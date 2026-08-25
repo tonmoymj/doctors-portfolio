@@ -3,85 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Sienna Rossi &mdash; Gynecologist | Minimalist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Dr. Sienna Rossi &mdash; Gynecologist | Sidebar Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #6B3B6B; --text: #18181b; --muted: #71717a; --bg: #ffffff; --border: #e4e4e7; }
+        :root { --accent: #881337; --accent-hover: #660e29; --accent-bg: rgba(136,19,55,0.12); --sidebar-bg: #090e17; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --radius: 14px; }
         *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; padding: 60px 24px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: #f8fafc; display: flex; }
+        h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
         a { text-decoration: none; color: inherit; }
-        .container { max-width: 880px; margin: 0 auto; }
 
-        .m-header { border-bottom: 1px solid var(--border); padding-bottom: 40px; margin-bottom: 50px; display: flex; justify-content: space-between; align-items: flex-end; }
-        .m-photo { width: 140px; height: 140px; border-radius: 12px; object-fit: cover; }
-        .m-title { font-size: 2.8rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 4px; }
-        .m-sec { margin-bottom: 50px; }
-        .m-label { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 700; margin-bottom: 20px; }
-        
-        .m-row { display: grid; grid-template-columns: 1fr 1.6fr; padding: 18px 0; border-bottom: 1px solid var(--border); }
-        .m-row-name { font-weight: 600; font-size: 1.05rem; }
-        .m-row-desc { font-size: 0.9rem; color: var(--muted); }
+        .sidebar { width: 330px; background: var(--sidebar-bg); color: white; padding: 40px 28px; position: fixed; top: 0; bottom: 0; left: 0; display: flex; flex-direction: column; justify-content: space-between; overflow-y: auto; z-index: 50; border-right: 1px solid rgba(255,255,255,0.08); }
+        .doc-avatar { width: 110px; height: 110px; border-radius: 20px; object-fit: cover; border: 3px solid var(--accent); margin-bottom: 16px; }
+        .side-nav { list-style: none; margin: 28px 0; display: flex; flex-direction: column; gap: 8px; }
+        .side-nav a { color: #cbd5e1; font-size: 0.88rem; font-weight: 600; padding: 10px 14px; border-radius: 8px; display: block; }
+        .side-nav a:hover { background: rgba(255,255,255,0.08); color: white; }
 
-        .form-input { width: 100%; padding: 12px 0; border: none; border-bottom: 1.5px solid var(--border); margin-bottom: 20px; font-family: inherit; font-size: 0.95rem; outline: none; }
-        .form-input:focus { border-color: var(--accent); }
-        .btn-m { background: var(--text); color: white; border: none; padding: 14px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        .main-canvas { margin-left: 330px; flex: 1; padding: 60px 56px; max-width: 1060px; }
+        .banner { background: white; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 48px; margin-bottom: 48px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .sec-title { font-size: 2rem; margin-bottom: 24px; }
+        .wide-svc-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; display: flex; gap: 20px; align-items: flex-start; }
+        .wide-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--accent-bg); color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
-        .faq-question { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
-        .faq-answer { color: var(--muted); font-size: 0.88rem; margin-top: 6px; display: none; }
+        .box { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; margin-bottom: 40px; }
+        .form-input, .form-textarea { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 8px; margin-bottom: 12px; font-family: inherit; }
+        .btn-act { background: var(--accent); color: white; padding: 14px; border: none; border-radius: 8px; font-weight: 700; width: 100%; cursor: pointer; }
+
+        .faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+        .faq-question { font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-answer { color: var(--muted); font-size: 0.9rem; margin-top: 8px; display: none; }
         .faq-item.active .faq-answer { display: block; }
 
-        @media(max-width: 700px) { .m-header { flex-direction: column; align-items: flex-start; gap: 20px; } .m-row { grid-template-columns: 1fr; gap: 6px; } }
+        @media(max-width: 960px) { body { flex-direction: column; } .sidebar { width: 100%; position: relative; } .main-canvas { margin-left: 0; padding: 24px; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="m-header">
-            <div>
-                <h1 class="m-title">Dr. Sienna Rossi</h1>
-                <div style="font-size: 1rem; color: var(--muted); font-weight: 500;">MD, FACOG &middot; Board-Certified Gynecologist &mdash; Gynecologist, San Francisco, CA</div>
+    <aside class="sidebar">
+        <div>
+            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80" alt="Dr. Sienna Rossi" class="doc-avatar">
+            <h2 class="doc-name-dyn" style="font-size: 1.3rem; color: white;">Dr. Sienna Rossi</h2>
+            <div class="doc-spec-dyn" style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; margin-top: 4px;">Gynecologist &bull; San Francisco, CA</div>
+            <ul class="side-nav">
+                <li><a href="#overview">&bull; Overview &amp; Bio</a></li>
+                <li><a href="#services">&bull; Procedures (6)</a></li>
+                <li><a href="#chambers">&bull; Chamber Schedule</a></li>
+                <li><a href="#faq">&bull; Common FAQs</a></li>
+                <li><a href="#book">&bull; Book Appointment</a></li>
+            </ul>
+        </div>
+        <div>
+            <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 8px;">Hotline: +880 1609-977377</div>
+            <a href="https://wa.me/8801609977377" target="_blank" style="background: #25D366; color: white; padding: 12px; border-radius: 8px; display: block; text-align: center; font-weight: 700; font-size: 0.85rem;">WhatsApp Direct</a>
+        </div>
+    </aside>
+
+    <main class="main-canvas">
+        <section class="banner" id="overview">
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;">Senior Clinical Practice</span>
+            <h1 class="doc-name-dyn" style="font-size: 2.8rem; margin: 8px 0 12px;">Dr. Sienna Rossi</h1>
+            <p style="font-size: 1.1rem; color: var(--muted); line-height: 1.7;">Dedicated adolescent gynecology expertise delivered with compassion and clinical excellence. MD, FACOG &middot; Board-Certified Gynecologist with over 16+ years of specialized medical service in San Francisco, CA.</p>
+        </section>
+
+        <section style="margin-bottom: 48px;" id="services">
+            <h2 class="sec-title">Specialized Clinical Services</h2>
+            <div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Well-Woman Screening</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Annual Pap smear, HPV test, and breast health exam.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Antenatal & Prenatal Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Maternal-fetal monitoring throughout pregnancy.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Laparoscopic Surgery</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Keyhole surgery for ovarian cysts and fibroids.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Menopause & HRT Guidance</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Hormone replacement therapy and bone density tracking.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Infertility Evaluation</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Follicular tracking, hormone profiling, and counseling.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">High-Risk Obstetrics</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Specialized obstetric care for complex pregnancies.</p></div></div>
+        </section>
+
+        <section class="box" id="chambers">
+            <h2 class="sec-title">Chamber Hours &amp; Locations</h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div style="background:#f8fafc; padding:20px; border-radius:8px; border:1px solid var(--border);">
+                    <h4>Main Diagnostic Chamber</h4>
+                    <p style="font-size:0.85rem; color:var(--muted); margin:4px 0 10px;">Suite #402, Diagnostic Center, San Francisco, CA</p>
+                    <div style="font-size:0.82rem; font-weight:700; color:var(--accent);">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</div>
+                </div>
+                <div style="background:#f8fafc; padding:20px; border-radius:8px; border:1px solid var(--border);">
+                    <h4>Hospital Department</h4>
+                    <p style="font-size:0.85rem; color:var(--muted); margin:4px 0 10px;">City Specialty Hospital, San Francisco, CA</p>
+                    <div style="font-size:0.82rem; font-weight:700; color:var(--accent);">Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</div>
+                </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80" alt="Dr. Sienna Rossi" class="m-photo">
-        </header>
-
-        <section class="m-sec">
-            <div class="m-label">01 &mdash; Clinical Profile</div>
-            <p style="font-size: 1.15rem; line-height: 1.8; color: #27272a;">Dedicated adolescent gynecology expertise delivered with compassion and clinical excellence. Bringing 16+ years of evidence-based medical treatments and diagnostic care to patients in San Francisco, CA.</p>
         </section>
 
-        <section class="m-sec">
-            <div class="m-label">02 &mdash; Procedures &amp; Care</div>
-            <div class="m-row"><div class="m-row-name">Well-Woman Routine Screening</div><div class="m-row-desc">Annual Pap smear cytology, HPV screening, pelvic ultrasonography, and clinical breast examinations.</div></div><div class="m-row"><div class="m-row-name">Antenatal Care & Safe Delivery</div><div class="m-row-desc">Comprehensive maternal-fetal monitoring throughout trimesters ensuring safe, healthy delivery.</div></div><div class="m-row"><div class="m-row-name">Minimally Invasive Laparoscopic Surgery</div><div class="m-row-desc">Keyhole laparoscopic surgery for ovarian cysts, uterine fibroids, and severe endometriosis.</div></div><div class="m-row"><div class="m-row-name">Menopause Care & HRT Guidance</div><div class="m-row-desc">Personalized hormone replacement therapy, hot flash relief, and bone health DEXA tracking.</div></div><div class="m-row"><div class="m-row-name">Infertility Workup & Ovulation Induction</div><div class="m-row-desc">Couples fertility evaluation, follicular tracking, hormonal profiling, and reproductive counseling.</div></div><div class="m-row"><div class="m-row-name">High-Risk Pregnancy Management</div><div class="m-row-desc">Specialized obstetric care for gestational diabetes, pre-eclampsia, and twin pregnancies.</div></div>
+        <section class="box" id="faq">
+            <h2 class="sec-title">Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="faq-question"><span>What should I bring to the chamber?</span><span>+</span></div><div class="faq-answer">Bring all previous test reports, doctor prescriptions, and current medications.</div></div>
+            <div class="faq-item"><div class="faq-question"><span>How do I confirm my serial?</span><span>+</span></div><div class="faq-answer">Submit the booking form below or message our assistant on WhatsApp at +880 1609-977377.</div></div>
         </section>
 
-        <section class="m-sec">
-            <div class="m-label">03 &mdash; Chamber &amp; Timetable</div>
-            <div class="m-row"><div class="m-row-name">Specialist Diagnostic Center</div><div class="m-row-desc">Suite #402, San Francisco, CA &bull; Sat &ndash; Thu (5PM &ndash; 9PM)</div></div>
-            <div class="m-row"><div class="m-row-name">Hospital Visiting Hours</div><div class="m-row-desc">City Hospital, San Francisco, CA &bull; Sat &ndash; Thu (9AM &ndash; 2PM)</div></div>
-        </section>
-
-        <section class="m-sec">
-            <div class="m-label">04 &mdash; Frequently Asked Questions</div>
-            <div class="faq-item"><div class="faq-question"><span>What to bring for my appointment?</span><span>&darr;</span></div><div class="faq-answer">Please bring all recent reports, previous prescriptions, and ongoing medication details.</div></div>
-            <div class="faq-item"><div class="faq-question"><span>How to contact directly?</span><span>&darr;</span></div><div class="faq-answer">Call or WhatsApp at +880 1609-977377 for instant booking.</div></div>
-        </section>
-
-        <section class="m-sec">
-            <div class="m-label">05 &mdash; Consultation Booking</div>
-            <p style="color: var(--muted); margin-bottom: 24px;">Visiting Hours: Sat &ndash; Thu 5PM &ndash; 9PM | Hotline: +880 1609-977377</p>
+        <section class="box" id="book">
+            <h2 class="sec-title">Book an Appointment</h2>
             <form onsubmit="return handleSubmit(event)">
                 <input class="form-input" type="text" placeholder="Patient Full Name" required>
-                <input class="form-input" type="tel" placeholder="Mobile / WhatsApp Number" required>
+                <input class="form-input" type="tel" placeholder="Mobile Number (+880)" required>
                 <input class="form-input" type="date" required>
-                <button type="submit" class="btn-m">Submit Booking Request &rarr;</button>
+                <textarea class="form-textarea" rows="3" placeholder="Reason for consultation..."></textarea>
+                <button type="submit" class="btn-act">Confirm Chamber Appointment &rarr;</button>
             </form>
         </section>
 
-        <footer style="border-top: 1px solid var(--border); padding-top: 24px; font-size: 0.8rem; color: var(--muted); display: flex; justify-content: space-between;">
-            <div>&copy; 2026 Dr. Sienna Rossi</div>
-            <div>Doctors Portfolio</div>
+        <footer style="padding: 24px 0; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); text-align: center;">
+            &copy; 2026 Dr. Sienna Rossi. All Rights Reserved &bull; Doctors Portfolio.
         </footer>
-    </div>
+    </main>
     <script>
         function toggleMenu() {
             const m = document.getElementById('mobileMenu');
@@ -109,6 +132,19 @@
             setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
             return false;
         }
+        // Dynamic name replacer if parent postMessage arrives
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
+                const name = event.data.name;
+                const spec = event.data.specialty;
+                if (name) {
+                    document.querySelectorAll('.doc-name-dyn').forEach(el => el.textContent = name);
+                }
+                if (spec) {
+                    document.querySelectorAll('.doc-spec-dyn').forEach(el => el.textContent = spec);
+                }
+            }
+        });
     </script>
 </body>
 </html>

@@ -6,7 +6,7 @@
     <title>Dr. Specialist #058 &mdash; Specialist | Sidebar Layout</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #6B7F6B; --accent-hover: #505f50; --accent-bg: rgba(107,127,107,0.1); --sidebar-bg: #090e17; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --radius: 14px; }
+        :root { --accent: #F59E0B; --accent-hover: #b77608; --accent-bg: rgba(245,158,11,0.12); --sidebar-bg: #090e17; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --radius: 14px; }
         *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: #f8fafc; display: flex; }
         h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
@@ -15,13 +15,11 @@
         .sidebar { width: 330px; background: var(--sidebar-bg); color: white; padding: 40px 28px; position: fixed; top: 0; bottom: 0; left: 0; display: flex; flex-direction: column; justify-content: space-between; overflow-y: auto; z-index: 50; border-right: 1px solid rgba(255,255,255,0.08); }
         .doc-avatar { width: 110px; height: 110px; border-radius: 20px; object-fit: cover; border: 3px solid var(--accent); margin-bottom: 16px; }
         .side-nav { list-style: none; margin: 28px 0; display: flex; flex-direction: column; gap: 8px; }
-        .side-nav a { color: #cbd5e1; font-size: 0.88rem; font-weight: 600; padding: 10px 14px; border-radius: 8px; display: block; transition: 0.2s; }
+        .side-nav a { color: #cbd5e1; font-size: 0.88rem; font-weight: 600; padding: 10px 14px; border-radius: 8px; display: block; }
         .side-nav a:hover { background: rgba(255,255,255,0.08); color: white; }
 
         .main-canvas { margin-left: 330px; flex: 1; padding: 60px 56px; max-width: 1060px; }
         .banner { background: white; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 48px; margin-bottom: 48px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        .stats-row { display: flex; gap: 40px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
-
         .sec-title { font-size: 2rem; margin-bottom: 24px; }
         .wide-svc-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; display: flex; gap: 20px; align-items: flex-start; }
         .wide-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--accent-bg); color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -42,14 +40,12 @@
     <aside class="sidebar">
         <div>
             <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Dr. Specialist #058" class="doc-avatar">
-            <h2 style="font-size: 1.3rem; color: white;">Dr. Specialist #058</h2>
-            <div style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; margin-top: 4px;">Specialist &bull; Medical Plaza, NY</div>
+            <h2 class="doc-name-dyn" style="font-size: 1.3rem; color: white;">Dr. Specialist #058</h2>
+            <div class="doc-spec-dyn" style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; margin-top: 4px;">Specialist &bull; Medical Plaza, NY</div>
             <ul class="side-nav">
                 <li><a href="#overview">&bull; Overview &amp; Bio</a></li>
                 <li><a href="#services">&bull; Procedures (6)</a></li>
-                <li><a href="#timeline">&bull; Clinical Timeline</a></li>
                 <li><a href="#chambers">&bull; Chamber Schedule</a></li>
-                <li><a href="#reviews">&bull; Patient Feedback</a></li>
                 <li><a href="#faq">&bull; Common FAQs</a></li>
                 <li><a href="#book">&bull; Book Appointment</a></li>
             </ul>
@@ -63,27 +59,13 @@
     <main class="main-canvas">
         <section class="banner" id="overview">
             <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;">Senior Clinical Practice</span>
-            <h1 style="font-size: 2.8rem; margin: 8px 0 12px;">Dr. Specialist #058</h1>
+            <h1 class="doc-name-dyn" style="font-size: 2.8rem; margin: 8px 0 12px;">Dr. Specialist #058</h1>
             <p style="font-size: 1.1rem; color: var(--muted); line-height: 1.7;">Dedicated patient-centered healthcare excellence. MD, Board Certified with over 16+ years of specialized medical service in Medical Plaza, NY.</p>
-            <div class="stats-row">
-                <div><div style="font-size: 2rem; font-weight: 800; color: var(--accent); font-family: 'Fraunces', serif;">16+</div><div style="font-size: 0.78rem; color: var(--muted);">Years Exp.</div></div>
-                <div><div style="font-size: 2rem; font-weight: 800; color: var(--accent); font-family: 'Fraunces', serif;">4,800+</div><div style="font-size: 0.78rem; color: var(--muted);">Patients</div></div>
-                <div><div style="font-size: 2rem; font-weight: 800; color: var(--accent); font-family: 'Fraunces', serif;">98%</div><div style="font-size: 0.78rem; color: var(--muted);">Satisfaction</div></div>
-            </div>
         </section>
 
         <section style="margin-bottom: 48px;" id="services">
             <h2 class="sec-title">Specialized Clinical Services</h2>
-            <div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Comprehensive Annual Health Checkup</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Thorough clinical physical exam, preventive laboratory panels, ECG, and wellness risk assessment.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Diabetes & Metabolic Syndrome Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">HbA1c optimization, insulin titration, dietary coaching, and diabetic complication screening.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Hypertension & Cardiovascular Health</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Continuous 24-hour BP monitoring, arterial stiffness assessment, and target organ protection.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Acute Infections & Febrile Illness</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Prompt diagnostic workup for viral fevers, pneumonia, dengue, malaria, and gastrointestinal infections.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Geriatric Care & Polypharmacy Review</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Holistic care for elderly patients, fall prevention, cognitive screening, and safe medication management.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Executive Health & Lifestyle Medicine</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Tailored preventive medicine protocols for busy corporate executives and professionals.</p></div></div>
-        </section>
-
-        <section class="box" id="timeline">
-            <h2 class="sec-title">Career Milestones</h2>
-            <div style="display:flex; flex-direction:column; gap:16px;">
-                <div style="border-left:2px solid var(--accent); padding-left:16px;"><strong>2006 &ndash; 2010: Clinical Residency</strong><p style="font-size:0.85rem; color:var(--muted);">University Medical Hospital &bull; Inpatient and emergency care.</p></div>
-                <div style="border-left:2px solid var(--accent); padding-left:16px;"><strong>2011 &ndash; 2018: Consultant in Specialist</strong><p style="font-size:0.85rem; color:var(--muted);">Supervised specialized outpatient clinic and clinical procedures.</p></div>
-                <div style="border-left:2px solid var(--accent); padding-left:16px;"><strong>2019 &ndash; Present: Senior Specialist Practice</strong><p style="font-size:0.85rem; color:var(--muted);">Consulting at premier diagnostic center in Medical Plaza, NY.</p></div>
-            </div>
+            <div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Annual Health Checkup</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Comprehensive physical exam, lab panels, and wellness care.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Diabetes & Metabolic Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">HbA1c optimization, diet coaching, and complication screening.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Hypertension Management</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">24-hour BP monitoring and cardiovascular protection.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Acute Infections Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Prompt diagnosis for viral fevers, flu, and infections.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Geriatric Primary Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Holistic care for elderly adults and safe medication reviews.</p></div></div><div class="wide-svc-card"><div class="wide-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div><h3 style="font-size:1.15rem; margin-bottom:4px;">Executive Health Screening</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Tailored preventive medicine protocols for professionals.</p></div></div>
         </section>
 
         <section class="box" id="chambers">
@@ -99,14 +81,6 @@
                     <p style="font-size:0.85rem; color:var(--muted); margin:4px 0 10px;">City Specialty Hospital, Medical Plaza, NY</p>
                     <div style="font-size:0.82rem; font-weight:700; color:var(--accent);">Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</div>
                 </div>
-            </div>
-        </section>
-
-        <section class="box" id="reviews">
-            <h2 class="sec-title">Verified Patient Reviews</h2>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-                <div style="background:#f8fafc; padding:18px; border-radius:8px;"><div style="color:#d97706;">★★★★★</div><p style="font-style:italic; font-size:0.86rem; color:var(--muted); margin:8px 0;">&ldquo;Dr. #058 is one of the most competent physicians I have visited. Highly effective prescription.&rdquo;</p><strong>Mahmudul Hasan</strong></div>
-                <div style="background:#f8fafc; padding:18px; border-radius:8px;"><div style="color:#d97706;">★★★★★</div><p style="font-style:italic; font-size:0.86rem; color:var(--muted); margin:8px 0;">&ldquo;The doctor listened to all my medical history patiently and provided reassurance.&rdquo;</p><strong>Sabrina Karim</strong></div>
             </div>
         </section>
 
@@ -158,6 +132,19 @@
             setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
             return false;
         }
+        // Dynamic name replacer if parent postMessage arrives
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
+                const name = event.data.name;
+                const spec = event.data.specialty;
+                if (name) {
+                    document.querySelectorAll('.doc-name-dyn').forEach(el => el.textContent = name);
+                }
+                if (spec) {
+                    document.querySelectorAll('.doc-spec-dyn').forEach(el => el.textContent = spec);
+                }
+            }
+        });
     </script>
 </body>
 </html>
