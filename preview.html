@@ -250,9 +250,9 @@
 
     // Parse URL param
     const urlParams = new URLSearchParams(window.location.search);
-    const paramT = urlParams.get('t');
+    const paramT = urlParams.get('template') || urlParams.get('t') || urlParams.get('id');
     if (paramT) {
-      const foundIdx = templates.findIndex(item => item.n === paramT || item.n === paramT.padStart(3, '0'));
+      const foundIdx = templates.findIndex(item => item.n === paramT || parseInt(item.n, 10) === parseInt(paramT, 10) || item.n === String(paramT).padStart(3, '0'));
       if (foundIdx !== -1) currentIndex = foundIdx;
     }
 
