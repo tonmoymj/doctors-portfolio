@@ -1,75 +1,48 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Dr. Diana Cho | ENT Specialist | Sidebar HUD</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#090E17;--panel:#111A2E;--cyan:#06B6D4;--green:#10B981;--border:#1E293B;--muted:#94A3B8}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;color:#F1F5F9;background:var(--bg);display:flex;min-height:100vh}h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;color:white}a{text-decoration:none;color:inherit}
+:root{--bg:#8B939C;--panel:#FFF;--acc:#38405F;--border:#E2E8F0;--muted:#64748B}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',sans-serif;color:#1E293B;background:var(--bg);display:flex;min-height:100vh}h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:#0E131F}a{text-decoration:none;color:inherit}
 .sidebar{width:320px;background:var(--panel);border-right:1px solid var(--border);position:fixed;top:0;bottom:0;left:0;padding:36px 26px;display:flex;flex-direction:column;justify-content:space-between;z-index:50;overflow-y:auto}
-.s-photo{width:100px;height:100px;border-radius:16px;object-fit:cover;border:2px solid var(--cyan);box-shadow:0 0 20px rgba(6,182,212,.3);margin-bottom:14px}
-.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;animation:p 1.5s infinite}
+.s-photo{width:100px;height:100px;border-radius:16px;object-fit:cover;border:2px solid var(--acc);margin-bottom:14px}
+.pulse{width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;animation:p 1.5s infinite}
 @keyframes p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
-.s-nav a{display:block;padding:9px 14px;border-radius:8px;font-size:.85rem;color:var(--muted);margin-bottom:4px;transition:.2s}
-.s-nav a:hover{background:rgba(255,255,255,.06);color:white}
 .main{margin-left:320px;flex:1;padding:50px 48px;max-width:1000px}
-.banner{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:44px;margin-bottom:32px;position:relative;overflow:hidden}
-.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
-.m-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:18px}
+.banner{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:40px;margin-bottom:32px}
 .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:32px}
 .cap-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:26px}
-.slot-btn{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:6px;font-size:.8rem;cursor:pointer;margin:3px;display:inline-block}
-.slot-btn.active{background:var(--cyan);color:#090E17;font-weight:700}
-.f-input{width:100%;padding:12px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:white;border-radius:8px;margin-bottom:12px;font-family:'Inter',sans-serif}
-@media(max-width:960px){body{flex-direction:column}.sidebar{width:100%;position:relative;height:auto}.main{margin-left:0;padding:24px}.cap-grid,.metrics-row{grid-template-columns:1fr}}
+.slot-btn{background:#F1F5F9;border:1px solid var(--border);color:#1E293B;padding:8px 14px;border-radius:6px;font-size:.8rem;cursor:pointer;margin:3px;display:inline-block}
+.slot-btn.active{background:var(--acc);color:#FFF;font-weight:700}
+.f-input{width:100%;padding:12px;background:#FFF;border:1px solid var(--border);color:#1E293B;border-radius:8px;margin-bottom:12px;font-family:inherit}
+@media(max-width:960px){body{flex-direction:column}.sidebar{width:100%;position:relative;height:auto}.main{margin-left:0;padding:24px}.cap-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <aside class="sidebar">
   <div>
     <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Dr. Diana Cho" class="s-photo">
-    <div style="background:rgba(16,185,129,.15);color:var(--green);padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-bottom:14px"><span class="pulse"></span>In Chamber Now</div>
-    <div class="d-name" style="font-size:1.3rem;color:white">Dr. Diana Cho</div>
-    <div class="d-spec" style="font-size:.75rem;color:var(--cyan);text-transform:uppercase;font-weight:700;margin-bottom:20px">ENT Specialist &bull; Los Angeles, CA</div>
-    <div class="s-nav">
-      <a href="#overview">&rsaquo; Overview</a>
-      <a href="#procedures">&rsaquo; Capabilities</a>
-      <a href="#chambers">&rsaquo; Chambers</a>
-      <a href="#booking">&rsaquo; Live Booking</a>
-    </div>
+    <div style="background:rgba(16,185,129,.15);color:#10B981;padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-bottom:14px"><span class="pulse"></span>In Chamber Now</div>
+    <div class="d-name" style="font-size:1.3rem;font-weight:800">Dr. Diana Cho</div>
+    <div class="d-spec" style="font-size:.75rem;color:var(--acc);text-transform:uppercase;font-weight:700;margin-bottom:20px">ENT Specialist &bull; Los Angeles, CA</div>
   </div>
-  <div>
-    <a href="https://wa.me/8801609977377" target="_blank" style="display:block;background:#25D366;color:white;padding:12px;border-radius:8px;text-align:center;font-weight:700;font-size:.85rem">&#x1F4AC; WhatsApp (+880 1609-977377)</a>
-  </div>
+  <div><a href="https://wa.me/8801609977377" target="_blank" style="display:block;background:#25D366;color:white;padding:12px;border-radius:8px;text-align:center;font-weight:700;font-size:.85rem">&#x1F4AC; WhatsApp (+880 1609-977377)</a></div>
 </aside>
 <main class="main">
-  <section class="banner" id="overview">
-    <span style="font-size:.72rem;color:var(--cyan);font-weight:800;text-transform:uppercase">Health-Tech Diagnostic Suite</span>
+  <section class="banner">
+    <span style="font-size:.72rem;color:var(--acc);font-weight:800;text-transform:uppercase">Diagnostic Suite &bull; Los Angeles, CA</span>
     <h1 class="d-name" style="font-size:2.8rem;font-weight:800;margin:10px 0 12px">Dr. Diana Cho</h1>
-    <p style="color:var(--cyan);font-size:1rem;margin-bottom:10px;font-weight:600">MD, FACS &middot; Board-Certified ENT Specialist</p>
-    <p style="color:var(--muted);font-size:1rem;line-height:1.75;max-width:600px">Dedicated pediatric ent expertise delivered with compassion and clinical excellence. Delivering advanced diagnostic protocols and patient-centred clinical care in Los Angeles, CA.</p>
-    <div class="metrics-row">
-      <div class="m-card"><div style="font-size:2rem;font-weight:800;color:var(--cyan)">16+</div><div style="font-size:.72rem;color:var(--muted)">Yrs Experience</div></div>
-      <div class="m-card"><div style="font-size:2rem;font-weight:800;color:var(--cyan)">4,800+</div><div style="font-size:.72rem;color:var(--muted)">Cases Treated</div></div>
-      <div class="m-card"><div style="font-size:2rem;font-weight:800;color:var(--cyan)">99.2%</div><div style="font-size:.72rem;color:var(--muted)">Success Rate</div></div>
-      <div class="m-card"><div style="font-size:2rem;font-weight:800;color:var(--cyan)">24/7</div><div style="font-size:.72rem;color:var(--muted)">Emergency Refs</div></div>
-    </div>
+    <p style="color:var(--acc);font-size:1rem;margin-bottom:10px;font-weight:600">MD, FACS &middot; Board-Certified ENT Specialist</p>
+    <p style="color:var(--muted);font-size:1rem;line-height:1.75;max-width:600px">Dedicated pediatric ent expertise delivered with compassion and clinical excellence.</p>
   </section>
-  <section id="procedures" style="margin-bottom:32px">
-    <h2 style="font-size:1.8rem;margin-bottom:20px">Precision Capabilities</h2>
-    <div class="cap-grid">
-      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Annual Health Checkup</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Comprehensive physical examination, complete blood panel, and personalized wellness recommendations.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Diabetes & Metabolic Care</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">HbA1c optimization, dietary counseling, and long-term complication screening protocols.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Hypertension Management</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">24-hour ambulatory blood pressure monitoring and evidence-based cardiovascular risk reduction.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Acute Illness & Infections</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Rapid diagnosis and targeted treatment for viral fevers, bacterial infections, and tropical diseases.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Geriatric Primary Care</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Holistic health management for elderly patients including polypharmacy review and falls prevention.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Executive Health Screening</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Tailored corporate health assessment with advanced imaging, blood panels, and cardiac evaluation.</p></div>
-    </div>
-  </section>
-  <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:32px;margin-bottom:32px" id="chambers">
-    <h2 style="font-size:1.5rem;margin-bottom:14px">Chamber &amp; Schedule</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
-      <div style="background:rgba(255,255,255,.03);padding:18px;border-radius:10px;border:1px solid var(--border)"><strong>Main Chamber:</strong><p style="color:var(--muted);font-size:.85rem;margin-top:4px">Suite #402, Diagnostic Center, Los Angeles, CA<br>Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</p></div>
-      <div style="background:rgba(255,255,255,.03);padding:18px;border-radius:10px;border:1px solid var(--border)"><strong>Hospital Rounds:</strong><p style="color:var(--muted);font-size:.85rem;margin-top:4px">City Hospital, Los Angeles, CA<br>Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</p></div>
-    </div>
+  <h2 style="font-size:1.8rem;margin-bottom:20px">Precision Capabilities</h2>
+  <div class="cap-grid">
+    <div class="cap-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:700;margin-bottom:6px">Annual Health Checkup</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Comprehensive physical examination, complete blood panel, and personalized wellness recommendations.</p></div>    <div class="cap-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:700;margin-bottom:6px">Diabetes & Metabolic Care</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">HbA1c optimization, dietary counseling, and long-term complication screening protocols.</p></div>    <div class="cap-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:700;margin-bottom:6px">Hypertension Management</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">24-hour ambulatory blood pressure monitoring and evidence-based cardiovascular risk reduction.</p></div>    <div class="cap-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:700;margin-bottom:6px">Acute Illness & Infections</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Rapid diagnosis and targeted treatment for viral fevers, bacterial infections, and tropical diseases.</p></div>    <div class="cap-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:700;margin-bottom:6px">Geriatric Primary Care</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Holistic health management for elderly patients including polypharmacy review and falls prevention.</p></div>    <div class="cap-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:700;margin-bottom:6px">Executive Health Screening</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Tailored corporate health assessment with advanced imaging, blood panels, and cardiac evaluation.</p></div>
   </div>
   <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:32px" id="booking">
-    <h2 style="font-size:1.5rem;margin-bottom:14px">Instant Telemetry Booking</h2>
+    <h2 style="font-size:1.5rem;margin-bottom:14px">Instant Serial Booking</h2>
     <div style="margin-bottom:14px"><span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span><span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span><span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span><span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span><span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span></div>
-    <form onsubmit="handleForm(event)"><input class="f-input" type="text" placeholder="Patient Full Name" required><input class="f-input" type="tel" placeholder="Mobile Number (+880)" required><input class="f-input" type="date" required><button type="submit" style="background:var(--cyan);color:#090E17;border:none;padding:14px;width:100%;border-radius:8px;font-weight:800;cursor:pointer">Confirm Booking &rarr;</button></form>
+    <form onsubmit="handleForm(event)"><input class="f-input" type="text" placeholder="Patient Full Name" required><input class="f-input" type="tel" placeholder="Mobile Number (+880)" required><input class="f-input" type="date" required><button type="submit" style="background:var(--acc);color:#FFF;border:none;padding:14px;width:100%;border-radius:8px;font-weight:800;cursor:pointer">Confirm Booking &rarr;</button></form>
   </div>
 </main>
 <script>

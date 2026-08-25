@@ -3,38 +3,39 @@
 <title>Dr. Stephanie Nguyen | Dentist | Surgical Pulse</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{--acc:#722F37;--border:#E2E8F0;--muted:#64748B}
 *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;color:#F8FAFC;background:#030712;line-height:1.65}h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;color:white}a{text-decoration:none;color:inherit}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 .hero{padding:80px 0;background:radial-gradient(circle at 75% 20%,rgba(56,189,248,.18) 0%,transparent 55%)}
 .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
-.p-card{background:#0F172A;border:1px solid #1E293B;border-radius:14px;padding:26px;transition:.3s}
-.p-card:hover{border-color:#38BDF8;box-shadow:0 0 24px rgba(56,189,248,.12)}
+.p-card{background:#0F172A;border:1px solid var(--border);border-radius:14px;padding:26px;transition:.3s}
+.p-card:hover{border-color:var(--acc);box-shadow:0 0 24px rgba(56,189,248,.15)}
 .p-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
-.f-in{width:100%;padding:12px;background:rgba(255,255,255,.04);border:1px solid #1E293B;color:white;border-radius:8px;margin-bottom:12px}
+.f-in{width:100%;padding:12px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:white;border-radius:8px;margin-bottom:12px}
 @media(max-width:768px){.hero-grid,.p-grid-3{grid-template-columns:1fr}}
 </style></head>
 <body>
-<div style="background:#0F172A;border-bottom:1px solid #1E293B;padding:16px 24px;display:flex;justify-content:space-between;align-items:center">
-  <div><strong class="d-name" style="font-size:1.15rem">Dr. Stephanie Nguyen</strong> &bull; <span class="d-spec" style="color:#38BDF8;font-weight:700">Dentist</span></div>
-  <a href="https://wa.me/8801609977377" target="_blank" style="background:#38BDF8;color:#030712;padding:9px 18px;border-radius:6px;font-weight:800;font-size:.82rem">OT Hotline (+880 1609-977377)</a>
+<div style="background:#0F172A;border-bottom:1px solid var(--border);padding:16px 24px;display:flex;justify-content:space-between;align-items:center">
+  <div><strong class="d-name" style="font-size:1.15rem">Dr. Stephanie Nguyen</strong> &bull; <span class="d-spec" style="color:var(--acc);font-weight:700">Dentist</span></div>
+  <a href="https://wa.me/8801609977377" target="_blank" style="background:var(--acc);color:#030712;padding:9px 18px;border-radius:6px;font-weight:800;font-size:.82rem">OT Hotline (+880 1609-977377)</a>
 </div>
 <section class="hero"><div class="wrap hero-grid">
   <div>
-    <span style="background:rgba(56,189,248,.12);color:#38BDF8;padding:4px 14px;border-radius:20px;font-size:.72rem;font-weight:800;text-transform:uppercase">Robotic &amp; Surgical Suite</span>
+    <span style="background:rgba(56,189,248,.12);color:var(--acc);padding:4px 14px;border-radius:20px;font-size:.72rem;font-weight:800;text-transform:uppercase">Robotic &amp; Surgical Suite</span>
     <h1 class="d-name" style="font-size:clamp(2.5rem,4.5vw,3.8rem);font-weight:800;line-height:1.1;margin:12px 0">Dr. Stephanie Nguyen</h1>
-    <p style="color:#94A3B8;font-size:1rem;line-height:1.75;margin-bottom:24px">Dedicated family dentistry expertise delivered with compassion and clinical excellence. Advanced surgical and diagnostic precision in Nashville, TN.</p>
-    <a href="#booking" style="background:#38BDF8;color:#030712;padding:12px 24px;border-radius:6px;font-weight:800;font-size:.88rem">Book OT Slot &rarr;</a>
+    <p style="color:var(--muted);font-size:1rem;line-height:1.75;margin-bottom:24px">Dedicated family dentistry expertise delivered with compassion and clinical excellence. Advanced surgical and diagnostic precision in Nashville, TN.</p>
+    <a href="#booking" style="background:var(--acc);color:#030712;padding:12px 24px;border-radius:6px;font-weight:800;font-size:.88rem">Book OT Slot &rarr;</a>
   </div>
-  <div><img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=800&q=80" alt="Dr. Stephanie Nguyen" style="width:100%;border-radius:18px;border:2px solid #1E293B;box-shadow:0 0 40px rgba(56,189,248,.15)"></div>
+  <div><img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=800&q=80" alt="Dr. Stephanie Nguyen" style="width:100%;border-radius:18px;border:2px solid var(--border);box-shadow:0 0 40px rgba(56,189,248,.15)"></div>
 </div></section>
 <div class="wrap">
   <h2 style="font-size:2rem;margin-bottom:24px">Surgical Procedures</h2>
   <div class="p-grid-3">
-    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Digital Smile Design</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Full aesthetic transformation using ceramic veneers, digital wax-ups, and pre-visualization mock-ups.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Zirconia Restorations</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Ultra-durable all-ceramic zirconia crowns and bridges restoring natural bite and chewing function.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Titanium Dental Implants</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Permanent artificial tooth root placement with immediate-load surgical precision and osseointegration.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Invisalign Clear Aligners</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Customized transparent aligner therapy correcting crowding, spacing, and bite misalignment.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Microscopic Root Canal</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Single-visit pain-free endodontic therapy using dental microscope magnification to save natural teeth.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Periodontal Laser Therapy</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Laser-assisted gum decontamination and guided bone regeneration for advanced periodontal disease.</p></div>
+    <div class="p-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:800;margin-bottom:8px">Digital Smile Design</div><p style="font-size:.86rem;color:var(--muted);line-height:1.65">Full aesthetic transformation using ceramic veneers, digital wax-ups, and pre-visualization mock-ups.</p></div>    <div class="p-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:800;margin-bottom:8px">Zirconia Restorations</div><p style="font-size:.86rem;color:var(--muted);line-height:1.65">Ultra-durable all-ceramic zirconia crowns and bridges restoring natural bite and chewing function.</p></div>    <div class="p-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:800;margin-bottom:8px">Titanium Dental Implants</div><p style="font-size:.86rem;color:var(--muted);line-height:1.65">Permanent artificial tooth root placement with immediate-load surgical precision and osseointegration.</p></div>    <div class="p-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:800;margin-bottom:8px">Invisalign Clear Aligners</div><p style="font-size:.86rem;color:var(--muted);line-height:1.65">Customized transparent aligner therapy correcting crowding, spacing, and bite misalignment.</p></div>    <div class="p-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:800;margin-bottom:8px">Microscopic Root Canal</div><p style="font-size:.86rem;color:var(--muted);line-height:1.65">Single-visit pain-free endodontic therapy using dental microscope magnification to save natural teeth.</p></div>    <div class="p-card"><div style="color:var(--acc);font-size:1.1rem;font-weight:800;margin-bottom:8px">Periodontal Laser Therapy</div><p style="font-size:.86rem;color:var(--muted);line-height:1.65">Laser-assisted gum decontamination and guided bone regeneration for advanced periodontal disease.</p></div>
   </div>
   <div class="p-card" style="max-width:700px;margin:0 auto 40px" id="booking">
     <h2 style="font-size:1.8rem;margin-bottom:14px">Chamber &amp; OT Booking</h2>
-    <form onsubmit="handleForm(event)"><input class="f-in" type="text" placeholder="Patient Full Name" required><input class="f-in" type="tel" placeholder="Mobile (+880)" required><input class="f-in" type="date" required><button type="submit" style="background:#38BDF8;color:#030712;border:none;padding:14px;width:100%;border-radius:8px;font-weight:800;cursor:pointer">Confirm Serial Request &rarr;</button></form>
+    <form onsubmit="handleForm(event)"><input class="f-in" type="text" placeholder="Patient Full Name" required><input class="f-in" type="tel" placeholder="Mobile (+880)" required><input class="f-in" type="date" required><button type="submit" style="background:var(--acc);color:#030712;border:none;padding:14px;width:100%;border-radius:8px;font-weight:800;cursor:pointer">Confirm Serial Request &rarr;</button></form>
   </div>
 </div>
 <footer style="background:#02050A;color:#64748B;padding:32px 0;text-align:center;font-size:.8rem">&copy; 2026 Dr. Stephanie Nguyen. Surgical Pulse &bull; Doctors Portfolio</footer>
