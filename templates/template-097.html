@@ -1,105 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Specialist #097 &mdash; Specialist | Harley Street Private Practice</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Alex+Brush&display=swap" rel="stylesheet">
-    <style>
-        :root { --navy: #0A192F; --gold: #D4AF37; --gold-light: #F4E8C1; --ivory: #FCFBF7; --text: #1E293B; --muted: #64748B; --border: #E2D9C8; }
-        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--ivory); line-height: 1.7; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--navy); }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
-
-        /* Royal Header */
-        .royal-crest-bar { background: var(--navy); color: var(--gold-light); font-size: 0.78rem; text-align: center; padding: 8px 0; letter-spacing: 0.15em; text-transform: uppercase; font-family: 'Cinzel', serif; border-bottom: 1px solid var(--gold); }
-        .royal-nav { position: sticky; top: 0; z-index: 100; background: rgba(252,251,247,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 78px; }
-        .crest-logo { display: flex; align-items: center; gap: 12px; }
-        .crest-badge { width: 44px; height: 44px; background: var(--navy); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 800; border: 2px solid var(--gold); }
-        .btn-royal { background: var(--navy); color: var(--gold-light); border: 1px solid var(--gold); padding: 12px 24px; border-radius: 4px; font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.1em; font-weight: 700; transition: 0.3s; cursor: pointer; }
-        .btn-royal:hover { background: var(--gold); color: var(--navy); }
-
-        /* Hero */
-        .hero { padding: 84px 0 70px; }
-        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-        .royal-portrait-box { position: relative; padding: 16px; border: 1px solid var(--gold); background: white; box-shadow: 0 20px 40px rgba(10,25,47,0.08); }
-        .royal-portrait-box img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
-        .signature { font-family: 'Alex Brush', cursive; font-size: 2.2rem; color: var(--gold); margin-top: 10px; }
-
-        /* Royal Sections */
-        .royal-sec { padding: 80px 0; border-bottom: 1px solid var(--border); }
-        .sec-header { text-align: center; max-width: 680px; margin: 0 auto 50px; }
-        .sec-eyebrow { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
-        
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-        .svc-card { background: white; border: 1px solid var(--border); padding: 32px; transition: 0.3s; position: relative; }
-        .svc-card::before { content:''; position: absolute; top:0; left:0; width:0; height:3px; background: var(--gold); transition: 0.3s; }
-        .svc-card:hover::before { width: 100%; }
-
-        .chamber-box { background: white; border: 1.5px solid var(--gold); padding: 36px; }
-        .slot-pill { background: var(--ivory); border: 1px solid var(--border); padding: 8px 16px; border-radius: 4px; font-size: 0.82rem; font-weight: 600; cursor: pointer; display: inline-block; margin: 4px; }
-        .slot-pill.active { background: var(--navy); color: var(--gold); border-color: var(--gold); }
-
-        .faq-item { background: white; border: 1px solid var(--border); margin-bottom: 12px; }
-        .faq-q { padding: 18px 24px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
-        .faq-a { padding: 0 24px 18px; color: var(--muted); font-size: 0.9rem; display: none; }
-        .faq-item.active .faq-a { display: block; }
-
-        .footer { background: var(--navy); color: #cbd5e1; padding: 70px 0 30px; }
-        @media(max-width: 768px) { .hero-grid, .services-grid { grid-template-columns: 1fr; } }
-    </style>
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dr. Specialist #097 | Specialist | Harley Street Private Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A192F;--gold:#D4AF37;--gilt:#F4E8C1;--ivory:#FCFBF7;--muted:#64748B;--border:#E2D9C8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:#1E293B;background:var(--ivory);line-height:1.7}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.topbar{background:var(--navy);color:var(--gilt);font-size:.78rem;text-align:center;padding:8px 0;letter-spacing:.15em;text-transform:uppercase;font-family:'Cinzel',serif;border-bottom:2px solid var(--gold)}
+.navbar{position:sticky;top:0;z-index:100;background:rgba(252,251,247,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:76px}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.crest{width:44px;height:44px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.15rem;border:2px solid var(--gold)}
+.nav-links{display:flex;gap:22px;list-style:none;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.nav-links a{color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--gold)}
+.btn-royal{background:var(--navy);color:var(--gilt);border:1px solid var(--gold);padding:11px 22px;font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.08em;font-weight:700;cursor:pointer;transition:.3s}
+.btn-royal:hover{background:var(--gold);color:var(--navy)}
+.hero{padding:84px 0 68px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero-eyebrow{font-family:'Cinzel',serif;font-size:.75rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.hero-title{font-size:clamp(2.4rem,4vw,3.5rem);margin:10px 0 14px;line-height:1.15}
+.hero-creds{font-size:1.05rem;color:var(--gold);font-weight:600;margin-bottom:16px}
+.hero-bio{color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:24px}
+.signature{font-family:'Alex Brush',cursive;font-size:2.4rem;color:var(--gold)}
+.portrait-box{padding:16px;border:1.5px solid var(--gold);background:white;box-shadow:0 20px 40px rgba(10,25,47,.1)}
+.portrait-box img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.stats-strip{background:white;border:1px solid var(--border);padding:40px;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;margin-bottom:70px;gap:20px}
+.stat-num{font-size:2.6rem;font-weight:700;color:var(--gold);font-family:'Cinzel',serif;line-height:1}
+.stat-lbl{font-size:.82rem;color:var(--muted);margin-top:4px}
+.sec{padding:80px 0;border-bottom:1px solid var(--border)}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 48px}
+.sec-eye{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:8px}
+.cred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.cred-card{background:white;border:1px solid var(--border);border-left:4px solid var(--gold);padding:26px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc-card{background:white;border:1px solid var(--border);padding:30px;transition:.3s;position:relative;overflow:hidden}
+.svc-card::after{content:'';position:absolute;top:0;left:0;width:0;height:3px;background:var(--gold);transition:.4s}
+.svc-card:hover::after{width:100%}
+.svc-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-3px)}
+.svc-num{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold);font-weight:700;margin-bottom:10px}
+.timeline{border-left:2px solid var(--gold);padding-left:32px;margin-left:12px}
+.tl-node{position:relative;margin-bottom:36px;padding-bottom:8px}
+.tl-node::before{content:'';position:absolute;left:-41px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--navy);border:3px solid var(--gold)}
+.tl-year{font-family:'Cinzel',serif;color:var(--gold);font-weight:700;font-size:.85rem}
+.ch-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.ch-card{background:white;border:1.5px solid var(--gold);padding:32px}
+.ch-head{font-size:1.2rem;margin-bottom:8px}
+.ch-loc{color:var(--muted);font-size:.88rem;margin-bottom:14px}
+.ch-hrs{background:var(--ivory);border:1px solid var(--border);padding:12px 16px;font-size:.88rem;margin-bottom:16px;line-height:1.6}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev-card{background:white;border:1px solid var(--border);padding:28px}
+.rev-stars{color:var(--gold);font-size:1.1rem;margin-bottom:12px}
+.rev-text{font-style:italic;color:var(--muted);font-size:.9rem;line-height:1.7}
+.rev-auth{margin-top:14px;font-weight:700;font-size:.82rem}
+.faq-item{background:white;border:1px solid var(--border);margin-bottom:10px}
+.faq-q{padding:18px 24px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-a{padding:0 24px 16px;color:var(--muted);font-size:.9rem;display:none;line-height:1.7}
+.faq-item.active .faq-a{display:block}
+.slot-btn{background:var(--ivory);border:1px solid var(--border);padding:8px 16px;font-size:.82rem;font-weight:600;cursor:pointer;margin:4px;display:inline-block;transition:.2s}
+.slot-btn.active{background:var(--navy);color:var(--gold);border-color:var(--gold)}
+.f-input{width:100%;padding:13px 16px;border:1px solid var(--border);margin-bottom:12px;font-family:inherit;font-size:.95rem}
+.f-input:focus{outline:none;border-color:var(--gold)}
+.f-area{width:100%;padding:13px 16px;border:1px solid var(--border);font-family:inherit;font-size:.95rem;resize:vertical}
+.footer{background:var(--navy);color:#cbd5e1;padding:70px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-copy{text-align:center;padding-top:24px;font-size:.78rem;color:#64748b}
+@media(max-width:768px){.hero-grid,.stats-strip,.cred-grid,.svc-grid,.ch-grid,.rev-grid,.footer-grid{grid-template-columns:1fr}.nav-links{display:none}}
+</style></head>
 <body>
-    <div class="royal-crest-bar">Royal College Fellow &bull; Harley Street Clinical Specialist &bull; Medical Plaza, NY</div>
-    <nav class="royal-nav"><div class="container nav-inner"><div class="crest-logo"><div class="crest-badge">⚕</div><div><h3 class="dyn-doc-name" style="font-size:1.15rem; color:var(--navy);">Dr. Specialist #097</h3><span class="dyn-doc-spec" style="font-size:0.72rem; color:var(--gold); font-weight:700; text-transform:uppercase;">Specialist</span></div></div><div><button class="btn-royal" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Request Private Consultation</button></div></div></nav>
+<div class="topbar">Royal College Fellow &bull; Harley Street Clinical Specialist &bull; Medical Plaza, NY</div>
+<nav class="navbar"><div class="wrap nav-inner">
+  <div class="nav-logo"><div class="crest">&#9877;</div><div><div class="d-name" style="font-size:1.1rem;font-family:'Playfair Display',serif;color:var(--navy);">Dr. Specialist #097</div><div class="d-spec" style="font-size:.72rem;color:var(--gold);font-weight:700;text-transform:uppercase;">Specialist</div></div></div>
+  <ul class="nav-links"><li><a href="#about">Bio</a></li><li><a href="#services">Procedures</a></li><li><a href="#timeline">Career</a></li><li><a href="#chambers">Chambers</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#booking">Book</a></li></ul>
+  <button class="btn-royal" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Private Consultation</button>
+</div></nav>
 
-    <section class="hero"><div class="container hero-grid"><div><span class="sec-eyebrow">Consultant Specialist Physician</span><h1 class="dyn-doc-name" style="font-size:clamp(2.5rem, 4vw, 3.6rem); margin: 8px 0 14px;">Dr. Specialist #097</h1><p style="font-size: 1.1rem; color: var(--gold); font-weight:600; margin-bottom: 16px;">MD, Board Certified</p><p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">Providing exceptional care in Houston, TX. Dedicated to personalized, evidence-based medicine for all patients. Dedicated to master clinical diagnosis, bespoke recovery protocols, and distinguished bedside care.</p><div class="signature">Dr. #097</div><div style="margin-top: 24px;"><a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366; color:white; padding:12px 24px; border-radius:4px; font-weight:700; font-size:0.88rem; display:inline-block;">💬 Direct Private WhatsApp (+880 1609-977377)</a></div></div><div class="royal-portrait-box"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Dr. Specialist #097"></div></div></section>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <span class="hero-eyebrow">Consultant Specialist Physician</span>
+    <h1 class="d-name hero-title">Dr. Specialist #097</h1>
+    <p class="hero-creds">MD, Board Certified</p>
+    <p class="hero-bio">Providing exceptional care in Houston, TX. Dedicated to personalized, evidence-based medicine for all patients. Providing world-class diagnostic precision, bespoke recovery planning, and compassionate bedside excellence across specialist consultations in Medical Plaza, NY.</p>
+    <div class="signature">Dr. #097</div>
+    <div style="margin-top:22px;display:flex;gap:14px;flex-wrap:wrap">
+      <a href="#booking" class="btn-royal" style="display:inline-block;padding:13px 26px;">Book Consultation &rarr;</a>
+      <a href="https://wa.me/8801609977377" target="_blank" style="display:inline-block;background:#25D366;color:white;padding:13px 22px;font-weight:700;font-size:.85rem;">&#x1F4AC; WhatsApp (+880 1609-977377)</a>
+    </div>
+  </div>
+  <div class="portrait-box"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Dr. Specialist #097"></div>
+</div></section>
 
-    <section class="royal-sec"><div class="container"><div class="sec-header"><span class="sec-eyebrow">Excellence in Practice</span><h2>Specialized Clinical Procedures</h2></div><div class="services-grid"><div class="svc-card"><h3 style="font-size:1.2rem; margin-bottom:10px;">Annual Health Checkup</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.7;">Comprehensive physical exam, lab panels, and wellness care.</p></div><div class="svc-card"><h3 style="font-size:1.2rem; margin-bottom:10px;">Diabetes & Metabolic Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.7;">HbA1c optimization, diet coaching, and complication screening.</p></div><div class="svc-card"><h3 style="font-size:1.2rem; margin-bottom:10px;">Hypertension Management</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.7;">24-hour BP monitoring and cardiovascular protection.</p></div><div class="svc-card"><h3 style="font-size:1.2rem; margin-bottom:10px;">Acute Infections Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.7;">Prompt diagnosis for viral fevers, flu, and infections.</p></div><div class="svc-card"><h3 style="font-size:1.2rem; margin-bottom:10px;">Geriatric Primary Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.7;">Holistic care for elderly adults and safe medication reviews.</p></div><div class="svc-card"><h3 style="font-size:1.2rem; margin-bottom:10px;">Executive Health Screening</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.7;">Tailored preventive medicine protocols for professionals.</p></div></div></div></section>
+<div class="wrap"><div class="stats-strip">
+  <div><div class="stat-num">16+</div><div class="stat-lbl">Years Clinical Tenure</div></div>
+  <div><div class="stat-num">4,800+</div><div class="stat-lbl">Patients Treated</div></div>
+  <div><div class="stat-num">98.6%</div><div class="stat-lbl">Patient Satisfaction</div></div>
+  <div><div class="stat-num">25+</div><div class="stat-lbl">Research Publications</div></div>
+</div></div>
 
-    <section class="royal-sec"><div class="container"><div class="sec-header"><span class="sec-eyebrow">Private Consulting Rooms</span><h2>Chamber &amp; Consulting Schedule</h2></div><div style="display:grid; grid-template-columns:1fr 1fr; gap:30px;"><div class="chamber-box"><h3>The Harley Street Diagnostic Suite</h3><p style="color:var(--muted); margin:8px 0 16px;">Suite #402, Private Medical Plaza, Medical Plaza, NY</p><strong>Consulting Hours:</strong> Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM<br><br><a href="https://wa.me/8801609977377" target="_blank" style="background:var(--navy); color:var(--gold-light); padding:10px 20px; border-radius:4px; display:inline-block; font-family:'Cinzel'; font-size:0.75rem;">Book via Concierge WhatsApp</a></div><div class="chamber-box"><h3>Affiliated Teaching Hospital</h3><p style="color:var(--muted); margin:8px 0 16px;">Department of Specialist, Medical Plaza, NY</p><strong>Clinical Rounds:</strong> Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM<br><br><a href="#booking" style="background:var(--gold); color:var(--navy); padding:10px 20px; border-radius:4px; display:inline-block; font-family:'Cinzel'; font-size:0.75rem; font-weight:700;">Request Hospital Referral</a></div></div></div></section>
+<section class="sec" id="about"><div class="wrap">
+  <div class="sec-head"><span class="sec-eye">Biography &amp; Fellowship</span><h2>Distinguished Medical Career</h2><p style="color:var(--muted);margin-top:10px;">Dr. #097 brings clinical mastery and scholarly research to every patient consultation, upholding the highest standards of specialist medicine.</p></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start">
+    <div>
+      <h3 style="font-size:1.5rem;margin-bottom:14px;">Clinical Expertise &amp; Biography</h3>
+      <p style="color:var(--muted);line-height:1.85;margin-bottom:16px;">Dr. #097 completed an honours medical degree before undertaking subspecialty training at a leading teaching institution. With over 16 years of consultant-level practice, the clinic maintains a reputation for evidence-based diagnostics and patient-centred holistic care across specialist in Medical Plaza, NY.</p>
+      <p style="color:var(--muted);line-height:1.85;">Active in medical education, contributing to post-graduate teaching, clinical research publications, and hospital ethics committees.</p>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card"><h4>Doctor of Medicine (MD / MBBS)</h4><p style="font-size:.86rem;color:var(--muted);margin-top:4px;">Graduated with Distinction &bull; Top 1% Honours</p></div>
+      <div class="cred-card"><h4>Royal College Fellowship</h4><p style="font-size:.86rem;color:var(--muted);margin-top:4px;">Elected Fellow for Clinical Excellence &amp; Research</p></div>
+      <div class="cred-card"><h4>Subspecialty Fellowship Training</h4><p style="font-size:.86rem;color:var(--muted);margin-top:4px;">Advanced Tertiary Rotations in Specialist</p></div>
+      <div class="cred-card"><h4>Board Certification &amp; Specialist Registration</h4><p style="font-size:.86rem;color:var(--muted);margin-top:4px;">Permanent Medical Council Accreditation</p></div>
+    </div>
+  </div>
+</div></section>
 
-    <section class="royal-sec" id="booking"><div class="container" style="max-width:720px;"><div class="sec-header"><span class="sec-eyebrow">Appointment Reservation</span><h2>Schedule a Private Consultation</h2></div><div style="background:white; border:1px solid var(--border); padding:36px;"><form onsubmit="return handleAppointment(event)"><div style="margin-bottom:16px;"><label style="display:block; font-size:0.8rem; font-weight:700; margin-bottom:6px;">Select Preferred Consultation Slot:</label><div class="slot-pill active" onclick="selectSlot(this)">5:00 PM</div><div class="slot-pill" onclick="selectSlot(this)">5:30 PM</div><div class="slot-pill" onclick="selectSlot(this)">6:00 PM</div><div class="slot-pill" onclick="selectSlot(this)">6:30 PM</div><div class="slot-pill" onclick="selectSlot(this)">7:00 PM</div></div><input type="text" placeholder="Patient Full Name" style="width:100%; padding:12px; border:1px solid var(--border); margin-bottom:12px;" required><input type="tel" placeholder="Mobile / WhatsApp Number" style="width:100%; padding:12px; border:1px solid var(--border); margin-bottom:12px;" required><input type="date" style="width:100%; padding:12px; border:1px solid var(--border); margin-bottom:12px;" required><button type="submit" class="btn-royal" style="width:100%; padding:14px; font-size:0.88rem;">Confirm Private Consultation</button></form></div></div></section>
+<section class="sec" id="services"><div class="wrap">
+  <div class="sec-head"><span class="sec-eye">Excellence in Practice</span><h2>Specialized Clinical Procedures</h2><p style="color:var(--muted);margin-top:10px;">Each treatment is tailored to the individual patient's diagnostic findings and clinical objectives.</p></div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <h3 style="font-size:1.15rem;margin-bottom:10px;">Annual Health Checkup</h3>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.75;">Comprehensive physical examination, complete blood panel, and personalized wellness recommendations.</p>
+    </div>    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <h3 style="font-size:1.15rem;margin-bottom:10px;">Diabetes & Metabolic Care</h3>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.75;">HbA1c optimization, dietary counseling, and long-term complication screening protocols.</p>
+    </div>    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <h3 style="font-size:1.15rem;margin-bottom:10px;">Hypertension Management</h3>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.75;">24-hour ambulatory blood pressure monitoring and evidence-based cardiovascular risk reduction.</p>
+    </div>    <div class="svc-card">
+      <div class="svc-num">04</div>
+      <h3 style="font-size:1.15rem;margin-bottom:10px;">Acute Illness & Infections</h3>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.75;">Rapid diagnosis and targeted treatment for viral fevers, bacterial infections, and tropical diseases.</p>
+    </div>    <div class="svc-card">
+      <div class="svc-num">05</div>
+      <h3 style="font-size:1.15rem;margin-bottom:10px;">Geriatric Primary Care</h3>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.75;">Holistic health management for elderly patients including polypharmacy review and falls prevention.</p>
+    </div>    <div class="svc-card">
+      <div class="svc-num">06</div>
+      <h3 style="font-size:1.15rem;margin-bottom:10px;">Executive Health Screening</h3>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.75;">Tailored corporate health assessment with advanced imaging, blood panels, and cardiac evaluation.</p>
+    </div>
+  </div>
+</div></section>
 
-    <footer class="footer"><div class="container" style="display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.1);"><div><h3 style="color:var(--gold-light);">Dr. Specialist #097</h3><p style="color:#94a3b8; font-size:0.85rem; margin-top:6px;">MD, Board Certified &bull; Specialist</p></div><div><h4 style="color:white; margin-bottom:12px; font-family:'Cinzel'; font-size:0.85rem;">Practice</h4><p style="font-size:0.85rem; color:#94a3b8;">Private Chamber, Medical Plaza, NY<br>Hotline: +880 1609-977377</p></div><div><h4 style="color:white; margin-bottom:12px; font-family:'Cinzel'; font-size:0.85rem;">Inquiries</h4><p style="font-size:0.85rem; color:#94a3b8;">For clinical serials, reach out via WhatsApp at +880 1609-977377.</p></div></div><div class="container" style="text-align:center; padding-top:20px; font-size:0.78rem; color:#64748b;">&copy; 2026 Dr. Specialist #097. Harley Street Private Practice Standards.</div></footer>
-    <script>
-        function toggleMenu() {
-            const m = document.getElementById('mobileMenu');
-            if (m) m.classList.toggle('open');
+<section class="sec" id="timeline"><div class="wrap">
+  <div class="sec-head"><span class="sec-eye">Milestones</span><h2>Academic &amp; Clinical Journey</h2></div>
+  <div style="max-width:800px;margin:0 auto">
+    <div class="timeline">
+      <div class="tl-node"><div class="tl-year">2006 &ndash; 2011</div><h3 style="font-size:1.2rem;margin:4px 0 6px;">MBBS &amp; Medical Internship &bull; Gold Medal</h3><p style="color:var(--muted);font-size:.9rem;">Completed medical education with First Class Honours and completed supervised hospital internship rotations.</p></div>
+      <div class="tl-node"><div class="tl-year">2012 &ndash; 2016</div><h3 style="font-size:1.2rem;margin:4px 0 6px;">Post-Graduate Residency &amp; Fellowship</h3><p style="color:var(--muted);font-size:.9rem;">Specialized residency and subspecialty fellowship in Specialist at a premier teaching hospital.</p></div>
+      <div class="tl-node"><div class="tl-year">2017 &ndash; Present</div><h3 style="font-size:1.2rem;margin:4px 0 6px;">Senior Consultant &bull; Private Practice</h3><p style="color:var(--muted);font-size:.9rem;">Leading private specialist practice in Medical Plaza, NY with full diagnostic facilities and advanced procedural capabilities.</p></div>
+      <div class="tl-node"><div class="tl-year">Ongoing</div><h3 style="font-size:1.2rem;margin:4px 0 6px;">Research, Teaching &amp; Publications</h3><p style="color:var(--muted);font-size:.9rem;">Publishing peer-reviewed research and conducting post-graduate medical teaching in specialist care.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="chambers"><div class="wrap">
+  <div class="sec-head"><span class="sec-eye">Private Consulting Rooms</span><h2>Chamber &amp; Consulting Schedule</h2></div>
+  <div class="ch-grid">
+    <div class="ch-card">
+      <h3 class="ch-head">Harley Street Diagnostic Suite</h3>
+      <p class="ch-loc">Suite #402, Private Medical Plaza, Medical Plaza, NY</p>
+      <div class="ch-hrs"><strong>Visiting Hours:</strong><br>Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM<br>Friday: Closed</div>
+      <a href="https://wa.me/8801609977377" target="_blank" style="display:block;background:#25D366;color:white;text-align:center;padding:12px;font-weight:700;font-size:.85rem;">&#x1F4AC; WhatsApp Concierge Booking</a>
+    </div>
+    <div class="ch-card">
+      <h3 class="ch-head">Affiliated Teaching Hospital</h3>
+      <p class="ch-loc">Department of Specialist, City Hospital, Medical Plaza, NY</p>
+      <div class="ch-hrs"><strong>Clinical Rounds:</strong><br>Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM<br>Emergency referrals available 24/7</div>
+      <a href="#booking" style="display:block;background:var(--navy);color:var(--gilt);border:1px solid var(--gold);text-align:center;padding:12px;font-family:'Cinzel',serif;font-size:.76rem;font-weight:700;">Request Hospital Referral</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="reviews"><div class="wrap">
+  <div class="sec-head"><span class="sec-eye">Patient Experiences</span><h2>Verified Patient Reviews</h2></div>
+  <div class="rev-grid">
+    <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-text">&ldquo;Dr. #097's diagnostic precision and calm bedside manner gave our family complete peace of mind during a very difficult time. I am grateful for such thorough, compassionate care.&rdquo;</p><div class="rev-auth">&mdash; M. Rahman &bull; Verified Patient</div></div>
+    <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-text">&ldquo;Exceptional specialist care and a very comprehensive explanation of my treatment plan. The chamber organisation and follow-up protocol were world-class. Highly recommend.&rdquo;</p><div class="rev-auth">&mdash; Ayesha Begum &bull; Medical Plaza, NY</div></div>
+    <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-text">&ldquo;The highest standard of medical consultancy I have experienced. Dr. #097's attention to detail and personalised approach to my condition has truly changed my quality of life.&rdquo;</p><div class="rev-auth">&mdash; Tariq Ahmed &bull; Private Patient</div></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="sec-head"><span class="sec-eye">Patient Assistance</span><h2>Frequently Asked Questions</h2></div>
+  <div style="max-width:760px;margin:0 auto">
+    <div class="faq-item"><div class="faq-q"><span>What documents should I bring to my consultation?</span><span>&#9660;</span></div><div class="faq-a">Please bring all recent diagnostic reports, imaging studies (X-ray, MRI, CT), blood test results, and current medication lists along with previous prescriptions.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>How do I secure an appointment serial?</span><span>&#9660;</span></div><div class="faq-a">Use the booking form below, call our concierge line at +880 1609-977377, or message directly via WhatsApp for the fastest response.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>Are emergency referrals supported?</span><span>&#9660;</span></div><div class="faq-a">Yes. Emergency referrals to our affiliated hospital department are coordinated 24 hours a day, 7 days a week through our concierge service.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>Is telemedicine consultation available?</span><span>&#9660;</span></div><div class="faq-a">Video consultations are available for follow-up appointments and second opinions. Contact us via WhatsApp to schedule a teleconsultation session.</div></div>
+  </div>
+</div></section>
+
+<section class="sec" id="booking"><div class="wrap" style="max-width:740px">
+  <div class="sec-head"><span class="sec-eye">Appointment Reservation</span><h2>Schedule a Private Consultation</h2><p style="color:var(--muted);margin-top:8px;">Visiting Hours: Sat &ndash; Thu, 5:00 PM &ndash; 9:00 PM &bull; Hotline: +880 1609-977377</p></div>
+  <div style="background:white;border:1.5px solid var(--gold);padding:44px;box-shadow:0 12px 30px rgba(0,0,0,.04)">
+    <div style="margin-bottom:18px">
+      <label style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:8px;">Select Preferred Time Slot</label>
+      <span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">7:30 PM</span>
+    </div>
+    <form onsubmit="handleForm(event)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <input class="f-input" type="text" placeholder="Patient Full Name" required>
+        <input class="f-input" type="tel" placeholder="Mobile / WhatsApp Number" required>
+      </div>
+      <input class="f-input" type="date" required style="margin-bottom:12px">
+      <textarea class="f-area" rows="3" placeholder="Brief symptoms or reason for consultation..." style="margin-bottom:16px"></textarea>
+      <button type="submit" class="btn-royal" data-orig="Confirm Private Consultation" style="width:100%;padding:16px;font-size:.88rem;">Confirm Private Consultation</button>
+    </form>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="wrap">
+  <div class="footer-grid">
+    <div>
+      <h3 class="d-name" style="color:var(--gilt);font-size:1.5rem;">Dr. Specialist #097</h3>
+      <p class="d-spec" style="color:#94a3b8;font-size:.85rem;margin-top:6px;">MD, Board Certified &bull; Specialist</p>
+      <p style="color:#64748b;font-size:.82rem;margin-top:12px;line-height:1.7;">Medical Plaza, NY &bull; Harley Street Private Practice Standards</p>
+    </div>
+    <div>
+      <h4 style="color:white;margin-bottom:14px;font-family:'Cinzel',serif;font-size:.85rem;">Navigation</h4>
+      <p style="font-size:.85rem;color:#94a3b8;line-height:2.2"><a href="#about" style="color:#94a3b8;">Biography</a><br><a href="#services" style="color:#94a3b8;">Procedures</a><br><a href="#timeline" style="color:#94a3b8;">Career</a><br><a href="#chambers" style="color:#94a3b8;">Chambers</a></p>
+    </div>
+    <div>
+      <h4 style="color:white;margin-bottom:14px;font-family:'Cinzel',serif;font-size:.85rem;">Chamber</h4>
+      <p style="font-size:.85rem;color:#94a3b8;line-height:1.9">Suite #402, Medical Plaza<br>Medical Plaza, NY<br>Sat &ndash; Thu: 5–9 PM<br>Hospital: 9 AM–2 PM</p>
+    </div>
+    <div>
+      <h4 style="color:white;margin-bottom:14px;font-family:'Cinzel',serif;font-size:.85rem;">Concierge Hotline</h4>
+      <a href="https://wa.me/8801609977377" target="_blank" style="color:#25D366;font-weight:700;font-size:.95rem;">+880 1609-977377</a>
+      <p style="color:#64748b;font-size:.8rem;margin-top:8px;">WhatsApp Concierge available for urgent bookings and referrals</p>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 Dr. Specialist #097. Harley Street Private Practice &bull; Doctors Portfolio Platform</div>
+</div></footer>
+<script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+    });
+    function selectSlot(btn) {
+        document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    function handleForm(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('[type=submit]');
+        btn.textContent = 'Appointment Confirmed ✓';
+        btn.style.background = '#059669';
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = btn.dataset.orig || 'Submit'; btn.style.background=''; btn.disabled=false; e.target.reset(); }, 4000);
+    }
+    window.addEventListener('message', ev => {
+        if (ev.data && ev.data.type === 'CUSTOMIZE_DOCTOR') {
+            document.querySelectorAll('.d-name').forEach(el => { if(ev.data.name) el.textContent = ev.data.name; });
+            document.querySelectorAll('.d-spec').forEach(el => { if(ev.data.specialty) el.textContent = ev.data.specialty; });
         }
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-        function selectSlot(btn) {
-            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            const slotInput = document.getElementById('selectedSlot');
-            if (slotInput) slotInput.value = btn.textContent.trim();
-        }
-        function handleAppointment(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('[type="submit"]');
-            const orig = btn.textContent;
-            btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#059669';
-            btn.disabled = true;
-            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
-            return false;
-        }
-        window.addEventListener('message', (event) => {
-            if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
-                const name = event.data.name;
-                const spec = event.data.specialty;
-                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
-                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
-            }
-        });
+    });
     </script>
-</body>
-</html>
+</body></html>

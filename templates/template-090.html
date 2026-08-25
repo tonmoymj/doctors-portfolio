@@ -1,141 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Daniel Weiss &mdash; Endocrinologist | Next-Gen Health-Tech HUD</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #090E17; --panel: #111A2E; --cyan: #06B6D4; --green: #10B981; --text: #F1F5F9; --muted: #94A3B8; --border: #1E293B; }
-        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); display: flex; }
-        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; color: white; }
-        a { text-decoration: none; color: inherit; }
-
-        /* Left HUD Sidebar */
-        .hud-sidebar { width: 340px; background: var(--panel); border-right: 1px solid var(--border); position: fixed; top: 0; bottom: 0; left: 0; padding: 36px 28px; display: flex; flex-direction: column; justify-content: space-between; z-index: 50; }
-        .hud-doc-photo { width: 100px; height: 100px; border-radius: 16px; object-fit: cover; border: 2px solid var(--cyan); box-shadow: 0 0 20px rgba(6,182,212,0.3); }
-        .live-status-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,0.15); color: var(--green); padding: 4px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; border: 1px solid rgba(16,185,129,0.3); margin-top: 10px; }
-        .live-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.3); } 100% { opacity: 1; transform: scale(1); } }
-
-        /* Main Stream */
-        .hud-main { margin-left: 340px; flex: 1; padding: 60px 48px; max-width: 1060px; }
-        .hud-banner { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-bottom: 40px; position: relative; overflow: hidden; }
-        .hud-banner::after { content:''; position: absolute; top:0; right:0; width:200px; height:200px; background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%); }
-
-        .hud-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 30px 0; }
-        .metric-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
-        .metric-val { font-size: 2.2rem; font-weight: 800; color: var(--cyan); font-family: 'Space Grotesk', sans-serif; }
-
-        .hud-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
-        .hud-card { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
-
-        .slot-pill { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; padding: 8px 14px; border-radius: 6px; font-size: 0.8rem; cursor: pointer; display: inline-block; margin: 4px; }
-        .slot-pill.active { background: var(--cyan); color: #090E17; font-weight: 700; }
-
-        .form-input { width: 100%; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: white; border-radius: 8px; margin-bottom: 12px; }
-        @media(max-width: 960px) { body { flex-direction: column; } .hud-sidebar { width: 100%; position: relative; } .hud-main { margin-left: 0; padding: 24px; } }
-    </style>
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dr. Daniel Weiss | Endocrinologist | Health-Tech HUD</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090E17;--panel:#111A2E;--cyan:#06B6D4;--green:#10B981;--border:#1E293B;--muted:#94A3B8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:#F1F5F9;background:var(--bg);display:flex;min-height:100vh}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;color:white}
+a{text-decoration:none;color:inherit}
+.sidebar{width:320px;background:var(--panel);border-right:1px solid var(--border);position:fixed;top:0;bottom:0;left:0;padding:36px 26px;display:flex;flex-direction:column;justify-content:space-between;z-index:50;overflow-y:auto}
+.s-photo{width:100px;height:100px;border-radius:16px;object-fit:cover;border:2px solid var(--cyan);box-shadow:0 0 20px rgba(6,182,212,.3);margin-bottom:14px}
+.live-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(16,185,129,.15);color:var(--green);padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:700;border:1px solid rgba(16,185,129,.3);margin-bottom:14px}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+.s-name{font-size:1.3rem;color:white;margin-bottom:4px}
+.s-spec{font-size:.75rem;color:var(--cyan);text-transform:uppercase;font-weight:700;margin-bottom:20px}
+.s-nav{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:24px}
+.s-nav a{display:block;padding:9px 14px;border-radius:8px;font-size:.85rem;color:var(--muted);font-weight:500;transition:.2s}
+.s-nav a:hover{background:rgba(255,255,255,.06);color:white}
+.s-metric{background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);border-radius:10px;padding:14px;margin-bottom:10px}
+.s-m-val{font-size:1.6rem;font-weight:800;color:var(--cyan);font-family:'Space Grotesk',sans-serif}
+.s-m-lbl{font-size:.72rem;color:var(--muted)}
+.main{margin-left:320px;flex:1;padding:50px 48px;max-width:1000px}
+.banner{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:44px;margin-bottom:32px;position:relative;overflow:hidden}
+.banner::after{content:'';position:absolute;top:-40px;right:-40px;width:240px;height:240px;background:radial-gradient(circle,rgba(6,182,212,.18) 0%,transparent 70%)}
+.banner-tag{font-size:.72rem;color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+.banner-title{font-size:2.8rem;font-weight:800;margin:10px 0 12px;letter-spacing:-.02em}
+.banner-bio{color:var(--muted);font-size:1rem;line-height:1.75;max-width:600px}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.m-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:18px}
+.m-val{font-size:2rem;font-weight:800;color:var(--cyan)}
+.m-lbl{font-size:.72rem;color:var(--muted);margin-top:2px}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:32px}
+.cap-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:26px;transition:.3s}
+.cap-card:hover{border-color:var(--cyan);box-shadow:0 0 20px rgba(6,182,212,.12)}
+.cap-title{color:var(--cyan);font-size:1.1rem;margin-bottom:6px}
+.cap-desc{color:var(--muted);font-size:.86rem;line-height:1.65}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:32px}
+.panel-box{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:28px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+.rev-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px}
+.rev-stars{color:var(--cyan);margin-bottom:10px}
+.slot-btn{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:6px;font-size:.8rem;cursor:pointer;margin:3px;display:inline-block;transition:.2s}
+.slot-btn.active{background:var(--cyan);color:#090E17;font-weight:700}
+.f-input{width:100%;padding:12px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:white;border-radius:8px;margin-bottom:12px;font-family:'Inter',sans-serif}
+.faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+.faq-q{font-weight:600;cursor:pointer;display:flex;justify-content:space-between;color:white}
+.faq-a{color:var(--muted);font-size:.88rem;margin-top:8px;display:none;line-height:1.7}
+.faq-item.active .faq-a{display:block}
+@media(max-width:960px){body{flex-direction:column}.sidebar{width:100%;position:relative;height:auto}.main{margin-left:0;padding:24px}.cap-grid,.two-col,.rev-grid,.metrics-row{grid-template-columns:1fr}}
+</style></head>
 <body>
-    <aside class="hud-sidebar">
-        <div>
-            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Dr. Daniel Weiss" class="hud-doc-photo">
-            <div class="live-status-pill"><span class="live-pulse"></span>In Chamber Now</div>
-            <h2 class="dyn-doc-name" style="font-size: 1.35rem; margin-top: 12px;">Dr. Daniel Weiss</h2>
-            <div class="dyn-doc-spec" style="font-size: 0.78rem; color: var(--cyan); text-transform: uppercase; font-weight: 700;">Endocrinologist &bull; San Francisco, CA</div>
-        </div>
-        <div>
-            <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 8px;">Direct Booking Hotline:</div>
-            <a href="https://wa.me/8801609977377" target="_blank" style="background: #25D366; color: white; padding: 12px; border-radius: 8px; display: block; text-align: center; font-weight: 700; font-size: 0.85rem;">💬 WhatsApp Consultation (+880 1609-977377)</a>
-        </div>
-    </aside>
+<aside class="sidebar">
+  <div>
+    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Dr. Daniel Weiss" class="s-photo">
+    <div class="live-badge"><span class="pulse"></span>In Chamber Now</div>
+    <div class="d-name s-name">Dr. Daniel Weiss</div>
+    <div class="d-spec s-spec">Endocrinologist &bull; San Francisco, CA</div>
+    <ul class="s-nav">
+      <li><a href="#overview">&rsaquo; Overview &amp; Bio</a></li>
+      <li><a href="#capabilities">&rsaquo; Procedures (6)</a></li>
+      <li><a href="#timeline">&rsaquo; Career Timeline</a></li>
+      <li><a href="#chambers">&rsaquo; Chamber Schedule</a></li>
+      <li><a href="#reviews">&rsaquo; Patient Reviews</a></li>
+      <li><a href="#booking">&rsaquo; Book Appointment</a></li>
+    </ul>
+    <div class="s-metric"><div class="s-m-val">16+</div><div class="s-m-lbl">Years Exp.</div></div>
+    <div class="s-metric"><div class="s-m-val">4,800+</div><div class="s-m-lbl">Cases Resolved</div></div>
+  </div>
+  <div>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:8px;">Booking Hotline</p>
+    <a href="https://wa.me/8801609977377" target="_blank" style="display:block;background:#25D366;color:white;padding:12px;border-radius:8px;text-align:center;font-weight:700;font-size:.85rem;">&#x1F4AC; WhatsApp (+880 1609-977377)</a>
+  </div>
+</aside>
 
-    <main class="hud-main">
-        <section class="hud-banner">
-            <span style="font-size: 0.75rem; color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Telehealth &bull; Precision Clinical Care</span>
-            <h1 class="dyn-doc-name" style="font-size: 2.8rem; margin: 8px 0 12px;">Dr. Daniel Weiss</h1>
-            <p style="color: var(--muted); font-size: 1.05rem;">Dedicated diabetes technology expertise delivered with compassion and clinical excellence. MD, FACE &middot; Board-Certified Endocrinologist</p>
-            <div class="hud-metrics">
-                <div class="metric-card"><div class="metric-val">16+</div><div style="font-size:0.75rem; color:var(--muted);">Years Exp.</div></div>
-                <div class="metric-card"><div class="metric-val">4,800+</div><div style="font-size:0.75rem; color:var(--muted);">Cases Solved</div></div>
-                <div class="metric-card"><div class="metric-val">99.2%</div><div style="font-size:0.75rem; color:var(--muted);">Success Rate</div></div>
-            </div>
-        </section>
+<main class="main">
+  <section class="banner" id="overview">
+    <div class="banner-tag">Precision Clinical Care &bull; Health-Tech Practice</div>
+    <h1 class="d-name banner-title">Dr. Daniel Weiss</h1>
+    <p style="color:var(--cyan);font-size:1rem;margin-bottom:10px;font-weight:600;">MD, FACE &middot; Board-Certified Endocrinologist</p>
+    <p class="banner-bio">Dedicated diabetes technology expertise delivered with compassion and clinical excellence. Delivering advanced diagnostic protocols, technology-driven clinical outcomes, and patient-centred care in San Francisco, CA.</p>
+    <div class="metrics-row">
+      <div class="m-card"><div class="m-val">16+</div><div class="m-lbl">Yrs Experience</div></div>
+      <div class="m-card"><div class="m-val">4,800+</div><div class="m-lbl">Cases Treated</div></div>
+      <div class="m-card"><div class="m-val">99.2%</div><div class="m-lbl">Success Rate</div></div>
+      <div class="m-card"><div class="m-val">24/7</div><div class="m-lbl">Emergency Refs</div></div>
+    </div>
+  </section>
 
-        <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Precision Clinical Capabilities</h2>
-        <div class="hud-grid-2"><div class="hud-card"><h3 style="font-size:1.15rem; color:var(--cyan); margin-bottom:6px;">Continuous Glucose (CGM)</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Smart CGM sensors and automated insulin pump management.</p></div><div class="hud-card"><h3 style="font-size:1.15rem; color:var(--cyan); margin-bottom:6px;">Thyroid Nodules & Biopsy</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Ultrasound-guided biopsy and thyroid disorder care.</p></div><div class="hud-card"><h3 style="font-size:1.15rem; color:var(--cyan); margin-bottom:6px;">Weight & Metabolic Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Evidence-based GLP-1 therapy and metabolic care.</p></div><div class="hud-card"><h3 style="font-size:1.15rem; color:var(--cyan); margin-bottom:6px;">PCOS & Hormonal Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Hormonal regulation and metabolic risk reduction.</p></div><div class="hud-card"><h3 style="font-size:1.15rem; color:var(--cyan); margin-bottom:6px;">Adrenal & Pituitary Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Hormonal stimulation testing and gland balance.</p></div><div class="hud-card"><h3 style="font-size:1.15rem; color:var(--cyan); margin-bottom:6px;">Osteoporosis & Bone Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">DEXA analysis and bone-building infusion therapy.</p></div></div>
+  <div class="panel-box" style="margin-bottom:32px">
+    <h2 style="font-size:1.5rem;margin-bottom:12px">Clinical Biography</h2>
+    <p style="color:var(--muted);line-height:1.85;margin-bottom:12px">Dr. Weiss leads a cutting-edge specialist practice combining advanced endocrinologist care with digital health innovations. Trained at premier institutions and holding international board certifications, Dr. Weiss is renowned for precise diagnostics, targeted therapy, and data-driven clinical decision-making.</p>
+    <p style="color:var(--muted);line-height:1.85">The clinic integrates AI-assisted diagnostics, real-time monitoring, and personalised care pathways that align with the best international clinical guidelines.</p>
+  </div>
 
-        <div class="hud-grid-2">
-            <div class="hud-card">
-                <h3 style="font-size: 1.2rem; margin-bottom: 14px;">Chamber Timetable</h3>
-                <div style="background:rgba(255,255,255,0.03); padding:14px; border-radius:8px; margin-bottom:10px;">
-                    <strong style="color:var(--cyan);">Specialist Diagnostic Center</strong>
-                    <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</div>
-                </div>
-                <div style="background:rgba(255,255,255,0.03); padding:14px; border-radius:8px;">
-                    <strong style="color:var(--cyan);">Hospital Clinical Rounds</strong>
-                    <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</div>
-                </div>
-            </div>
+  <section id="capabilities">
+    <h2 style="font-size:1.8rem;margin-bottom:20px;">Precision Clinical Capabilities</h2>
+    <div class="cap-grid">
+      <div class="cap-card"><div class="cap-title">Annual Health Checkup</div><p class="cap-desc">Comprehensive physical examination, complete blood panel, and personalized wellness recommendations.</p></div>      <div class="cap-card"><div class="cap-title">Diabetes & Metabolic Care</div><p class="cap-desc">HbA1c optimization, dietary counseling, and long-term complication screening protocols.</p></div>      <div class="cap-card"><div class="cap-title">Hypertension Management</div><p class="cap-desc">24-hour ambulatory blood pressure monitoring and evidence-based cardiovascular risk reduction.</p></div>      <div class="cap-card"><div class="cap-title">Acute Illness & Infections</div><p class="cap-desc">Rapid diagnosis and targeted treatment for viral fevers, bacterial infections, and tropical diseases.</p></div>      <div class="cap-card"><div class="cap-title">Geriatric Primary Care</div><p class="cap-desc">Holistic health management for elderly patients including polypharmacy review and falls prevention.</p></div>      <div class="cap-card"><div class="cap-title">Executive Health Screening</div><p class="cap-desc">Tailored corporate health assessment with advanced imaging, blood panels, and cardiac evaluation.</p></div>
+    </div>
+  </section>
 
-            <div class="hud-card" id="booking">
-                <h3 style="font-size: 1.2rem; margin-bottom: 14px;">Instant Appointment Terminal</h3>
-                <form onsubmit="return handleAppointment(event)">
-                    <div style="margin-bottom:12px;">
-                        <span class="slot-pill active" onclick="selectSlot(this)">5:00 PM</span>
-                        <span class="slot-pill" onclick="selectSlot(this)">6:00 PM</span>
-                        <span class="slot-pill" onclick="selectSlot(this)">7:00 PM</span>
-                        <span class="slot-pill" onclick="selectSlot(this)">8:00 PM</span>
-                    </div>
-                    <input class="form-input" type="text" placeholder="Patient Full Name" required>
-                    <input class="form-input" type="tel" placeholder="Mobile (+880)" required>
-                    <input class="form-input" type="date" required>
-                    <button type="submit" style="background:var(--cyan); color:#090E17; border:none; padding:13px; width:100%; border-radius:8px; font-weight:800; cursor:pointer;">Confirm Chamber Slot &rarr;</button>
-                </form>
-            </div>
-        </div>
+  <div class="panel-box" style="margin-bottom:32px" id="timeline">
+    <h2 style="font-size:1.5rem;margin-bottom:18px">Career Milestones</h2>
+    <div style="border-left:2px solid var(--cyan);padding-left:24px;margin-left:8px">
+      <div style="position:relative;margin-bottom:28px"><div style="position:absolute;left:-33px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--cyan)"></div><div style="font-size:.82rem;color:var(--cyan);font-weight:700">2006 &ndash; 2011</div><h4 style="font-size:1.1rem;margin:3px 0 5px">Medical Degree &amp; Hospital Internship</h4><p style="font-size:.86rem;color:var(--muted)">Completed with First Class Honours. Supervised clinical rotations across major hospital departments.</p></div>
+      <div style="position:relative;margin-bottom:28px"><div style="position:absolute;left:-33px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--cyan)"></div><div style="font-size:.82rem;color:var(--cyan);font-weight:700">2012 &ndash; 2017</div><h4 style="font-size:1.1rem;margin:3px 0 5px">Post-Graduate Residency &amp; Fellowship in Endocrinologist</h4><p style="font-size:.86rem;color:var(--muted)">Advanced subspecialty training with research publications in leading clinical journals.</p></div>
+      <div style="position:relative;margin-bottom:28px"><div style="position:absolute;left:-33px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--green)"></div><div style="font-size:.82rem;color:var(--green);font-weight:700">2018 &ndash; Present</div><h4 style="font-size:1.1rem;margin:3px 0 5px">Senior Consultant &bull; Private Specialist Practice</h4><p style="font-size:.86rem;color:var(--muted)">Running a fully equipped specialist diagnostic clinic in San Francisco, CA with 4,800+ successful patient outcomes.</p></div>
+    </div>
+  </div>
 
-        <footer style="padding:24px 0; border-top:1px solid var(--border); text-align:center; font-size:0.8rem; color:var(--muted);">
-            &copy; 2026 Dr. Daniel Weiss. Health-Tech Precision Medical Suite &bull; Doctors Portfolio.
-        </footer>
-    </main>
-    <script>
-        function toggleMenu() {
-            const m = document.getElementById('mobileMenu');
-            if (m) m.classList.toggle('open');
+  <div class="two-col" id="chambers">
+    <div class="panel-box">
+      <h3 style="font-size:1.25rem;margin-bottom:12px">Main Specialist Chamber</h3>
+      <p style="color:var(--muted);font-size:.86rem;margin-bottom:12px">Suite #402, Diagnostic Center, San Francisco, CA</p>
+      <div style="background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);padding:12px;border-radius:8px;margin-bottom:14px"><strong style="color:var(--cyan)">Visiting Hours:</strong><br><span style="font-size:.85rem;color:var(--muted)">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</span></div>
+      <a href="https://wa.me/8801609977377" target="_blank" style="display:block;background:#25D366;color:white;text-align:center;padding:11px;border-radius:8px;font-weight:700;font-size:.85rem;">WhatsApp Booking</a>
+    </div>
+    <div class="panel-box">
+      <h3 style="font-size:1.25rem;margin-bottom:12px">Hospital Clinical Rounds</h3>
+      <p style="color:var(--muted);font-size:.86rem;margin-bottom:12px">City Specialty Hospital, San Francisco, CA</p>
+      <div style="background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);padding:12px;border-radius:8px;margin-bottom:14px"><strong style="color:var(--cyan)">Clinical Hours:</strong><br><span style="font-size:.85rem;color:var(--muted)">Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</span></div>
+      <a href="#booking" style="display:block;background:var(--cyan);color:#090E17;text-align:center;padding:11px;border-radius:8px;font-weight:700;font-size:.85rem;">Request Referral</a>
+    </div>
+  </div>
+
+  <section id="reviews" style="margin-bottom:32px">
+    <h2 style="font-size:1.8rem;margin-bottom:20px">Patient Testimonials</h2>
+    <div class="rev-grid">
+      <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="color:var(--muted);font-size:.88rem;font-style:italic;line-height:1.7">&ldquo;Exceptional diagnostic precision. Dr. Weiss identified what three other doctors had missed. Truly outstanding clinical expertise.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:600">M. Rahman &bull; Dhaka</div></div>
+      <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="color:var(--muted);font-size:.88rem;font-style:italic;line-height:1.7">&ldquo;The digital diagnostic tools and real-time treatment monitoring gave me full confidence in the process. World-class experience.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:600">S. Karim &bull; Chittagong</div></div>
+      <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="color:var(--muted);font-size:.88rem;font-style:italic;line-height:1.7">&ldquo;From booking to follow-up, every step was handled with precision and care. I recommend Dr. Weiss without any hesitation.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:600">R. Islam &bull; Sylhet</div></div>
+    </div>
+  </section>
+
+  <div class="panel-box" style="margin-bottom:32px">
+    <h2 style="font-size:1.5rem;margin-bottom:18px">Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q"><span>What diagnostic reports should I bring?</span><span>+</span></div><div class="faq-a">Please bring all imaging reports, blood test results, echocardiograms or specialist scans, and previous medication history.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>How do I book an appointment?</span><span>+</span></div><div class="faq-a">Submit the appointment form below or message directly via WhatsApp at +880 1609-977377 for the fastest confirmation.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>Is teleconsultation available?</span><span>+</span></div><div class="faq-a">Yes. Video-based follow-up consultations are available via secure link. Request during booking or via WhatsApp.</div></div>
+  </div>
+
+  <div class="panel-box" id="booking">
+    <h2 style="font-size:1.5rem;margin-bottom:6px">Instant Appointment Terminal</h2>
+    <p style="color:var(--muted);font-size:.86rem;margin-bottom:18px">Visiting: Sat &ndash; Thu (5 PM &ndash; 9 PM) &bull; Hotline: +880 1609-977377</p>
+    <div style="margin-bottom:16px">
+      <span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">7:30 PM</span>
+    </div>
+    <form onsubmit="handleForm(event)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <input class="f-input" type="text" placeholder="Patient Full Name" required>
+        <input class="f-input" type="tel" placeholder="Mobile Number (+880)" required>
+      </div>
+      <input class="f-input" type="date" required>
+      <textarea class="f-input" rows="3" placeholder="Symptoms / Reason for visit..." style="resize:vertical"></textarea>
+      <button type="submit" data-orig="Confirm Chamber Booking" style="background:var(--cyan);color:#090E17;border:none;padding:14px;width:100%;border-radius:8px;font-weight:800;font-size:.95rem;cursor:pointer;">Confirm Chamber Booking &rarr;</button>
+    </form>
+  </div>
+
+  <footer style="padding:28px 0;border-top:1px solid var(--border);text-align:center;font-size:.8rem;color:var(--muted);margin-top:16px">
+    &copy; 2026 Dr. Daniel Weiss. Health-Tech Precision Medical Suite &bull; Doctors Portfolio
+  </footer>
+</main>
+<script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+    });
+    function selectSlot(btn) {
+        document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    function handleForm(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('[type=submit]');
+        btn.textContent = 'Appointment Confirmed ✓';
+        btn.style.background = '#059669';
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = btn.dataset.orig || 'Submit'; btn.style.background=''; btn.disabled=false; e.target.reset(); }, 4000);
+    }
+    window.addEventListener('message', ev => {
+        if (ev.data && ev.data.type === 'CUSTOMIZE_DOCTOR') {
+            document.querySelectorAll('.d-name').forEach(el => { if(ev.data.name) el.textContent = ev.data.name; });
+            document.querySelectorAll('.d-spec').forEach(el => { if(ev.data.specialty) el.textContent = ev.data.specialty; });
         }
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-        function selectSlot(btn) {
-            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            const slotInput = document.getElementById('selectedSlot');
-            if (slotInput) slotInput.value = btn.textContent.trim();
-        }
-        function handleAppointment(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('[type="submit"]');
-            const orig = btn.textContent;
-            btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#059669';
-            btn.disabled = true;
-            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
-            return false;
-        }
-        window.addEventListener('message', (event) => {
-            if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
-                const name = event.data.name;
-                const spec = event.data.specialty;
-                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
-                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
-            }
-        });
+    });
     </script>
-</body>
-</html>
+</body></html>

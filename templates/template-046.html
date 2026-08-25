@@ -1,74 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Laurent Dubois &mdash; Dermatologist | Surgical Pulse</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #030712; --card: #0F172A; --cyan: #38BDF8; --border: #1E293B; --text: #F8FAFC; --muted: #94A3B8; }
-        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.65; }
-        h1, h2, h3, h4 { font-family: 'Cabinet Grotesk', sans-serif; color: white; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-
-        .pulse-nav { background: rgba(15,23,42,0.9); border-bottom: 1px solid var(--border); padding: 18px 0; backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
-        .hero-pulse { padding: 80px 0; background: radial-gradient(circle at 80% 20%, rgba(56,189,248,0.15) 0%, transparent 60%); }
-        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
-        
-        .pulse-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: 0.3s; }
-        .pulse-card:hover { border-color: var(--cyan); box-shadow: 0 0 25px rgba(56,189,248,0.15); }
-        
-        .form-input { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; border-radius: 8px; margin-bottom: 12px; }
-        @media(max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
-    </style>
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dr. Laurent Dubois | Dermatologist | Surgical Pulse</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;color:#F8FAFC;background:#030712;line-height:1.65}h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;color:white}a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.p-nav{background:rgba(15,23,42,.9);border-bottom:1px solid #1E293B;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.p-nav-inner{display:flex;justify-content:space-between;align-items:center;height:70px}
+.p-nav-links{display:flex;gap:22px;list-style:none;font-size:.82rem;font-weight:600;color:#94A3B8}
+.p-nav-links a:hover{color:#38BDF8}
+.hero{padding:80px 0;background:radial-gradient(circle at 75% 20%,rgba(56,189,248,.18) 0%,transparent 55%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.h-tag{background:rgba(56,189,248,.12);color:#38BDF8;padding:4px 14px;border-radius:20px;font-size:.72rem;font-weight:800;text-transform:uppercase;display:inline-block;margin-bottom:14px}
+.h-title{font-size:clamp(2.5rem,4.5vw,3.8rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:12px}
+.h-stats{display:flex;gap:32px;margin-top:28px;padding-top:20px;border-top:1px solid #1E293B}
+.h-stat-num{font-size:2rem;font-weight:900;color:#38BDF8}
+.h-stat-lbl{font-size:.72rem;color:#94A3B8}
+.p-sec{padding:70px 0;border-top:1px solid #1E293B}
+.p-sec-head{text-align:center;margin-bottom:44px}
+.p-eye{font-size:.72rem;color:#38BDF8;font-weight:800;text-transform:uppercase;letter-spacing:.12em;display:block;margin-bottom:8px}
+.p-card{background:#0F172A;border:1px solid #1E293B;border-radius:14px;padding:26px;transition:.3s}
+.p-card:hover{border-color:#38BDF8;box-shadow:0 0 24px rgba(56,189,248,.12)}
+.p-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.p-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tl{border-left:2px solid #38BDF8;padding-left:24px;margin-left:8px}
+.tl-node{position:relative;margin-bottom:28px}
+.tl-node::before{content:'';position:absolute;left:-33px;top:3px;width:14px;height:14px;border-radius:50%;background:#38BDF8}
+.slot-btn{background:rgba(255,255,255,.05);border:1px solid #1E293B;color:#94A3B8;padding:8px 14px;border-radius:6px;font-size:.8rem;cursor:pointer;margin:3px;display:inline-block;transition:.2s}
+.slot-btn.active{background:#38BDF8;color:#030712;font-weight:700}
+.f-in{width:100%;padding:12px;background:rgba(255,255,255,.04);border:1px solid #1E293B;color:white;border-radius:8px;margin-bottom:12px;font-family:'Inter',sans-serif}
+.faq-item{border-bottom:1px solid #1E293B;padding:14px 0}
+.faq-q{font-weight:600;cursor:pointer;display:flex;justify-content:space-between;color:white}
+.faq-a{color:#94A3B8;font-size:.88rem;margin-top:8px;display:none;line-height:1.7}
+.faq-item.active .faq-a{display:block}
+@media(max-width:768px){.hero-grid,.p-grid-3,.p-grid-2{grid-template-columns:1fr}.p-nav-links{display:none}}
+</style></head>
 <body>
-    <nav class="pulse-nav"><div class="container" style="display:flex; justify-content:space-between; align-items:center;"><div><strong class="dyn-doc-name" style="font-size:1.2rem;">Dr. Laurent Dubois</strong> <span class="dyn-doc-spec" style="font-size:0.75rem; color:var(--cyan); font-weight:700;">Dermatologist</span></div><a href="https://wa.me/8801609977377" target="_blank" style="background:var(--cyan); color:#030712; padding:8px 18px; border-radius:6px; font-weight:800; font-size:0.82rem;">OT Hotline (+880 1609-977377)</a></div></nav>
+<nav class="p-nav"><div class="wrap p-nav-inner">
+  <div><strong class="d-name" style="font-size:1.1rem">Dr. Laurent Dubois</strong> &nbsp;<span class="d-spec" style="font-size:.72rem;color:#38BDF8;font-weight:700;text-transform:uppercase">Dermatologist</span></div>
+  <ul class="p-nav-links"><li><a href="#bio">Bio</a></li><li><a href="#procedures">Procedures</a></li><li><a href="#chambers">Chambers</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#booking">Book</a></li></ul>
+  <a href="https://wa.me/8801609977377" target="_blank" style="background:#38BDF8;color:#030712;padding:9px 18px;border-radius:6px;font-weight:800;font-size:.82rem">OT Hotline (+880 1609-977377)</a>
+</div></nav>
 
-    <section class="hero-pulse"><div class="container hero-grid"><div><span style="background:rgba(56,189,248,0.15); color:var(--cyan); padding:4px 12px; border-radius:20px; font-size:0.75rem; font-weight:800;">SURGICAL EXCELLENCE</span><h1 class="dyn-doc-name" style="font-size:clamp(2.5rem, 4.5vw, 3.8rem); margin:12px 0 14px;">Dr. Laurent Dubois</h1><p style="color:var(--muted); font-size:1.05rem; line-height:1.7;">Dedicated anti-aging dermatology expertise delivered with compassion and clinical excellence. MD, FAAD &middot; Board-Certified Dermatologist</p><div style="display:flex; gap:30px; margin-top:28px;"><div style="font-size:2rem; font-weight:900; color:var(--cyan);">16+ <span style="font-size:0.8rem; color:var(--muted); display:block; font-weight:500;">Years Surgical Exp.</span></div><div style="font-size:2rem; font-weight:900; color:var(--cyan);">4,800+ <span style="font-size:0.8rem; color:var(--muted); display:block; font-weight:500;">Successful Procedures</span></div></div></div><div><img src="https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=800&q=80" alt="Dr. Laurent Dubois" style="width:100%; border-radius:20px; border:2px solid var(--border); box-shadow:0 0 35px rgba(56,189,248,0.2);"></div></div></section>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <span class="h-tag">Surgical Excellence &bull; Dermatologist</span>
+    <h1 class="d-name h-title">Dr. Laurent Dubois</h1>
+    <p style="color:#38BDF8;font-weight:600;margin-bottom:12px">MD, FAAD &middot; Board-Certified Dermatologist</p>
+    <p style="color:#94A3B8;font-size:1rem;line-height:1.75;max-width:560px">Dedicated anti-aging dermatology expertise delivered with compassion and clinical excellence. Providing advanced surgical, diagnostic, and therapeutic excellence across dermatologist practice in Los Angeles, CA.</p>
+    <div class="h-stats">
+      <div><div class="h-stat-num">16+</div><div class="h-stat-lbl">Years Surgical Exp.</div></div>
+      <div><div class="h-stat-num">4,800+</div><div class="h-stat-lbl">Procedures Done</div></div>
+      <div><div class="h-stat-num">99.2%</div><div class="h-stat-lbl">Success Rate</div></div>
+    </div>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#booking" style="background:#38BDF8;color:#030712;padding:12px 22px;border-radius:6px;font-weight:800;font-size:.86rem">Book Chamber Slot &rarr;</a>
+      <a href="https://wa.me/8801609977377" target="_blank" style="display:inline-block;background:#25D366;color:white;padding:12px 20px;border-radius:6px;font-weight:700;font-size:.86rem">&#x1F4AC; WhatsApp</a>
+    </div>
+  </div>
+  <div><img src="https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=800&q=80" alt="Dr. Laurent Dubois" style="width:100%;border-radius:18px;border:2px solid #1E293B;box-shadow:0 0 40px rgba(56,189,248,.15)"></div>
+</div></section>
 
-    <section style="padding: 70px 0;"><div class="container"><h2 style="font-size: 2rem; margin-bottom: 24px;">Robotic &amp; Specialized Procedures</h2><div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;"><div class="pulse-card"><h3 style="font-size:1.2rem; color:var(--cyan); margin-bottom:8px;">Acne & Medical Dermatology</h3><p style="font-size:0.86rem; color:var(--muted);">Targeted medical therapy for cystic acne and psoriasis.</p></div><div class="pulse-card"><h3 style="font-size:1.2rem; color:var(--cyan); margin-bottom:8px;">Full-Body Mole Mapping</h3><p style="font-size:0.86rem; color:var(--muted);">Digital dermoscopy for early detection of skin lesions.</p></div><div class="pulse-card"><h3 style="font-size:1.2rem; color:var(--cyan); margin-bottom:8px;">Cosmetic Rejuvenation</h3><p style="font-size:0.86rem; color:var(--muted);">Botox, dermal fillers, and laser skin resurfacing.</p></div><div class="pulse-card"><h3 style="font-size:1.2rem; color:var(--cyan); margin-bottom:8px;">Mohs Precision Surgery</h3><p style="font-size:0.86rem; color:var(--muted);">Tissue-sparing skin cancer excision with minimal scarring.</p></div><div class="pulse-card"><h3 style="font-size:1.2rem; color:var(--cyan); margin-bottom:8px;">Hair Loss & PRP Solutions</h3><p style="font-size:0.86rem; color:var(--muted);">PRP scalp mesotherapy and hair density restoration.</p></div><div class="pulse-card"><h3 style="font-size:1.2rem; color:var(--cyan); margin-bottom:8px;">Pediatric Skin Conditions</h3><p style="font-size:0.86rem; color:var(--muted);">Gentle treatment for infant eczema and birthmarks.</p></div></div></div></section>
+<section class="p-sec" id="bio"><div class="wrap">
+  <div class="p-sec-head"><span class="p-eye">Clinical Biography</span><h2 style="font-size:2rem">Expert Profile &amp; Credentials</h2></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <div><p style="color:#94A3B8;line-height:1.85;margin-bottom:14px">Dr. Dubois is a leading consultant in dermatologist, combining advanced surgical techniques with evidence-based medicine. Trained at premier teaching institutions with international fellowships, Dr. Dubois has built a reputation for precision, innovation, and consistently superior patient outcomes.</p><p style="color:#94A3B8;line-height:1.85">The practice integrates high-resolution diagnostic imaging, robotic-assisted procedures, and real-time patient monitoring for optimal results.</p></div>
+    <div class="p-grid-2">
+      <div class="p-card"><div style="color:#38BDF8;font-weight:800;margin-bottom:4px">MBBS / MD</div><div style="font-size:.8rem;color:#94A3B8">First Class Honour Graduate</div></div>
+      <div class="p-card"><div style="color:#38BDF8;font-weight:800;margin-bottom:4px">Fellowship</div><div style="font-size:.8rem;color:#94A3B8">International Board Certified</div></div>
+      <div class="p-card"><div style="color:#38BDF8;font-weight:800;margin-bottom:4px">16+ Years</div><div style="font-size:.8rem;color:#94A3B8">Consultant Practice</div></div>
+      <div class="p-card"><div style="color:#38BDF8;font-weight:800;margin-bottom:4px">25+ Papers</div><div style="font-size:.8rem;color:#94A3B8">Research Published</div></div>
+    </div>
+  </div>
+</div></section>
 
-    <section style="padding: 70px 0; background: #070D1B;" id="booking"><div class="container" style="max-width: 650px;"><h2 style="font-size: 2rem; margin-bottom: 20px; text-align: center;">Chamber &amp; OT Booking</h2><form onsubmit="return handleAppointment(event)"><input class="form-input" type="text" placeholder="Patient Full Name" required><input class="form-input" type="tel" placeholder="Contact Mobile (+880)" required><input class="form-input" type="date" required><button type="submit" style="background:var(--cyan); color:#030712; border:none; padding:14px; width:100%; border-radius:8px; font-weight:800; cursor:pointer;">Confirm Serial Request &rarr;</button></form></div></section>
+<section class="p-sec" id="procedures"><div class="wrap">
+  <div class="p-sec-head"><span class="p-eye">Capabilities</span><h2 style="font-size:2rem">Robotic &amp; Specialized Procedures</h2></div>
+  <div class="p-grid-3">
+    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Advanced Medical Dermatology</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Comprehensive evaluation and targeted biological therapies for severe psoriasis, eczema, and rosacea.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Digital Mole Mapping & Dermoscopy</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Full-body computerized photographic dermoscopy for early melanoma and skin cancer screening.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Laser Skin Rejuvenation</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Fractional CO2, Nd:YAG laser resurfacing, and IPL for pigmentation, scars, and anti-aging.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Mohs Micrographic Surgery</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Gold-standard tissue-sparing surgical excision for skin carcinomas with precise margin control.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Hair Restoration & Scalp PRP</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Autologous platelet-rich plasma and peptide mesotherapy for androgenetic alopecia.</p></div>    <div class="p-card"><div style="color:#38BDF8;font-size:1.1rem;font-weight:800;margin-bottom:8px">Pediatric & Allergy Dermatology</div><p style="font-size:.86rem;color:#94A3B8;line-height:1.65">Specialized pediatric skin management, patch testing, and allergy-safe topical protocols.</p></div>
+  </div>
+</div></section>
 
-    <footer style="background:#02050A; color:#64748B; padding:30px 0; text-align:center; font-size:0.82rem;">&copy; 2026 Dr. Laurent Dubois. Surgical Pulse Interface &bull; Doctors Portfolio.</footer>
-    <script>
-        function toggleMenu() {
-            const m = document.getElementById('mobileMenu');
-            if (m) m.classList.toggle('open');
+<section class="p-sec"><div class="wrap">
+  <div class="p-sec-head"><span class="p-eye">Milestones</span><h2 style="font-size:2rem">Career Progression</h2></div>
+  <div style="max-width:760px;margin:0 auto" class="tl">
+    <div class="tl-node"><div style="font-size:.8rem;color:#38BDF8;font-weight:700">2006 &ndash; 2011</div><h4 style="font-size:1.1rem;margin:4px 0 6px">MBBS &amp; Clinical Internship</h4><p style="font-size:.86rem;color:#94A3B8">First Class Honours. Completed supervised rotations in major hospital departments.</p></div>
+    <div class="tl-node"><div style="font-size:.8rem;color:#38BDF8;font-weight:700">2012 &ndash; 2017</div><h4 style="font-size:1.1rem;margin:4px 0 6px">Fellowship in Dermatologist</h4><p style="font-size:.86rem;color:#94A3B8">Subspecialty advanced training. Published first 15 peer-reviewed research papers.</p></div>
+    <div class="tl-node"><div style="font-size:.8rem;color:#38BDF8;font-weight:700">2018 &ndash; Present</div><h4 style="font-size:1.1rem;margin:4px 0 6px">Senior Consultant &bull; Private Practice</h4><p style="font-size:.86rem;color:#94A3B8">4,800+ patients. Full procedural suite. Ongoing research and post-graduate teaching.</p></div>
+  </div>
+</div></section>
+
+<section class="p-sec" id="chambers"><div class="wrap">
+  <div class="p-sec-head"><span class="p-eye">Locations</span><h2 style="font-size:2rem">Chamber &amp; OT Schedule</h2></div>
+  <div class="p-grid-2">
+    <div class="p-card"><h3 style="margin-bottom:10px">Specialist Diagnostic Center</h3><p style="font-size:.84rem;color:#94A3B8;margin-bottom:12px">Suite #402, Medical Plaza, Los Angeles, CA</p><div style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);padding:12px;border-radius:8px;margin-bottom:14px"><strong style="color:#38BDF8">Visiting Hours:</strong><br><span style="font-size:.84rem;color:#94A3B8">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</span></div><a href="https://wa.me/8801609977377" target="_blank" style="display:block;background:#25D366;color:white;text-align:center;padding:11px;border-radius:8px;font-weight:700;font-size:.84rem">WhatsApp Booking</a></div>
+    <div class="p-card"><h3 style="margin-bottom:10px">Surgical &amp; Hospital Department</h3><p style="font-size:.84rem;color:#94A3B8;margin-bottom:12px">City Surgical Centre, Los Angeles, CA</p><div style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);padding:12px;border-radius:8px;margin-bottom:14px"><strong style="color:#38BDF8">Clinical Hours:</strong><br><span style="font-size:.84rem;color:#94A3B8">Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</span></div><a href="#booking" style="display:block;background:#38BDF8;color:#030712;text-align:center;padding:11px;border-radius:8px;font-weight:800;font-size:.84rem">Request Referral &rarr;</a></div>
+  </div>
+</div></section>
+
+<section class="p-sec" id="reviews"><div class="wrap">
+  <div class="p-sec-head"><span class="p-eye">Patient Voice</span><h2 style="font-size:2rem">Verified Testimonials</h2></div>
+  <div class="p-grid-3">
+    <div class="p-card"><div style="color:#38BDF8;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="color:#94A3B8;font-size:.88rem;font-style:italic;line-height:1.7">&ldquo;The surgical precision and post-operative care exceeded every expectation. Dr. Dubois is truly world-class.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:600">M. Rahman &bull; Dhaka</div></div>
+    <div class="p-card"><div style="color:#38BDF8;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="color:#94A3B8;font-size:.88rem;font-style:italic;line-height:1.7">&ldquo;Phenomenal diagnostic accuracy and a compassionate approach to a very difficult medical situation. Forever grateful.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:600">S. Karim &bull; Chittagong</div></div>
+    <div class="p-card"><div style="color:#38BDF8;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="color:#94A3B8;font-size:.88rem;font-style:italic;line-height:1.7">&ldquo;From the first consultation to my final check-up, the level of care was consistently outstanding. Best decision I made.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:600">T. Ahmed &bull; Sylhet</div></div>
+  </div>
+</div></section>
+
+<section class="p-sec"><div class="wrap" style="max-width:760px">
+  <div class="p-sec-head"><span class="p-eye">Information</span><h2 style="font-size:2rem">Patient FAQs</h2></div>
+  <div class="faq-item"><div class="faq-q"><span>What diagnostic reports are required?</span><span>+</span></div><div class="faq-a">Please bring imaging reports, blood test panels, ECG / scan results, and your current medication list.</div></div>
+  <div class="faq-item"><div class="faq-q"><span>How do I book an appointment?</span><span>+</span></div><div class="faq-a">Fill in the form below or WhatsApp directly at +880 1609-977377 for the fastest confirmation.</div></div>
+  <div class="faq-item"><div class="faq-q"><span>Are emergency surgical referrals available?</span><span>+</span></div><div class="faq-a">Yes. Emergency referrals to our affiliated surgical centre are coordinated 24/7 through the hotline.</div></div>
+</div></section>
+
+<section class="p-sec" id="booking"><div class="wrap" style="max-width:700px">
+  <div class="p-sec-head"><span class="p-eye">Reservation</span><h2 style="font-size:2rem">OT &amp; Chamber Booking</h2></div>
+  <div class="p-card">
+    <p style="color:#94A3B8;font-size:.86rem;margin-bottom:16px">Visiting: Sat &ndash; Thu (5 PM &ndash; 9 PM) &bull; Hotline: +880 1609-977377</p>
+    <div style="margin-bottom:14px">
+      <span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">7:30 PM</span>
+    </div>
+    <form onsubmit="handleForm(event)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <input class="f-in" type="text" placeholder="Patient Full Name" required>
+        <input class="f-in" type="tel" placeholder="Mobile (+880)" required>
+      </div>
+      <input class="f-in" type="date" required>
+      <textarea class="f-in" rows="3" placeholder="Symptoms / reason for visit..." style="resize:vertical"></textarea>
+      <button type="submit" data-orig="Confirm Serial Request" style="background:#38BDF8;color:#030712;border:none;padding:14px;width:100%;border-radius:8px;font-weight:800;font-size:.92rem;cursor:pointer">Confirm Serial Request &rarr;</button>
+    </form>
+  </div>
+</div></section>
+
+<footer style="background:#02050A;color:#64748B;padding:32px 0;text-align:center;font-size:.8rem">&copy; 2026 Dr. Laurent Dubois. Surgical Pulse Interface &bull; Doctors Portfolio</footer>
+<script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+    });
+    function selectSlot(btn) {
+        document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    function handleForm(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('[type=submit]');
+        btn.textContent = 'Appointment Confirmed ✓';
+        btn.style.background = '#059669';
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = btn.dataset.orig || 'Submit'; btn.style.background=''; btn.disabled=false; e.target.reset(); }, 4000);
+    }
+    window.addEventListener('message', ev => {
+        if (ev.data && ev.data.type === 'CUSTOMIZE_DOCTOR') {
+            document.querySelectorAll('.d-name').forEach(el => { if(ev.data.name) el.textContent = ev.data.name; });
+            document.querySelectorAll('.d-spec').forEach(el => { if(ev.data.specialty) el.textContent = ev.data.specialty; });
         }
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-        function selectSlot(btn) {
-            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            const slotInput = document.getElementById('selectedSlot');
-            if (slotInput) slotInput.value = btn.textContent.trim();
-        }
-        function handleAppointment(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('[type="submit"]');
-            const orig = btn.textContent;
-            btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#059669';
-            btn.disabled = true;
-            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
-            return false;
-        }
-        window.addEventListener('message', (event) => {
-            if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
-                const name = event.data.name;
-                const spec = event.data.specialty;
-                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
-                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
-            }
-        });
-    </script>
-</body>
-</html>
+    });
+    </script></body></html>

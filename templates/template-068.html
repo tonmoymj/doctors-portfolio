@@ -1,106 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Sienna Rossi &mdash; Gynecologist | Nordic Minimalist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        :root { --text: #18181B; --muted: #71717A; --bg: #FFFFFF; --border: #E4E4E7; --green: #059669; }
-        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; padding: 60px 24px; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; letter-spacing: -0.03em; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 860px; margin: 0 auto; }
-
-        .nordic-head { border-bottom: 1px solid var(--border); padding-bottom: 40px; margin-bottom: 50px; display: flex; justify-content: space-between; align-items: flex-end; }
-        .nordic-photo { width: 140px; height: 140px; border-radius: 12px; object-fit: cover; }
-        .nordic-sec { margin-bottom: 50px; }
-        .nordic-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); font-weight: 700; margin-bottom: 20px; }
-        
-        .nordic-row { display: grid; grid-template-columns: 1fr 1.6fr; padding: 18px 0; border-bottom: 1px solid var(--border); }
-        .form-input { width: 100%; padding: 12px 0; border: none; border-bottom: 1.5px solid var(--border); margin-bottom: 20px; font-family: inherit; font-size: 0.95rem; outline: none; }
-        .form-input:focus { border-color: var(--green); }
-        @media(max-width: 700px) { .nordic-head { flex-direction: column; align-items: flex-start; gap: 20px; } .nordic-row { grid-template-columns: 1fr; } }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header class="nordic-head">
-            <div>
-                <h1 class="dyn-doc-name" style="font-size: 3rem; margin-bottom: 4px;">Dr. Sienna Rossi</h1>
-                <div class="dyn-doc-spec" style="font-size: 1rem; color: var(--muted); font-weight: 500;">MD, FACOG &middot; Board-Certified Gynecologist &mdash; Gynecologist, San Francisco, CA</div>
-            </div>
-            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80" alt="Dr. Sienna Rossi" class="nordic-photo">
-        </header>
-
-        <section class="nordic-sec">
-            <div class="nordic-label">01 &mdash; Clinical Profile</div>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #27272A;">Dedicated adolescent gynecology expertise delivered with compassion and clinical excellence. Dedicated to evidence-based surgery, precision diagnostics, and compassionate patient care in San Francisco, CA.</p>
-        </section>
-
-        <section class="nordic-sec">
-            <div class="nordic-label">02 &mdash; Procedures &amp; Care</div>
-            <div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Well-Woman Screening</div><div style="color:var(--muted); font-size:0.9rem;">Annual Pap smear, HPV test, and breast health exam.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Antenatal & Prenatal Care</div><div style="color:var(--muted); font-size:0.9rem;">Maternal-fetal monitoring throughout pregnancy.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Laparoscopic Surgery</div><div style="color:var(--muted); font-size:0.9rem;">Keyhole surgery for ovarian cysts and fibroids.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Menopause & HRT Guidance</div><div style="color:var(--muted); font-size:0.9rem;">Hormone replacement therapy and bone density tracking.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Infertility Evaluation</div><div style="color:var(--muted); font-size:0.9rem;">Follicular tracking, hormone profiling, and counseling.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">High-Risk Obstetrics</div><div style="color:var(--muted); font-size:0.9rem;">Specialized obstetric care for complex pregnancies.</div></div>
-        </section>
-
-        <section class="nordic-sec">
-            <div class="nordic-label">03 &mdash; Chamber &amp; Timetable</div>
-            <div class="nordic-row"><div>Specialist Diagnostic Center</div><div style="color:var(--muted);">Suite #402, San Francisco, CA &bull; Sat &ndash; Thu (5PM &ndash; 9PM)</div></div>
-            <div class="nordic-row"><div>Hospital Clinical Rounds</div><div style="color:var(--muted);">City Hospital, San Francisco, CA &bull; Sat &ndash; Thu (9AM &ndash; 2PM)</div></div>
-        </section>
-
-        <section class="nordic-sec" id="booking">
-            <div class="nordic-label">04 &mdash; Consultation Booking</div>
-            <p style="color: var(--muted); margin-bottom: 24px;">Hotline: +880 1609-977377</p>
-            <form onsubmit="return handleAppointment(event)">
-                <input class="form-input" type="text" placeholder="Patient Full Name" required>
-                <input class="form-input" type="tel" placeholder="Mobile / WhatsApp Number" required>
-                <input class="form-input" type="date" required>
-                <button type="submit" style="background:var(--text); color:white; border:none; padding:14px 28px; border-radius:6px; font-weight:700; cursor:pointer;">Submit Booking &rarr;</button>
-            </form>
-        </section>
-
-        <footer style="border-top:1px solid var(--border); padding-top:24px; font-size:0.8rem; color:var(--muted); display:flex; justify-content:space-between;">
-            <div>&copy; 2026 Dr. Sienna Rossi</div>
-            <div>Nordic Minimalist Design &bull; Doctors Portfolio</div>
-        </footer>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dr. Sienna Rossi | Gynecologist | Nordic Minimalist</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;color:#18181B;background:#fff;line-height:1.7;padding:56px 24px}h1,h2,h3{font-family:'Syne',sans-serif;letter-spacing:-.03em}a{text-decoration:none;color:inherit}
+.wrap{max-width:900px;margin:0 auto}
+.n-head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid #E4E4E7;padding-bottom:40px;margin-bottom:56px}
+.n-photo{width:140px;height:140px;border-radius:12px;object-fit:cover}
+.n-sec{margin-bottom:56px}
+.n-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:#71717A;font-weight:700;margin-bottom:20px}
+.n-row{display:grid;grid-template-columns:1fr 1.6fr;padding:16px 0;border-bottom:1px solid #E4E4E7;align-items:start}
+.n-row-title{font-weight:600;font-size:1rem}
+.n-row-desc{font-size:.88rem;color:#71717A;line-height:1.7}
+.f-line{width:100%;padding:12px 0;border:none;border-bottom:1.5px solid #E4E4E7;margin-bottom:20px;font-family:'Inter',sans-serif;font-size:.95rem;outline:none}
+.f-line:focus{border-color:#18181B}
+.slot-btn{background:#F4F4F5;border:1px solid #E4E4E7;padding:8px 14px;font-size:.8rem;font-weight:600;cursor:pointer;margin:3px;display:inline-block;transition:.2s;border-radius:4px}
+.slot-btn.active{background:#18181B;color:white}
+.faq-item{border-bottom:1px solid #E4E4E7;padding:16px 0}
+.faq-q{font-weight:600;cursor:pointer;display:flex;justify-content:space-between}
+.faq-a{color:#71717A;font-size:.88rem;margin-top:8px;display:none;line-height:1.7}
+.faq-item.active .faq-a{display:block}
+@media(max-width:680px){.n-head{flex-direction:column;align-items:flex-start;gap:20px}.n-row{grid-template-columns:1fr;gap:4px}}
+</style></head>
+<body><div class="wrap">
+<header class="n-head">
+  <div>
+    <h1 class="d-name" style="font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:6px">Dr. Sienna Rossi</h1>
+    <div class="d-spec" style="font-size:1rem;color:#71717A;font-weight:400">MD, FACOG &middot; Board-Certified Gynecologist &mdash; Gynecologist, San Francisco, CA</div>
+    <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#booking" style="background:#18181B;color:white;padding:10px 20px;border-radius:4px;font-weight:600;font-size:.85rem">Book Consultation</a>
+      <a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366;color:white;padding:10px 18px;border-radius:4px;font-weight:600;font-size:.85rem">&#x1F4AC; WhatsApp</a>
     </div>
-    <script>
-        function toggleMenu() {
-            const m = document.getElementById('mobileMenu');
-            if (m) m.classList.toggle('open');
+  </div>
+  <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80" alt="Dr. Sienna Rossi" class="n-photo">
+</header>
+
+<section class="n-sec">
+  <div class="n-label">01 &mdash; Clinical Profile</div>
+  <p style="font-size:1.2rem;line-height:1.85;color:#27272A;max-width:720px">Dedicated adolescent gynecology expertise delivered with compassion and clinical excellence.</p>
+  <p style="font-size:1rem;line-height:1.85;color:#71717A;margin-top:16px;max-width:720px">Dr. Rossi brings over 16 years of specialist clinical expertise in gynecologist to patients in San Francisco, CA. A graduate with First Class Honours, Dr. Rossi completed postgraduate fellowship training at a leading teaching hospital before establishing a private specialist practice. Research contributions include over 25 peer-reviewed publications in international clinical journals. The practice prioritises evidence-based medicine, precision diagnostics, and personalised patient outcomes.</p>
+</section>
+
+<section class="n-sec">
+  <div class="n-label">02 &mdash; Academic Credentials</div>
+  <div class="n-row"><div class="n-row-title">MBBS / Doctor of Medicine</div><div class="n-row-desc">First Class Honours Graduate &bull; Top 1% of medical school cohort. Awarded Gold Medal for Academic Excellence.</div></div>
+  <div class="n-row"><div class="n-row-title">Post-Graduate Fellowship</div><div class="n-row-desc">Subspecialty Fellowship in Gynecologist &bull; Prestigious Teaching Hospital Affiliation. International clinical rotations.</div></div>
+  <div class="n-row"><div class="n-row-title">Board Certification &amp; Registration</div><div class="n-row-desc">Permanent Medical Council Specialist Certification &bull; Royal College Fellowship. Active medical licence.</div></div>
+  <div class="n-row"><div class="n-row-title">Research &amp; Academic Contributions</div><div class="n-row-desc">Author of 25+ peer-reviewed papers. Post-graduate medical educator. Member of 3 international medical societies.</div></div>
+</section>
+
+<section class="n-sec">
+  <div class="n-label">03 &mdash; Procedures &amp; Clinical Services</div>
+  <div class="n-row"><div class="n-row-title">Annual Health Checkup</div><div class="n-row-desc">Comprehensive physical examination, complete blood panel, and personalized wellness recommendations.</div></div>  <div class="n-row"><div class="n-row-title">Diabetes & Metabolic Care</div><div class="n-row-desc">HbA1c optimization, dietary counseling, and long-term complication screening protocols.</div></div>  <div class="n-row"><div class="n-row-title">Hypertension Management</div><div class="n-row-desc">24-hour ambulatory blood pressure monitoring and evidence-based cardiovascular risk reduction.</div></div>  <div class="n-row"><div class="n-row-title">Acute Illness & Infections</div><div class="n-row-desc">Rapid diagnosis and targeted treatment for viral fevers, bacterial infections, and tropical diseases.</div></div>  <div class="n-row"><div class="n-row-title">Geriatric Primary Care</div><div class="n-row-desc">Holistic health management for elderly patients including polypharmacy review and falls prevention.</div></div>  <div class="n-row"><div class="n-row-title">Executive Health Screening</div><div class="n-row-desc">Tailored corporate health assessment with advanced imaging, blood panels, and cardiac evaluation.</div></div>
+</section>
+
+<section class="n-sec">
+  <div class="n-label">04 &mdash; Career Milestones</div>
+  <div class="n-row"><div class="n-row-title">2006 &ndash; 2011</div><div class="n-row-desc">Medical Degree (MBBS) with Gold Medal distinction. Hospital internship across major clinical departments.</div></div>
+  <div class="n-row"><div class="n-row-title">2012 &ndash; 2017</div><div class="n-row-desc">Post-Graduate Residency and Gynecologist Fellowship. Published first 10 peer-reviewed research papers.</div></div>
+  <div class="n-row"><div class="n-row-title">2018 &ndash; Present</div><div class="n-row-desc">Senior Consultant Specialist. Private practice in San Francisco, CA. 4,800+ patients. Ongoing academic teaching.</div></div>
+</section>
+
+<section class="n-sec">
+  <div class="n-label">05 &mdash; Chamber &amp; Timetable</div>
+  <div class="n-row"><div class="n-row-title">Main Diagnostic Chamber</div><div class="n-row-desc">Suite #402, Medical Plaza, San Francisco, CA &bull; Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</div></div>
+  <div class="n-row"><div class="n-row-title">Hospital Clinical Rounds</div><div class="n-row-desc">City Hospital Department of Gynecologist, San Francisco, CA &bull; Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</div></div>
+  <div class="n-row"><div class="n-row-title">Emergency Referrals</div><div class="n-row-desc">Available 24 hours via WhatsApp at +880 1609-977377. Coordinated hospital admission on request.</div></div>
+</section>
+
+<section class="n-sec">
+  <div class="n-label">06 &mdash; Patient Testimonials</div>
+  <div class="n-row"><div class="n-row-title">M. Rahman &#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="n-row-desc">&ldquo;Dr. Rossi's diagnostic precision transformed our family's understanding of my condition. The care was deeply compassionate and thorough.&rdquo;</div></div>
+  <div class="n-row"><div class="n-row-title">Ayesha Begum &#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="n-row-desc">&ldquo;An exceptional specialist who takes the time to truly explain every step. The treatment outcomes exceeded our expectations completely.&rdquo;</div></div>
+  <div class="n-row"><div class="n-row-title">T. Ahmed &#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="n-row-desc">&ldquo;Best consultation experience I have had. Clear diagnosis, targeted treatment, and outstanding follow-up. I strongly recommend Dr. Rossi.&rdquo;</div></div>
+</section>
+
+<section class="n-sec">
+  <div class="n-label">07 &mdash; Frequently Asked Questions</div>
+  <div class="faq-item"><div class="faq-q"><span>What should I bring for consultation?</span><span>&darr;</span></div><div class="faq-a">All recent diagnostic reports, imaging scans, blood results, and medication history.</div></div>
+  <div class="faq-item"><div class="faq-q"><span>How do I book an appointment?</span><span>&darr;</span></div><div class="faq-a">Complete the booking form below or WhatsApp directly at +880 1609-977377 for fastest response.</div></div>
+  <div class="faq-item"><div class="faq-q"><span>Is video / telemedicine available?</span><span>&darr;</span></div><div class="faq-a">Yes. Video follow-up consultations available on request. Contact via WhatsApp to schedule.</div></div>
+</section>
+
+<section class="n-sec" id="booking">
+  <div class="n-label">08 &mdash; Appointment Booking</div>
+  <p style="color:#71717A;margin-bottom:24px">Visiting Hours: Sat &ndash; Thu, 5:00 PM &ndash; 9:00 PM &bull; Hotline: +880 1609-977377</p>
+  <div style="margin-bottom:20px">
+    <span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">7:30 PM</span>
+  </div>
+  <form onsubmit="handleForm(event)">
+    <input class="f-line" type="text" placeholder="Patient Full Name" required>
+    <input class="f-line" type="tel" placeholder="Mobile / WhatsApp Number (+880)" required>
+    <input class="f-line" type="date" required>
+    <input class="f-line" type="text" placeholder="Symptoms or reason for consultation">
+    <button type="submit" data-orig="Submit Booking Request" style="background:#18181B;color:white;border:none;padding:14px 28px;font-weight:600;cursor:pointer;font-family:'Syne',sans-serif;letter-spacing:-.01em">Submit Booking Request &rarr;</button>
+  </form>
+</section>
+
+<footer style="border-top:1px solid #E4E4E7;padding-top:24px;font-size:.8rem;color:#71717A;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+  <div>&copy; 2026 Dr. Sienna Rossi</div><div>Nordic Minimalist Design &bull; Doctors Portfolio</div>
+</footer>
+</div><script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+    });
+    function selectSlot(btn) {
+        document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    function handleForm(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('[type=submit]');
+        btn.textContent = 'Appointment Confirmed ✓';
+        btn.style.background = '#059669';
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = btn.dataset.orig || 'Submit'; btn.style.background=''; btn.disabled=false; e.target.reset(); }, 4000);
+    }
+    window.addEventListener('message', ev => {
+        if (ev.data && ev.data.type === 'CUSTOMIZE_DOCTOR') {
+            document.querySelectorAll('.d-name').forEach(el => { if(ev.data.name) el.textContent = ev.data.name; });
+            document.querySelectorAll('.d-spec').forEach(el => { if(ev.data.specialty) el.textContent = ev.data.specialty; });
         }
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-        function selectSlot(btn) {
-            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            const slotInput = document.getElementById('selectedSlot');
-            if (slotInput) slotInput.value = btn.textContent.trim();
-        }
-        function handleAppointment(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('[type="submit"]');
-            const orig = btn.textContent;
-            btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#059669';
-            btn.disabled = true;
-            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
-            return false;
-        }
-        window.addEventListener('message', (event) => {
-            if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
-                const name = event.data.name;
-                const spec = event.data.specialty;
-                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
-                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
-            }
-        });
-    </script>
-</body>
-</html>
+    });
+    </script></body></html>

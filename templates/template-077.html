@@ -1,107 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Specialist #077 &mdash; Specialist | Harvard Medical Journal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #FAF7F2; --text: #1C1917; --muted: #78716C; --border: #E7E5E4; --burgundy: #881337; }
-        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
-        h1, h2, h3, h4 { font-family: 'Newsreader', serif; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-        .journal-header { text-align: center; border-bottom: 2px solid var(--text); padding: 30px 0 16px; margin-bottom: 50px; }
-        .journal-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; padding-bottom: 60px; border-bottom: 1px solid var(--border); }
-        .pull-quote { border-left: 3px solid var(--burgundy); padding-left: 20px; font-style: italic; font-size: 1.25rem; color: var(--muted); margin: 24px 0; font-family: 'Newsreader', serif; }
-        .form-input { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 6px; margin-bottom: 12px; background: white; font-family: inherit; }
-        @media(max-width: 800px) { .journal-grid { grid-template-columns: 1fr; } }
-    </style>
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dr. Specialist #077 | Specialist | Medical Journal Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',sans-serif;color:#1C1917;background:#FAF7F2;line-height:1.7}h1,h2,h3,h4{font-family:'Newsreader',serif}a{text-decoration:none;color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.masthead{text-align:center;border-bottom:3px double #1C1917;padding:28px 24px 20px;margin-bottom:0}
+.mast-vol{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#71717A}
+.mast-title{font-size:clamp(2.4rem,5vw,3.8rem);font-family:'Newsreader',serif;margin:8px 0 6px;font-weight:700;line-height:1.1}
+.mast-byline{font-size:.95rem;color:#881337;font-weight:600}
+.navstrip{background:white;border-bottom:1px solid #E7E5E4;padding:12px 24px;display:flex;justify-content:center;gap:28px;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;position:sticky;top:0;z-index:100}
+.navstrip a{color:#78716C;transition:.2s}.navstrip a:hover{color:#881337}
+.article-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;padding:60px 0;border-bottom:1px solid #E7E5E4}
+.article-lead{font-size:1.15rem;line-height:1.85;color:#292524;margin-bottom:18px}
+.pull-quote{border-left:3px solid #881337;padding:10px 20px;font-family:'Newsreader',serif;font-style:italic;font-size:1.2rem;color:#78716C;margin:22px 0;line-height:1.5}
+.portrait-fig img{width:100%;border-radius:8px;aspect-ratio:4/5;object-fit:cover;box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.fig-cap{font-size:.78rem;color:#78716C;text-align:center;margin-top:8px;font-style:italic}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:36px 0;border-bottom:1px solid #E7E5E4;gap:16px}
+.st-num{font-family:'Newsreader',serif;font-size:2.6rem;font-weight:700;color:#881337}
+.st-lbl{font-size:.8rem;color:#78716C;margin-top:3px}
+.j-sec{padding:60px 0;border-bottom:1px solid #E7E5E4}
+.j-eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:#881337;font-weight:700;margin-bottom:8px;display:block}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc-card{background:white;border:1px solid #E7E5E4;padding:28px;transition:.3s}
+.svc-card:hover{box-shadow:0 8px 22px rgba(0,0,0,.05);transform:translateY(-3px)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev-card{background:white;border:1px solid #E7E5E4;padding:26px}
+.slot-btn{background:var(--ivory,#FAF7F2);border:1px solid #E7E5E4;padding:8px 14px;font-size:.8rem;font-weight:600;cursor:pointer;margin:3px;display:inline-block}
+.slot-btn.active{background:#881337;color:white;border-color:#881337}
+.faq-item{border-bottom:1px solid #E7E5E4;padding:14px 0}
+.faq-q{font-weight:700;cursor:pointer;display:flex;justify-content:space-between}
+.faq-a{color:#78716C;font-size:.88rem;margin-top:8px;display:none;line-height:1.7}
+.faq-item.active .faq-a{display:block}
+.f-in{width:100%;padding:12px 14px;border:1px solid #E7E5E4;margin-bottom:12px;background:white;font-family:inherit}
+@media(max-width:800px){.article-grid,.svc-grid,.rev-grid,.stats-row{grid-template-columns:1fr}.navstrip{gap:14px;font-size:.76rem}}
+</style></head>
 <body>
-    <div class="container">
-        <header class="journal-header">
-            <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;">Academic Clinical Portfolio &bull; Vol. XXVI</div>
-            <h1 class="dyn-doc-name" style="font-size: 3.2rem; margin: 6px 0;">Dr. Specialist #077</h1>
-            <div class="dyn-doc-spec" style="font-size: 0.95rem; color: var(--burgundy); font-weight: 600;">MD, Board Certified &bull; Senior Consultant in Specialist, Medical Plaza, NY</div>
-        </header>
+<header class="masthead">
+  <div class="mast-vol">Academic Clinical Portfolio &bull; Vol. XXVI &bull; Medical Plaza, NY</div>
+  <h1 class="d-name mast-title">Dr. Specialist #077</h1>
+  <div class="d-spec mast-byline">MD, Board Certified &bull; Senior Consultant in Specialist</div>
+</header>
+<nav class="navstrip"><a href="#article">Biography</a><a href="#services">Procedures</a><a href="#publications">Research</a><a href="#chambers">Chambers</a><a href="#reviews">Reviews</a><a href="#booking">Book</a></nav>
 
-        <div class="journal-grid">
-            <div>
-                <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--burgundy); font-weight: 700;">Clinical Leadership</span>
-                <h2 style="font-size: 2.2rem; margin: 10px 0;">Pioneering Evidence-Based Therapeutics</h2>
-                <div class="pull-quote">&ldquo;Dedicated patient-centered healthcare excellence.&rdquo;</div>
-                <p style="color: var(--muted); font-size: 1rem; line-height: 1.8;">Author of numerous clinical research publications in international peer-reviewed journals. Providing tertiary-level patient care and consultations across Specialist in Medical Plaza, NY.</p>
-            </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80" alt="Dr. Specialist #077" style="width: 100%; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover; box-shadow: 0 14px 35px rgba(0,0,0,0.06);">
-            </div>
-        </div>
-
-        <div style="padding: 60px 0; border-bottom: 1px solid var(--border);">
-            <h2 style="font-size: 2rem; margin-bottom: 24px;">Key Clinical Procedures</h2>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
-                <div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Annual Health Checkup</h3><p style="font-size:0.86rem; color:var(--muted);">Comprehensive physical exam, lab panels, and wellness care.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Diabetes & Metabolic Care</h3><p style="font-size:0.86rem; color:var(--muted);">HbA1c optimization, diet coaching, and complication screening.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Hypertension Management</h3><p style="font-size:0.86rem; color:var(--muted);">24-hour BP monitoring and cardiovascular protection.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Acute Infections Care</h3><p style="font-size:0.86rem; color:var(--muted);">Prompt diagnosis for viral fevers, flu, and infections.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Geriatric Primary Care</h3><p style="font-size:0.86rem; color:var(--muted);">Holistic care for elderly adults and safe medication reviews.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Executive Health Screening</h3><p style="font-size:0.86rem; color:var(--muted);">Tailored preventive medicine protocols for professionals.</p></div>
-            </div>
-        </div>
-
-        <div style="padding: 60px 0;" id="booking">
-            <h2 style="font-size: 2rem; margin-bottom: 24px;">Request Academic Chamber Consultation</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div>
-                    <p style="color: var(--muted); margin-bottom: 16px;">Visiting Hours: Sat &ndash; Thu 5PM &ndash; 9PM<br>Diagnostic Center, Medical Plaza, NY<br>Hotline: +880 1609-977377</p>
-                    <a href="https://wa.me/8801609977377" target="_blank" style="background: #25D366; color: white; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; display: inline-block;">💬 Direct WhatsApp Consultation</a>
-                </div>
-                <form onsubmit="return handleAppointment(event)">
-                    <input class="form-input" type="text" placeholder="Patient Full Name" required>
-                    <input class="form-input" type="tel" placeholder="Mobile Number" required>
-                    <input class="form-input" type="date" required>
-                    <button type="submit" style="background:var(--burgundy); color:white; border:none; padding:14px; width:100%; border-radius:6px; font-weight:700; cursor:pointer;">Confirm Appointment</button>
-                </form>
-            </div>
-        </div>
-
-        <footer style="background:#1c1917; color:#a8a29e; padding:30px 0; text-align:center; font-size:0.85rem; margin-top:40px;">
-            &copy; 2026 Dr. Specialist #077. Medical Journal Edition &bull; Doctors Portfolio.
-        </footer>
+<div class="wrap"><section class="article-grid" id="article">
+  <div>
+    <span class="j-eyebrow">Clinical Leadership &amp; Academic Practice</span>
+    <h2 style="font-size:2rem;margin-bottom:18px">Pioneering Evidence-Based Therapeutics in Specialist</h2>
+    <p class="article-lead">Dedicated patient-centered healthcare excellence.</p>
+    <div class="pull-quote">&ldquo;Every patient deserves a diagnosis built on evidence, a treatment grounded in science, and a recovery achieved with compassion.&rdquo;</div>
+    <p style="color:#78716C;line-height:1.85;margin-bottom:14px">Dr. #077 is an internationally recognised authority in specialist, with over 16 years of consultant-level clinical practice in Medical Plaza, NY. A First Class Honours medical graduate, Dr. #077 completed subspecialty fellowship training and has authored more than 25 peer-reviewed papers in leading clinical journals.</p>
+    <p style="color:#78716C;line-height:1.85">Active in post-graduate medical education, Dr. #077 sits on hospital ethics committees and contributes regularly to continuing medical education programmes across the region.</p>
+    <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#booking" style="background:#881337;color:white;padding:12px 22px;font-weight:700;font-size:.86rem;display:inline-block">Request Consultation &rarr;</a>
+      <a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366;color:white;padding:12px 20px;font-weight:700;font-size:.86rem;display:inline-block">&#x1F4AC; WhatsApp (+880 1609-977377)</a>
     </div>
-    <script>
-        function toggleMenu() {
-            const m = document.getElementById('mobileMenu');
-            if (m) m.classList.toggle('open');
+  </div>
+  <div class="portrait-fig">
+    <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80" alt="Dr. Specialist #077">
+    <p class="fig-cap">Dr. #077 — Consultant Specialist</p>
+  </div>
+</section>
+
+<div class="stats-row">
+  <div><div class="st-num">16+</div><div class="st-lbl">Years Clinical Tenure</div></div>
+  <div><div class="st-num">4,800+</div><div class="st-lbl">Patients Treated</div></div>
+  <div><div class="st-num">98.6%</div><div class="st-lbl">Satisfaction Rate</div></div>
+  <div><div class="st-num">25+</div><div class="st-lbl">Research Papers</div></div>
+</div>
+
+<section class="j-sec" id="services">
+  <div style="text-align:center;margin-bottom:40px"><span class="j-eyebrow">Clinical Practice</span><h2 style="font-size:2rem">Key Clinical Procedures &amp; Treatments</h2></div>
+  <div class="svc-grid">
+    <div class="svc-card"><div style="font-size:.72rem;color:#881337;font-weight:700;text-transform:uppercase;margin-bottom:8px">Treatment 01</div><h3 style="font-family:'Newsreader',serif;font-size:1.25rem;margin-bottom:10px">Annual Health Checkup</h3><p style="font-size:.88rem;color:#78716C;line-height:1.75">Comprehensive physical examination, complete blood panel, and personalized wellness recommendations.</p></div>    <div class="svc-card"><div style="font-size:.72rem;color:#881337;font-weight:700;text-transform:uppercase;margin-bottom:8px">Treatment 02</div><h3 style="font-family:'Newsreader',serif;font-size:1.25rem;margin-bottom:10px">Diabetes & Metabolic Care</h3><p style="font-size:.88rem;color:#78716C;line-height:1.75">HbA1c optimization, dietary counseling, and long-term complication screening protocols.</p></div>    <div class="svc-card"><div style="font-size:.72rem;color:#881337;font-weight:700;text-transform:uppercase;margin-bottom:8px">Treatment 03</div><h3 style="font-family:'Newsreader',serif;font-size:1.25rem;margin-bottom:10px">Hypertension Management</h3><p style="font-size:.88rem;color:#78716C;line-height:1.75">24-hour ambulatory blood pressure monitoring and evidence-based cardiovascular risk reduction.</p></div>    <div class="svc-card"><div style="font-size:.72rem;color:#881337;font-weight:700;text-transform:uppercase;margin-bottom:8px">Treatment 04</div><h3 style="font-family:'Newsreader',serif;font-size:1.25rem;margin-bottom:10px">Acute Illness & Infections</h3><p style="font-size:.88rem;color:#78716C;line-height:1.75">Rapid diagnosis and targeted treatment for viral fevers, bacterial infections, and tropical diseases.</p></div>    <div class="svc-card"><div style="font-size:.72rem;color:#881337;font-weight:700;text-transform:uppercase;margin-bottom:8px">Treatment 05</div><h3 style="font-family:'Newsreader',serif;font-size:1.25rem;margin-bottom:10px">Geriatric Primary Care</h3><p style="font-size:.88rem;color:#78716C;line-height:1.75">Holistic health management for elderly patients including polypharmacy review and falls prevention.</p></div>    <div class="svc-card"><div style="font-size:.72rem;color:#881337;font-weight:700;text-transform:uppercase;margin-bottom:8px">Treatment 06</div><h3 style="font-family:'Newsreader',serif;font-size:1.25rem;margin-bottom:10px">Executive Health Screening</h3><p style="font-size:.88rem;color:#78716C;line-height:1.75">Tailored corporate health assessment with advanced imaging, blood panels, and cardiac evaluation.</p></div>
+  </div>
+</section>
+
+<section class="j-sec" id="publications">
+  <div style="text-align:center;margin-bottom:36px"><span class="j-eyebrow">Academic Research</span><h2 style="font-size:2rem">Selected Research Publications</h2></div>
+  <div style="max-width:780px;margin:0 auto">
+    <div style="border-bottom:1px solid #E7E5E4;padding:18px 0"><div style="font-size:.8rem;color:#881337;font-weight:700">Journal of Specialist Medicine, 2024</div><h4 style="font-family:'Newsreader',serif;font-size:1.1rem;margin:4px 0">Advanced Diagnostic Protocols in Specialist: A 5-Year Retrospective Study</h4><p style="font-size:.84rem;color:#78716C">Dr. #077 et al. &bull; Peer-Reviewed &bull; International Clinical Journal</p></div>
+    <div style="border-bottom:1px solid #E7E5E4;padding:18px 0"><div style="font-size:.8rem;color:#881337;font-weight:700">Clinical Medicine Review, 2023</div><h4 style="font-family:'Newsreader',serif;font-size:1.1rem;margin:4px 0">Patient Outcome Optimisation in specialist — Evidence-Based Approaches</h4><p style="font-size:.84rem;color:#78716C">Dr. #077 et al. &bull; Peer-Reviewed &bull; BMC Clinical Practice</p></div>
+    <div style="border-bottom:1px solid #E7E5E4;padding:18px 0"><div style="font-size:.8rem;color:#881337;font-weight:700">Specialist Medical Bulletin, 2022</div><h4 style="font-family:'Newsreader',serif;font-size:1.1rem;margin:4px 0">Technology-Driven Clinical Decision-Making in Modern Specialist Practice</h4><p style="font-size:.84rem;color:#78716C">Dr. #077 et al. &bull; Peer-Reviewed &bull; JAMA Clinical Notes</p></div>
+    <div style="padding:18px 0"><div style="font-size:.8rem;color:#881337;font-weight:700">Post-Graduate Teaching Module, 2021</div><h4 style="font-family:'Newsreader',serif;font-size:1.1rem;margin:4px 0">Fellowship Training Curriculum for Specialist: A Comprehensive Framework</h4><p style="font-size:.84rem;color:#78716C">Dr. #077 et al. &bull; Academic Medical Press</p></div>
+  </div>
+</section>
+
+<section class="j-sec" id="chambers">
+  <div style="text-align:center;margin-bottom:36px"><span class="j-eyebrow">Consulting Rooms</span><h2 style="font-size:2rem">Chamber Hours &amp; Locations</h2></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <div style="background:white;border:1px solid #E7E5E4;padding:30px"><h3 style="font-family:'Newsreader',serif;font-size:1.3rem;margin-bottom:8px">Specialist Diagnostic Suite</h3><p style="color:#78716C;font-size:.86rem;margin-bottom:14px">Suite #402, Private Medical Plaza, Medical Plaza, NY</p><div style="background:#FAF7F2;padding:14px;font-size:.86rem;margin-bottom:16px;line-height:1.7"><strong>Visiting Hours:</strong><br>Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM<br>Friday: Closed</div><a href="https://wa.me/8801609977377" target="_blank" style="display:block;background:#25D366;color:white;text-align:center;padding:12px;font-weight:700;font-size:.85rem">WhatsApp Booking</a></div>
+    <div style="background:white;border:1px solid #E7E5E4;padding:30px"><h3 style="font-family:'Newsreader',serif;font-size:1.3rem;margin-bottom:8px">Hospital Consultations</h3><p style="color:#78716C;font-size:.86rem;margin-bottom:14px">Teaching Hospital Dept. of Specialist, Medical Plaza, NY</p><div style="background:#FAF7F2;padding:14px;font-size:.86rem;margin-bottom:16px;line-height:1.7"><strong>Clinical Hours:</strong><br>Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM<br>Emergencies: 24/7 via hotline</div><a href="#booking" style="display:block;background:#881337;color:white;text-align:center;padding:12px;font-weight:700;font-size:.85rem">Request Slot</a></div>
+  </div>
+</section>
+
+<section class="j-sec" id="reviews">
+  <div style="text-align:center;margin-bottom:36px"><span class="j-eyebrow">Patient Voices</span><h2 style="font-size:2rem">Verified Patient Reviews</h2></div>
+  <div class="rev-grid">
+    <div class="rev-card"><div style="color:#881337;font-size:1.1rem;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-family:'Newsreader',serif;font-style:italic;color:#78716C;line-height:1.7;font-size:.95rem">&ldquo;The academic rigour and clinical compassion of Dr. #077 gave us absolute confidence throughout treatment. Truly exceptional care.&rdquo;</p><div style="margin-top:14px;font-size:.82rem;font-weight:700">&mdash; M. Rahman &bull; Verified Patient</div></div>
+    <div class="rev-card"><div style="color:#881337;font-size:1.1rem;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-family:'Newsreader',serif;font-style:italic;color:#78716C;line-height:1.7;font-size:.95rem">&ldquo;I am deeply grateful for the precise diagnosis and evidence-based treatment plan. Dr. #077's expertise made all the difference.&rdquo;</p><div style="margin-top:14px;font-size:.82rem;font-weight:700">&mdash; Ayesha B. &bull; Medical Plaza, NY</div></div>
+    <div class="rev-card"><div style="color:#881337;font-size:1.1rem;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-family:'Newsreader',serif;font-style:italic;color:#78716C;line-height:1.7;font-size:.95rem">&ldquo;Dr. #077's chamber is the finest medical experience I have had. Professional, thorough, and incredibly caring throughout.&rdquo;</p><div style="margin-top:14px;font-size:.82rem;font-weight:700">&mdash; T. Ahmed &bull; Verified Patient</div></div>
+  </div>
+</section>
+
+<section class="j-sec">
+  <div style="text-align:center;margin-bottom:36px"><span class="j-eyebrow">Patient Information</span><h2 style="font-size:2rem">Frequently Asked Questions</h2></div>
+  <div style="max-width:760px;margin:0 auto">
+    <div class="faq-item"><div class="faq-q"><span>What documents should I bring for consultation?</span><span>&#9660;</span></div><div class="faq-a">All diagnostic reports, imaging (MRI, CT, X-ray), blood panels, and a list of current medications.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>How do I secure an appointment serial?</span><span>&#9660;</span></div><div class="faq-a">Complete the consultation request form below or contact us directly via WhatsApp at +880 1609-977377.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>Are academic second opinions available?</span><span>&#9660;</span></div><div class="faq-a">Yes. Dr. #077 provides specialist second opinions for complex cases. Teleconsultation available on request.</div></div>
+  </div>
+</section>
+
+<section class="j-sec" id="booking">
+  <div style="text-align:center;margin-bottom:36px"><span class="j-eyebrow">Appointment Reservation</span><h2 style="font-size:2rem">Schedule Academic Consultation</h2></div>
+  <div style="max-width:700px;margin:0 auto;background:white;border:1px solid #E7E5E4;padding:40px">
+    <p style="color:#78716C;margin-bottom:18px">Visiting Hours: Sat &ndash; Thu, 5:00 PM &ndash; 9:00 PM &bull; Hotline: +880 1609-977377</p>
+    <div style="margin-bottom:16px"><label style="font-size:.8rem;font-weight:700;text-transform:uppercase;display:block;margin-bottom:8px">Select Time Slot</label>
+      <span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span>
+      <span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span>
+    </div>
+    <form onsubmit="handleForm(event)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <input class="f-in" type="text" placeholder="Patient Full Name" required>
+        <input class="f-in" type="tel" placeholder="Mobile Number (+880)" required>
+      </div>
+      <input class="f-in" type="date" required>
+      <textarea class="f-in" rows="3" placeholder="Reason for consultation / symptoms..." style="resize:vertical"></textarea>
+      <button type="submit" data-orig="Confirm Consultation Request" style="background:#881337;color:white;border:none;padding:14px;width:100%;font-weight:700;font-size:.9rem;cursor:pointer">Confirm Consultation Request</button>
+    </form>
+  </div>
+</section>
+</div>
+
+<footer style="background:#1C1917;color:#a8a29e;padding:36px 0;text-align:center;font-size:.85rem">&copy; 2026 Dr. Specialist #077. Medical Journal Edition &bull; Doctors Portfolio</footer>
+<script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+    });
+    function selectSlot(btn) {
+        document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    function handleForm(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('[type=submit]');
+        btn.textContent = 'Appointment Confirmed ✓';
+        btn.style.background = '#059669';
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = btn.dataset.orig || 'Submit'; btn.style.background=''; btn.disabled=false; e.target.reset(); }, 4000);
+    }
+    window.addEventListener('message', ev => {
+        if (ev.data && ev.data.type === 'CUSTOMIZE_DOCTOR') {
+            document.querySelectorAll('.d-name').forEach(el => { if(ev.data.name) el.textContent = ev.data.name; });
+            document.querySelectorAll('.d-spec').forEach(el => { if(ev.data.specialty) el.textContent = ev.data.specialty; });
         }
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-        function selectSlot(btn) {
-            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            const slotInput = document.getElementById('selectedSlot');
-            if (slotInput) slotInput.value = btn.textContent.trim();
-        }
-        function handleAppointment(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('[type="submit"]');
-            const orig = btn.textContent;
-            btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#059669';
-            btn.disabled = true;
-            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
-            return false;
-        }
-        window.addEventListener('message', (event) => {
-            if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
-                const name = event.data.name;
-                const spec = event.data.specialty;
-                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
-                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
-            }
-        });
-    </script>
-</body>
-</html>
+    });
+    </script></body></html>

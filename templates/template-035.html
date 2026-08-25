@@ -1,132 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Steven Park &mdash; Neurologist | Apple Bento UI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #F4F4F5; --card: rgba(255,255,255,0.92); --border: #E4E4E7; --text: #09090B; --muted: #71717A; --blue: #2563EB; }
-        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); padding: 40px 20px; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1140px; margin: 0 auto; }
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dr. Steven Park | Neurologist | Bento Grid UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',sans-serif;background:#F4F4F5;color:#09090B;line-height:1.65;padding:32px 20px}a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto}
+.pill-nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1.5px solid #E4E4E7;border-radius:40px;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,.03)}
+.b-card{background:white;border:1.5px solid #E4E4E7;border-radius:22px;padding:30px;box-shadow:0 4px 14px rgba(0,0,0,.02)}
+.bento-hero{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:18px;margin-bottom:22px}
+.b-main{grid-row:1/3;display:flex;flex-direction:column;justify-content:space-between}
+.b-img{padding:0;overflow:hidden;min-height:240px;border-radius:22px}
+.b-img img{width:100%;height:100%;object-fit:cover;display:block}
+.b-stat{border:none;background:#2563EB;color:white;display:flex;flex-direction:column;justify-content:center}
+.b-wide{grid-column:2/4;display:flex;justify-content:space-between;align-items:center}
+.bento-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:22px}
+.b-tile{background:white;border:1.5px solid #E4E4E7;border-radius:18px;padding:24px;transition:.3s}
+.b-tile:hover{border-color:#2563EB;transform:translateY(-3px);box-shadow:0 10px 24px rgba(37,99,235,.08)}
+.slot-btn{background:#F4F4F5;border:1.5px solid #E4E4E7;padding:8px 14px;border-radius:9px;font-size:.8rem;font-weight:600;cursor:pointer;margin:3px;display:inline-block;transition:.2s}
+.slot-btn.active{background:#2563EB;color:white;border-color:#2563EB}
+.f-in{width:100%;padding:12px 14px;border:1.5px solid #E4E4E7;border-radius:11px;margin-bottom:11px;font-family:inherit;font-size:.93rem}
+.faq-item{border-bottom:1px solid #E4E4E7;padding:14px 0}
+.faq-q{font-weight:700;cursor:pointer;display:flex;justify-content:space-between}
+.faq-a{color:#71717A;font-size:.88rem;margin-top:8px;display:none;line-height:1.7}
+.faq-item.active .faq-a{display:block}
+@media(max-width:860px){.bento-hero,.bento-3{grid-template-columns:1fr}.b-main,.b-wide{grid-row:auto;grid-column:auto}}
+</style></head>
+<body><div class="wrap">
+<header class="pill-nav">
+  <div><strong class="d-name" style="font-size:1.1rem">Dr. Steven Park</strong> &nbsp;<span class="d-spec" style="font-size:.75rem;color:#2563EB;font-weight:700">Neurologist</span></div>
+  <nav style="display:flex;gap:20px;font-size:.82rem;font-weight:600;color:#71717A"><a href="#services">Procedures</a><a href="#chambers">Chambers</a><a href="#reviews">Reviews</a></nav>
+  <a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366;color:white;padding:9px 18px;border-radius:22px;font-size:.8rem;font-weight:700">&#x1F4AC; +880 1609-977377</a>
+</header>
 
-        /* Floating Pill Nav */
-        .bento-nav { background: var(--card); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 40px; padding: 12px 28px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        
-        .bento-hero { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 20px; margin-bottom: 24px; }
-        .b-card { background: var(--card); border: 1.5px solid var(--border); border-radius: 24px; padding: 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.02); }
-        .b-main { grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; }
-        
-        .bento-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
-        .b-tile { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 26px; transition: 0.3s; }
-        .b-tile:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-
-        .slot-pill { background: #f4f4f5; border: 1px solid var(--border); padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-block; margin: 3px; }
-        .slot-pill.active { background: var(--blue); color: white; }
-
-        .form-input { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 12px; margin-bottom: 12px; font-family: inherit; }
-        @media(max-width: 860px) { .bento-hero, .bento-grid-3 { grid-template-columns: 1fr; } .b-main { grid-row: auto; } }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header class="bento-nav">
-            <div><strong class="dyn-doc-name" style="font-size:1.1rem;">Dr. Steven Park</strong> <span class="dyn-doc-spec" style="font-size:0.75rem; color:var(--blue); font-weight:700;">Neurologist</span></div>
-            <a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366; color:white; padding:8px 16px; border-radius:20px; font-size:0.8rem; font-weight:700;">WhatsApp (+880 1609-977377)</a>
-        </header>
-
-        <div class="bento-hero">
-            <div class="b-card b-main">
-                <div>
-                    <span style="font-size:0.75rem; font-weight:800; color:var(--blue); text-transform:uppercase; letter-spacing:0.08em;">Top Medical Specialist</span>
-                    <h1 class="dyn-doc-name" style="font-size:2.8rem; font-weight:800; margin:10px 0 12px; letter-spacing:-0.03em;">Dr. Steven Park</h1>
-                    <p style="color:var(--muted); font-size:1.05rem; line-height:1.7;">Dedicated neuromuscular disease expertise delivered with compassion and clinical excellence. MD, FAAN &middot; Board-Certified Neurologist</p>
-                </div>
-                <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--border);">
-                    <div style="font-size:0.82rem; color:var(--muted);">Chamber:</div>
-                    <div style="font-size:1.05rem; font-weight:700;">Specialist Diagnostic Center &bull; Chicago, IL</div>
-                </div>
-            </div>
-
-            <div class="b-card" style="padding:0; overflow:hidden; min-height:220px;">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80" alt="Dr. Steven Park" style="width:100%; height:100%; object-fit:cover; display:block;">
-            </div>
-
-            <div class="b-card" style="background:var(--blue); color:white; border:none; display:flex; flex-direction:column; justify-content:center;">
-                <div style="font-size:3.2rem; font-weight:800; line-height:1;">16+</div>
-                <div style="font-size:0.95rem; opacity:0.9; margin-top:4px;">Years of Dedicated Clinical Tenure</div>
-            </div>
-
-            <div class="b-card" style="grid-column: 2 / 4; display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <div style="font-size:1.15rem; font-weight:800;">Chamber Visiting Hours</div>
-                    <div style="font-size:0.85rem; color:var(--muted);">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</div>
-                </div>
-                <a href="#booking" style="background:var(--text); color:white; padding:12px 22px; border-radius:12px; font-weight:700; font-size:0.85rem;">Reserve Slot &rarr;</a>
-            </div>
-        </div>
-
-        <h2 style="font-size: 1.8rem; font-weight: 800; margin: 36px 0 18px; letter-spacing:-0.02em;">Clinical Treatments &amp; Procedures</h2>
-        <div class="bento-grid-3"><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Epilepsy & Video EEG</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Continuous EEG monitoring and seizure optimization.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Migraine & Headache Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Botox therapy and CGRP antagonist infusion protocols.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Parkinson's & Movement</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">DBS evaluation and movement disorder rehabilitation.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Stroke Neurovascular Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Carotid Doppler evaluation and secondary stroke prevention.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">EMG & Nerve Conduction</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Electrodiagnostic testing for diabetic neuropathy.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Memory & Dementia Clinic</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Cognitive assessments and early biomarker screening.</p></div></div>
-
-        <div class="b-card" style="max-width:680px; margin: 0 auto 40px;" id="booking">
-            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:14px;">Select Chamber Time Slot</h3>
-            <div style="margin-bottom:16px;">
-                <span class="slot-pill active" onclick="selectSlot(this)">5:00 PM</span>
-                <span class="slot-pill" onclick="selectSlot(this)">5:30 PM</span>
-                <span class="slot-pill" onclick="selectSlot(this)">6:00 PM</span>
-                <span class="slot-pill" onclick="selectSlot(this)">6:30 PM</span>
-                <span class="slot-pill" onclick="selectSlot(this)">7:00 PM</span>
-            </div>
-            <form onsubmit="return handleAppointment(event)">
-                <input class="form-input" type="text" placeholder="Patient Full Name" required>
-                <input class="form-input" type="tel" placeholder="Mobile Number" required>
-                <input class="form-input" type="date" required>
-                <button type="submit" style="background:var(--text); color:white; padding:14px; border:none; border-radius:12px; font-weight:700; width:100%; cursor:pointer;">Confirm Reservation &rarr;</button>
-            </form>
-        </div>
-
-        <footer style="text-align:center; font-size:0.82rem; color:var(--muted); padding:20px 0; border-top:1px solid var(--border);">
-            &copy; 2026 Dr. Steven Park. Apple Bento Design &bull; Doctors Portfolio.
-        </footer>
+<div class="bento-hero">
+  <div class="b-card b-main">
+    <div>
+      <span style="font-size:.72rem;font-weight:800;color:#2563EB;text-transform:uppercase;letter-spacing:.1em">Neurologist Specialist</span>
+      <h1 class="d-name" style="font-size:clamp(2.2rem,3.5vw,3rem);font-weight:800;margin:10px 0 12px;letter-spacing:-.03em">Dr. Steven Park</h1>
+      <p style="color:#71717A;font-size:1rem;line-height:1.7">Dedicated neuromuscular disease expertise delivered with compassion and clinical excellence. — MD, FAAN &middot; Board-Certified Neurologist</p>
     </div>
-    <script>
-        function toggleMenu() {
-            const m = document.getElementById('mobileMenu');
-            if (m) m.classList.toggle('open');
+    <div style="margin-top:28px;padding-top:18px;border-top:1.5px solid #E4E4E7">
+      <div style="font-size:.82rem;color:#71717A">Private Chamber:</div>
+      <div style="font-size:1.05rem;font-weight:700">Specialist Diagnostic Center &bull; Chicago, IL</div>
+      <div style="font-size:.82rem;color:#71717A;margin-top:4px">Visiting: Sat &ndash; Thu, 5:00 PM &ndash; 9:00 PM</div>
+    </div>
+  </div>
+  <div class="b-card b-img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80" alt="Dr. Steven Park"></div>
+  <div class="b-card b-stat"><div style="font-size:3.2rem;font-weight:800;line-height:1">16+</div><div style="font-size:.95rem;opacity:.9;margin-top:4px">Years Clinical Excellence</div></div>
+  <div class="b-card b-wide">
+    <div>
+      <div style="font-size:1.1rem;font-weight:800">Book Chamber Serial Now</div>
+      <div style="font-size:.84rem;color:#71717A">Available slots: 5:00 PM &ndash; 9:00 PM &bull; +880 1609-977377</div>
+    </div>
+    <a href="#booking" style="background:#09090B;color:white;padding:12px 22px;border-radius:12px;font-weight:700;font-size:.85rem">Reserve Slot &rarr;</a>
+  </div>
+</div>
+
+<div class="b-card" style="margin-bottom:22px">
+  <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:12px">Clinical Biography &amp; Credentials</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+    <div><p style="color:#71717A;line-height:1.85;margin-bottom:12px">Dr. Park is a senior consultant specialist in neurologist, holding advanced international board certifications and fellowship training from premier teaching institutions. With over 16 years of dedicated clinical practice in Chicago, IL, Dr. Park has treated over 4,800 patients and contributed to 25+ peer-reviewed research publications.</p><p style="color:#71717A;line-height:1.85">Committed to combining evidence-based medicine with compassionate patient care, the practice offers full diagnostic capabilities, advanced procedural services, and personalised therapeutic planning.</p></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#F4F4F5;padding:18px;border-radius:12px"><div style="font-weight:800;font-size:1.05rem;margin-bottom:4px">MD / MBBS</div><div style="font-size:.8rem;color:#71717A">First Class Honours Graduate</div></div>
+      <div style="background:#F4F4F5;padding:18px;border-radius:12px"><div style="font-weight:800;font-size:1.05rem;margin-bottom:4px">Fellowship</div><div style="font-size:.8rem;color:#71717A">Royal College Fellow &amp; FACP</div></div>
+      <div style="background:#F4F4F5;padding:18px;border-radius:12px"><div style="font-weight:800;font-size:1.05rem;margin-bottom:4px">Board Certified</div><div style="font-size:.8rem;color:#71717A">Specialist Medical Council</div></div>
+      <div style="background:#F4F4F5;padding:18px;border-radius:12px"><div style="font-weight:800;font-size:1.05rem;margin-bottom:4px">25+ Papers</div><div style="font-size:.8rem;color:#71717A">International Journals</div></div>
+    </div>
+  </div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:22px">
+  <div class="b-card" style="text-align:center"><div style="font-size:2.4rem;font-weight:800;color:#2563EB">16+</div><div style="font-size:.82rem;color:#71717A;margin-top:4px">Years Exp.</div></div>
+  <div class="b-card" style="text-align:center"><div style="font-size:2.4rem;font-weight:800;color:#2563EB">4,800+</div><div style="font-size:.82rem;color:#71717A;margin-top:4px">Patients</div></div>
+  <div class="b-card" style="text-align:center"><div style="font-size:2.4rem;font-weight:800;color:#2563EB">98.6%</div><div style="font-size:.82rem;color:#71717A;margin-top:4px">Satisfaction</div></div>
+  <div class="b-card" style="text-align:center"><div style="font-size:2.4rem;font-weight:800;color:#2563EB">25+</div><div style="font-size:.82rem;color:#71717A;margin-top:4px">Publications</div></div>
+</div>
+
+<h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px;letter-spacing:-.02em" id="services">Clinical Treatments &amp; Procedures</h2>
+<div class="bento-3">
+<div class="b-tile"><div style="font-size:.7rem;font-weight:800;color:#2563EB;text-transform:uppercase;margin-bottom:8px">01</div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Epilepsy & Video-EEG</h3><p style="font-size:.86rem;color:#71717A;line-height:1.65">Long-term video-EEG monitoring for seizure classification and surgical candidacy evaluation.</p></div><div class="b-tile"><div style="font-size:.7rem;font-weight:800;color:#2563EB;text-transform:uppercase;margin-bottom:8px">02</div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Migraine & Headache Clinic</h3><p style="font-size:.86rem;color:#71717A;line-height:1.65">Botox injections, CGRP monoclonal antibodies, and neuromodulation for refractory migraines.</p></div><div class="b-tile"><div style="font-size:.7rem;font-weight:800;color:#2563EB;text-transform:uppercase;margin-bottom:8px">03</div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Parkinson's & Movement Disorders</h3><p style="font-size:.86rem;color:#71717A;line-height:1.65">Deep brain stimulation candidate evaluation and dopaminergic therapy optimization.</p></div><div class="b-tile"><div style="font-size:.7rem;font-weight:800;color:#2563EB;text-transform:uppercase;margin-bottom:8px">04</div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Stroke & Neurovascular Care</h3><p style="font-size:.86rem;color:#71717A;line-height:1.65">Carotid Doppler evaluation, TIA workup, and secondary stroke prevention protocols.</p></div><div class="b-tile"><div style="font-size:.7rem;font-weight:800;color:#2563EB;text-transform:uppercase;margin-bottom:8px">05</div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">EMG & Nerve Conduction Study</h3><p style="font-size:.86rem;color:#71717A;line-height:1.65">Electrodiagnostic evaluation of peripheral neuropathy, myopathy, and neuromuscular junction disorders.</p></div><div class="b-tile"><div style="font-size:.7rem;font-weight:800;color:#2563EB;text-transform:uppercase;margin-bottom:8px">06</div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Memory & Cognitive Clinic</h3><p style="font-size:.86rem;color:#71717A;line-height:1.65">Neuropsychological testing, MRI volumetry, and biomarker-based dementia risk stratification.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px" id="chambers">
+  <div class="b-card">
+    <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:12px">Chamber Schedule</h3>
+    <div style="background:#F4F4F5;padding:16px;border-radius:12px;margin-bottom:12px"><strong>Main Diagnostic Center</strong><div style="font-size:.84rem;color:#71717A;margin-top:3px">Suite #402, Chicago, IL</div><div style="font-size:.82rem;color:#2563EB;font-weight:700;margin-top:5px">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</div></div>
+    <div style="background:#F4F4F5;padding:16px;border-radius:12px"><strong>Hospital Department</strong><div style="font-size:.84rem;color:#71717A;margin-top:3px">City Hospital, Chicago, IL</div><div style="font-size:.82rem;color:#2563EB;font-weight:700;margin-top:5px">Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</div></div>
+  </div>
+  <div class="b-card">
+    <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:12px">Patient FAQs</h3>
+    <div class="faq-item"><div class="faq-q"><span>What to bring for consultation?</span><span>+</span></div><div class="faq-a">All recent test reports, imaging scans, medications, and previous prescriptions.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>How to confirm appointment?</span><span>+</span></div><div class="faq-a">Fill in the booking form below or message on WhatsApp at +880 1609-977377.</div></div>
+    <div class="faq-item"><div class="faq-q"><span>Is teleconsult available?</span><span>+</span></div><div class="faq-a">Yes, video follow-ups are available. Request when booking via WhatsApp.</div></div>
+  </div>
+</div>
+
+<h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px" id="reviews">Patient Reviews</h2>
+<div class="bento-3" style="margin-bottom:22px">
+  <div class="b-card"><div style="color:#2563EB;font-size:1.1rem;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-size:.88rem;color:#71717A;font-style:italic;line-height:1.7">&ldquo;Incredible diagnostic skill and warm bedside manner. Dr. Park made a life-changing difference to my health and peace of mind.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:700">M. Rahman &bull; Dhaka</div></div>
+  <div class="b-card"><div style="color:#2563EB;font-size:1.1rem;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-size:.88rem;color:#71717A;font-style:italic;line-height:1.7">&ldquo;The bespoke treatment plan and follow-up monitoring were world-class. I felt genuinely cared for at every stage of my recovery.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:700">Ayesha B. &bull; Chittagong</div></div>
+  <div class="b-card"><div style="color:#2563EB;font-size:1.1rem;margin-bottom:10px">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-size:.88rem;color:#71717A;font-style:italic;line-height:1.7">&ldquo;Fastest, most accurate diagnosis I have ever received. The chamber setup is incredibly professional. Highly recommended.&rdquo;</p><div style="margin-top:12px;font-size:.8rem;font-weight:700">T. Ahmed &bull; Sylhet</div></div>
+</div>
+
+<div class="b-card" style="max-width:700px;margin:0 auto 40px" id="booking">
+  <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:6px">Reserve Your Chamber Slot</h3>
+  <p style="font-size:.84rem;color:#71717A;margin-bottom:16px">Visiting: Sat &ndash; Thu, 5 PM &ndash; 9 PM &bull; +880 1609-977377</p>
+  <div style="margin-bottom:14px">
+    <span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span>
+    <span class="slot-btn" onclick="selectSlot(this)">7:30 PM</span>
+  </div>
+  <form onsubmit="handleForm(event)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+      <input class="f-in" type="text" placeholder="Patient Full Name" required>
+      <input class="f-in" type="tel" placeholder="Mobile Number (+880)" required>
+    </div>
+    <input class="f-in" type="date" required>
+    <textarea class="f-in" rows="3" placeholder="Symptoms or reason for consultation..." style="resize:vertical"></textarea>
+    <button type="submit" data-orig="Confirm Reservation" style="background:#09090B;color:white;border:none;padding:14px;width:100%;border-radius:12px;font-weight:800;font-size:.95rem;cursor:pointer">Confirm Reservation &rarr;</button>
+  </form>
+</div>
+
+<footer style="text-align:center;font-size:.8rem;color:#71717A;padding:20px 0;border-top:1.5px solid #E4E4E7">&copy; 2026 Dr. Steven Park. Apple Bento Design &bull; Doctors Portfolio</footer>
+</div><script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+    });
+    function selectSlot(btn) {
+        document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    function handleForm(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('[type=submit]');
+        btn.textContent = 'Appointment Confirmed ✓';
+        btn.style.background = '#059669';
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = btn.dataset.orig || 'Submit'; btn.style.background=''; btn.disabled=false; e.target.reset(); }, 4000);
+    }
+    window.addEventListener('message', ev => {
+        if (ev.data && ev.data.type === 'CUSTOMIZE_DOCTOR') {
+            document.querySelectorAll('.d-name').forEach(el => { if(ev.data.name) el.textContent = ev.data.name; });
+            document.querySelectorAll('.d-spec').forEach(el => { if(ev.data.specialty) el.textContent = ev.data.specialty; });
         }
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-        function selectSlot(btn) {
-            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            const slotInput = document.getElementById('selectedSlot');
-            if (slotInput) slotInput.value = btn.textContent.trim();
-        }
-        function handleAppointment(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('[type="submit"]');
-            const orig = btn.textContent;
-            btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#059669';
-            btn.disabled = true;
-            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
-            return false;
-        }
-        window.addEventListener('message', (event) => {
-            if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
-                const name = event.data.name;
-                const spec = event.data.specialty;
-                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
-                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
-            }
-        });
-    </script>
-</body>
-</html>
+    });
+    </script></body></html>
