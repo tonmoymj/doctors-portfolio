@@ -9,7 +9,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-001.html"
+    "path": "templates/template-001.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "002",
@@ -21,43 +23,51 @@
     "creds": "MD, FACC, FHRS &middot; Board-Certified Cardiologist",
     "city": "Boston, MA",
     "tagline": "Pioneering cardiac electrophysiology care for complex arrhythmias and rhythm disorders.",
-    "path": "templates/template-002.html"
+    "path": "templates/template-002.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "003",
     "title": "Dr. Elena Vasquez &mdash; Cardiologist",
     "doctor": "Dr. Elena Vasquez",
     "specialty": "Cardiologist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#1B3A6B",
     "creds": "MD, FACC &middot; Board-Certified Cardiologist",
     "city": "Chicago, IL",
     "tagline": "Structural heart disease expertise bringing hope to patients with complex cardiac conditions.",
-    "path": "templates/template-003.html"
+    "path": "templates/template-003.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "004",
     "title": "Dr. William Chen &mdash; Cardiologist",
     "doctor": "Dr. William Chen",
     "specialty": "Cardiologist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#4A5568",
     "creds": "MD, PhD &middot; Board-Certified Cardiologist",
     "city": "San Francisco, CA",
     "tagline": "Precision medicine and genomic approaches to cardiovascular disease prevention and treatment.",
-    "path": "templates/template-004.html"
+    "path": "templates/template-004.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "005",
     "title": "Dr. Margaret Okafor &mdash; Cardiologist",
     "doctor": "Dr. Margaret Okafor",
     "specialty": "Cardiologist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#7B1D1D",
     "creds": "MD, FACC, FASE &middot; Board-Certified Cardiologist",
     "city": "Houston, TX",
     "tagline": "Dedicated to advancing women's heart health through specialized cardiology and compassionate care.",
-    "path": "templates/template-005.html"
+    "path": "templates/template-005.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "006",
@@ -69,31 +79,37 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-006.html"
+    "path": "templates/template-006.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "007",
     "title": "Dr. Angela Kim &mdash; Cardiologist",
     "doctor": "Dr. Angela Kim",
     "specialty": "Cardiologist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#8B1A2B",
     "creds": "MD, FACC &middot; Board-Certified Cardiologist",
     "city": "Seattle, WA",
     "tagline": "Preventive cardiology and sports medicine expertise keeping hearts healthy and athletes performing.",
-    "path": "templates/template-007.html"
+    "path": "templates/template-007.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "008",
     "title": "Dr. Thomas Brennan &mdash; Cardiologist",
     "doctor": "Dr. Thomas Brennan",
     "specialty": "Cardiologist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#0D2B5E",
     "creds": "MD, FACC, FSCAI &middot; Board-Certified Cardiologist",
     "city": "Washington, DC",
     "tagline": "Vascular cardiology expertise addressing complex peripheral and coronary arterial disease.",
-    "path": "templates/template-008.html"
+    "path": "templates/template-008.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "009",
@@ -105,7 +121,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-009.html"
+    "path": "templates/template-009.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "010",
@@ -117,43 +135,51 @@
     "creds": "DMD, MS &middot; Board-Certified Dentist",
     "city": "Denver, CO",
     "tagline": "Transforming smiles and improving lives through orthodontics and comprehensive oral health care.",
-    "path": "templates/template-010.html"
+    "path": "templates/template-010.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "011",
     "title": "Dr. Lisa Anderson &mdash; Dentist",
     "doctor": "Dr. Lisa Anderson",
     "specialty": "Dentist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#1B6B6B",
     "creds": "DDS, AACD Member &middot; Board-Certified Dentist",
     "city": "Los Angeles, CA",
     "tagline": "Dedicated cosmetic dentistry specialist expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-011.html"
+    "path": "templates/template-011.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "012",
     "title": "Dr. Nathan Webb &mdash; Dentist",
     "doctor": "Dr. Nathan Webb",
     "specialty": "Dentist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#2B4B8B",
     "creds": "DMD &middot; Board-Certified Dentist",
     "city": "Portland, OR",
     "tagline": "Dedicated digital & holistic dentistry expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-012.html"
+    "path": "templates/template-012.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "013",
     "title": "Dr. Rachel Torres &mdash; Dentist",
     "doctor": "Dr. Rachel Torres",
     "specialty": "Dentist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#0D5757",
     "creds": "DDS, MS &middot; Board-Certified Dentist",
     "city": "Miami, FL",
     "tagline": "Dedicated prosthodontics specialist expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-013.html"
+    "path": "templates/template-013.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "014",
@@ -165,31 +191,37 @@
     "creds": "DDS, ABPD &middot; Board-Certified Dentist",
     "city": "San Diego, CA",
     "tagline": "Dedicated pediatric dentistry expert expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-014.html"
+    "path": "templates/template-014.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "015",
     "title": "Dr. Stephanie Nguyen &mdash; Dentist",
     "doctor": "Dr. Stephanie Nguyen",
     "specialty": "Dentist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#1B6B6B",
     "creds": "DDS &middot; Board-Certified Dentist",
     "city": "Nashville, TN",
     "tagline": "Dedicated family dentistry expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-015.html"
+    "path": "templates/template-015.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "016",
     "title": "Dr. Carlos Mendes &mdash; Dentist",
     "doctor": "Dr. Carlos Mendes",
     "specialty": "Dentist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#2B4B8B",
     "creds": "DMD, FICOI &middot; Board-Certified Dentist",
     "city": "Phoenix, AZ",
     "tagline": "Dedicated dental implant specialist expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-016.html"
+    "path": "templates/template-016.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "017",
@@ -201,7 +233,9 @@
     "creds": "MD, FAAP &middot; Board-Certified Pediatrician",
     "city": "Minneapolis, MN",
     "tagline": "Dedicated pediatric medicine expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-017.html"
+    "path": "templates/template-017.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "018",
@@ -213,43 +247,51 @@
     "creds": "MD, MPH, FAAP &middot; Board-Certified Pediatrician",
     "city": "Atlanta, GA",
     "tagline": "Dedicated community pediatric care expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-018.html"
+    "path": "templates/template-018.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1643297654416-05795d62e39c?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "019",
     "title": "Dr. Jennifer Walsh &mdash; Pediatrician",
     "doctor": "Dr. Jennifer Walsh",
     "specialty": "Pediatrician",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#C06040",
     "creds": "MD, FAAP &middot; Board-Certified Pediatrician",
     "city": "Charlotte, NC",
     "tagline": "Dedicated general pediatrics expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-019.html"
+    "path": "templates/template-019.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "020",
     "title": "Dr. Daniel Yoon &mdash; Pediatrician",
     "doctor": "Dr. Daniel Yoon",
     "specialty": "Pediatrician",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#2D6A4F",
     "creds": "MD, FAAP &middot; Board-Certified Pediatrician",
     "city": "San Jose, CA",
     "tagline": "Dedicated concierge pediatric care expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-020.html"
+    "path": "templates/template-020.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "021",
     "title": "Dr. Patricia Gonzalez &mdash; Pediatrician",
     "doctor": "Dr. Patricia Gonzalez",
     "specialty": "Pediatrician",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#B05030",
     "creds": "MD, FAAP &middot; Board-Certified Pediatrician",
     "city": "Dallas, TX",
     "tagline": "Dedicated pediatric chronic disease expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-021.html"
+    "path": "templates/template-021.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "022",
@@ -261,31 +303,37 @@
     "creds": "MD, FAAP &middot; Board-Certified Pediatrician",
     "city": "Detroit, MI",
     "tagline": "Dedicated community child health expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-022.html"
+    "path": "templates/template-022.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1623854767648-e7bb8009f0db?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "023",
     "title": "Dr. Sophia Andreou &mdash; Pediatrician",
     "doctor": "Dr. Sophia Andreou",
     "specialty": "Pediatrician",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#C06040",
     "creds": "MD, FAAP &middot; Board-Certified Pediatrician",
     "city": "Boston, MA",
     "tagline": "Dedicated neurodevelopmental pediatrics expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-023.html"
+    "path": "templates/template-023.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "024",
     "title": "Dr. Oliver Hutchinson &mdash; Pediatrician",
     "doctor": "Dr. Oliver Hutchinson",
     "specialty": "Pediatrician",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#2D6A4F",
     "creds": "MD, FAAP &middot; Board-Certified Pediatrician",
     "city": "Vancouver, WA",
     "tagline": "Dedicated newborn & infant care expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-024.html"
+    "path": "templates/template-024.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "025",
@@ -297,7 +345,9 @@
     "creds": "MD, FAAOS &middot; Board-Certified Orthopedic Surgeon",
     "city": "Cleveland, OH",
     "tagline": "Dedicated joint replacement specialist expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-025.html"
+    "path": "templates/template-025.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "026",
@@ -309,43 +359,51 @@
     "creds": "MD, FAAOS &middot; Board-Certified Orthopedic Surgeon",
     "city": "Los Angeles, CA",
     "tagline": "Dedicated spine surgery specialist expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-026.html"
+    "path": "templates/template-026.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "027",
     "title": "Dr. David Morrison &mdash; Orthopedic Surgeon",
     "doctor": "Dr. David Morrison",
     "specialty": "Orthopedic Surgeon",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#2B5B8B",
     "creds": "MD, FAAOS &middot; Board-Certified Orthopedic Surgeon",
     "city": "Chicago, IL",
     "tagline": "Dedicated sports medicine surgery expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-027.html"
+    "path": "templates/template-027.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "028",
     "title": "Dr. Grace Thornton &mdash; Orthopedic Surgeon",
     "doctor": "Dr. Grace Thornton",
     "specialty": "Orthopedic Surgeon",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#3D3D3D",
     "creds": "MD, FAAOS &middot; Board-Certified Orthopedic Surgeon",
     "city": "Nashville, TN",
     "tagline": "Dedicated robotic joint replacement expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-028.html"
+    "path": "templates/template-028.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "029",
     "title": "Dr. Anthony Russo &mdash; Orthopedic Surgeon",
     "doctor": "Dr. Anthony Russo",
     "specialty": "Orthopedic Surgeon",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#2B5B8B",
     "creds": "MD, FAAOS &middot; Board-Certified Orthopedic Surgeon",
     "city": "Pittsburgh, PA",
     "tagline": "Dedicated hand & microsurgery expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-029.html"
+    "path": "templates/template-029.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "030",
@@ -357,31 +415,37 @@
     "creds": "MD, FAAOS &middot; Board-Certified Orthopedic Surgeon",
     "city": "Minneapolis, MN",
     "tagline": "Dedicated pediatric orthopedics expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-030.html"
+    "path": "templates/template-030.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "031",
     "title": "Dr. Ian Fitzgerald, MD, FAAOS - Orthopedic Surgeon | Baltimore, MD",
     "doctor": "Dr. Specialist #031",
     "specialty": "Specialist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#2B5B8B",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-031.html"
+    "path": "templates/template-031.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "032",
     "title": "Dr. Lydia Chambers, MD, FAAOS, MBA - Orthopedic Surgeon | Salt Lake City, UT",
     "doctor": "Dr. Specialist #032",
     "specialty": "Specialist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#3D3D3D",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Providing expert care in Salt Lake City, UT with a focus on advanced treatments and patient-centered recovery plans.",
-    "path": "templates/template-032.html"
+    "path": "templates/template-032.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "033",
@@ -393,7 +457,9 @@
     "creds": "MD, PhD, FAAN &middot; Board-Certified Neurologist",
     "city": "New York, NY",
     "tagline": "Dedicated epilepsy & neurology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-033.html"
+    "path": "templates/template-033.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "034",
@@ -405,43 +471,51 @@
     "creds": "MD, FAAN &middot; Board-Certified Neurologist",
     "city": "Houston, TX",
     "tagline": "Dedicated movement disorders expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-034.html"
+    "path": "templates/template-034.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "035",
     "title": "Dr. Steven Park &mdash; Neurologist",
     "doctor": "Dr. Steven Park",
     "specialty": "Neurologist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#4B2882",
     "creds": "MD, FAAN &middot; Board-Certified Neurologist",
     "city": "Chicago, IL",
     "tagline": "Dedicated neuromuscular disease expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-035.html"
+    "path": "templates/template-035.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "036",
     "title": "Dr. Claire Beaumont &mdash; Neurologist",
     "doctor": "Dr. Claire Beaumont",
     "specialty": "Neurologist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#312ABF",
     "creds": "MD, MSc &middot; Board-Certified Neurologist",
     "city": "San Francisco, CA",
     "tagline": "Dedicated cognitive neurology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-036.html"
+    "path": "templates/template-036.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "037",
     "title": "Dr. Nicholas Lombardi, MD, PhD - Neurologist | Boston, MA",
     "doctor": "Dr. Specialist #037",
     "specialty": "Specialist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#3D1F6F",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-037.html"
+    "path": "templates/template-037.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "038",
@@ -453,31 +527,37 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-038.html"
+    "path": "templates/template-038.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "039",
     "title": "Dr. Emmanuel Osei, MD, FAAN - Neurologist | Atlanta, GA",
     "doctor": "Dr. Specialist #039",
     "specialty": "Specialist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#4B2882",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-039.html"
+    "path": "templates/template-039.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "040",
     "title": "Dr. Victoria Strand, MD, FAAN, FAES - Neurologist | Seattle, WA",
     "doctor": "Dr. Specialist #040",
     "specialty": "Specialist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#312ABF",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Providing expert care in Seattle, WA with a focus on advanced treatments and patient-centered recovery plans.",
-    "path": "templates/template-040.html"
+    "path": "templates/template-040.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "041",
@@ -489,7 +569,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-041.html"
+    "path": "templates/template-041.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "042",
@@ -501,43 +583,51 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-042.html"
+    "path": "templates/template-042.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "043",
     "title": "Dr. Ayesha Rahman - Skin of Color Dermatology",
     "doctor": "Dr. Specialist #043",
     "specialty": "Specialist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#8B4566",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-043.html"
+    "path": "templates/template-043.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "044",
     "title": "Dr. Sebastian Krause - Surgical Dermatologist",
     "doctor": "Dr. Specialist #044",
     "specialty": "Specialist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#7B5080",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-044.html"
+    "path": "templates/template-044.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "045",
     "title": "Dr. Priya Menon - Pediatric Dermatologist",
     "doctor": "Dr. Specialist #045",
     "specialty": "Specialist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#7A3555",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-045.html"
+    "path": "templates/template-045.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "046",
@@ -549,31 +639,37 @@
     "creds": "MD, FAAD &middot; Board-Certified Dermatologist",
     "city": "Los Angeles, CA",
     "tagline": "Dedicated anti-aging dermatology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-046.html"
+    "path": "templates/template-046.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "047",
     "title": "Dr. Naomi Oduya - Autoimmune Dermatology",
     "doctor": "Dr. Specialist #047",
     "specialty": "Specialist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#8B4566",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-047.html"
+    "path": "templates/template-047.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "048",
     "title": "Dr. Finn Andersen &mdash; Dermatologist",
     "doctor": "Dr. Finn Andersen",
     "specialty": "Dermatologist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#7B5080",
     "creds": "MD, FAAD &middot; Board-Certified Dermatologist",
     "city": "Minneapolis, MN",
     "tagline": "Dedicated contact dermatology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-048.html"
+    "path": "templates/template-048.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "049",
@@ -585,7 +681,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-049.html"
+    "path": "templates/template-049.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "050",
@@ -597,43 +695,51 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-050.html"
+    "path": "templates/template-050.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1643297654416-05795d62e39c?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "051",
     "title": "Dr. Yuki Tanaka, MD, FACP | General Physician",
     "doctor": "Dr. Specialist #051",
     "specialty": "Specialist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#2D6A4F",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-051.html"
+    "path": "templates/template-051.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "052",
     "title": "Dr. Amara Diallo, MD, MPH | General Physician",
     "doctor": "Dr. Specialist #052",
     "specialty": "Specialist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#4A5C2A",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-052.html"
+    "path": "templates/template-052.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "053",
     "title": "Dr. Patrick Sullivan, MD, FACP, FAAFP | General Physician",
     "doctor": "Dr. Specialist #053",
     "specialty": "Specialist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#1D5A3F",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-053.html"
+    "path": "templates/template-053.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "054",
@@ -645,31 +751,37 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-054.html"
+    "path": "templates/template-054.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1623854767648-e7bb8009f0db?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "055",
     "title": "Dr. Kwame Asante, MD, FACP | General Physician",
     "doctor": "Dr. Specialist #055",
     "specialty": "Specialist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#2D6A4F",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-055.html"
+    "path": "templates/template-055.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "056",
     "title": "Dr. Joanna Kowalski, MD, FACP | General Physician",
     "doctor": "Dr. Specialist #056",
     "specialty": "Specialist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#4A5C2A",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-056.html"
+    "path": "templates/template-056.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "057",
@@ -681,7 +793,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-057.html"
+    "path": "templates/template-057.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "058",
@@ -693,43 +807,51 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-058.html"
+    "path": "templates/template-058.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "059",
     "title": "Dr. Laila Al-Hussain, MD, FAPA, DFAACAP | Psychiatrist",
     "doctor": "Dr. Specialist #059",
     "specialty": "Specialist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#4A5568",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-059.html"
+    "path": "templates/template-059.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "060",
     "title": "Dr. Eliot Fairbanks, MD, FAPA | Psychiatrist",
     "doctor": "Dr. Specialist #060",
     "specialty": "Specialist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#6B7F6B",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-060.html"
+    "path": "templates/template-060.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "061",
     "title": "Dr. Nadia Volkov &mdash; Psychiatrist",
     "doctor": "Dr. Nadia Volkov",
     "specialty": "Psychiatrist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#3A4558",
     "creds": "MD, FAPA &middot; Board-Certified Psychiatrist",
     "city": "Chicago, IL",
     "tagline": "Dedicated forensic psychiatry expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-061.html"
+    "path": "templates/template-061.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "062",
@@ -741,31 +863,37 @@
     "creds": "MD, FAPA &middot; Board-Certified Psychiatrist",
     "city": "Boston, MA",
     "tagline": "Dedicated neuropsychiatry & tms expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-062.html"
+    "path": "templates/template-062.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "063",
     "title": "Dr. Isabel Santos &mdash; Psychiatrist",
     "doctor": "Dr. Isabel Santos",
     "specialty": "Psychiatrist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#4A5568",
     "creds": "MD, FAPA &middot; Board-Certified Psychiatrist",
     "city": "Miami, FL",
     "tagline": "Dedicated cultural psychiatry expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-063.html"
+    "path": "templates/template-063.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "064",
     "title": "Dr. Haruto Yamamoto &mdash; Psychiatrist",
     "doctor": "Dr. Haruto Yamamoto",
     "specialty": "Psychiatrist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#6B7F6B",
     "creds": "MD, PhD &middot; Board-Certified Psychiatrist",
     "city": "Los Angeles, CA",
     "tagline": "Dedicated sleep psychiatry expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-064.html"
+    "path": "templates/template-064.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "065",
@@ -777,7 +905,9 @@
     "creds": "MD, FACOG &middot; Board-Certified Gynecologist",
     "city": "New York, NY",
     "tagline": "Dedicated obstetrics & gynecology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-065.html"
+    "path": "templates/template-065.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "066",
@@ -789,43 +919,51 @@
     "creds": "MD, FACOG &middot; Board-Certified Gynecologist",
     "city": "Philadelphia, PA",
     "tagline": "Dedicated reproductive endocrinology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-066.html"
+    "path": "templates/template-066.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "067",
     "title": "Dr. Alexis Morton &mdash; Gynecologist",
     "doctor": "Dr. Alexis Morton",
     "specialty": "Gynecologist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#9B6B7B",
     "creds": "MD, FACOG &middot; Board-Certified Gynecologist",
     "city": "Atlanta, GA",
     "tagline": "Dedicated urogynecology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-067.html"
+    "path": "templates/template-067.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "068",
     "title": "Dr. Sienna Rossi &mdash; Gynecologist",
     "doctor": "Dr. Sienna Rossi",
     "specialty": "Gynecologist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#6B3B6B",
     "creds": "MD, FACOG &middot; Board-Certified Gynecologist",
     "city": "San Francisco, CA",
     "tagline": "Dedicated adolescent gynecology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-068.html"
+    "path": "templates/template-068.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "069",
     "title": "Dr. Victoria Huang &mdash; Gynecologist",
     "doctor": "Dr. Victoria Huang",
     "specialty": "Gynecologist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#8B5B6B",
     "creds": "MD, FACOG &middot; Board-Certified Gynecologist",
     "city": "Houston, TX",
     "tagline": "Dedicated menopause & pelvic health expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-069.html"
+    "path": "templates/template-069.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "070",
@@ -837,31 +975,37 @@
     "creds": "MD, FACOG &middot; Board-Certified Gynecologist",
     "city": "Minneapolis, MN",
     "tagline": "Dedicated gynecologic oncology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-070.html"
+    "path": "templates/template-070.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "071",
     "title": "Dr. Miranda Walsh, MD, FACOG - Gynecologist",
     "doctor": "Dr. Specialist #071",
     "specialty": "Specialist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#9B6B7B",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-071.html"
+    "path": "templates/template-071.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "072",
     "title": "Dr. Rania Khoury, MD, FACOG - Gynecologist",
     "doctor": "Dr. Specialist #072",
     "specialty": "Specialist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#6B3B6B",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-072.html"
+    "path": "templates/template-072.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "073",
@@ -873,7 +1017,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-073.html"
+    "path": "templates/template-073.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "074",
@@ -885,43 +1031,51 @@
     "creds": "MD, FACS &middot; Board-Certified ENT Specialist",
     "city": "Los Angeles, CA",
     "tagline": "Dedicated pediatric ent expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-074.html"
+    "path": "templates/template-074.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "075",
     "title": "Dr. Gerhard Mueller, MD, FACS - ENT Specialist",
     "doctor": "Dr. Specialist #075",
     "specialty": "Specialist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#7B1D1D",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-075.html"
+    "path": "templates/template-075.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "076",
     "title": "Dr. Sarah Okonkwo &mdash; ENT Specialist",
     "doctor": "Dr. Sarah Okonkwo",
     "specialty": "ENT Specialist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#8B5A2B",
     "creds": "MD, FACS &middot; Board-Certified ENT Specialist",
     "city": "Atlanta, GA",
     "tagline": "Dedicated neurotology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-076.html"
+    "path": "templates/template-076.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "077",
     "title": "Dr. Thomas Whitfield, MD, FACS - ENT Specialist",
     "doctor": "Dr. Specialist #077",
     "specialty": "Specialist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#6B0D0D",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-077.html"
+    "path": "templates/template-077.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "078",
@@ -933,31 +1087,37 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-078.html"
+    "path": "templates/template-078.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "079",
     "title": "Dr. Henri Beaumont, MD, FACS - ENT Specialist",
     "doctor": "Dr. Specialist #079",
     "specialty": "Specialist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#7B1D1D",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-079.html"
+    "path": "templates/template-079.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "080",
     "title": "Dr. Miriam Stenberg, MD, FACS - ENT Specialist",
     "doctor": "Dr. Specialist #080",
     "specialty": "Specialist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#8B5A2B",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-080.html"
+    "path": "templates/template-080.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "081",
@@ -969,7 +1129,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-081.html"
+    "path": "templates/template-081.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "082",
@@ -981,43 +1143,51 @@
     "creds": "MD, MRCP &middot; Board-Certified Oncologist",
     "city": "Houston, TX",
     "tagline": "Dedicated gi oncology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-082.html"
+    "path": "templates/template-082.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1643297654416-05795d62e39c?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "083",
     "title": "Dr. Francesca Romano &mdash; Oncologist",
     "doctor": "Dr. Francesca Romano",
     "specialty": "Oncologist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#0D5757",
     "creds": "MD, PhD &middot; Board-Certified Oncologist",
     "city": "Chicago, IL",
     "tagline": "Dedicated hematology & oncology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-083.html"
+    "path": "templates/template-083.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "084",
     "title": "Dr. Leo Tanaka &mdash; Oncologist",
     "doctor": "Dr. Leo Tanaka",
     "specialty": "Oncologist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#3D3D3D",
     "creds": "MD, FACP &middot; Board-Certified Oncologist",
     "city": "Los Angeles, CA",
     "tagline": "Dedicated thoracic oncology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-084.html"
+    "path": "templates/template-084.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "085",
     "title": "Dr. Charlotte Evans - Ophthalmologist",
     "doctor": "Dr. Specialist #085",
     "specialty": "Specialist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#1B6BA8",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-085.html"
+    "path": "templates/template-085.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "086",
@@ -1029,31 +1199,37 @@
     "creds": "MD, FRCS &middot; Board-Certified Ophthalmologist",
     "city": "Houston, TX",
     "tagline": "Dedicated retinal surgery expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-086.html"
+    "path": "templates/template-086.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1623854767648-e7bb8009f0db?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "087",
     "title": "Dr. Natasha Romanov &mdash; Ophthalmologist",
     "doctor": "Dr. Natasha Romanov",
     "specialty": "Ophthalmologist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#1B6BA8",
     "creds": "MD, FACS &middot; Board-Certified Ophthalmologist",
     "city": "Los Angeles, CA",
     "tagline": "Dedicated refractive surgery expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-087.html"
+    "path": "templates/template-087.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "088",
     "title": "Dr. Michael Johannsen &mdash; Ophthalmologist",
     "doctor": "Dr. Michael Johannsen",
     "specialty": "Ophthalmologist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#1B3A6B",
     "creds": "MD, PhD &middot; Board-Certified Ophthalmologist",
     "city": "Philadelphia, PA",
     "tagline": "Dedicated pediatric ophthalmology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-088.html"
+    "path": "templates/template-088.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "089",
@@ -1065,7 +1241,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Dedicated patient-centered healthcare excellence.",
-    "path": "templates/template-089.html"
+    "path": "templates/template-089.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "090",
@@ -1077,43 +1255,51 @@
     "creds": "MD, FACE &middot; Board-Certified Endocrinologist",
     "city": "San Francisco, CA",
     "tagline": "Dedicated diabetes technology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-090.html"
+    "path": "templates/template-090.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "091",
     "title": "Dr. Amelia Thornton &mdash; Endocrinologist",
     "doctor": "Dr. Amelia Thornton",
     "specialty": "Endocrinologist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#3B6B3B",
     "creds": "MD, FACE &middot; Board-Certified Endocrinologist",
     "city": "Boston, MA",
     "tagline": "Dedicated thyroid & endocrine oncology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-091.html"
+    "path": "templates/template-091.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "092",
     "title": "Dr. Carlos Vega &mdash; Endocrinologist",
     "doctor": "Dr. Carlos Vega",
     "specialty": "Endocrinologist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#1B6B6B",
     "creds": "MD, FACE &middot; Board-Certified Endocrinologist",
     "city": "San Antonio, TX",
     "tagline": "Dedicated obesity medicine expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-092.html"
+    "path": "templates/template-092.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "093",
     "title": "Dr. Howard Lindemann, MD, FACG - Gastroenterologist",
     "doctor": "Dr. Specialist #093",
     "specialty": "Specialist",
-    "layout": "Magazine Editorial",
+    "layout": "Magazine & Editorial",
     "accent": "#4A5C2A",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Providing exceptional care in Philadelphia, PA. Dedicated to personalized, evidence-based medicine for all patients.",
-    "path": "templates/template-093.html"
+    "path": "templates/template-093.html",
+    "layout_id": 5,
+    "photo": "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "094",
@@ -1125,31 +1311,37 @@
     "creds": "MD, FACG &middot; Board-Certified Gastroenterologist",
     "city": "Chicago, IL",
     "tagline": "Dedicated hepatology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-094.html"
+    "path": "templates/template-094.html",
+    "layout_id": 6,
+    "photo": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "095",
     "title": "Dr. Patricia Lennon, MD, FACR - Rheumatologist",
     "doctor": "Dr. Specialist #095",
     "specialty": "Specialist",
-    "layout": "Full-width Hero",
+    "layout": "Full-Width Immersive",
     "accent": "#4A6B8B",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Providing exceptional care in Baltimore, MD. Dedicated to personalized, evidence-based medicine for all patients.",
-    "path": "templates/template-095.html"
+    "path": "templates/template-095.html",
+    "layout_id": 7,
+    "photo": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "096",
     "title": "Dr. Tomasz Kowalczyk &mdash; Rheumatologist",
     "doctor": "Dr. Tomasz Kowalczyk",
     "specialty": "Rheumatologist",
-    "layout": "Split Screen",
+    "layout": "Split-Screen Dual Stream",
     "accent": "#5A5A6B",
     "creds": "MD, PhD &middot; Board-Certified Rheumatologist",
     "city": "Chicago, IL",
     "tagline": "Dedicated connective tissue disease expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-096.html"
+    "path": "templates/template-096.html",
+    "layout_id": 8,
+    "photo": "https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "097",
@@ -1161,7 +1353,9 @@
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Providing exceptional care in Houston, TX. Dedicated to personalized, evidence-based medicine for all patients.",
-    "path": "templates/template-097.html"
+    "path": "templates/template-097.html",
+    "layout_id": 1,
+    "photo": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "098",
@@ -1173,30 +1367,36 @@
     "creds": "MD, FACS &middot; Board-Certified Urologist",
     "city": "Seattle, WA",
     "tagline": "Dedicated female urology expertise delivered with compassion and clinical excellence.",
-    "path": "templates/template-098.html"
+    "path": "templates/template-098.html",
+    "layout_id": 2,
+    "photo": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "099",
     "title": "Dr. Andrew O'Connell, MD, FASN - Nephrologist",
     "doctor": "Dr. Specialist #099",
     "specialty": "Specialist",
-    "layout": "Clean Grid",
+    "layout": "Bento Grid UI",
     "accent": "#0D5757",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Providing exceptional care in Boston, MA. Dedicated to personalized, evidence-based medicine for all patients.",
-    "path": "templates/template-099.html"
+    "path": "templates/template-099.html",
+    "layout_id": 3,
+    "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "n": "100",
     "title": "Dr. Claire Blackwood, MD, FCCP - Pulmonologist",
     "doctor": "Dr. Specialist #100",
     "specialty": "Specialist",
-    "layout": "Minimalist",
+    "layout": "Minimalist Scandinavian",
     "accent": "#1B3A6B",
     "creds": "MD, Board Certified",
     "city": "Medical Plaza, NY",
     "tagline": "Providing exceptional care in Denver, CO. Dedicated to personalized, evidence-based medicine for all patients.",
-    "path": "templates/template-100.html"
+    "path": "templates/template-100.html",
+    "layout_id": 4,
+    "photo": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80"
   }
 ]
