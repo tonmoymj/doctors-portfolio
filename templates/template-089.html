@@ -101,7 +101,6 @@
             setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
             return false;
         }
-        // Dynamic name replacer if parent postMessage arrives
         window.addEventListener('message', (event) => {
             if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
                 const name = event.data.name;

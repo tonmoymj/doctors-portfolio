@@ -3,77 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Margaret Okafor &mdash; Cardiologist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Dr. Margaret Okafor &mdash; Cardiologist | Editorial Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #6D28D9; --accent-hover: #511ea2; --accent-bg: rgba(109,40,217,0.08); --accent-border: rgba(109,40,217,0.25); --text: #111827; --muted: #4b5563; --bg: #ffffff; --bg-alt: #f8fafc; --border: #e2e8f0; --radius: 12px; }
+        :root { --accent: #6D28D9; --text: #1c1917; --muted: #78716c; --bg: #fdfbf7; --border: #e7e5e4; }
         *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.65; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
         a { text-decoration: none; color: inherit; }
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-        .fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        .topbar { background: #0f172a; color: #cbd5e1; font-size: 0.8rem; padding: 8px 0; }
-        .navbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); }
-        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-        .nav-links { display: flex; gap: 24px; list-style: none; }
-        .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--muted); }
-        .btn-nav { background: var(--accent); color: white; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; }
+        .editorial-hero { padding: 80px 0; border-bottom: 1px solid var(--border); }
+        .editorial-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
+        .editorial-title { font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 12px; }
+        .editorial-quote { border-left: 3px solid var(--accent); padding-left: 20px; font-style: italic; font-size: 1.2rem; color: var(--muted); margin: 24px 0; }
+        .editorial-img { width: 100%; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover; box-shadow: 0 14px 35px rgba(0,0,0,0.08); }
 
-        .hero { padding: 76px 0 64px; }
-        .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 50px; align-items: center; }
-        .hero-pill { display: inline-block; background: var(--accent-bg); color: var(--accent); padding: 5px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 14px; border: 1px solid var(--accent-border); }
-        .hero-stats { display: flex; gap: 30px; margin: 28px 0; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
-        .stat-num { font-size: 2.1rem; font-weight: 700; color: var(--accent); }
-        .hero-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; box-shadow: 0 12px 30px rgba(0,0,0,0.1); border: 1px solid var(--border); }
-        .hero-img img { width: 100%; height: 100%; object-fit: cover; }
-
-        .py-sec { padding: 80px 0; }
-        .bg-alt { background: var(--bg-alt); }
-        .sec-head { text-align: center; max-width: 600px; margin: 0 auto 48px; }
-        .tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
-
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .svc-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: 0.3s; border-top: 3px solid var(--accent); }
-        .svc-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
-        .svc-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--accent-bg); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-
-        .chamber-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .ch-card { background: white; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 28px; }
-
-        .faq-item { background: white; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; }
-        .faq-question { padding: 18px 22px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
-        .faq-answer { padding: 0 22px 18px; color: var(--muted); font-size: 0.9rem; display: none; }
+        .sec-title { font-size: 2.2rem; margin-bottom: 24px; }
+        .form-input, .form-textarea { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 6px; margin-bottom: 12px; background: white; font-family: inherit; }
+        
+        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+        .faq-question { font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-answer { color: var(--muted); font-size: 0.88rem; margin-top: 6px; display: none; }
         .faq-item.active .faq-answer { display: block; }
 
-        .form-input, .form-textarea { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 8px; margin-bottom: 12px; font-family: inherit; }
-        .btn-submit { width: 100%; background: var(--accent); color: white; padding: 14px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
-
-        .footer { background: #0f172a; color: #cbd5e1; padding: 60px 0 20px; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-
-        @media(max-width: 768px) { .hero-grid, .services-grid, .chamber-grid, .footer-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+        @media(max-width: 800px) { .editorial-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <div class="topbar"><div class="container" style="display:flex; justify-content:space-between;"><div>📍 Chamber: Houston, TX &bull; Visiting: Sat&ndash;Thu 5PM&ndash;9PM</div><div>Hotline: <a href="https://wa.me/8801609977377" style="color:#86efac; font-weight:700;">+880 1609-977377</a></div></div></div>
-    <nav class="navbar"><div class="container nav-inner"><div><h2 class="doc-name-dyn" style="font-size:1.2rem;">Dr. Margaret Okafor</h2><span class="doc-spec-dyn" style="font-size:0.75rem; color:var(--accent); font-weight:600;">Cardiologist &bull; Houston, TX</span></div><ul class="nav-links"><li><a href="#about">Bio</a></li><li><a href="#services">Services</a></li><li><a href="#chambers">Chambers</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul><button class="btn-nav" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Appointment</button></div></nav>
+    <div class="container editorial-hero">
+        <div class="editorial-grid">
+            <div>
+                <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 700;">Specialist Physician Profile</span>
+                <h1 class="editorial-title doc-name-dyn">Dr. Margaret Okafor</h1>
+                <p class="doc-spec-dyn" style="font-size: 1.1rem; color: var(--muted);">MD, FACC, FASE &middot; Board-Certified Cardiologist &bull; Cardiologist, Houston, TX</p>
+                <div class="editorial-quote">&ldquo;Dedicated to advancing women's heart health through specialized cardiology and compassionate care.&rdquo;</div>
+                <p style="color: var(--muted); font-size: 0.98rem; line-height: 1.8;">Delivering clinical judgment, pioneering patient recovery pathways, and high-standard care across Cardiologist. Consulting at premier medical institutes with 16+ years of clinical tenure.</p>
+            </div>
+            <div><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80" alt="Dr. Margaret Okafor" class="editorial-img"></div>
+        </div>
+    </div>
 
-    <section class="hero" id="home"><div class="container hero-grid"><div class="fade-in"><span class="hero-pill">&#10003; Certified Specialist</span><h1 class="doc-name-dyn" style="font-size:clamp(2.3rem, 4vw, 3.4rem); margin-bottom:6px;">Dr. Margaret Okafor</h1><p style="color:var(--muted); font-weight:600; margin-bottom:14px;">MD, FACC, FASE &middot; Board-Certified Cardiologist</p><p style="color:var(--muted); font-size:1.05rem; line-height:1.7;">Dedicated to advancing women's heart health through specialized cardiology and compassionate care. Delivering advanced diagnostics, evidence-based therapies, and compassionate bedside care.</p><div class="hero-stats"><div><div class="stat-num">16+</div><div style="font-size:0.75rem; color:var(--muted);">Years Exp.</div></div><div><div class="stat-num">4,800+</div><div style="font-size:0.75rem; color:var(--muted);">Patients</div></div><div><div class="stat-num">98%</div><div style="font-size:0.75rem; color:var(--muted);">Satisfaction</div></div></div><button class="btn-nav" style="padding:14px 28px;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Schedule Consultation &rarr;</button></div><div class="hero-img fade-in"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80" alt="Dr. Margaret Okafor"></div></div></section>
+    <div class="container" style="padding: 70px 24px; border-bottom: 1px solid var(--border);">
+        <h2 class="sec-title">Specialized Clinical Procedures</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            <div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Preventive Cardiology</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Comprehensive risk profiling and early heart disease prevention.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">ECG & Holter Rhythm</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">24-48h continuous rhythm monitoring detecting palpitations.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Doppler Echocardiography</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">High-resolution ultrasound imaging of cardiac function and valves.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Heart Failure & Hypertension</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Individualized medical therapy for chronic cardiovascular health.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Angiography & Stenting</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Minimally invasive coronary catheterization and stent care.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Cardiac Rehabilitation</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Supervised post-procedural rehabilitation and lifestyle coaching.</p></div>
+        </div>
+    </div>
 
-    <section class="py-sec bg-alt" id="about"><div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:50px;"><div class="fade-in"><span class="tag">Profile</span><h2>Clinical Excellence &amp; Care</h2><p style="color:var(--muted); margin-top:14px; line-height:1.7;">Dr. Okafor holds senior consultant appointments and brings over 16 years of expertise in cardiologist. Focused on evidence-based therapies, precision diagnostics, and rapid recovery pathways.</p></div><div><span class="tag">Credentials</span><div style="background:white; border:1px solid var(--border); border-radius:8px; padding:18px; margin-bottom:12px;"><strong>Doctor of Medicine (MD / MBBS)</strong><p style="font-size:0.85rem; color:var(--muted);">Premier Medical University &mdash; Top 1% Honors</p></div><div style="background:white; border:1px solid var(--border); border-radius:8px; padding:18px;"><strong>Residency &amp; Fellowship Training</strong><p style="font-size:0.85rem; color:var(--muted);">Advanced Subspecialty Certification in Cardiologist</p></div></div></div></section>
+    <div class="container" style="padding: 70px 24px; border-bottom: 1px solid var(--border);">
+        <h2 class="sec-title">Chamber Hours &amp; Schedule</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+            <div style="background:white; border:1px solid var(--border); padding:28px; border-radius:10px;">
+                <h3>Specialist Diagnostic Center</h3>
+                <p style="color:var(--muted); margin:8px 0;">Suite #402, Main Diagnostic Plaza, Houston, TX</p>
+                <strong>Visiting Hours:</strong> Sat &ndash; Thu (5PM &ndash; 9PM)<br><br>
+                <a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366; color:white; padding:10px 18px; border-radius:6px; font-weight:700; font-size:0.85rem; display:inline-block;">WhatsApp Booking</a>
+            </div>
+            <div style="background:white; border:1px solid var(--border); padding:28px; border-radius:10px;">
+                <h3>Hospital Consultations</h3>
+                <p style="color:var(--muted); margin:8px 0;">City Care Hospital, Houston, TX</p>
+                <strong>Clinical Hours:</strong> Sat &ndash; Thu (9AM &ndash; 2PM)<br><br>
+                <a href="#contact" style="background:var(--accent); color:white; padding:10px 18px; border-radius:6px; font-weight:700; font-size:0.85rem; display:inline-block;">Request Slot</a>
+            </div>
+        </div>
+    </div>
 
-    <section class="py-sec" id="services"><div class="container"><div class="sec-head fade-in"><span class="tag">Procedures</span><h2>Specialized Treatments</h2></div><div class="services-grid"><div class="svc-card fade-in"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3 style="font-size:1.15rem; margin-bottom:8px;">Preventive Cardiology</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Comprehensive risk profiling and early heart disease prevention.</p></div><div class="svc-card fade-in"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3 style="font-size:1.15rem; margin-bottom:8px;">ECG & Holter Rhythm</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">24-48h continuous rhythm monitoring detecting palpitations.</p></div><div class="svc-card fade-in"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg></div><h3 style="font-size:1.15rem; margin-bottom:8px;">Doppler Echocardiography</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">High-resolution ultrasound imaging of cardiac function and valves.</p></div><div class="svc-card fade-in"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h3 style="font-size:1.15rem; margin-bottom:8px;">Heart Failure & Hypertension</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Individualized medical therapy for chronic cardiovascular health.</p></div><div class="svc-card fade-in"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><h3 style="font-size:1.15rem; margin-bottom:8px;">Angiography & Stenting</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Minimally invasive coronary catheterization and stent care.</p></div><div class="svc-card fade-in"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div><h3 style="font-size:1.15rem; margin-bottom:8px;">Cardiac Rehabilitation</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Supervised post-procedural rehabilitation and lifestyle coaching.</p></div></div></div></section>
+    <div class="container" style="padding: 70px 24px;" id="contact">
+        <h2 class="sec-title">Appointment Request</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+            <div>
+                <p style="color: var(--muted); margin-bottom: 20px;">For patient serials, inquiries, or urgent chamber bookings, reach out via the form or hotline.</p>
+                <div style="font-size: 1.1rem; font-weight: 700;">Hotline: +880 1609-977377</div>
+            </div>
+            <form onsubmit="return handleSubmit(event)">
+                <input class="form-input" type="text" placeholder="Patient Full Name" required>
+                <input class="form-input" type="tel" placeholder="Phone Number" required>
+                <input class="form-input" type="date" required>
+                <button type="submit" style="background: var(--accent); color: white; border: none; padding: 14px; width: 100%; border-radius: 6px; font-weight: 700; cursor: pointer;">Confirm Appointment</button>
+            </form>
+        </div>
+    </div>
 
-    <section class="py-sec bg-alt" id="chambers"><div class="container"><div class="sec-head fade-in"><span class="tag">Locations</span><h2>Chamber Schedule</h2></div><div class="chamber-grid"><div class="ch-card"><h4>Main Diagnostic Center</h4><p style="font-size:0.85rem; color:var(--muted); margin:8px 0 14px;">Suite #402, Main Diagnostic Plaza, Houston, TX</p><div style="background:var(--bg); padding:12px; border-radius:6px; font-size:0.85rem; margin-bottom:14px;"><strong>Visiting Hours:</strong> Sat &ndash; Thu 5:00 PM &ndash; 9:00 PM</div><a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366; color:white; padding:10px 16px; border-radius:6px; font-weight:700; font-size:0.85rem; display:block; text-align:center;">Book via WhatsApp</a></div><div class="ch-card"><h4>City Care Specialty Hospital</h4><p style="font-size:0.85rem; color:var(--muted); margin:8px 0 14px;">Department of Cardiologist, Houston, TX</p><div style="background:var(--bg); padding:12px; border-radius:6px; font-size:0.85rem; margin-bottom:14px;"><strong>Clinical Hours:</strong> Sat &ndash; Thu 9:00 AM &ndash; 2:00 PM</div><a href="#contact" style="background:var(--accent); color:white; padding:10px 16px; border-radius:6px; font-weight:700; font-size:0.85rem; display:block; text-align:center;">Request Serial</a></div></div></div></section>
-
-    <section class="py-sec" id="faq"><div class="container"><div class="sec-head fade-in"><span class="tag">Help</span><h2>Frequently Asked Questions</h2></div><div style="max-width:760px; margin:0 auto;"><div class="faq-item"><div class="faq-question"><span>What should I bring for consultation?</span><span>▼</span></div><div class="faq-answer">Please bring previous prescriptions, diagnostic reports, and current medications.</div></div><div class="faq-item"><div class="faq-question"><span>How do I get an appointment serial?</span><span>▼</span></div><div class="faq-answer">Fill out the form below, call +880 1609-977377, or message directly on WhatsApp.</div></div></div></div></section>
-
-    <section class="py-sec bg-alt" id="contact"><div class="container" style="display:grid; grid-template-columns:1fr 1.2fr; gap:50px;"><div class="fade-in"><span class="tag">Booking</span><h2>Request Chamber Serial</h2><p style="color:var(--muted); margin:14px 0 24px;">Visiting Hours: Sat &ndash; Thu 5PM &ndash; 9PM<br>Hotline: +880 1609-977377</p><a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366; color:white; padding:12px 20px; border-radius:6px; font-weight:700; display:inline-block;">Message on WhatsApp &rarr;</a></div><form class="fade-in" onsubmit="return handleSubmit(event)"><input class="form-input" type="text" placeholder="Patient Name" required><input class="form-input" type="tel" placeholder="Phone Number" required><input class="form-input" type="date" required><textarea class="form-textarea" rows="3" placeholder="Reason for consultation..."></textarea><button type="submit" class="btn-submit">Confirm Appointment Request</button></form></div></section>
-
-    <footer class="footer"><div class="container footer-grid"><div><h3 class="doc-name-dyn" style="color:white; margin-bottom:8px;">Dr. Margaret Okafor</h3><p class="doc-spec-dyn" style="font-size:0.85rem; color:#94a3b8;">MD, FACC, FASE &middot; Board-Certified Cardiologist &bull; Cardiologist</p></div><div><h4 style="color:white; margin-bottom:14px; font-size:0.9rem;">Navigation</h4><p style="font-size:0.85rem; color:#94a3b8;">About &bull; Services &bull; Schedule &bull; FAQ</p></div><div><h4 style="color:white; margin-bottom:14px; font-size:0.9rem;">Contact</h4><p style="font-size:0.85rem; color:#94a3b8;">Houston, TX<br>+880 1609-977377</p></div><div><h4 style="color:white; margin-bottom:14px; font-size:0.9rem;">WhatsApp</h4><a href="https://wa.me/8801609977377" target="_blank" style="color:#25D366; font-weight:700;">+880 1609-977377</a></div></div><div class="container" style="padding-top:20px; text-align:center; font-size:0.8rem; color:#64748b;">&copy; 2026 Dr. Margaret Okafor. Powered by Doctors Portfolio.</div></footer>
+    <footer style="background:#1c1917; color:#a8a29e; padding:30px 0; text-align:center; font-size:0.85rem;">
+        &copy; 2026 Dr. Margaret Okafor. Powered by Doctors Portfolio.
+    </footer>
     <script>
         function toggleMenu() {
             const m = document.getElementById('mobileMenu');
@@ -101,7 +115,6 @@
             setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
             return false;
         }
-        // Dynamic name replacer if parent postMessage arrives
         window.addEventListener('message', (event) => {
             if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
                 const name = event.data.name;
