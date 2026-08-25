@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>ডাঃ [ডাক্তারের নাম] | প্রফেশনাল মেডিকেল ওয়েবসাইট</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5faff;
+            color: #1e2f4e;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* HEADER */
+        header {
+            background: linear-gradient(145deg, #ffffff, #f0f8ff);
+            box-shadow: 0 8px 32px rgba(0, 40, 80, 0.08);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(0, 123, 255, 0.15);
+        }
+        .header-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2a44;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #0066cc;
+            font-weight: 300;
+        }
+        .nav-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            align-items: center;
+        }
+        .nav-menu a {
+            font-weight: 500;
+            color: #1e3a6b;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.25s;
+            font-size: 0.95rem;
+        }
+        .nav-menu a:hover {
+            border-bottom-color: #0066cc;
+            color: #004080;
+        }
+        .lang-toggle {
+            background: #e6f0ff;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #004b99;
+            border: 1px solid #b8d4ff;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-left: 8px;
+        }
+        .lang-toggle:hover {
+            background: #cce0ff;
+        }
+        /* Hero Section - 3D cinematic */
+        .hero {
+            padding: 48px 0 32px;
+            position: relative;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: linear-gradient(135deg, #eef7ff 0%, #dceaff 100%);
+            border-radius: 48px;
+            padding: 40px 40px;
+            box-shadow: 0 20px 60px rgba(0, 40, 80, 0.12);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.4);
+            transform: perspective(1200px) rotateX(0deg) rotateY(0deg);
+            transition: transform 0.4s ease, box-shadow 0.4s;
+        }
+        .hero-grid:hover {
+            transform: perspective(1200px) rotateX(1.5deg) rotateY(2.5deg) scale(1.01);
+            box-shadow: 0 30px 80px rgba(0, 60, 130, 0.2);
+        }
+        .hero-left {
+            flex: 1 1 280px;
+            text-align: center;
+        }
+        .hero-left img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 20, 60, 0.25);
+            border: 4px solid white;
+            transition: 0.3s;
+            background: #d9e9ff;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+        .hero-left img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 60, 150, 0.3);
+        }
+        .hero-right {
+            flex: 2 1 380px;
+        }
+        .hero-right h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #0a2647;
+        }
+        .hero-right .speciality {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #0066cc;
+            margin: 6px 0 10px;
+            background: rgba(0, 102, 204, 0.08);
+            display: inline-block;
+            padding: 2px 18px;
+            border-radius: 40px;
+        }
+        .hero-right p {
+            font-size: 1.1rem;
+            color: #1f3a5f;
+            margin: 20px 0 28px;
+            max-width: 500px;
+            font-weight: 400;
+        }
+        .btn-primary {
+            background: #0066cc;
+            color: white;
+            padding: 16px 44px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            box-shadow: 0 12px 28px rgba(0, 102, 204, 0.3);
+            transition: 0.25s;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: #004b99;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 70, 150, 0.4);
+        }
+        /* section cards */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            color: #0a2a44;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 4px;
+            background: #0066cc;
+            border-radius: 8px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin: 32px 0;
+        }
+        .card {
+            background: white;
+            border-radius: 32px;
+            padding: 28px 22px;
+            box-shadow: 0 10px 30px rgba(0, 30, 60, 0.06);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(0, 102, 204, 0.06);
+            backdrop-filter: blur(2px);
+            transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+        }
+        .card:hover {
+            transform: perspective(800px) rotateX(1deg) rotateY(1.5deg) translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 60, 120, 0.12);
+            border-color: #b8d4ff;
+        }
+        .card i {
+            font-size: 2.8rem;
+            color: #0066cc;
+            margin-bottom: 14px;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .card p, .card li {
+            color: #2a4a6e;
+            font-size: 0.98rem;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card ul li {
+            padding: 4px 0;
+            border-bottom: 1px solid #eaf2fa;
+        }
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+        /* appointment form */
+        .appointment-box {
+            background: white;
+            border-radius: 48px;
+            padding: 36px 40px;
+            box-shadow: 0 20px 60px rgba(0, 40, 80, 0.08);
+            margin: 24px 0 16px;
+            border: 1px solid #dceaff;
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 24px 0;
+        }
+        .form-group {
+            flex: 1 1 200px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1f3a5f;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 40px;
+            border: 1.5px solid #d4e3f5;
+            font-size: 1rem;
+            background: #fbfdff;
+            transition: 0.2s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15);
+        }
+        .btn-submit {
+            background: #004b99;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: #00336b;
+            transform: scale(1.02);
+        }
+        .confirmation-msg {
+            background: #d9f0e1;
+            color: #00563b;
+            padding: 16px 24px;
+            border-radius: 60px;
+            margin-top: 20px;
+            font-weight: 600;
+            display: inline-block;
+            border-left: 6px solid #00a86b;
+        }
+        /* map placeholder */
+        .map-placeholder {
+            background: #dceaff;
+            height: 220px;
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #004b99;
+            font-weight: 500;
+            margin: 24px 0 12px;
+            border: 1px dashed #0066cc;
+        }
+        /* footer */
+        footer {
+            margin-top: 60px;
+            background: #0a2647;
+            color: #c4d9f0;
+            padding: 40px 0 28px;
+            border-radius: 48px 48px 0 0;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-social a {
+            color: white;
+            font-size: 1.6rem;
+            margin-right: 20px;
+            transition: 0.2s;
+        }
+        .footer-social a:hover {
+            color: #8bbaff;
+            transform: translateY(-3px);
+        }
+        .footer-copy {
+            margin-top: 28px;
+            border-top: 1px solid #1f3f66;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        /* responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
+                padding: 24px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-right h2 {
+                font-size: 2.2rem;
+            }
+            .hero-left img {
+                max-width: 200px;
+            }
+            .header-grid {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .nav-menu {
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 4px 16px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .appointment-box {
+                padding: 24px 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-right h2 {
+                font-size: 1.8rem;
+            }
+            .btn-primary {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-grid">
+        <div class="logo">
+            <h1>ডাঃ <span>রহমান</span></h1>
+            <div style="font-size:0.8rem;color:#1f4b7a;">MBBS, FCPS (মেডিসিন)</div>
+        </div>
+        <div class="nav-menu">
+            <a href="#home">হোম</a>
+            <a href="#about">সম্পর্কে</a>
+            <a href="#services">সেবাসমূহ</a>
+            <a href="#appointment">অ্যাপয়েন্টমেন্ট</a>
+            <a href="#hours">ভিজিটিং আওয়ার</a>
+            <a href="#contact">যোগাযোগ</a>
+            <span class="lang-toggle" id="langToggle"><i class="fas fa-globe"></i> EN/বাংলা</span>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- HERO / HOME -->
+    <section id="home" class="hero container">
+        <div class="hero-grid">
+            <div class="hero-left">
+                <!-- 3D cinematic ডাক্তারের ছবি (প্লেসহোল্ডার) -->
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23b8d4ff'/%3E%3Ccircle cx='200' cy='160' r='70' fill='%23ffffff'/%3E%3Ccircle cx='200' cy='160' r='60' fill='%23d9e9ff'/%3E%3Cpath d='M110 280 Q200 340 290 280 L290 320 Q200 380 110 320 Z' fill='%23ffffff'/%3E%3Crect x='100' y='260' width='200' height='40' rx='20' fill='%23ffffff'/%3E%3Ctext x='200' y='370' font-family='Inter' font-size='24' fill='%230a2a44' text-anchor='middle'%3Eডাঃ রহমান%3C/text%3E%3C/svg%3E"
+                     alt="ডাঃ রহমান" style="background: #d0e2ff;">
+            </div>
+            <div class="hero-right">
+                <h2>ডাঃ আব্দুর রহমান</h2>
+                <div class="speciality"><i class="fas fa-stethoscope"></i> মেডিসিন বিশেষজ্ঞ</div>
+                <p>২০+ বছরের অভিজ্ঞতা, মানবিক সেবা ও আধুনিক চিকিৎসাপদ্ধতিতে নিবেদিত। আপনার স্বাস্থ্যই আমাদের অগ্রাধিকার।</p>
+                <a href="#appointment" class="btn-primary"><i class="fas fa-calendar-check"></i> অ্যাপয়েন্টমেন্ট বুক করুন</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+        <h2 class="section-title">সম্পর্কে</h2>
+        <div class="card">
+            <i class="fas fa-user-md"></i>
+            <h3>ডাঃ আব্দুর রহমান</h3>
+            <p><strong>ডিগ্রি:</strong> MBBS (ঢাকা), FCPS (মেডিসিন), MD (ইন্টারনাল মেডিসিন)</p>
+            <p><strong>অভিজ্ঞতা:</strong> ২২ বছর (সরকারি ও বেসরকারি হাসপাতালে)</p>
+            <p><strong>কর্মস্থল:</strong> ঢাকা মেডিকেল কলেজ হাসপাতাল (সিনিয়র কনসালট্যান্ট), এভারকেয়ার হাসপাতাল</p>
+            <p style="margin-top:10px;">ডাঃ রহমান দীর্ঘ ২০ বছর ধরে রোগীদের সেবা প্রদান করছেন। বিশেষত ডায়াবেটিস, হাইপারটেনশন, থাইরয়েড ও জটিল সংক্রামক রোগে তার দক্ষতা রয়েছে। তিনি রোগীদের সাথে খোলামেলা আলোচনা এবং সঠিক চিকিৎসাপদ্ধতির জন্য সুপরিচিত।</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container">
+        <h2 class="section-title">সেবাসমূহ</h2>
+        <div class="card-grid">
+            <div class="card"><i class="fas fa-heartbeat"></i><h3>কার্ডিওলজি</h3><p>হৃদরোগ, উচ্চ রক্তচাপ, কোলেস্টেরল ব্যবস্থাপনা</p></div>
+            <div class="card"><i class="fas fa-lungs"></i><h3>শ্বাসতন্ত্র</h3><p>হাঁপানি, সিওপিডি, নিউমোনিয়া, অ্যালার্জি</p></div>
+            <div class="card"><i class="fas fa-bolt"></i><h3>ডায়াবেটিস & এন্ডোক্রাইন</h3><p>ডায়াবেটিস, থাইরয়েড, হরমোনজনিত রোগ</p></div>
+            <div class="card"><i class="fas fa-brain"></i><h3>স্নায়বিক রোগ</h3><p>মাইগ্রেন, মাথাব্যথা, স্মৃতিশক্তি হ্রাস</p></div>
+            <div class="card"><i class="fas fa-baby"></i><h3>শিশুরোগ</h3><p>শিশুর সাধারণ রোগ, পুষ্টি ও টিকাদান</p></div>
+            <div class="card"><i class="fas fa-notes-medical"></i><h3>প্রতিরোধমূলক স্বাস্থ্য</h3><p>স্বাস্থ্য পরীক্ষা, ভ্যাকসিনেশন, কাউন্সেলিং</p></div>
+        </div>
+    </section>
+
+    <!-- APPOINTMENT -->
+    <section id="appointment" class="container">
+        <h2 class="section-title">অ্যাপয়েন্টমেন্ট বুকিং</h2>
+        <div class="appointment-box">
+            <p style="font-size:1.1rem; margin-bottom:8px;"><i class="fas fa-clock"></i> অনলাইনে অ্যাপয়েন্টমেন্ট নিন</p>
+            <form id="appointmentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="patientName">রোগীর নাম</label>
+                        <input type="text" id="patientName" placeholder="পূর্ণ নাম" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">ফোন নম্বর</label>
+                        <input type="tel" id="phone" placeholder="০১XXX-XXXXXX" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">তারিখ</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">সময়</label>
+                        <input type="time" id="time" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit"><i class="fas fa-check-circle"></i> অ্যাপয়েন্টমেন্ট বুক করুন</button>
+            </form>
+            <div id="confirmationMsg" style="display:none;" class="confirmation-msg">
+                <i class="fas fa-check-circle"></i> আপনার অ্যাপয়েন্টমেন্ট সফলভাবে বুক করা হয়েছে! আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।
+            </div>
+        </div>
+    </section>
+
+    <!-- VISITING HOURS -->
+    <section id="hours" class="container">
+        <h2 class="section-title">চেম্বার / ভিজিটিং আওয়ার</h2>
+        <div class="card">
+            <i class="fas fa-hospital"></i>
+            <h3>এভারকেয়ার হাসপাতাল</h3>
+            <p><strong>ঠিকানা:</strong> ১২৩/এ, গুলশান এভিনিউ, ঢাকা-১২১২</p>
+            <ul style="margin-top:12px;">
+                <li><i class="fas fa-clock" style="width:24px;"></i> শনিবার - বুধবার: সকাল ৯টা - দুপুর ২টা</li>
+                <li><i class="fas fa-clock" style="width:24px;"></i> বৃহস্পতিবার: বিকাল ৪টা - রাত ৮টা</li>
+                <li><i class="fas fa-clock" style="width:24px;"></i> শুক্রবার: ছুটি</li>
+            </ul>
+            <p style="margin-top:12px;"><i class="fas fa-phone-alt"></i> +৮৮০-২-৯৮৭৬৫৪৩</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="container">
+        <h2 class="section-title">রোগীদের মতামত</h2>
+        <div class="card-grid">
+            <div class="card"><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><p>“ডাঃ রহমান অত্যন্ত ধৈর্যশীল ও দক্ষ চিকিৎসক। তার চিকিৎসায় আমার ডায়াবেটিস অনেকটাই নিয়ন্ত্রণে এসেছে।” — রফিকুল ইসলাম</p></div>
+            <div class="card"><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><p>“তিনি খুব যত্ন সহকারে রোগীর কথা শোনেন এবং সহজ ভাষায় রোগ ব্যাখ্যা করেন। সেরা ডাক্তারদের মধ্যে একজন।” — নাসরিন সুলতানা</p></div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP -->
+    <section id="contact" class="container">
+        <h2 class="section-title">যোগাযোগ</h2>
+        <div class="card">
+            <p><i class="fas fa-map-marker-alt" style="width:28px;"></i> <strong>ঠিকানা:</strong> ১২৩/এ, গুলশান এভিনিউ, ঢাকা-১২১২, বাংলাদেশ</p>
+            <p><i class="fas fa-phone-alt" style="width:28px;"></i> <strong>ফোন:</strong> +৮৮০-২-৯৮৭৬৫৪৩, মোবাইল: ০১৭XX-XXXXXX</p>
+            <p><i class="fas fa-envelope" style="width:28px;"></i> <strong>ইমেইল:</strong> dr.rahman@healthcare.com</p>
+            <div class="map-placeholder">
+                <i class="fas fa-map" style="font-size:2rem; margin-right:12px;"></i> গুগল ম্যাপ লোকেশন (ঢাকা)
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <h3 style="color:white;">ডাঃ আব্দুর রহমান</h3>
+            <p style="margin-top:6px;">মানুষের সেবায় নিবেদিত</p>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="container footer-copy">
+        &copy; ২০২৬ ডাঃ আব্দুর রহমান | সর্বস্বত্ব সংরক্ষিত | ডিজাইন ও ডেভেলপমেন্ট: মেডিকেল টিম
+    </div>
+</footer>
+
+<script>
+    // language toggle (demonstration)
+    document.getElementById('langToggle')?.addEventListener('click', function() {
+        alert('ভাষা পরিবর্তন (ইংরেজি/বাংলা) - ডেমো সংস্করণ');
+    });
+
+    // appointment form submission with confirmation
+    document.getElementById('appointmentForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('patientName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        if (!name || !phone || !date || !time) {
+            alert('দয়া করে সমস্ত তথ্য পূরণ করুন।');
+            return;
+        }
+        // show confirmation
+        const msgDiv = document.getElementById('confirmationMsg');
+        msgDiv.style.display = 'block';
+        msgDiv.innerHTML = `<i class="fas fa-check-circle"></i> ধন্যবাদ, ${name}! আপনার অ্যাপয়েন্টমেন্ট ${date} তারিখ ${time} সময়ে বুক করা হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।`;
+        // reset form (optional)
+        // this.reset(); 
+        // scroll to confirmation
+        msgDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+</script>
+
+</body>
+</html>

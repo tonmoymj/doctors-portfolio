@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডাঃ মোঃ আরিফুল ইসলাম | মেসডিসিন ও হৃদরোগ বিশেষজ্ঞ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Bengali (Hind Siliguri) & English (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#0a3651',
+                        },
+                        emeraldCustom: '#059669',
+                    },
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Hind Siliguri', 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #075985 0%, #0369a1 50%, #0d9488 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Top Information Bar -->
+    <div class="bg-medical-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone-volume text-emerald-400"></i> জরুরী হটলাইন: <a href="tel:+8801700000000" class="hover:underline font-semibold">+৮৮০ ১৭০০-০০০০০০</a></span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-envelope text-sky-300"></i> dr.ariful@example.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-amber-300"></i> চেম্বারের সময়: বিকাল ৪:০০ - রাত ৯:০০ (শনি-বুধ)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-medical-600 text-white flex items-center justify-center font-bold text-2xl shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-slate-900 leading-tight">ডাঃ মোঃ আরিফুল ইসলাম</h1>
+                        <p class="text-xs text-medical-600 font-semibold">মেডিসিন ও হৃদরোগ বিশেষজ্ঞ</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Menu -->
+                <div class="hidden lg:flex items-center gap-8 text-slate-700 font-medium text-base">
+                    <a href="#about" class="hover:text-medical-600 transition-colors">পরিচয়</a>
+                    <a href="#qualifications" class="hover:text-medical-600 transition-colors">যোগ্যতা</a>
+                    <a href="#services" class="hover:text-medical-600 transition-colors">সেবাসমূহ</a>
+                    <a href="#chambers" class="hover:text-medical-600 transition-colors">চেম্বার সূচী</a>
+                    <a href="#reviews" class="hover:text-medical-600 transition-colors">রোগীর মতামত</a>
+                    <a href="#faq" class="hover:text-medical-600 transition-colors">প্রশ্নোত্তর</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="#appointment" class="bg-medical-600 hover:bg-medical-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>সিরিয়াল বুক করুন</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 focus:outline-none p-2 rounded-lg hover:bg-slate-100">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-slate-50 text-slate-700 font-medium">পরিচয়</a>
+            <a href="#qualifications" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-slate-50 text-slate-700 font-medium">যোগ্যতা</a>
+            <a href="#services" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-slate-50 text-slate-700 font-medium">সেবাসমূহ</a>
+            <a href="#chambers" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-slate-50 text-slate-700 font-medium">চেম্বার সূচী</a>
+            <a href="#reviews" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-slate-50 text-slate-700 font-medium">রোগীর মতামত</a>
+            <a href="#faq" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-slate-50 text-slate-700 font-medium">প্রশ্নোত্তর</a>
+            <a href="#appointment" class="mobile-nav-link block w-full text-center bg-medical-600 text-white py-3 rounded-xl font-semibold shadow">সিরিয়াল বুক করুন</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-slate-900 overflow-hidden py-16 lg:py-24 text-white">
+        <!-- Background Pattern Decorator -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-medical-500 blur-3xl"></div>
+            <div class="absolute top-1/2 right-0 w-96 h-96 rounded-full bg-teal-500 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-medical-500/20 border border-medical-400/30 text-sky-300 text-sm font-semibold">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        ১৫+ বছরের অভিজ্ঞতাসম্পন্ন সিনিয়র কনসালট্যান্ট
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        আপনার ও পরিবারের <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-teal-200 to-emerald-300">সুস্বাস্থ্য আমাদের অঙ্গীকার</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                        হৃদরোগ, উচ্চ রক্তচাপ, ডায়াবেটিস ও জটিল মেডিসিন সমস্যার সঠিক নির্ণয় ও বিশ্বমানের সেবা পেতে ডাঃ মোঃ আরিফুল ইসলাম এর চেম্বারে অ্যাপয়েন্টমেন্ট নিন।
+                    </p>
+
+                    <!-- Degree Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-200">MBBS (Dhaka)</span>
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-200">FCPS (Medicine)</span>
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-200">MD (Cardiology)</span>
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-200">FACC (USA)</span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#appointment" class="w-full sm:w-auto bg-gradient-to-r from-medical-500 to-teal-600 hover:from-medical-600 hover:to-teal-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-medical-500/30 hover:shadow-xl transition-all text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calendar-check text-xl"></i>
+                            <span>অনলাইন সিরিয়াল নিন</span>
+                        </a>
+                        <a href="tel:+8801700000000" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white px-7 py-4 rounded-xl font-semibold text-base transition-all text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone text-emerald-400"></i>
+                            <span>সরাসরি কল করুন</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Doctor Image Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Glow behind card -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-medical-500 to-emerald-500 rounded-3xl blur-2xl opacity-40"></div>
+                        
+                        <!-- Card Wrapper -->
+                        <div class="relative bg-slate-800/90 border border-slate-700/80 rounded-3xl p-6 shadow-2xl backdrop-blur-md">
+                            <!-- Image Container -->
+                            <div class="w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-700 relative mb-5">
+                                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" 
+                                     alt="ডাঃ মোঃ আরিফুল ইসলাম" 
+                                     class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                                     onerror="this.src='https://placehold.co/600x800/0f172a/0284c7?text=Dr.+Ariful+Islam'">
+                                
+                                <!-- Floating Status Tag -->
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full shadow flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                    আজ চেম্বার খোলা আছে
+                                </div>
+                            </div>
+
+                            <!-- Doctor Short Title -->
+                            <div class="text-center">
+                                <h3 class="text-xl font-bold text-white">ডাঃ মোঃ আরিফুল ইসলাম</h3>
+                                <p class="text-sm text-sky-300 font-medium mt-1">সহকারী অধ্যাপক (কার্ডিওলজি)</p>
+                                <p class="text-xs text-slate-400 mt-1">ঢাকা মেডিকেল কলেজ ও হাসপাতাল</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="bg-white border-b border-slate-100 py-10 shadow-sm relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-2xl bg-sky-50/60 border border-sky-100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-medical-600">১৫+</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">বছরের অভিজ্ঞতা</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-teal-50/60 border border-teal-100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-teal-600">১৮,০০০+</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">সন্তুষ্ট রোগী</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-indigo-600">৩টি</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">আধুনিক চেম্বার</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-600">৪.৯ ★</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">রোগীর গড় রেটিং</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Qualifications Section -->
+    <section id="about" class="py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <span class="text-medical-600 text-sm font-bold uppercase tracking-wider">ডাক্তারের পরিচিতি</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 leading-tight">অভিজ্ঞতা ও মানবসেবায় উৎসর্গীকৃত একজন চিকিৎসক</h2>
+                    </div>
+                    
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        ডাঃ মোঃ আরিফুল ইসলাম একজন খ্যাতনামা মেডিসিন ও হৃদরোগ বিশেষজ্ঞ। তিনি দীর্ঘ ১৫ বছরেরও বেশি সময় ধরে দেশের শীর্ষস্থানীয় সরকারি ও বেসরকারি হাসপাতালে রোগীদের সেবা দিয়ে আসছেন। হৃদরোগ প্রতিরোধ, ডায়াবেটিস ব্যবস্থাপনা এবং জটিল অভ্যন্তরীণ রোগীদের চিকিৎসায় তিনি বিশেষভাবে সুপরিচিত।
+                    </p>
+
+                    <!-- Key Expertise Features -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-heart-circle-check text-medical-600 text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">হৃদরোগ ও প্রেশার</h4>
+                                <p class="text-xs text-slate-500">উচ্চ রক্তচাপ ও বুক ব্যথার সঠিক নির্ণয়</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-vial-circle-check text-emerald-600 text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">ডায়াবেটিস নিয়ন্ত্রণ</h4>
+                                <p class="text-xs text-slate-500">আধুনিক গাইডলাইন অনুযায়ী ডায়াবেটিস কেয়ার</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-stethoscope text-indigo-600 text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">মেডিসিন কনসালটেশন</h4>
+                                <p class="text-xs text-slate-500">দীর্ঘমেয়াদী ও জটিল শারীরিক সমস্যার সমাধান</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-laptop-medical text-amber-600 text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">অনলাইন পরামর্শ</h4>
+                                <p class="text-xs text-slate-500">ভিডিও কলের মাধ্যমে প্রেসক্রিপশন প্রদান</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Qualifications List -->
+                <div id="qualifications" class="lg:col-span-6">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg relative">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900">শিক্ষাগত যোগ্যতা ও ডিগ্রি</h3>
+                        </div>
+
+                        <div class="space-y-6 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-slate-200">
+                            
+                            <!-- Qualification Item 1 -->
+                            <div class="relative pl-8">
+                                <div class="absolute left-0 top-1.5 w-7 h-7 rounded-full bg-medical-600 text-white flex items-center justify-center text-xs font-bold ring-4 ring-white">১</div>
+                                <h4 class="text-lg font-bold text-slate-900">MBBS — ঢাকা মেডিকেল কলেজ</h4>
+                                <p class="text-sm text-medical-600 font-semibold">২০০৮ | গোল্ড মেডেল প্রাপ্ত</p>
+                                <p class="text-xs text-slate-500 mt-1">মেডিসিন ও সার্জারিতে বিশেষ কৃতিত্বের সহিত ব্যাচেলর অব মেডিসিন ডিগ্রি সম্পন্ন।</p>
+                            </div>
+
+                            <!-- Qualification Item 2 -->
+                            <div class="relative pl-8">
+                                <div class="absolute left-0 top-1.5 w-7 h-7 rounded-full bg-medical-600 text-white flex items-center justify-center text-xs font-bold ring-4 ring-white">২</div>
+                                <h4 class="text-lg font-bold text-slate-900">FCPS (Medicine) — BCPS</h4>
+                                <p class="text-sm text-medical-600 font-semibold">২০১৩ | বাংলাদেশ কলেজ অব ফিজিশিয়ানস অ্যান্ড সার্জনস</p>
+                                <p class="text-xs text-slate-500 mt-1">অভ্যন্তরীণ মেডিসিনে উচ্চতর ফেলোশিপ ডিগ্রি অর্জন।</p>
+                            </div>
+
+                            <!-- Qualification Item 3 -->
+                            <div class="relative pl-8">
+                                <div class="absolute left-0 top-1.5 w-7 h-7 rounded-full bg-medical-600 text-white flex items-center justify-center text-xs font-bold ring-4 ring-white">৩</div>
+                                <h4 class="text-lg font-bold text-slate-900">MD (Cardiology) — BSMMU</h4>
+                                <p class="text-sm text-medical-600 font-semibold">২০১৬ | বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয়</p>
+                                <p class="text-xs text-slate-500 mt-1">হৃদরোগ ও ইন্টারভেনশনাল কার্ডিওলোজিতে ডক্টর অব মেডিসিন।</p>
+                            </div>
+
+                            <!-- Qualification Item 4 -->
+                            <div class="relative pl-8">
+                                <div class="absolute left-0 top-1.5 w-7 h-7 rounded-full bg-medical-600 text-white flex items-center justify-center text-xs font-bold ring-4 ring-white">৪</div>
+                                <h4 class="text-lg font-bold text-slate-900">FACC (USA) — আমেরিকান কলেজ অব কার্ডিওলজি</h4>
+                                <p class="text-sm text-medical-600 font-semibold">২০১৯ | ফেলো অব আমেরিকান কলেজ অব কার্ডিওলজি</p>
+                                <p class="text-xs text-slate-500 mt-1">আন্তর্জাতিক মানসম্পন্ন উন্নত হৃদরোগ চিকিৎসার ফেলোশিপ।</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 lg:py-24 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 text-sm font-bold uppercase tracking-wider">চিকিৎসা সেবাসমূহ</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">রোগ নির্ণয় ও আধুনিক চিকিৎসা সেবা</h2>
+                <p class="text-slate-600 mt-3 text-base">যেকোনো শারীরিক সমস্যায় সঠিক সময়ে অভিজ্ঞ পরামর্শের মাধ্যমে নিরাময় সম্ভব।</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-medical-500 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-100 text-medical-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">হৃদরোগ ও বুক ব্যথা চিকিৎসা</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        বুক ধড়ফড় করা, বুকে চাপ অনুভব করা, এনজাইনা ও হার্ট অ্যাটাক পরবর্তী পুনর্বাসন ও দীর্ঘমেয়াদী যত্ন।
+                    </p>
+                    <a href="#appointment" class="inline-flex items-center gap-2 text-medical-600 font-bold text-sm hover:gap-3 transition-all">
+                        <span>সিরিয়াল বুক করুন</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">উচ্চ রক্তচাপ ও ডায়াবেটিস</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        হাই প্রেশার ও অনিয়ন্ত্রিত ডায়াবেটিস নিয়মিত মনিটরিং ও লাইফস্টাইল পরিবর্তনের মাধ্যমে নিয়ন্ত্রণে রাখা।
+                    </p>
+                    <a href="#appointment" class="inline-flex items-center gap-2 text-emerald-600 font-bold text-sm hover:gap-3 transition-all">
+                        <span>সিরিয়াল বুক করুন</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-indigo-500 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-briefcase-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">জটিল মেডিসিন কনসালটেশন</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        দীর্ঘদিনের জ্বর, গ্যাস্ট্রিক, লিভারের সমস্যা, থাইরয়েড ও শ্বাসকষ্টজনিত রোগসমূহের পূর্ণাঙ্গ চিকিৎসা।
+                    </p>
+                    <a href="#appointment" class="inline-flex items-center gap-2 text-indigo-600 font-bold text-sm hover:gap-3 transition-all">
+                        <span>সিরিয়াল বুক করুন</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-teal-500 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-waveform"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">ইসিজি ও একোকার্ডিওগ্রাম రిపోર્ట్</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        ECG, Echocardiogram, ETT ও Holter Monitor রিপোর্টের সঠিক পর্যবেক্ষণ ও সঠিক সেকেন্ড ওপিনিয়ন।
+                    </p>
+                    <a href="#appointment" class="inline-flex items-center gap-2 text-teal-600 font-bold text-sm hover:gap-3 transition-all">
+                        <span>সিরিয়াল বুক করুন</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-purple-500 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">অনলাইন ভিডিও কনসালটেশন</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        যাঁরা সরাসরি চেম্বারে আসতে পারছেন না, তাঁদের জন্য ঘরে বসেই ভিডিও কলেই ই-প্রেসক্রিপশন গ্রহণের সুযোগ।
+                    </p>
+                    <a href="#appointment" class="inline-flex items-center gap-2 text-purple-600 font-bold text-sm hover:gap-3 transition-all">
+                        <span>সিরিয়াল বুক করুন</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-rose-500 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">হার্ট অ্যাটাক প্রতিরোধ ও চেকআপ</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        ৪০+ বয়সীদের জন্য বিশেষ কার্ডিয়াক স্ক্রিনিং প্যাকেজ ও হৃদরোগ ঝুঁকি কমানোর লাইফস্টাইল নির্দেশিকা।
+                    </p>
+                    <a href="#appointment" class="inline-flex items-center gap-2 text-rose-600 font-bold text-sm hover:gap-3 transition-all">
+                        <span>সিরিয়াল বুক করুন</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Chambers Section -->
+    <section id="chambers" class="py-16 lg:py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-sky-400 text-sm font-bold uppercase tracking-wider">রোগী দেখার সময়সূচী</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">চেম্বার ও ভিজিটিং আওয়ার</h2>
+                <p class="text-slate-400 mt-3 text-base">আপনার সুবিধাজনক নিকটস্থ চেম্বারে অ্যাপয়েন্টমেন্ট বুকিং দিন।</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Chamber Card 1 -->
+                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700/80 hover:border-sky-500 transition-all shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-sky-500/20 text-sky-300 text-xs font-bold px-3 py-1 rounded-full mb-4 border border-sky-400/30">
+                            প্রধান চেম্বার (ধানমন্ডি)
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">স্কয়ার হাসপাতাল লিমিটেড</h3>
+                        <p class="text-slate-400 text-sm flex items-start gap-2 mb-6">
+                            <i class="fa-solid fa-location-dot text-sky-400 mt-1"></i>
+                            ১৮/এফ, বীর উত্তম কাজী নুরুজ্জামান সড়ক, পান্থপথ, ধানমন্ডি, ঢাকা।
+                        </p>
+
+                        <div class="space-y-3 bg-slate-900/60 p-4 rounded-2xl border border-slate-700">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-regular fa-calendar text-sky-400"></i> বার:</span>
+                                <span class="text-white font-bold">শনিবার - বুধবার</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-regular fa-clock text-sky-400"></i> সময়:</span>
+                                <span class="text-emerald-400 font-bold">বিকাল ৫:০০ - রাত ৯:০০</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-solid fa-ticket text-sky-400"></i> সিরিয়াল লিমিট:</span>
+                                <span class="text-amber-300 font-bold">সর্বোচ্চ ৩০ জন</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-slate-700 flex flex-col gap-3">
+                        <a href="tel:+8801700000000" class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 rounded-xl text-center text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-emerald-400"></i> সিরিয়াল বুকিং: ০১৭০০-০০০০০০
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Chamber Card 2 -->
+                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700/80 hover:border-teal-500 transition-all shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-teal-500/20 text-teal-300 text-xs font-bold px-3 py-1 rounded-full mb-4 border border-teal-400/30">
+                            দ্বিতীয় চেম্বার (মিরপুর)
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">পপুলার ডায়াগনস্টিক সেন্টার</h3>
+                        <p class="text-slate-400 text-sm flex items-start gap-2 mb-6">
+                            <i class="fa-solid fa-location-dot text-teal-400 mt-1"></i>
+                            হাউজ #২, ব্লক #এ, মেইন রোড, মিরপুর-১০, ঢাকা।
+                        </p>
+
+                        <div class="space-y-3 bg-slate-900/60 p-4 rounded-2xl border border-slate-700">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-regular fa-calendar text-teal-400"></i> বার:</span>
+                                <span class="text-white font-bold">বৃহস্পতি ও শুক্রবার</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-regular fa-clock text-teal-400"></i> সময়:</span>
+                                <span class="text-emerald-400 font-bold">বিকাল ৪:০০ - রাত ৮:০০</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-solid fa-ticket text-teal-400"></i> সিরিয়াল লিমিট:</span>
+                                <span class="text-amber-300 font-bold">সর্বোচ্চ ২৫ জন</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-slate-700 flex flex-col gap-3">
+                        <a href="tel:+8801711111111" class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 rounded-xl text-center text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-emerald-400"></i> সিরিয়াল বুকিং: ০১৭১১-১১১১১১
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Chamber Card 3 -->
+                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700/80 hover:border-amber-500 transition-all shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-amber-500/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full mb-4 border border-amber-400/30">
+                            বিভাগীয় চেম্বার (রাজশাহী)
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">রাজশাহী সেন্ট্রাল হাসপাতাল</h3>
+                        <p class="text-slate-400 text-sm flex items-start gap-2 mb-6">
+                            <i class="fa-solid fa-location-dot text-amber-400 mt-1"></i>
+                            গ্রেটার রোড, লক্ষ্মীপুর মোড়, রাজশাহী।
+                        </p>
+
+                        <div class="space-y-3 bg-slate-900/60 p-4 rounded-2xl border border-slate-700">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-regular fa-calendar text-amber-400"></i> বার:</span>
+                                <span class="text-white font-bold">প্রতি মাসের ১ম ও ৩য় শনিবার</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-regular fa-clock text-amber-400"></i> সময়:</span>
+                                <span class="text-emerald-400 font-bold">সকাল ১০:০০ - বিকাল ৪:০০</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-semibold"><i class="fa-solid fa-ticket text-amber-400"></i> সিরিয়াল লিমিট:</span>
+                                <span class="text-amber-300 font-bold">পূর্ব বুকিং সাপেক্ষে</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-slate-700 flex flex-col gap-3">
+                        <a href="tel:+8801722222222" class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 rounded-xl text-center text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-emerald-400"></i> সিরিয়াল বুকিং: ০১৭২২-২২২২২২
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Form Section -->
+    <section id="appointment" class="py-16 lg:py-24 bg-gradient-to-b from-sky-50 to-slate-100 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-200 relative overflow-hidden">
+                <!-- Decorative Top Bar -->
+                <div class="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-medical-500 via-teal-500 to-emerald-500"></div>
+
+                <div class="text-center mb-8">
+                    <span class="text-medical-600 text-xs font-bold uppercase tracking-wider bg-sky-100 px-3 py-1 rounded-full">সহজ ও দ্রুত</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">অনলাইন চেম্বার সিরিয়াল ফর্ম</h2>
+                    <p class="text-slate-500 text-sm mt-1">নিচের তথ্যগুলো দিয়ে সিরিয়াল বুক করুন। আমাদের প্রতিনিধি কল করে সময় নিশ্চিত করবে।</p>
+                </div>
+
+                <!-- Form -->
+                <form id="booking-form" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        
+                        <!-- Patient Name -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">রোগীর নাম <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400"><i class="fa-solid fa-user"></i></span>
+                                <input type="text" id="patient_name" required placeholder="রোগীর পূর্ণ নাম লিখুন" 
+                                       class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-medical-500 focus:border-medical-500 text-slate-800 text-sm transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">মোবাইল নম্বর <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400"><i class="fa-solid fa-phone"></i></span>
+                                <input type="tel" id="patient_phone" required placeholder="০১৭০০-০০০০০০" 
+                                       class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-medical-500 focus:border-medical-500 text-slate-800 text-sm transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Patient Age & Gender -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">বয়স <span class="text-rose-500">*</span></label>
+                                <input type="number" id="patient_age" required placeholder="যেমন: ৪৫" 
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-medical-500 focus:border-medical-500 text-slate-800 text-sm transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">লিঙ্গ</label>
+                                <select id="patient_gender" class="w-full px-3 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-medical-500 focus:border-medical-500 text-slate-800 text-sm transition-all">
+                                    <option value="পুরুষ">পুরুষ</option>
+                                    <option value="মহিলা">মহিলা</option>
+                                    <option value="অন্যান্য">অন্যান্য</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Chamber Select -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">চেম্বার নির্বাচন করুন <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400"><i class="fa-solid fa-hospital"></i></span>
+                                <select id="chamber_select" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-medical-500 focus:border-medical-500 text-slate-800 text-sm transition-all">
+                                    <option value="">চেম্বার বেছে নিন...</option>
+                                    <option value="স্কয়ার হাসপাতাল, ধানমন্ডি (শনি-বুধ)">স্কয়ার হাসপাতাল, ধানমন্ডি (শনি-বুধ)</option>
+                                    <option value="পপুলার ডায়াগনস্টিক, মিরপুর (বৃহস্পতি-শুক্র)">পপুলার ডায়াগনস্টিক, মিরপুর (বৃহস্পতি-শুক্র)</option>
+                                    <option value="রাজশাহী সেন্ট্রাল হাসপাতাল (১ম ও ৩য় শনিবার)">রাজশাহী সেন্ট্রাল হাসপাতাল (১ম ও ৩য় শনিবার)</option>
+                                    <option value="অনলাইন ভিডিও কনসালটেশন">অনলাইন ভিডিও কনসালটেশন</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Date Selection -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">পছন্দের তারিখ <span class="text-rose-500">*</span></label>
+                            <input type="date" id="appointment_date" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-medical-500 focus:border-medical-500 text-slate-800 text-sm transition-all">
+                        </div>
+
+                        <!-- Visit Type -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">ভিজিটের ধরন</label>
+                            <select id="visit_type" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-medical-500 focus:border-medical-500 text-slate-800 text-sm transition-all">
+                                <option value="নতুন রোগী">নতুন রোগী (New Patient)</option>
+                                <option value="পুরাতন/রিপোর্ট দেখাতে">পুরাতন/রিপোর্ট দেখাতে (Follow-up)</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Symptoms / Problems -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">প্রধান শারীরিক সমস্যা / লক্ষণ (সংক্ষেপে)</label>
+                        <textarea id="symptoms" rows="3" placeholder="যেমন: ৩ দিন ধরে বুক ব্যথা ও প্রেশার বেশি..." 
+                                  class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-medical-500 focus:border-medical-500 text-slate-800 text-sm transition-all"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-gradient-to-r from-medical-600 to-teal-600 hover:from-medical-700 hover:to-teal-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-base flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>বুকিং কনফার্ম করুন</span>
+                    </button>
+                </form>
+
+                <!-- Feedback Toast Modal Container -->
+                <div id="booking-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-3xl max-w-md w-full p-6 text-center shadow-2xl space-y-4 border border-slate-100 animate-bounce-short">
+                        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900">বুকিং আবেদন সফল হয়েছে!</h3>
+                        <div id="modal-details" class="text-xs sm:text-sm text-slate-600 bg-slate-50 p-4 rounded-2xl text-left space-y-1 border border-slate-200">
+                            <!-- Populated via JS -->
+                        </div>
+                        <p class="text-xs text-slate-500">আমাদের প্রতিনিধি শীঘ্রই আপনার দেওয়া নম্বরে কল করে সিরিয়াল নিশ্চিত করবেন। ধন্যবাদ!</p>
+                        <button id="close-modal" class="w-full bg-medical-600 text-white font-bold py-3 rounded-xl hover:bg-medical-700">ঠিক আছে</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Patient Reviews Section -->
+    <section id="reviews" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 text-sm font-bold uppercase tracking-wider">রোগীদের ফিডব্যাক</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">রোগীদের সন্তুষ্টিই আমাদের সাফল্য</h2>
+                <p class="text-slate-600 mt-3 text-base">চিকিৎসা গ্রহণকারী সম্মানিত রোগীদের কিছু অনুভূতি ও অভিজ্ঞতা।</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Review Card 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-6">
+                            "স্যার অত্যন্ত মন দিয়ে রোগীর কথা শুনেন। আমার বাবার দীর্ঘদিনের বুকে চাপ ধরা সমস্যা ও প্রেশার স্যারের সঠিক ঔষধে এখন একদম নিয়ন্ত্রণে। উনার ব্যবহারের জন্য অসংখ্য ধন্যবাদ।"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+                        <div class="w-10 h-10 rounded-full bg-sky-600 text-white font-bold flex items-center justify-center text-sm">
+                            অ
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">আব্দুর রহিম</h4>
+                            <p class="text-xs text-slate-500">মিরপুর, ঢাকা</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-6">
+                            "অনলাইন ভিডিও কলে উনার থেকে সেকেন্ড ওপিনিয়ন নিয়েছিলাম। ডাক্তার স্যার অহেতুক বাড়তি টেস্ট দেন না। খুব সৎ ও প্রফেশনাল গাইডলাইন দিয়েছেন।"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
+                            স
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">সুলতানা পারভীন</h4>
+                            <p class="text-xs text-slate-500">রাজশাহী সদর</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-6">
+                            "স্কয়ার হাসপাতালে স্যারের কাছে অ্যাপয়েন্টমেন্ট নেওয়া খুব সহজ ছিল। চেম্বারে সময় নিয়ে পুঙ্খানুপুঙ্খ পরীক্ষা করেছেন। এমন আন্তরিক ডাক্তার বর্তমান সময়ে বিরল।"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+                        <div class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
+                            এম
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">মাহমুদুল হাসান</h4>
+                            <p class="text-xs text-slate-500">ধানমন্ডি, ঢাকা</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 lg:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <span class="text-medical-600 text-sm font-bold uppercase tracking-wider">সাধারণ প্রশ্নাবলী</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">আপনার মনে কি কোনো প্রশ্ন আছে?</h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50">
+                        <span>১. কীভাবে চেম্বারের সিরিয়াল নিশ্চিত করব?</span>
+                        <i class="fa-solid fa-chevron-down text-medical-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed">
+                        আপনি উপরের "সিরিয়াল বুক করুন" ফর্মে আপনার তথ্য পূরণ করে সাবমিট করতে পারেন অথবা স্ক্রিনে প্রদর্শিত চেম্বারের সরাসরি নম্বরে কল করে সিরিয়াল নিতে পারেন।
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50">
+                        <span>২. প্রথমবার চেম্বারে আসার সময় সাথে কী কী আনতে হবে?</span>
+                        <i class="fa-solid fa-chevron-down text-medical-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed">
+                        আপনার পূর্বের সকল প্রকার চিকিৎসাপত্র (Prescriptions), ইসিজি, রক্ত পরীক্ষা বা অন্যান্য সকল ডায়াগনস্টিক রিপোর্ট সঙ্গে নিয়ে আসবেন।
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50">
+                        <span>৩. অনলাইন ভিডিও কনসালটেশনের সুবিধা কীভাবে পাব?</span>
+                        <i class="fa-solid fa-chevron-down text-medical-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed">
+                        বুকিং ফর্মে 'অনলাইন ভিডিও কনসালটেশন' অপশনটি বেছে নিয়ে সাবমিট করুন। আমাদের টিম হোয়াটসঅ্যাপ বা ফোনের মাধ্যমে ফি প্রদান পদ্ধতি ও কল সময় জানিয়ে দেবে।
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50">
+                        <span>৪. জরুরী মুহূর্তে কোথায় যোগাযোগ করব?</span>
+                        <i class="fa-solid fa-chevron-down text-medical-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed">
+                        তীব্র বুকে ব্যথা বা আশঙ্কাজনক অবস্থায় বিলম্ব না করে সরাসরি নিকটস্থ হাসপাতালের জরুরী বিভাগে (Emergency Unit) নিয়ে যাওয়ার পরামর্শ দেওয়া হচ্ছে।
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 rounded-lg bg-medical-600 text-white flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">ডাঃ মোঃ আরিফুল ইসলাম</h3>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        মেডিসিন ও হৃদরোগ চিকিৎসায় এক নির্ভরযোগ্য নাম। মানবসেবা ও সঠিক চিকিৎসায় সদা সচেষ্ট।
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">দ্রুত লিংক</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-sky-400">ডাক্তার পরিচয়</a></li>
+                        <li><a href="#services" class="hover:text-sky-400">চিকিৎসা সেবাসমূহ</a></li>
+                        <li><a href="#chambers" class="hover:text-sky-400">চেম্বার সূচী</a></li>
+                        <li><a href="#appointment" class="hover:text-sky-400">সিরিয়াল বুকিং</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">সেবাসমূহ</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li>হৃদরোগ ও ইসিজি রিডিং</li>
+                        <li>উচ্চ রক্তচাপ ও ডায়াবেটিস</li>
+                        <li>জটিল মেডিসিন কনসালটেশন</li>
+                        <li>অনলাইন ভিডিও কল কনসালটেশন</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">যোগাযোগ</h4>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> হটলাইন: ০১৭০০-০০০০০০</p>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope text-sky-400 mr-2"></i> dr.ariful@example.com</p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-rose-400 mr-2"></i> পান্থপথ, ঢাকা - ১২০৫</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>© ২০২৬ ডাঃ মোঃ আরিফুল ইসলাম | সর্বস্বত্ব সংরক্ষিত</p>
+                <p>ডিজাইন ও ডেভেলপমেন্ট: পেশাদার মেডিকেল ওয়েব সলিউশন</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Mobile Actions Bar -->
+    <div class="fixed bottom-4 right-4 z-40 flex flex-col gap-3">
+        <!-- Floating WhatsApp -->
+        <a href="https://wa.me/8801700000000" target="_blank" title="হোয়াটসঅ্যাপে মেসেজ দিন" 
+           class="w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl hover:bg-emerald-600 hover:scale-110 transition-all border-2 border-white">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <!-- Floating Call -->
+        <a href="tel:+8801700000000" title="সরাসরি কল করুন" 
+           class="w-14 h-14 bg-medical-600 text-white rounded-full flex items-center justify-center text-xl shadow-2xl hover:bg-medical-700 hover:scale-110 transition-all border-2 border-white">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <script>
+        // Setup Date Input Minimum (Today)
+        const dateInput = document.getElementById('appointment_date');
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // FAQ Accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Toggle Answer
+                answer.classList.toggle('hidden');
+                
+                // Rotate Chevron Icon
+                if (answer.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Booking Form Submission Handler (No alert())
+        const bookingForm = document.getElementById('booking-form');
+        const bookingModal = document.getElementById('booking-modal');
+        const modalDetails = document.getElementById('modal-details');
+        const closeModal = document.getElementById('close-modal');
+
+        if (bookingForm && bookingModal) {
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('patient_name').value;
+                const phone = document.getElementById('patient_phone').value;
+                const age = document.getElementById('patient_age').value;
+                const gender = document.getElementById('patient_gender').value;
+                const chamber = document.getElementById('chamber_select').value;
+                const date = document.getElementById('appointment_date').value;
+
+                modalDetails.innerHTML = `
+                    <p><strong>রোগীর নাম:</strong> ${name}</p>
+                    <p><strong>মোবাইল:</strong> ${phone}</p>
+                    <p><strong>বয়স/লিঙ্গ:</strong> ${age} বছর (${gender})</p>
+                    <p><strong>চেম্বার:</strong> ${chamber}</p>
+                    <p><strong>তারিখ:</strong> ${date}</p>
+                `;
+
+                bookingModal.classList.remove('hidden');
+                bookingForm.reset();
+            });
+
+            closeModal.addEventListener('click', () => {
+                bookingModal.classList.add('hidden');
+            });
+
+            // Close modal on background click
+            bookingModal.addEventListener('click', (e) => {
+                if (e.target === bookingModal) {
+                    bookingModal.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

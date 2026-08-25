@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>ডাঃ [পুরো নাম] | বিশেষজ্ঞ চিকিৎসক</title>
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fbfc;
+            color: #1e2f3e;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* color palette: white, soft blue, medical green */
+        :root {
+            --primary: #1a6f5c;      /* medical green */
+            --primary-light: #e1f3ee;
+            --secondary: #2b7c9e;    /* soft blue */
+            --secondary-light: #d8ecf5;
+            --accent: #f0f7fa;
+            --text-dark: #1e2f3e;
+            --text-muted: #4a5b66;
+            --white: #ffffff;
+            --shadow: 0 8px 24px rgba(0,20,30,0.08);
+            --radius: 16px;
+        }
+
+        /* header / nav */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(26,111,92,0.08);
+        }
+        .nav-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            font-weight: 300;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            display: block;
+            margin-top: -4px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-weight: 500;
+            color: var(--text-dark);
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            font-size: 0.95rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: var(--primary);
+            color: var(--primary);
+        }
+        .lang-toggle {
+            background: var(--secondary-light);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            cursor: default;
+            transition: 0.2s;
+        }
+        .lang-toggle i {
+            margin-right: 6px;
+        }
+        .mobile-menu {
+            display: none;
+            font-size: 1.6rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 60px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 8px 16px rgba(26,111,92,0.2);
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: #145a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(26,111,92,0.25);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 28px;
+            border-radius: 60px;
+            font-weight: 600;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* sections */
+        section {
+            padding: 70px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+        .section-sub {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 36px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* home hero */
+        .hero {
+            padding: 30px 0 60px;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-image {
+            background: var(--secondary-light);
+            border-radius: var(--radius);
+            height: 340px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="45" r="30" fill="%23ffffff" opacity="0.6"/><circle cx="50" cy="40" r="22" fill="%23ffffff" opacity="0.3"/><rect x="35" y="70" width="30" height="8" rx="4" fill="%23ffffff" opacity="0.4"/></svg>');
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            background-color: #d2e8f0;
+        }
+        .hero-image span {
+            background: rgba(255,255,255,0.8);
+            padding: 8px 24px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            margin-bottom: 24px;
+        }
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .hero-content .speciality {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin: 6px 0 12px;
+        }
+        .hero-content .brief {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin: 16px 0 28px;
+            max-width: 480px;
+        }
+        .badge-exp {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+
+        /* about */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .about-grid ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+        .about-grid ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf3f6;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .about-grid ul li i {
+            color: var(--primary);
+            width: 22px;
+        }
+
+        /* services cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .service-card {
+            background: white;
+            padding: 28px 16px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: 0.2s;
+            border-bottom: 4px solid var(--primary-light);
+        }
+        .service-card i {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .service-card h4 {
+            font-weight: 600;
+        }
+
+        /* appointment form */
+        .appointment-box {
+            background: white;
+            padding: 40px 36px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            padding: 14px 18px;
+            border: 1px solid #dde7ec;
+            border-radius: 60px;
+            font-size: 1rem;
+            background: #fafcfd;
+            transition: 0.2s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(26,111,92,0.08);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .confirmation-msg {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 14px 20px;
+            border-radius: 60px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 16px;
+            display: none;
+        }
+
+        /* hours & contact */
+        .hours-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: inline-block;
+            min-width: 260px;
+        }
+        .hours-card .day {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eef5f8;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 60px;
+            box-shadow: var(--shadow);
+            margin-bottom: 16px;
+        }
+        .contact-item i {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            width: 30px;
+        }
+        .map-placeholder {
+            background: #d4e2ea;
+            border-radius: var(--radius);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 500;
+            box-shadow: var(--shadow);
+        }
+
+        /* testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            font-style: italic;
+        }
+        .testimonial-card .name {
+            font-weight: 600;
+            font-style: normal;
+            margin-top: 12px;
+            color: var(--primary);
+        }
+
+        /* footer */
+        footer {
+            background: #12262e;
+            color: #d4e2ea;
+            padding: 36px 0 20px;
+        }
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .social-links a {
+            color: #d4e2ea;
+            margin: 0 10px;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+        .social-links a:hover {
+            color: white;
+        }
+        .copy {
+            font-size: 0.9rem;
+        }
+
+        /* responsive */
+        @media (max-width: 900px) {
+            .hero-grid, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 8px;
+                padding: 16px 0;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .appointment-box {
+                padding: 28px 18px;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            .btn-primary {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+        /* Language toggle (static demo) */
+        .lang-badge {
+            background: #ecf7f4;
+            border-radius: 30px;
+            padding: 3px 10px;
+            font-size: 0.75rem;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">
+                <h1>ডাঃ শাহিদা রহমান</h1>
+                <span>MD, FCPS (মেডিসিন)</span>
+            </div>
+            <div class="mobile-menu" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">হোম</a>
+                <a href="#about">সম্পর্কে</a>
+                <a href="#services">সেবাসমূহ</a>
+                <a href="#appointment">অ্যাপয়েন্টমেন্ট</a>
+                <a href="#hours">ভিজিটিং আওয়ার</a>
+                <a href="#testimonials">মতামত</a>
+                <a href="#contact">যোগাযোগ</a>
+                <span class="lang-toggle"><i class="fas fa-globe"></i> বাংলা / EN</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge-exp"><i class="fas fa-star"></i> ১৪+ বছর অভিজ্ঞতা</span>
+                <h1>ডাঃ শাহিদা রহমান</h1>
+                <div class="speciality">মেডিসিন ও কার্ডিওলজি বিশেষজ্ঞ</div>
+                <p class="brief">হার্ট, ডায়াবেটিস ও উচ্চ রক্তচাপ সহ জটিল রোগের আধুনিক চিকিৎসা। রোগীর সুস্বাস্থ্যই আমাদের লক্ষ্য।</p>
+                <a href="#appointment" class="btn-primary"><i class="fas fa-calendar-check"></i> অ্যাপয়েন্টমেন্ট বুক করুন</a>
+            </div>
+            <div class="hero-image">
+                <span><i class="fas fa-user-md"></i> ডাঃ শাহিদা রহমান</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="background: var(--accent);">
+        <div class="container">
+            <h2 class="section-title">সম্পর্কে</h2>
+            <div class="about-grid">
+                <div>
+                    <h3>শিক্ষাগত যোগ্যতা</h3>
+                    <ul>
+                        <li><i class="fas fa-graduation-cap"></i> MBBS (ঢাকা মেডিকেল কলেজ)</li>
+                        <li><i class="fas fa-graduation-cap"></i> MD (মেডিসিন, বঙ্গবন্ধু শেখ মুজিব মেডিকেল)</li>
+                        <li><i class="fas fa-graduation-cap"></i> FCPS (কার্ডিওলজি)</li>
+                        <li><i class="fas fa-certificate"></i> এডভান্সড কার্ডিয়াক লাইফ সাপোর্ট (ACLS)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>অভিজ্ঞতা ও কর্মক্ষেত্র</h3>
+                    <ul>
+                        <li><i class="fas fa-hospital"></i> ১০+ বছর ঢাকা মেডিকেল কলেজ হাসপাতাল</li>
+                        <li><i class="fas fa-clinic-medical"></i> ন্যাশনাল হার্ট ফাউন্ডেশন, ঢাকা</li>
+                        <li><i class="fas fa-user-md"></i> ২০১৫-বর্তমান: চেম্বার অনুশীলন</li>
+                        <li><i class="fas fa-microscope"></i> ২০০+ সফল করোনারি এনজিওপ্লাস্টি</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">সেবাসমূহ</h2>
+            <p class="section-sub">আমাদের দেওয়া বিশেষায়িত চিকিৎসা সেবাসমূহ</p>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-heartbeat"></i><h4>কার্ডিওলজি</h4><p>হার্টের সমস্যা, এনজাইনা, হার্ট ফেইলিউর</p></div>
+                <div class="service-card"><i class="fas fa-bolt"></i><h4>উচ্চ রক্তচাপ</h4><p>হাইপারটেনশন নিয়ন্ত্রণ ও জটিলতা প্রতিরোধ</p></div>
+                <div class="service-card"><i class="fas fa-droplet"></i><h4>ডায়াবেটিস মেলিটাস</h4><p>টাইপ ১ ও ২ ডায়াবেটিস ব্যবস্থাপনা</p></div>
+                <div class="service-card"><i class="fas fa-lungs"></i><h4>শ্বাসকষ্ট</h4><p>হাঁপানি, সিওপিডি, অ্যালার্জি</p></div>
+                <div class="service-card"><i class="fas fa-kidney"></i><h4>কিডনি রোগ</h4><p>প্রাথমিক পর্যায়ে সনাক্তকরণ ও চিকিৎসা</p></div>
+                <div class="service-card"><i class="fas fa-stethoscope"></i><h4>প্রিভেন্টিভ মেডিসিন</h4><p>স্বাস্থ্য পরীক্ষা ও টিকা</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment -->
+    <section id="appointment" style="background: var(--accent);">
+        <div class="container">
+            <h2 class="section-title text-center">অ্যাপয়েন্টমেন্ট বুক করুন</h2>
+            <div class="appointment-box" id="appointmentForm">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> রোগীর নাম</label>
+                        <input type="text" id="patientName" placeholder="আপনার নাম" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> মোবাইল নম্বর</label>
+                        <input type="tel" id="patientPhone" placeholder="০১×××××××××" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> তারিখ</label>
+                            <input type="date" id="apptDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-clock"></i> সময়</label>
+                            <input type="time" id="apptTime" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width:100%;"><i class="fas fa-check-circle"></i> বুকিং নিশ্চিত করুন</button>
+                </form>
+                <div id="confirmationMessage" class="confirmation-msg">
+                    <i class="fas fa-check-circle"></i> আপনার অ্যাপয়েন্টমেন্ট সফলভাবে সম্পন্ন হয়েছে!<br>
+                    <span style="font-size:0.9rem;">আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visiting Hours -->
+    <section id="hours">
+        <div class="container text-center">
+            <h2 class="section-title">চেম্বার ভিজিটিং আওয়ার</h2>
+            <div class="flex-center" style="margin-top:20px;">
+                <div class="hours-card">
+                    <div class="day"><span>শনিবার</span><span>সকাল ৯টা - দুপুর ২টা</span></div>
+                    <div class="day"><span>রবিবার</span><span>সকাল ১০টা - বিকেল ৪টা</span></div>
+                    <div class="day"><span>সোমবার</span><span>বিকেল ৪টা - রাত ৮টা</span></div>
+                    <div class="day"><span>মঙ্গলবার</span><span>সকাল ৯টা - দুপুর ১টা</span></div>
+                    <div class="day"><span>বুধবার</span><span>বিকেল ৪টা - রাত ৮টা</span></div>
+                    <div class="day"><span>বৃহস্পতিবার</span><span>ছুটি</span></div>
+                    <div class="day"><span>শুক্রবার</span><span>সকাল ১০টা - দুপুর ২টা</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" style="background: var(--accent);">
+        <div class="container">
+            <h2 class="section-title text-center">রোগীদের মতামত</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p>ডাঃ রহমান অত্যন্ত ধৈর্যশীল ও দক্ষ। আমার হার্টের সমস্যা এখন অনেক ভালো।</p><div class="name">- মোঃ সাদিক</div></div>
+                <div class="testimonial-card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p>সঠিক রোগ নির্ণয় ও চিকিৎসা। তাঁর পরামর্শে ডায়াবেটিস নিয়ন্ত্রণে এসেছে।</p><div class="name">- নাসরিন আক্তার</div></div>
+                <div class="testimonial-card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p>চেম্বারের পরিবেশ অত্যন্ত স্বচ্ছ। সময়মতো সেবা পাই। ধন্যবাদ।</p><div class="name">- আব্দুর রহিম</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">যোগাযোগ</h2>
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-item"><i class="fas fa-map-pin"></i> <span>ঢাকা মেডিকেল কলেজ রোড, শাহবাগ, ঢাকা-১০০০</span></div>
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+৮৮০ ১৭১২-৩৪৫৬৭৮</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> <span>dr.shahida@medcare.com</span></div>
+                    <div class="map-placeholder"><i class="fas fa-map-marked-alt" style="margin-right:12px;"></i> গুগল ম্যাপ লোকেশন</div>
+                </div>
+                <div>
+                    <h4>চেম্বারের ঠিকানা</h4>
+                    <p style="background:white; padding:24px; border-radius:var(--radius); box-shadow:var(--shadow);">
+                        <strong>মেডিকেয়ার হাসপাতাল</strong><br>
+                        শাহবাগ, ঢাকা-১০০০<br>
+                        <span class="badge-exp" style="margin-top:8px;"><i class="fas fa-clock"></i> প্রতিদিন সকাল ৯টা-রাত ৮টা</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-flex">
+            <div class="copy"><i class="fas fa-copyright"></i> ২০২৬ ডাঃ শাহিদা রহমান | সর্বস্বত্ব সংরক্ষিত</div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="lang-badge"><i class="fas fa-language"></i> বাংলা / English</div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+
+        // Appointment booking confirmation
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('patientName').value.trim();
+            const phone = document.getElementById('patientPhone').value.trim();
+            const date = document.getElementById('apptDate').value;
+            const time = document.getElementById('apptTime').value;
+            if (!name || !phone || !date || !time) {
+                alert('দয়া করে সকল তথ্য পূরণ করুন।');
+                return;
+            }
+            // show confirmation
+            const msg = document.getElementById('confirmationMessage');
+            msg.style.display = 'block';
+            // reset form (optional)
+            // this.reset();
+            // Scroll to confirmation
+            msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Also you can reset after few seconds, but we keep it for demo.
+            setTimeout(() => {
+                // optionally hide after 8s
+                // msg.style.display = 'none';
+            }, 10000);
+        });
+
+        // set default date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('apptDate').setAttribute('min', today);
+        });
+    </script>
+</body>
+</html>

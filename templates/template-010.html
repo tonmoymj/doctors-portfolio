@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ডা. আরিফুল ইসলাম | মেডিসিন বিশেষজ্ঞ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon-deep: #5C0F1E;
+    --maroon: #7A1526;
+    --maroon-light: #9C2436;
+    --gold: #B9862F;
+    --cream: #FBF6F1;
+    --white: #FFFFFF;
+    --ink: #2A0A10;
+    --ink-soft: #6b4a4f;
+    --line: #E7D9CE;
+    --radius: 2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Hind Siliguri', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{ font-family:'Noto Serif Bengali', serif; }
+  a{ text-decoration:none; color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+
+  /* Focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+  }
+  .seal{
+    width:40px; height:40px; border-radius:50%;
+    background:var(--maroon);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white); font-family:'Noto Serif Bengali',serif; font-weight:700; font-size:15px;
+    border:2px solid var(--gold);
+    flex-shrink:0;
+  }
+  .brand-text{ line-height:1.25; }
+  .brand-text .name{ font-family:'Noto Serif Bengali',serif; font-weight:700; font-size:17px; color:var(--maroon-deep); }
+  .brand-text .role{ font-size:12.5px; color:var(--ink-soft); }
+
+  nav.links{ display:flex; gap:30px; }
+  nav.links a{
+    font-size:15px; color:var(--ink); position:relative; padding:4px 0;
+  }
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--gold);
+    transition:width .25s ease;
+  }
+  nav.links a:hover::after{ width:100%; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:12px 26px; font-family:'Hind Siliguri',sans-serif; font-weight:600; font-size:15px;
+    border-radius:var(--radius); cursor:pointer; border:1.5px solid transparent;
+    transition: all .2s ease;
+  }
+  .btn-primary{ background:var(--maroon); color:var(--white); }
+  .btn-primary:hover{ background:var(--maroon-deep); }
+  .btn-outline{ background:transparent; color:var(--maroon); border-color:var(--maroon); }
+  .btn-outline:hover{ background:var(--maroon); color:var(--white); }
+
+  .menu-toggle{ display:none; background:none; border:none; font-size:26px; color:var(--maroon-deep); cursor:pointer; }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+    padding:76px 0 90px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; letter-spacing:.14em; color:var(--maroon);
+    font-weight:600; margin-bottom:18px;
+  }
+  .eyebrow::before{ content:''; width:26px; height:1.5px; background:var(--gold); display:inline-block; }
+  .hero h1{
+    font-size:clamp(32px,4.2vw,50px); color:var(--maroon-deep); font-weight:700; line-height:1.25;
+    margin-bottom:18px;
+  }
+  .hero h1 span{ color:var(--gold); }
+  .hero p.lead{
+    font-size:17px; color:var(--ink-soft); max-width:480px; margin-bottom:32px;
+  }
+  .hero-cta{ display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-stats{
+    display:flex; gap:34px; margin-top:44px; flex-wrap:wrap;
+  }
+  .stat b{ display:block; font-family:'Noto Serif Bengali',serif; font-size:26px; color:var(--maroon-deep); }
+  .stat span{ font-size:13px; color:var(--ink-soft); }
+
+  .hero-portrait{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .portrait-frame{
+    width:100%; max-width:340px; aspect-ratio:3/3.6;
+    background:var(--maroon); border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white); position:relative;
+    box-shadow:0 24px 50px -18px rgba(92,15,30,.45);
+  }
+  .portrait-frame::before{
+    content:''; position:absolute; inset:14px; border:1px solid rgba(255,255,255,.35); border-radius:4px;
+  }
+  .portrait-initials{ font-family:'Noto Serif Bengali',serif; font-size:64px; font-weight:700; }
+  .portrait-caption{ position:absolute; bottom:-18px; left:50%; transform:translateX(-50%);
+    background:var(--white); border:1px solid var(--line); padding:10px 22px; border-radius:3px;
+    font-size:13px; color:var(--maroon-deep); font-weight:600; white-space:nowrap;
+    box-shadow:0 8px 18px -10px rgba(0,0,0,.2);
+  }
+
+  /* decorative pulse line (signature element) */
+  .pulse-line{
+    position:absolute; left:0; right:0; bottom:0; height:64px; opacity:.5;
+  }
+
+  /* ===== Section basics ===== */
+  section{ padding:84px 0; }
+  .section-head{ margin-bottom:48px; max-width:600px; }
+  .section-head .eyebrow{ margin-bottom:10px; }
+  .section-head h2{ font-size:clamp(26px,3vw,34px); color:var(--maroon-deep); font-weight:700; }
+  .section-head p{ color:var(--ink-soft); margin-top:12px; font-size:15.5px; }
+
+  /* About */
+  .about{ background:var(--white); border-bottom:1px solid var(--line); }
+  .about-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; }
+  .cred-list{ list-style:none; }
+  .cred-list li{
+    display:flex; gap:14px; padding:16px 0; border-bottom:1px dashed var(--line);
+  }
+  .cred-list li:last-child{ border-bottom:none; }
+  .cred-mark{
+    width:28px; height:28px; border-radius:50%; background:var(--cream); border:1.5px solid var(--gold);
+    flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--maroon); font-size:13px; font-weight:700;
+  }
+  .cred-body b{ display:block; color:var(--maroon-deep); font-size:15px; margin-bottom:2px; }
+  .cred-body span{ font-size:13.5px; color:var(--ink-soft); }
+
+  .about-text p{ margin-bottom:16px; color:var(--ink-soft); font-size:15.5px; }
+  .quote-block{
+    margin-top:24px; padding:22px 24px; background:var(--cream); border-left:3px solid var(--gold);
+    font-family:'Noto Serif Bengali',serif; color:var(--maroon-deep); font-size:16px; border-radius:2px;
+  }
+
+  /* Services */
+  .services{ background:var(--cream); }
+  .service-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .service-card{
+    background:var(--white); padding:30px 26px; border:1px solid var(--line); border-radius:4px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .service-card:hover{ transform:translateY(-4px); box-shadow:0 18px 34px -22px rgba(92,15,30,.35); border-color:var(--gold); }
+  .service-num{ font-family:'Noto Serif Bengali',serif; color:var(--gold); font-size:14px; font-weight:700; margin-bottom:14px; letter-spacing:.06em; }
+  .service-card h3{ font-size:18px; color:var(--maroon-deep); margin-bottom:10px; }
+  .service-card p{ font-size:14.5px; color:var(--ink-soft); }
+
+  /* Appointment */
+  .appointment{ background:var(--maroon-deep); color:var(--white); position:relative; overflow:hidden; }
+  .appointment .section-head h2{ color:var(--white); }
+  .appointment .section-head p{ color:#e6c9ce; }
+  .appointment .eyebrow{ color:var(--gold); }
+  .appointment .eyebrow::before{ background:var(--white); }
+
+  .appt-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px; align-items:start; }
+  .hours-card{
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18); border-radius:6px; padding:28px;
+  }
+  .hours-card h3{ font-size:17px; margin-bottom:18px; color:var(--white); font-family:'Noto Serif Bengali',serif; }
+  .hours-row{ display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.14); font-size:14.5px; }
+  .hours-row:last-child{ border-bottom:none; }
+  .hours-row span:first-child{ color:#f0d9dc; }
+  .hours-row span:last-child{ font-weight:600; }
+
+  .form-card{
+    background:var(--white); color:var(--ink); border-radius:6px; padding:34px;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.5);
+  }
+  .form-card h3{ color:var(--maroon-deep); font-size:19px; margin-bottom:22px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .field{ display:flex; flex-direction:column; gap:6px; }
+  .field.full{ grid-column:1/-1; }
+  label{ font-size:13px; font-weight:600; color:var(--maroon-deep); }
+  input, select, textarea{
+    font-family:'Hind Siliguri',sans-serif; font-size:15px; padding:11px 13px;
+    border:1.5px solid var(--line); border-radius:3px; background:var(--cream); color:var(--ink);
+  }
+  input:focus, select:focus, textarea:focus{ border-color:var(--maroon); background:var(--white); }
+  textarea{ resize:vertical; min-height:70px; }
+  .form-note{ font-size:12.5px; color:var(--ink-soft); margin-top:4px; }
+  .submit-btn{ width:100%; margin-top:8px; padding:14px; font-size:15.5px; }
+
+  .confirm-box{
+    display:none; margin-top:18px; padding:18px; background:#F2FBF4; border:1px solid #BFE6C7; border-radius:4px;
+  }
+  .confirm-box.show{ display:block; }
+  .confirm-box h4{ color:#1e7a34; font-size:15px; margin-bottom:8px; }
+  .confirm-box p{ font-size:14px; color:#2c3e34; margin-bottom:3px; }
+
+  /* Testimonials */
+  .testimonials{ background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .t-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  .t-card{ background:var(--cream); padding:26px; border-radius:4px; border:1px solid var(--line); }
+  .t-quote{ font-family:'Noto Serif Bengali',serif; color:var(--maroon-deep); font-size:15.5px; margin-bottom:16px; }
+  .t-author{ display:flex; align-items:center; gap:10px; }
+  .t-avatar{ width:36px; height:36px; border-radius:50%; background:var(--maroon); color:var(--white); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; font-family:'Noto Serif Bengali',serif; }
+  .t-author b{ font-size:13.5px; color:var(--ink); display:block; }
+  .t-author span{ font-size:12px; color:var(--ink-soft); }
+
+  /* Contact */
+  .contact{ background:var(--cream); }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .c-card{ background:var(--white); border:1px solid var(--line); border-radius:4px; padding:24px; }
+  .c-card b{ display:block; color:var(--maroon-deep); font-size:14px; margin-bottom:6px; }
+  .c-card span{ font-size:14.5px; color:var(--ink-soft); }
+  .map-box{ grid-column:1/-1; height:200px; border-radius:4px; background:repeating-linear-gradient(45deg, #efe1d7, #efe1d7 10px, #f7ece3 10px, #f7ece3 20px); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13.5px; }
+
+  /* Footer */
+  footer{ background:var(--maroon-deep); color:#f0d9dc; padding:40px 0 26px; }
+  .footer-grid{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .footer-brand{ display:flex; align-items:center; gap:12px; }
+  .footer-brand .name{ color:var(--white); font-family:'Noto Serif Bengali',serif; font-weight:700; font-size:16px; }
+  .foot-links{ display:flex; gap:20px; font-size:13.5px; }
+  .foot-links a:hover{ color:var(--white); }
+  .copyright{ text-align:center; font-size:12.5px; margin-top:26px; border-top:1px solid rgba(255,255,255,.15); padding-top:20px; color:#dba9af; }
+
+  /* Responsive */
+  @media (max-width: 860px){
+    nav.links{ display:none; }
+    .menu-toggle{ display:block; }
+    .hero-grid, .about-grid, .appt-grid, .contact-grid{ grid-template-columns:1fr; }
+    .service-grid{ grid-template-columns:1fr 1fr; }
+    .t-grid{ grid-template-columns:1fr; }
+    .hero-portrait{ order:-1; }
+    .form-row{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 520px){
+    .service-grid{ grid-template-columns:1fr; }
+    section{ padding:60px 0; }
+    .wrap{ padding:0 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; scroll-behavior:auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="seal">আই</div>
+      <div class="brand-text">
+        <div class="name">ডা. আরিফুল ইসলাম</div>
+        <div class="role">MBBS, FCPS (মেডিসিন)</div>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#about">পরিচিতি</a>
+      <a href="#services">সেবাসমূহ</a>
+      <a href="#appointment">অ্যাপয়েন্টমেন্ট</a>
+      <a href="#testimonials">মতামত</a>
+      <a href="#contact">যোগাযোগ</a>
+    </nav>
+    <a href="#appointment" class="btn btn-primary" style="font-size:14px; padding:10px 20px;">অ্যাপয়েন্টমেন্ট বুক করুন</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">১৫+ বছরের অভিজ্ঞতা</div>
+      <h1>সুস্থতার পথে, আপনার পাশে <span>আস্থার</span> চিকিৎসক</h1>
+      <p class="lead">ডা. আরিফুল ইসলাম একজন অভিজ্ঞ মেডিসিন বিশেষজ্ঞ, যিনি নির্ভুল রোগ নির্ণয় ও যত্নশীল চিকিৎসার মাধ্যমে হাজারো রোগীর আস্থা অর্জন করেছেন।</p>
+      <div class="hero-cta">
+        <a href="#appointment" class="btn btn-primary">এখনই অ্যাপয়েন্টমেন্ট নিন</a>
+        <a href="#about" class="btn btn-outline">পরিচিতি জানুন</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>১৫+</b><span>বছরের অভিজ্ঞতা</span></div>
+        <div class="stat"><b>২০,০০০+</b><span>রোগী দেখেছেন</span></div>
+        <div class="stat"><b>৪.৯/৫</b><span>রোগীর রেটিং</span></div>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <div class="portrait-frame">
+        <span class="portrait-initials">আই</span>
+        <div class="portrait-caption">ডা. আরিফুল ইসলাম</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <ul class="cred-list">
+        <li>
+          <div class="cred-mark">✓</div>
+          <div class="cred-body"><b>MBBS</b><span>ঢাকা মেডিকেল কলেজ</span></div>
+        </li>
+        <li>
+          <div class="cred-mark">✓</div>
+          <div class="cred-body"><b>FCPS (মেডিসিন)</b><span>বাংলাদেশ কলেজ অব ফিজিশিয়ানস অ্যান্ড সার্জনস</span></div>
+        </li>
+        <li>
+          <div class="cred-mark">✓</div>
+          <div class="cred-body"><b>সহকারী অধ্যাপক, মেডিসিন বিভাগ</b><span>[হাসপাতাল/মেডিকেল কলেজের নাম]</span></div>
+        </li>
+        <li>
+          <div class="cred-mark">✓</div>
+          <div class="cred-body"><b>আজীবন সদস্য</b><span>বাংলাদেশ মেডিকেল অ্যাসোসিয়েশন (BMA)</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="about-text">
+      <div class="eyebrow">পরিচিতি</div>
+      <h2 style="color:var(--maroon-deep); font-size:26px; margin-bottom:16px;">রোগীকেন্দ্রিক, অভিজ্ঞতাসমৃদ্ধ চিকিৎসাসেবা</h2>
+      <p>দীর্ঘ ১৫ বছরের বেশি সময় ধরে ডা. আরিফুল ইসলাম জ্বর, ডায়াবেটিস, উচ্চ রক্তচাপ, লিভার ও কিডনির সমস্যাসহ বিভিন্ন জটিল রোগের চিকিৎসায় নিয়োজিত আছেন। তিনি প্রতিটি রোগীর সমস্যা মনোযোগ দিয়ে শোনেন এবং সহজবোধ্য ভাষায় চিকিৎসা পরিকল্পনা বুঝিয়ে দেন।</p>
+      <p>আধুনিক চিকিৎসাবিজ্ঞানের সর্বশেষ পদ্ধতির সাথে সামঞ্জস্য রেখে তিনি প্রতিটি রোগীকে ব্যক্তিগতভাবে যত্ন নিয়ে চিকিৎসা প্রদান করেন।</p>
+      <div class="quote-block">"আমি বিশ্বাস করি, একজন রোগীর কথা মনোযোগ দিয়ে শোনাটাই সঠিক চিকিৎসার প্রথম ধাপ।"</div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">সেবাসমূহ</div>
+      <h2>যেসব বিষয়ে চিকিৎসাসেবা দেওয়া হয়</h2>
+      <p>সাধারণ স্বাস্থ্য পরীক্ষা থেকে শুরু করে জটিল রোগ নির্ণয় পর্যন্ত — সম্পূর্ণ যত্নসহকারে সেবা প্রদান করা হয়।</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-num">০১</div>
+        <h3>ডায়াবেটিস ব্যবস্থাপনা</h3>
+        <p>রক্তে শর্করার মাত্রা নিয়ন্ত্রণ ও দীর্ঘমেয়াদি ব্যবস্থাপনা পরিকল্পনা।</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">০২</div>
+        <h3>উচ্চ রক্তচাপ চিকিৎসা</h3>
+        <p>নিয়মিত পর্যবেক্ষণ ও কার্যকর ওষুধ ব্যবস্থাপনার মাধ্যমে নিয়ন্ত্রণ।</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">০৩</div>
+        <h3>জ্বর ও সংক্রামক রোগ</h3>
+        <p>দ্রুত রোগ নির্ণয় এবং সঠিক চিকিৎসা পরিকল্পনা প্রদান।</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">০৪</div>
+        <h3>লিভার ও কিডনি সমস্যা</h3>
+        <p>প্রাথমিক পরীক্ষা থেকে দীর্ঘমেয়াদি ফলোআপ পর্যন্ত সেবা।</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">০৫</div>
+        <h3>নিয়মিত স্বাস্থ্য পরীক্ষা</h3>
+        <p>বার্ষিক চেকআপ ও প্রতিরোধমূলক স্বাস্থ্যসেবা পরামর্শ।</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">০৬</div>
+        <h3>দ্বিতীয় মতামত (Second Opinion)</h3>
+        <p>জটিল রোগ নির্ণয়ে বিশেষজ্ঞের পরামর্শ ও পুনর্মূল্যায়ন।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="appointment" id="appointment">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">অ্যাপয়েন্টমেন্ট</div>
+      <h2>এখনই আপনার সময় বুক করুন</h2>
+      <p>নিচের ফর্মটি পূরণ করুন — আমাদের টিম শীঘ্রই আপনার সাথে যোগাযোগ করে অ্যাপয়েন্টমেন্ট নিশ্চিত করবে।</p>
+    </div>
+    <div class="appt-grid">
+      <div class="hours-card">
+        <h3>চেম্বার সময়সূচি</h3>
+        <div class="hours-row"><span>শনিবার – বুধবার</span><span>বিকাল ৫টা – রাত ৯টা</span></div>
+        <div class="hours-row"><span>বৃহস্পতিবার</span><span>বিকাল ৫টা – রাত ৮টা</span></div>
+        <div class="hours-row"><span>শুক্রবার</span><span>বন্ধ</span></div>
+        <div class="hours-row"><span>জরুরি যোগাযোগ</span><span>[জরুরি নম্বর]</span></div>
+      </div>
+      <div class="form-card">
+        <h3>অ্যাপয়েন্টমেন্ট ফর্ম</h3>
+        <form id="apptForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="pname">পূর্ণ নাম *</label>
+              <input type="text" id="pname" required placeholder="আপনার নাম লিখুন">
+            </div>
+            <div class="field">
+              <label for="pphone">ফোন নম্বর *</label>
+              <input type="tel" id="pphone" required placeholder="01XXXXXXXXX">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="pdate">তারিখ *</label>
+              <input type="date" id="pdate" required>
+            </div>
+            <div class="field">
+              <label for="ptime">সময় *</label>
+              <select id="ptime" required>
+                <option value="">সময় নির্বাচন করুন</option>
+                <option>বিকাল ৫:০০</option>
+                <option>বিকাল ৬:০০</option>
+                <option>সন্ধ্যা ৭:০০</option>
+                <option>রাত ৮:০০</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field full">
+              <label for="preason">সমস্যার সংক্ষিপ্ত বিবরণ (ঐচ্ছিক)</label>
+              <textarea id="preason" placeholder="যে সমস্যার জন্য দেখাতে চান, সংক্ষেপে লিখুন"></textarea>
+              <span class="form-note">এই তথ্য শুধু ডাক্তারকে প্রাথমিক ধারণা দিতে সাহায্য করবে।</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">অ্যাপয়েন্টমেন্ট নিশ্চিত করুন</button>
+        </form>
+        <div class="confirm-box" id="confirmBox">
+          <h4>✓ অ্যাপয়েন্টমেন্ট রিকোয়েস্ট গৃহীত হয়েছে</h4>
+          <p id="confirmName"></p>
+          <p id="confirmDateTime"></p>
+          <p style="margin-top:8px; color:#4a5d50;">শীঘ্রই ফোন কলের মাধ্যমে আপনার অ্যাপয়েন্টমেন্ট নিশ্চিত করা হবে।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">রোগীদের মতামত</div>
+      <h2>রোগীরা যা বলেন</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <p class="t-quote">"ডাক্তার সাহেব খুব মনোযোগ দিয়ে সমস্যা শুনেছেন এবং সহজ ভাষায় সব বুঝিয়ে দিয়েছেন। খুবই ভালো অভিজ্ঞতা।"</p>
+        <div class="t-author">
+          <div class="t-avatar">র</div>
+          <div><b>রহিমা বেগম</b><span>রোগী</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <p class="t-quote">"দীর্ঘদিনের ডায়াবেটিস সমস্যা এখন অনেকটাই নিয়ন্ত্রণে। নিয়মিত ফলোআপ ও পরামর্শের জন্য কৃতজ্ঞ।"</p>
+        <div class="t-author">
+          <div class="t-avatar">ক</div>
+          <div><b>কামাল হোসেন</b><span>রোগী</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">যোগাযোগ</div>
+      <h2>আমাদের সাথে যোগাযোগ করুন</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="c-card">
+        <b>ঠিকানা</b>
+        <span>[চেম্বার/হাসপাতালের নাম], [রোড নং], [এলাকা], রাজশাহী</span>
+      </div>
+      <div class="c-card">
+        <b>ফোন</b>
+        <span>[ফোন নম্বর লিখুন]</span>
+      </div>
+      <div class="c-card">
+        <b>ইমেইল</b>
+        <span>[ইমেইল ঠিকানা লিখুন]</span>
+      </div>
+      <div class="c-card">
+        <b>চেম্বার সময়</b>
+        <span>শনি – বৃহস্পতি, বিকাল ৫টা থেকে</span>
+      </div>
+      <div class="map-box">মানচিত্র এখানে যুক্ত হবে (Google Maps Embed)</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="seal" style="background:transparent; border-color:#dba9af;">আই</div>
+        <div class="name">ডা. আরিফুল ইসলাম</div>
+      </div>
+      <div class="foot-links">
+        <a href="#about">পরিচিতি</a>
+        <a href="#services">সেবাসমূহ</a>
+        <a href="#appointment">অ্যাপয়েন্টমেন্ট</a>
+        <a href="#contact">যোগাযোগ</a>
+      </div>
+    </div>
+    <div class="copyright">© ২০২৬ ডা. আরিফুল ইসলাম। সর্বস্বত্ব সংরক্ষিত।</div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('apptForm');
+  const confirmBox = document.getElementById('confirmBox');
+  const confirmName = document.getElementById('confirmName');
+  const confirmDateTime = document.getElementById('confirmDateTime');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('pname').value.trim();
+    const date = document.getElementById('pdate').value;
+    const time = document.getElementById('ptime').value;
+
+    confirmName.textContent = 'নাম: ' + name;
+    confirmDateTime.textContent = 'তারিখ ও সময়: ' + date + ', ' + time;
+    confirmBox.classList.add('show');
+    confirmBox.scrollIntoView({behavior:'smooth', block:'nearest'});
+    form.reset();
+  });
+
+  // set min date to today
+  document.getElementById('pdate').min = new Date().toISOString().split('T')[0];
+</script>
+
+</body>
+</html>

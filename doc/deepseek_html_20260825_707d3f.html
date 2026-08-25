@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ডাঃ রহমান - কার্ডিওলজিস্ট</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ---------- Reset & Base ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f4f9fc;
+      color: #1e2b3a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- Header / Nav ---------- */
+    header {
+      background: #0a2f44;
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .logo span {
+      color: #7bc6e0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #7bc6e0;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 60px 0;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1 1 400px;
+    }
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .hero-content h1 span {
+      color: #0a7b9c;
+    }
+    .hero-content .tagline {
+      font-size: 22px;
+      color: #0a7b9c;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0a7b9c;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #065a73;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(10,123,156,0.3);
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 70px 0;
+      border-bottom: 1px solid #e0edf5;
+    }
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 15px;
+      color: #0a2f44;
+    }
+    .section-title span {
+      color: #0a7b9c;
+    }
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #4a5b6b;
+      margin-bottom: 50px;
+    }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-text {
+      flex: 2;
+    }
+    .about-text p {
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+    .about-text ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 30px;
+      margin-top: 15px;
+    }
+    .about-text ul li i {
+      color: #0a7b9c;
+      margin-right: 8px;
+    }
+
+    .about-stats {
+      flex: 1;
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-item .number {
+      font-size: 40px;
+      font-weight: 700;
+      color: #0a7b9c;
+    }
+    .stat-item .label {
+      font-size: 16px;
+      color: #4a5b6b;
+    }
+
+    /* ---------- Services ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: #fff;
+      padding: 35px 20px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      transition: 0.3s;
+      border-bottom: 4px solid transparent;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-bottom-color: #0a7b9c;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+    .service-card i {
+      font-size: 48px;
+      color: #0a7b9c;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      color: #4a5b6b;
+    }
+
+    /* ---------- Education & Experience ---------- */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .timeline-item {
+      background: #fff;
+      padding: 24px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-left: 6px solid #0a7b9c;
+    }
+    .timeline-item h3 {
+      font-size: 20px;
+      color: #0a2f44;
+    }
+    .timeline-item .meta {
+      color: #0a7b9c;
+      font-weight: 600;
+      margin: 5px 0 10px;
+    }
+    .timeline-item p {
+      color: #3a4b5b;
+    }
+
+    /* ---------- Testimonials ---------- */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .testimonial-card {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .testimonial-card i.fa-quote-left {
+      color: #d0e6ef;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+    .testimonial-card .client {
+      font-weight: 600;
+      color: #0a2f44;
+    }
+    .testimonial-card .client span {
+      font-weight: 400;
+      color: #4a5b6b;
+      font-size: 14px;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .contact-info {
+      flex: 1 1 300px;
+    }
+    .contact-info h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .contact-info p {
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+    .contact-info i {
+      width: 30px;
+      color: #0a7b9c;
+    }
+    .social-links {
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-block;
+      background: #0a2f44;
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 44px;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      background: #0a7b9c;
+      transform: scale(1.1);
+    }
+
+    .contact-form {
+      flex: 1 1 350px;
+      background: #fff;
+      padding: 30px 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      border: 1px solid #dce8ef;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #0a7b9c;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(10,123,156,0.15);
+    }
+    .contact-form textarea {
+      height: 140px;
+      resize: vertical;
+    }
+    .contact-form .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #0a2f44;
+      color: #cbdde8;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 20px;
+    }
+    footer p {
+      font-size: 15px;
+    }
+    footer a {
+      color: #7bc6e0;
+      text-decoration: none;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        gap: 15px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 36px;
+      }
+      .hero-image img {
+        width: 240px;
+        height: 240px;
+      }
+      .section-title {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 28px;
+      }
+      .hero-content .tagline {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">ডা<span>.</span> রহমান</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">পরিচয়</a></li>
+          <li><a href="#services">সেবাসমূহ</a></li>
+          <li><a href="#education">শিক্ষা</a></li>
+          <li><a href="#testimonials">মতামত</a></li>
+          <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section style="padding-top: 20px; border-bottom: none;">
+    <div class="container hero">
+      <div class="hero-content">
+        <h1>ডা. <span>মোঃ রহমান</span></h1>
+        <div class="tagline">কার্ডিওলজিস্ট &amp; ইন্টারনাল মেডিসিন</div>
+        <p>
+          হৃদরোগ ও উচ্চরক্তচাপ বিশেষজ্ঞ। ১২+ বছরের অভিজ্ঞতায় 
+          হাজারো রোগীকে সুস্থ জীবন দিয়েছি।
+        </p>
+        <a href="#contact" class="btn">অ্যাপয়েন্টমেন্ট নিন</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://img.freepik.com/free-photo/portrait-smiling-male-doctor_171337-1532.jpg?w=740&t=st=1700000000" alt="ডাক্তার রহমান" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">আমার <span>পরিচয়</span></h2>
+      <p class="section-subtitle">জানুন আমার যাত্রা ও দর্শন সম্পর্কে</p>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            আমি ডা. মোঃ রহমান, এমবিবিএস, এমডি (কার্ডিওলজি)। 
+            রাজশাহী মেডিকেল কলেজ থেকে এমবিবিএস সম্পন্ন করে 
+            বিএসএমএমইউ থেকে কার্ডিওলজিতে স্নাতকোত্তর ডিগ্রি অর্জন করি।
+          </p>
+          <p>
+            আমার লক্ষ্য হলো প্রতিটি রোগীকে আধুনিক ও মানসম্পন্ন 
+            চিকিৎসা সেবা প্রদান করা। আমি বিশ্বাস করি, রোগীর সাথে 
+            সৎ ও খোলামেলা কথোপকথনই সঠিক চিকিৎসার প্রথম ধাপ।
+          </p>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> ১২+ বছর অভিজ্ঞতা</li>
+            <li><i class="fas fa-check-circle"></i> ৫০০০+ সফল চিকিৎসা</li>
+            <li><i class="fas fa-check-circle"></i> আন্তর্জাতিক জার্নালে প্রকাশনা</li>
+            <li><i class="fas fa-check-circle"></i> নিয়মিত প্রশিক্ষণ ও ওয়ার্কশপ</li>
+          </ul>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="number">১২+</div>
+            <div class="label">বছর অভিজ্ঞতা</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">৫০০০+</div>
+            <div class="label">সফল চিকিৎসা</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">৯৮%</div>
+            <div class="label">রোগী সন্তুষ্টি</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section id="services" style="background: #ecf7fc;">
+    <div class="container">
+      <h2 class="section-title">আমার <span>সেবাসমূহ</span></h2>
+      <p class="section-subtitle">আধুনিক প্রযুক্তিতে সজ্জিত চিকিৎসা সেবা</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-heartbeat"></i>
+          <h3>কার্ডিওলজি</h3>
+          <p>হৃদরোগ, হার্ট অ্যাটাক, অ্যারিথমিয়া ইত্যাদি চিকিৎসা।</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-stethoscope"></i>
+          <h3>ইন্টারনাল মেডিসিন</h3>
+          <p>ডায়াবেটিস, থাইরয়েড, লিভার ও কিডনি রোগের চিকিৎসা।</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-bolt"></i>
+          <h3>ইসিজি &amp; স্ট্রেস টেস্ট</h3>
+          <p>আধুনিক ইসিজি মেশিন ও ট্রেডমিল টেস্ট সুবিধা।</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-lungs"></i>
+          <h3>শ্বাসতন্ত্রের রোগ</h3>
+          <p>হাঁপানি, সিওপিডি ও অন্যান্য শ্বাসজনিত সমস্যা।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION & EXPERIENCE ========== -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">শিক্ষা ও <span>অভিজ্ঞতা</span></h2>
+      <p class="section-subtitle">আমার একাডেমিক ও পেশাগত জীবন</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>এমডি (কার্ডিওলজি)</h3>
+          <div class="meta">বিএসএমএমইউ, ঢাকা | ২০১৬-২০১৯</div>
+          <p>কার্ডিওলজিতে স্নাতকোত্তর ডিগ্রি অর্জন। গবেষণার বিষয় ছিল 'হৃদরোগে আধুনিক চিকিৎসা পদ্ধতি'।</p>
+        </div>
+        <div class="timeline-item">
+          <h3>এমবিবিএস</h3>
+          <div class="meta">রাজশাহী মেডিকেল কলেজ | ২০০৫-২০১১</div>
+          <p>সোনালি ফলকে স্নাতক সম্পন্ন। ক্লিনিক্যাল প্রশিক্ষণে বিশেষ দক্ষতা অর্জন।</p>
+        </div>
+        <div class="timeline-item">
+          <h3>সিনিয়র কনসালটেন্ট</h3>
+          <div class="meta">এভারকেয়ার হাসপাতাল, ঢাকা | ২০২০-বর্তমান</div>
+          <p>কার্ডিওলজি বিভাগের প্রধান হিসেবে দায়িত্ব পালন। নিয়মিত রোগী দেখা ও জটিল কেস পরিচালনা।</p>
+        </div>
+        <div class="timeline-item">
+          <h3>রেসিডেন্ট ফিজিশিয়ান</h3>
+          <div class="meta">ন্যাশনাল হার্ট ফাউন্ডেশন | ২০১৪-২০১৬</div>
+          <p>হৃদরোগ বিভাগে ইন্টার্ন ও রেসিডেন্ট হিসেবে কাজ। ইমার্জেন্সি কার্ডিয়াক কেয়ারে দক্ষতা।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section id="testimonials" style="background: #ecf7fc;">
+    <div class="container">
+      <h2 class="section-title">রোগীদের <span>মতামত</span></h2>
+      <p class="section-subtitle">তারা যা বলেছেন</p>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>"ডা. রহমানের চিকিৎসায় আমার বাবার হার্টের সমস্যা অনেক উন্নত হয়েছে। অত্যন্ত ধৈর্যশীল ও যত্নশীল একজন ডাক্তার।"</p>
+          <div class="client">— মিসেস ফাতেমা <span>(রোগীর মেয়ে)</span></div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>"উচ্চরক্তচাপ নিয়ে অনেক ডাক্তার দেখিয়েছি, কিন্তু ডা. রহমানের পরামর্শ ও চিকিৎসা পদ্ধতি সত্যিই কার্যকর।"</p>
+          <div class="client">— মি. কামাল হোসেন <span>(সাবেক রোগী)</span></div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>"তার কাছ থেকে শুধু ওষুধ নয়, বরং জীবনযাপনের সঠিক নির্দেশনাও পেয়েছি। অত্যন্ত আন্তরিক একজন মানুষ।"</p>
+          <div class="client">— শ্রীমতি রিতা <span>(গৃহিণী)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">যোগাযোগ <span>করুন</span></h2>
+      <p class="section-subtitle">অ্যাপয়েন্টমেন্ট বা যেকোনো প্রশ্নে আমাকে লিখুন</p>
+      <div class="contact-wrapper">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3><i class="fas fa-map-marker-alt" style="color: #0a7b9c;"></i> ঠিকানা</h3>
+          <p><i class="fas fa-hospital"></i> এভারকেয়ার হাসপাতাল, ঢাকা</p>
+          <p><i class="fas fa-phone-alt"></i> +৮৮০ ১৭১২-৩৪৫৬৭৮</p>
+          <p><i class="fas fa-envelope"></i> dr.rahman@email.com</p>
+          <p><i class="fas fa-clock"></i> সকাল ১০টা – রাত ৮টা (শুক্রবার ছুটির দিন)</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm">
+          <h3 style="text-align:center; margin-bottom:18px; color:#0a2f44;">দ্রুত বার্তা পাঠান</h3>
+          <input type="text" placeholder="আপনার নাম" id="userName" required />
+          <input type="email" placeholder="ইমেইল" id="userEmail" required />
+          <input type="tel" placeholder="মোবাইল নম্বর" id="userPhone" />
+          <textarea placeholder="আপনার বার্তা লিখুন..." id="userMessage" required></textarea>
+          <button type="submit" class="btn">বার্তা পাঠান <i class="fas fa-paper-plane"></i></button>
+          <p id="formStatus" style="margin-top: 12px; font-weight: 500; text-align:center;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <p>&copy; ২০২৬ ডা. মোঃ রহমান – সকল অধিকার সংরক্ষিত।</p>
+      <p style="font-size: 14px; margin-top: 6px;">
+        ডিজাইন করেছেন <a href="#">মেডিক্যাল পোর্টফোলিও</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // ----- Hamburger Menu Toggle -----
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu on link click (for mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // ----- Contact Form Submit (Demo) -----
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('userName').value.trim();
+      const email = document.getElementById('userEmail').value.trim();
+      const message = document.getElementById('userMessage').value.trim();
+
+      if (name === '' || email === '' || message === '') {
+        status.innerHTML = '⚠️ দয়া করে সব ঘর পূরণ করুন।';
+        status.style.color = '#c0392b';
+        return;
+      }
+
+      // Simulate sending (replace with actual backend later)
+      status.innerHTML = '✅ আপনার বার্তা পাঠানো হয়েছে। ধন্যবাদ!';
+      status.style.color = '#0a7b9c';
+
+      // Clear form
+      form.reset();
+
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        status.innerHTML = '';
+      }, 5000);
+    });
+
+    // ----- Smooth scroll for anchor links (optional) -----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ----- Sticky Nav shadow on scroll -----
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 6px 20px rgba(0,0,0,0.15)';
+      } else {
+        header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+      }
+    });
+  </script>
+
+</body>
+</html>

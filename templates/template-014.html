@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Arif Rahman | Cardiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17211f;--green:#173f36;--mint:#dfeee6;--cream:#f7f5ef;
+  --orange:#d9794a;--gray:#68716e;--white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 36px));margin:auto}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;letter-spacing:.5px}
+.brand span{color:var(--orange)}
+.links{display:flex;gap:30px;color:#53605c;font-size:14px}
+.links a:hover{color:var(--orange)}
+.nav-btn{border:1px solid #b9c4be;border-radius:30px;padding:12px 19px;font-size:14px;font-weight:700}
+.hero{min-height:650px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.kicker{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--orange);font-weight:700;margin-bottom:18px}
+h1{font-family:"Playfair Display",serif;font-size:clamp(50px,6vw,78px);line-height:1.03;font-weight:600;letter-spacing:-2px;margin-bottom:25px}
+.hero p{max-width:530px;color:var(--gray);font-size:17px;line-height:1.8}
+.hero-actions{display:flex;align-items:center;gap:18px;margin-top:30px}
+.primary{background:var(--green);color:#fff;border-radius:30px;padding:15px 24px;font-weight:700}
+.text-btn{font-weight:700;color:var(--green)}
+.visual{position:relative}
+.photo{height:550px;border-radius:180px 180px 28px 28px;background:var(--mint);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.photo::before{content:"";width:310px;height:390px;border-radius:155px 155px 20px 20px;background:#c4ded3}
+.photo-label{position:absolute;bottom:28px;left:28px;background:#fff;padding:16px 19px;border-radius:16px;box-shadow:0 10px 30px #173f3620}
+.photo-label b{display:block;font-size:14px}.photo-label span{font-size:12px;color:var(--gray)}
+.badge{position:absolute;right:-18px;top:45px;width:125px;height:125px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;text-align:center;font-size:12px;font-weight:700;padding:15px}
+.intro{background:var(--green);color:#fff;border-radius:28px;padding:55px;display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center}
+.intro h2,.section-title{font-family:"Playfair Display",serif;font-size:42px;font-weight:600;line-height:1.15}
+.intro p{color:#d7e5df;line-height:1.8;margin-top:18px}
+.signature{font-family:"Playfair Display",serif;font-size:31px;color:#d7a987}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.stat{border-left:2px solid var(--orange);padding-left:18px}.stat b{font-size:30px;display:block}.stat span{font-size:13px;color:#c4d4ce}
+section{padding:90px 0}
+.section-top{display:flex;justify-content:space-between;align-items:end;margin-bottom:38px}
+.section-top p{color:var(--gray);max-width:450px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{background:#fff;border-radius:24px;padding:30px;border:1px solid #e7e3da;min-height:260px;transition:.25s}
+.service:hover{transform:translateY(-5px);box-shadow:0 18px 35px #17211f12}
+.num{color:var(--orange);font-weight:700;font-size:13px;margin-bottom:50px}
+.service h3{font-family:"Playfair Display",serif;font-size:25px;margin-bottom:12px}
+.service p{color:var(--gray);font-size:14px;line-height:1.7}
+.profile{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.profile-box{background:var(--mint);border-radius:28px;padding:38px}
+.profile-box h3{font-family:"Playfair Display",serif;font-size:30px;margin-bottom:10px}
+.profile-box p{color:var(--gray);font-size:14px;line-height:1.8}
+.profile-copy p{color:var(--gray);line-height:1.9;margin:20px 0}
+.credentials{display:flex;flex-wrap:wrap;gap:10px}
+.tag{border:1px solid #ccd7d0;border-radius:20px;padding:9px 13px;font-size:12px;background:#fff}
+.cta{background:var(--orange);border-radius:28px;padding:45px;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.cta h2{font-family:"Playfair Display",serif;font-size:39px}
+.cta p{margin-top:8px;color:#fff0e8}
+.cta a{background:#fff;color:var(--green);padding:14px 22px;border-radius:28px;font-weight:700;white-space:nowrap}
+footer{padding:35px 0 45px;color:var(--gray);font-size:13px}
+.footer{display:flex;justify-content:space-between}
+@media(max-width:850px){
+ .links{display:none}.hero{grid-template-columns:1fr;padding:45px 0}.visual{order:-1}.photo{height:430px}
+ .intro,.profile{grid-template-columns:1fr}.stats{margin-top:20px}.services{grid-template-columns:1fr}
+ .section-top{display:block}.section-top p{margin-top:10px}.cta{display:block}.cta a{display:inline-block;margin-top:22px}
+}
+@media(max-width:520px){
+ h1{font-size:50px}.photo{height:360px}.intro{padding:30px}.intro h2,.section-title{font-size:34px}
+ .stats{grid-template-columns:1fr}.profile{gap:30px}.cta{padding:30px}.cta h2{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+  <a class="brand" href="#">DR. ARIF <span>RAHMAN</span></a>
+  <div class="links">
+    <a href="#about">About</a><a href="#care">Care</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </div>
+  <a class="nav-btn" href="#contact">Book a Visit</a>
+</nav>
+</div>
+</header>
+
+<main>
+<div class="container">
+<section class="hero">
+  <div>
+    <div class="kicker">Consultant Cardiologist</div>
+    <h1>Medicine with a more human touch.</h1>
+    <p>Specialized cardiac care built around listening, clear explanations, and treatment plans that fit real life.</p>
+    <div class="hero-actions">
+      <a class="primary" href="#contact">Schedule Consultation</a>
+      <a class="text-btn" href="#care">Explore care →</a>
+    </div>
+  </div>
+  <div class="visual">
+    <div class="photo"><div class="photo-label"><b>Dr. Arif Rahman</b><span>MBBS · MD · FACC</span></div></div>
+    <div class="badge">15+ YEARS<br>OF CARE</div>
+  </div>
+</section>
+
+<section style="padding-top:0" id="experience">
+  <div class="intro">
+    <div>
+      <h2>Good medicine starts with listening.</h2>
+      <p>Every patient deserves time, clarity, and a plan they can understand. My practice combines specialist cardiology with a calm, personal approach.</p>
+      <div class="signature">Dr. Arif Rahman</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>15+</b><span>Years of experience</span></div>
+      <div class="stat"><b>12K+</b><span>Patients cared for</span></div>
+      <div class="stat"><b>4.9</b><span>Patient rating</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="care">
+  <div class="section-top">
+    <div><div class="kicker">Specialist care</div><h2 class="section-title">Focused on what matters.</h2></div>
+    <p>From prevention to ongoing treatment, every service is designed around better understanding and better outcomes.</p>
+  </div>
+  <div class="services">
+    <article class="service"><div class="num">01 — PREVENTION</div><h3>Heart Health Check</h3><p>Risk assessment, routine screening, ECG and practical lifestyle guidance.</p></article>
+    <article class="service"><div class="num">02 — MANAGEMENT</div><h3>Blood Pressure</h3><p>Personalized hypertension care with simple, sustainable treatment plans.</p></article>
+    <article class="service"><div class="num">03 — DIAGNOSIS</div><h3>Chest Pain & Rhythm</h3><p>Thoughtful evaluation of chest discomfort, palpitations and related symptoms.</p></article>
+  </div>
+</section>
+
+<section id="about">
+  <div class="profile">
+    <div class="profile-box">
+      <div class="kicker">Credentials</div>
+      <h3>Experience you can trust.</h3>
+      <p>Consultant Cardiologist with advanced clinical training and a commitment to evidence-led care.</p>
+    </div>
+    <div class="profile-copy">
+      <div class="kicker">About the doctor</div>
+      <h2 class="section-title">Clear answers. Calm decisions.</h2>
+      <p>I believe medical care should never feel rushed or confusing. My role is to explain what is happening, discuss your options, and help you choose the next step with confidence.</p>
+      <div class="credentials">
+        <span class="tag">MBBS</span><span class="tag">MD Cardiology</span><span class="tag">FACC</span><span class="tag">15+ Years</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cta">
+    <div><h2>Let's talk about your heart.</h2><p>Book a consultation for personalized cardiac care.</p></div>
+    <a href="tel:+8801XXXXXXXXX">Call +880 1XXX-XXXXXX</a>
+  </div>
+</section>
+</div>
+</main>
+
+<footer>
+<div class="container footer">
+  <div><b>DR. ARIF RAHMAN</b><br>Consultant Cardiologist · Dhaka</div>
+  <div>Appointments · +880 1XXX-XXXXXX</div>
+</div>
+</footer>
+</body>
+</html>

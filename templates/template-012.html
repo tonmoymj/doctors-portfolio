@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="bn" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Arham Rahman — Specialist Portfolio & Telemedicine</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Inter & Hind Siliguri for Bengali typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Hind Siliguri', 'sans-serif'],
+          },
+          colors: {
+            emerald: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            dark: {
+              bg: '#090d16',
+              card: '#111827',
+              border: '#1f2937'
+            }
+          },
+          animation: {
+            'pulse-glow': 'pulseGlow 3s infinite ease-in-out',
+            'float': 'float 6s infinite ease-in-out',
+          },
+          keyframes: {
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+              '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Glassmorphism & Custom Scrollbar */
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(16, 185, 129, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.15);
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f2937;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #10b981;
+    }
+
+    /* Print styles for appointment ticket */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printableTicket, #printableTicket * {
+        visibility: visible;
+      }
+      #printableTicket {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: #000 !important;
+        background: #fff !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#090d16] text-slate-100 antialiased min-h-screen selection:bg-emerald-500 selection:text-slate-950 font-sans pb-16">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-emerald-900/60 via-emerald-600/40 to-slate-900 border-b border-emerald-500/20 text-xs py-2 px-4 text-center flex items-center justify-center gap-3">
+    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-medium">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+      <span data-i18n="announcement_badge">Live Consultation Active</span>
+    </span>
+    <span data-i18n="announcement_text" class="text-slate-300 hidden sm:inline">Today's Dhanmondi Chamber Evening Slots Available!</span>
+    <button onclick="openBookingModal()" class="underline font-semibold text-emerald-400 hover:text-emerald-300 cursor-pointer ml-1" data-i18n="quick_book">Book Now</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-4 z-40 max-w-6xl mx-auto px-4 mt-2">
+    <nav class="glass-card rounded-2xl px-5 py-3.5 flex items-center justify-between shadow-2xl">
+      <!-- Logo / Name -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          DR
+        </div>
+        <div>
+          <h1 class="font-extrabold text-base md:text-lg tracking-tight text-white group-hover:text-emerald-400 transition-colors">
+            Dr. Arham Rahman
+          </h1>
+          <p class="text-[11px] text-slate-400 font-medium tracking-wide" data-i18n="subtitle">Cardiologist & Medicine Specialist</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-emerald-400 transition-colors" data-i18n="nav_about">About</a>
+        <a href="#specialties" class="hover:text-emerald-400 transition-colors" data-i18n="nav_services">Services</a>
+        <a href="#chambers" class="hover:text-emerald-400 transition-colors" data-i18n="nav_chambers">Chambers</a>
+        <a href="#tools" class="hover:text-emerald-400 transition-colors" data-i18n="nav_tools">Health Tools</a>
+        <a href="#reviews" class="hover:text-emerald-400 transition-colors" data-i18n="nav_reviews">Reviews</a>
+      </div>
+
+      <!-- Header Right Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Button -->
+        <button id="langToggle" onclick="toggleLanguage()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-300 flex items-center gap-1.5 transition-colors">
+          <i class="fa-solid fa-globe text-emerald-400"></i>
+          <span id="langText">BN</span>
+        </button>
+
+        <!-- Queue Status Button -->
+        <button onclick="openQueueModal()" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-xs font-medium text-slate-200 transition-colors">
+          <i class="fa-solid fa-clock-rotate-left text-amber-400"></i>
+          <span data-i18n="check_queue">Live Queue</span>
+        </button>
+
+        <!-- CTA Button -->
+        <button onclick="openBookingModal()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-bold text-xs md:text-sm transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-1.5">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span data-i18n="btn_appointment">Appointment</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Bento Grid Wrapper -->
+  <main class="max-w-6xl mx-auto px-4 mt-6 space-y-6">
+
+    <!-- Bento Grid Top Row -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+      
+      <!-- HERO CARD (Spans 8 cols) -->
+      <div id="about" class="md:col-span-8 glass-card rounded-3xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between group">
+        <!-- Background Ambient Glow -->
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-700"></div>
+        <div class="absolute -left-10 -top-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div>
+          <!-- Top Status Tag -->
+          <div class="flex flex-wrap items-center gap-2 mb-5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+              <i class="fa-solid fa-circle-check text-[10px]"></i>
+              <span data-i18n="hero_verified">BMDC Registered Specialist (A-89234)</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold">
+              <i class="fa-solid fa-graduation-cap"></i>
+              FCPS (Cardiology), MBBS (DMC)
+            </span>
+          </div>
+
+          <div class="flex flex-col lg:flex-row gap-6 items-start">
+            <!-- Doctor Avatar / Illustration -->
+            <div class="relative shrink-0">
+              <div class="w-28 h-28 lg:w-36 lg:h-36 rounded-2xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-slate-800 p-1 shadow-2xl shadow-emerald-500/20">
+                <div class="w-full h-full rounded-xl bg-slate-900 overflow-hidden relative flex items-center justify-center">
+                  <!-- Vector Graphic Placeholder for Doctor -->
+                  <i class="fa-solid fa-user-doctor text-6xl text-emerald-400/90 animate-float"></i>
+                  <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-1 text-center">
+                    <span class="text-[10px] font-bold text-emerald-400 tracking-wider uppercase">10+ Yrs Exp</span>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute -bottom-2 -right-2 bg-slate-900 border border-emerald-500/40 px-2 py-0.5 rounded-lg text-[10px] text-emerald-300 font-bold shadow">
+                ★ 4.98
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="space-y-3">
+              <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight" data-i18n="hero_title">
+                Compassionate Heart & Medical Care for Every Life
+              </h2>
+              <p class="text-slate-400 text-sm md:text-base leading-relaxed" data-i18n="hero_desc">
+                Consultant Cardiologist at National Heart Institute & Senior Physician. Specializing in advanced hypertension treatment, preventative cardiology, echocardiography, and online tele-consultation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Bottom Action Strip -->
+        <div class="mt-8 pt-5 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-6">
+            <div>
+              <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold" data-i18n="stat_patients">Patients Served</p>
+              <p class="text-xl font-extrabold text-white">14,500+</p>
+            </div>
+            <div class="h-8 w-px bg-slate-800"></div>
+            <div>
+              <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold" data-i18n="stat_experience">Experience</p>
+              <p class="text-xl font-extrabold text-white">11+ <span class="text-xs font-normal text-slate-400">Years</span></p>
+            </div>
+            <div class="h-8 w-px bg-slate-800 hidden sm:block"></div>
+            <div class="hidden sm:block">
+              <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold" data-i18n="stat_satisfaction">Satisfaction</p>
+              <p class="text-xl font-extrabold text-emerald-400">99.2%</p>
+            </div>
+          </div>
+
+          <button onclick="openBookingModal()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-xs md:text-sm transition-all flex items-center gap-2 group">
+            <span data-i18n="btn_schedule_visit">Schedule Chamber Visit</span>
+            <i class="fa-solid fa-arrow-right text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- SIDE CARD 1: Quick Emergency Helpline (Spans 4 cols) -->
+      <div class="md:col-span-4 flex flex-col gap-4">
+        
+        <!-- Emergency Hotline Box -->
+        <div class="glass-card rounded-3xl p-6 bg-gradient-to-br from-emerald-950/60 via-slate-900 to-slate-900 border border-emerald-500/30 flex flex-col justify-between relative overflow-hidden group">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shadow-inner border border-emerald-500/30">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-400 text-[10px] font-bold uppercase tracking-wider">
+              24/7 Hotline
+            </span>
+          </div>
+
+          <div class="my-4">
+            <h3 class="text-lg font-bold text-white" data-i18n="emergency_title">Emergency Medical Advice</h3>
+            <p class="text-xs text-slate-400 mt-1" data-i18n="emergency_sub">Urgent cardiac symptoms or quick prescription queries.</p>
+          </div>
+
+          <div class="space-y-2">
+            <a href="tel:+8801711002233" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-center text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
+              <i class="fa-solid fa-phone"></i>
+              +880 1711-002233
+            </a>
+            <a href="https://wa.me/8801711002233" target="_blank" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold text-center transition-all flex items-center justify-center gap-2 border border-slate-700">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+              <span data-i18n="whatsapp_chat">WhatsApp Assistant</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tele-consultation Promo Box -->
+        <div class="glass-card rounded-3xl p-5 border border-slate-800 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm text-white" data-i18n="video_consult_title">Online Video Chamber</h4>
+            <p class="text-xs text-slate-400" data-i18n="video_consult_desc">Consult from anywhere in BD via HD Video Call.</p>
+            <button onclick="openBookingModal('video')" class="text-xs text-emerald-400 font-bold hover:underline mt-1 inline-block" data-i18n="book_video_btn">
+              Book Online Slot →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SPECIALTIES & SERVICES GRID -->
+    <section id="specialties" class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-briefcase-medical text-emerald-400"></i>
+            <span data-i18n="section_services">Specialized Clinical Services</span>
+          </h3>
+          <p class="text-xs text-slate-400" data-i18n="section_services_sub">Evidence-based treatments & diagnostics tailored for long-term health</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Service Card 1 -->
+        <div class="glass-card glass-card-hover p-6 rounded-3xl flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h4 class="font-bold text-base text-white mb-2" data-i18n="service_1_title">Cardiology & Hypertension</h4>
+            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="service_1_desc">High blood pressure management, angina, CAD evaluation, ECG interpretation & Echo assessment.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs">
+            <span class="text-emerald-400 font-semibold">Fee: ৳ 1,000</span>
+            <button onclick="openBookingModal()" class="text-slate-400 hover:text-white" data-i18n="select">Select →</button>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="glass-card glass-card-hover p-6 rounded-3xl flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
+            <h4 class="font-bold text-base text-white mb-2" data-i18n="service_2_title">Internal Medicine</h4>
+            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="service_2_desc">Comprehensive diagnosis for adult illnesses, chronic diabetes care, chest pain, and general fatigue.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs">
+            <span class="text-emerald-400 font-semibold">Fee: ৳ 1,000</span>
+            <button onclick="openBookingModal()" class="text-slate-400 hover:text-white" data-i18n="select">Select →</button>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="glass-card glass-card-hover p-6 rounded-3xl flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-person-running"></i>
+            </div>
+            <h4 class="font-bold text-base text-white mb-2" data-i18n="service_3_title">Preventative Heart Care</h4>
+            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="service_3_desc">Lipid profile management, lifestyle modifications, cardiovascular risk index analysis & diet plan.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs">
+            <span class="text-emerald-400 font-semibold">Fee: ৳ 800</span>
+            <button onclick="openBookingModal()" class="text-slate-400 hover:text-white" data-i18n="select">Select →</button>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="glass-card glass-card-hover p-6 rounded-3xl flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-file-waveform"></i>
+            </div>
+            <h4 class="font-bold text-base text-white mb-2" data-i18n="service_4_title">Report Review & Follow-up</h4>
+            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="service_4_desc">Second opinion on angiograms, CT calcium score, lab reports, and ongoing prescription updates.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs">
+            <span class="text-emerald-400 font-semibold">Fee: ৳ 500</span>
+            <button onclick="openBookingModal()" class="text-slate-400 hover:text-white" data-i18n="select">Select →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMBERS & SCHEDULE SECTION -->
+    <section id="chambers" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      
+      <!-- Chamber 1: Popular Dhanmondi -->
+      <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between border-l-4 border-l-emerald-500">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">Chamber 01</span>
+            <span class="text-xs text-slate-400"><i class="fa-solid fa-door-open text-emerald-400 mr-1"></i> Room 402</span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-1">Popular Diagnostic Dhanmondi</h4>
+          <p class="text-xs text-slate-400 mb-4"><i class="fa-solid fa-location-dot text-rose-400 mr-1"></i> House 16, Road 2, Dhanmondi, Dhaka</p>
+
+          <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Days:</span>
+              <span class="font-semibold text-white">Sat, Sun, Mon, Tue, Wed</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-regular fa-clock mr-1"></i> Time:</span>
+              <span class="font-semibold text-emerald-400">05:00 PM – 09:00 PM</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-solid fa-users mr-1"></i> Max Serial:</span>
+              <span class="font-semibold text-white">30 Patients / Day</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 pt-4 border-t border-slate-800 flex items-center gap-2">
+          <button onclick="openBookingModal('dhanmondi')" class="flex-1 py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-bold text-xs border border-emerald-500/30 transition-all text-center">
+            Book Dhanmondi
+          </button>
+          <a href="https://maps.google.com" target="_blank" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700" title="View Map">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chamber 2: Square Hospital -->
+      <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between border-l-4 border-l-blue-500">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-extrabold uppercase tracking-widest text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">Chamber 02</span>
+            <span class="text-xs text-slate-400"><i class="fa-solid fa-door-open text-blue-400 mr-1"></i> OPD 105</span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-1">Square Hospital Panthapath</h4>
+          <p class="text-xs text-slate-400 mb-4"><i class="fa-solid fa-location-dot text-rose-400 mr-1"></i> 18/F Bir Uttam Qazi Nuruzzaman Sarak, Dhaka</p>
+
+          <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Days:</span>
+              <span class="font-semibold text-white">Thu & Friday Only</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-regular fa-clock mr-1"></i> Time:</span>
+              <span class="font-semibold text-blue-400">10:00 AM – 02:00 PM</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-solid fa-users mr-1"></i> Max Serial:</span>
+              <span class="font-semibold text-white">20 Patients / Day</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 pt-4 border-t border-slate-800 flex items-center gap-2">
+          <button onclick="openBookingModal('square')" class="flex-1 py-2.5 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 font-bold text-xs border border-blue-500/30 transition-all text-center">
+            Book Square Hosp.
+          </button>
+          <a href="https://maps.google.com" target="_blank" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700" title="View Map">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chamber 3: Virtual Tele-Consultation -->
+      <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between border-l-4 border-l-purple-500">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-md border border-purple-500/20">Online Portal</span>
+            <span class="text-xs text-slate-400"><i class="fa-solid fa-wifi text-purple-400 mr-1"></i> HD Video</span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-1">Telemedicine Clinic</h4>
+          <p class="text-xs text-slate-400 mb-4"><i class="fa-solid fa-laptop-medical text-purple-400 mr-1"></i> Digital Prescription via SMS/Email</p>
+
+          <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Days:</span>
+              <span class="font-semibold text-white">Everyday Evening</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-regular fa-clock mr-1"></i> Time:</span>
+              <span class="font-semibold text-purple-400">09:30 PM – 11:00 PM</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400"><i class="fa-solid fa-video mr-1"></i> Platform:</span>
+              <span class="font-semibold text-white">Google Meet / In-App</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 pt-4 border-t border-slate-800">
+          <button onclick="openBookingModal('video')" class="w-full py-2.5 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 font-bold text-xs border border-purple-500/30 transition-all text-center">
+            Book Online Video Consult
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- HEALTH TOOLS SECTION: BMI & Heart Rate Zone Calculator -->
+    <section id="tools" class="glass-card rounded-3xl p-6 md:p-8 space-y-6 border border-slate-800">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-4">
+        <div>
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-calculator text-emerald-400"></i>
+            <span data-i18n="tools_title">Interactive Patient Health Calculators</span>
+          </h3>
+          <p class="text-xs text-slate-400" data-i18n="tools_sub">Check your Body Mass Index (BMI) and target workout heart rate zone instant assessment.</p>
+        </div>
+        <span class="text-[11px] text-emerald-400 font-mono bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full self-start md:self-auto">
+          Free Diagnostic Tool
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Tool 1: BMI Calculator -->
+        <div class="space-y-4">
+          <h4 class="font-bold text-sm text-slate-200 flex items-center gap-2">
+            <i class="fa-solid fa-weight-scale text-emerald-400"></i>
+            <span data-i18n="bmi_calc_title">Body Mass Index (BMI) Calculator</span>
+          </h4>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs text-slate-400 mb-1" data-i18n="weight_kg">Weight (kg)</label>
+              <input type="number" id="bmiWeight" placeholder="e.g. 70" value="70" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+            </div>
+            <div>
+              <label class="block text-xs text-slate-400 mb-1" data-i18n="height_cm">Height (cm)</label>
+              <input type="number" id="bmiHeight" placeholder="e.g. 172" value="172" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+            </div>
+          </div>
+
+          <button onclick="calculateBMI()" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 font-bold text-xs transition-colors">
+            Calculate BMI Score
+          </button>
+
+          <!-- BMI Output Box -->
+          <div id="bmiResultBox" class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+            <div>
+              <p class="text-xs text-slate-400" data-i18n="your_bmi">Your Calculated BMI</p>
+              <p id="bmiValue" class="text-2xl font-extrabold text-emerald-400">23.7</p>
+            </div>
+            <div class="text-right">
+              <span id="bmiCategory" class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs border border-emerald-500/30">
+                Normal Weight
+              </span>
+              <p id="bmiAdvice" class="text-[11px] text-slate-400 mt-1">Healthy cardiovascular risk range.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 2: Target Heart Rate Zone -->
+        <div class="space-y-4">
+          <h4 class="font-bold text-sm text-slate-200 flex items-center gap-2">
+            <i class="fa-solid fa-heart-circle-bolt text-rose-400"></i>
+            <span data-i18n="hr_calc_title">Target Exercise Heart Rate Calculator</span>
+          </h4>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs text-slate-400 mb-1" data-i18n="age_years">Your Age (Years)</label>
+              <input type="number" id="hrAge" placeholder="e.g. 35" value="35" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+            </div>
+            <div>
+              <label class="block text-xs text-slate-400 mb-1" data-i18n="resting_hr">Resting Pulse (BPM)</label>
+              <input type="number" id="hrResting" placeholder="e.g. 72" value="72" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+            </div>
+          </div>
+
+          <button onclick="calculateHeartRate()" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-rose-400 border border-slate-700 font-bold text-xs transition-colors">
+            Calculate Target Heart Zones
+          </button>
+
+          <!-- HR Output Box -->
+          <div id="hrResultBox" class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+            <div>
+              <p class="text-xs text-slate-400" data-i18n="max_hr">Estimated Max HR</p>
+              <p id="hrMaxVal" class="text-2xl font-extrabold text-rose-400">185 <span class="text-xs font-normal text-slate-400">bpm</span></p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-slate-400" data-i18n="cardio_zone">Target Moderate Cardio Zone</p>
+              <p id="hrZoneVal" class="text-sm font-bold text-white mt-1">128 - 152 bpm</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PATIENT REVIEWS & TESTIMONIALS -->
+    <section id="reviews" class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <span data-i18n="reviews_title">Verified Patient Testimonials</span>
+          </h3>
+          <p class="text-xs text-slate-400" data-i18n="reviews_sub">Real feedback from patients treated at Popular Dhanmondi & Square Hospital.</p>
+        </div>
+
+        <button onclick="openReviewModal()" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-amber-400 transition-colors">
+          + Leave Feedback
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Review Card 1 -->
+        <div class="glass-card p-5 rounded-3xl space-y-3">
+          <div class="flex justify-between items-start">
+            <div>
+              <h5 class="font-bold text-sm text-white">Rafiqul Islam</h5>
+              <span class="text-[10px] text-slate-400">Hypertension Patient • 2 weeks ago</span>
+            </div>
+            <div class="text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed italic">
+            "Doctor Arham sir khub mon diye shob shomoshya shunechen. Bipod-er shomoy thik bhabe bujhiye oshud diyechen. Amar blood pressure ekhon completely normal."
+          </p>
+          <div class="text-[11px] text-emerald-400 font-medium">✓ Verified Chamber Visit</div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="glass-card p-5 rounded-3xl space-y-3">
+          <div class="flex justify-between items-start">
+            <div>
+              <h5 class="font-bold text-sm text-white">Dr. Shamima Nasrin</h5>
+              <span class="text-[10px] text-slate-400">ECG & Echo Assessment • 1 month ago</span>
+            </div>
+            <div class="text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed italic">
+            "Very professional diagnostic approach. Did not write unnecessary tests. Provided clear diet routine alongside medications."
+          </p>
+          <div class="text-[11px] text-emerald-400 font-medium">✓ Square Hospital OPD</div>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="glass-card p-5 rounded-3xl space-y-3">
+          <div class="flex justify-between items-start">
+            <div>
+              <h5 class="font-bold text-sm text-white">Tanvir Chowdhury</h5>
+              <span class="text-[10px] text-slate-400">Online Video Consult • 3 days ago</span>
+            </div>
+            <div class="text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed italic">
+            "Chittagong thke online video consultation niyechilam. Prescription video call shesh hobar 10 min er moddhe SMS e peye gechi."
+          </p>
+          <div class="text-[11px] text-emerald-400 font-medium">✓ Online Video Patient</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <p class="font-semibold text-slate-400">Dr. Arham Rahman — Specialist Medical Portfolio</p>
+        <p>© 2026 All Rights Reserved. Designed for modern healthcare delivery.</p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#about" class="hover:text-emerald-400">About</a>
+        <a href="#chambers" class="hover:text-emerald-400">Chambers</a>
+        <a href="#tools" class="hover:text-emerald-400">Health Tools</a>
+        <a href="tel:+8801711002233" class="hover:text-emerald-400">Emergency Call</a>
+      </div>
+    </footer>
+
+  </main>
+
+
+  <!-- MODAL 1: APPOINTMENT BOOKING WIZARD -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-card bg-slate-900 rounded-3xl max-w-lg w-full p-6 md:p-8 relative border border-slate-800 shadow-2xl max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button onclick="closeBookingModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Booking Wizard Header -->
+      <div id="bookingFormHeader">
+        <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full uppercase">Instant Appointment Booking</span>
+        <h3 class="text-xl font-bold text-white mt-2" data-i18n="modal_book_title">Select Chamber & Date</h3>
+        <p class="text-xs text-slate-400 mt-0.5">Fill in patient info to generate instant serial token.</p>
+      </div>
+
+      <!-- Form Steps -->
+      <form id="appointmentForm" onsubmit="handleBookingSubmit(event)" class="mt-6 space-y-4">
+        
+        <!-- Field 1: Chamber Location -->
+        <div>
+          <label class="block text-xs text-slate-300 font-semibold mb-1" data-i18n="select_chamber">Select Chamber / Portal</label>
+          <select id="bookChamber" onchange="updateAvailableTimeSlots()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs md:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+            <option value="dhanmondi">Popular Hospital, Dhanmondi (Sat-Wed, 5:00 PM)</option>
+            <option value="square">Square Hospital, Panthapath (Thu-Fri, 10:00 AM)</option>
+            <option value="video">Online HD Video Consultation (Daily, 9:30 PM)</option>
+          </select>
+        </div>
+
+        <!-- Field 2: Consultation Reason / Specialty -->
+        <div>
+          <label class="block text-xs text-slate-300 font-semibold mb-1" data-i18n="reason_label">Consultation Type</label>
+          <select id="bookType" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs md:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+            <option value="First Consultation">First New Patient Visit (৳ 1,000)</option>
+            <option value="Report Review">Report Review / Follow-up (৳ 500)</option>
+            <option value="Second Opinion">Cardiac Angiogram / Echo Opinion (৳ 1,000)</option>
+          </select>
+        </div>
+
+        <!-- Field 3: Date & Slot -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs text-slate-300 font-semibold mb-1" data-i18n="date_label">Preferred Date</label>
+            <input type="date" id="bookDate" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-xs md:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+          </div>
+          <div>
+            <label class="block text-xs text-slate-300 font-semibold mb-1" data-i18n="slot_label">Available Time Slot</label>
+            <select id="bookSlot" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs md:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+              <option value="05:30 PM">05:30 PM (Serial #04)</option>
+              <option value="06:00 PM">06:00 PM (Serial #09)</option>
+              <option value="07:15 PM">07:15 PM (Serial #18)</option>
+              <option value="08:30 PM">08:30 PM (Serial #25)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Field 4: Patient Info -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs text-slate-300 font-semibold mb-1" data-i18n="patient_name">Patient Name</label>
+            <input type="text" id="patientName" placeholder="e.g. Md. Kabir Hossain" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-xs md:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+          </div>
+          <div>
+            <label class="block text-xs text-slate-300 font-semibold mb-1" data-i18n="patient_phone">Phone Number</label>
+            <input type="tel" id="patientPhone" placeholder="01712345678" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-xs md:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+          </div>
+        </div>
+
+        <!-- Field 5: Key Symptoms / Brief Note -->
+        <div>
+          <label class="block text-xs text-slate-300 font-semibold mb-1" data-i18n="symptoms_label">Key Health Concerns / Symptoms (Optional)</label>
+          <textarea id="patientNotes" rows="2" placeholder="e.g. High blood pressure, chest heaviness, ECG review" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 focus:outline-none focus:border-emerald-500"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-extrabold text-sm transition-all shadow-lg shadow-emerald-500/25 mt-2">
+          Confirm Appointment & Get Ticket
+        </button>
+
+      </form>
+
+      <!-- PRINTABLE CONFIRMATION SLIP (Hidden initially) -->
+      <div id="bookingSuccessBox" class="hidden space-y-4 text-center py-4">
+        <div id="printableTicket" class="p-6 rounded-2xl bg-slate-950 border border-emerald-500/30 text-left space-y-3">
+          <div class="flex justify-between items-start border-b border-slate-800 pb-3">
+            <div>
+              <h4 class="font-bold text-white text-base">Dr. Arham Rahman</h4>
+              <p class="text-[11px] text-emerald-400">Appointment Confirmation Token</p>
+            </div>
+            <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md font-mono font-bold" id="slipToken">TOKEN #482</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-1">
+            <div><span class="text-slate-500 block">Patient:</span> <strong id="slipName" class="text-white">Md. Kabir</strong></div>
+            <div><span class="text-slate-500 block">Phone:</span> <strong id="slipPhone" class="text-white">01712345678</strong></div>
+            <div><span class="text-slate-500 block">Location:</span> <strong id="slipChamber" class="text-emerald-400">Popular Dhanmondi</strong></div>
+            <div><span class="text-slate-500 block">Date & Time:</span> <strong id="slipDateTime" class="text-white">Today @ 06:00 PM</strong></div>
+          </div>
+
+          <div class="bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-solid fa-circle-info text-emerald-400 mr-1"></i> Please report 15 min prior to your slot.</span>
+            <span class="font-mono text-emerald-400 font-bold">STATUS: CONFIRMED</span>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <button onclick="window.print()" class="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700">
+            <i class="fa-solid fa-print mr-1"></i> Print / Save Slip
+          </button>
+          <button onclick="closeBookingModal()" class="flex-1 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">
+            Done
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL 2: LIVE QUEUE TRACKER -->
+  <div id="queueModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-card bg-slate-900 rounded-3xl max-w-md w-full p-6 relative border border-slate-800 shadow-2xl">
+      <button onclick="closeQueueModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mx-auto border border-amber-500/20">
+          <i class="fa-solid fa-hospital-user"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white">Chamber Live Queue Status</h3>
+        <p class="text-xs text-slate-400">Popular Hospital Dhanmondi — Today's Evening Shift</p>
+      </div>
+
+      <div class="my-6 p-4 rounded-2xl bg-slate-950 border border-slate-800 text-center space-y-3">
+        <div class="grid grid-cols-2 gap-2">
+          <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
+            <span class="text-[10px] text-slate-500 uppercase block">Currently Inside</span>
+            <span class="text-2xl font-black text-emerald-400">Serial #12</span>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
+            <span class="text-[10px] text-slate-500 uppercase block">Next Expected</span>
+            <span class="text-2xl font-black text-amber-400">Serial #13</span>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-400"><i class="fa-solid fa-clock text-emerald-400 mr-1"></i> Average consultation time per patient: 12-15 mins.</p>
+      </div>
+
+      <div class="space-y-2">
+        <label class="block text-xs text-slate-400">Enter Your Phone or Serial Token to Check Status</label>
+        <div class="flex gap-2">
+          <input type="text" id="queueCheckInput" placeholder="Token # / Phone" class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none">
+          <button onclick="checkQueueStatus()" class="px-4 py-2 bg-emerald-500 text-slate-950 font-bold text-xs rounded-xl">Track</button>
+        </div>
+        <p id="queueResult" class="text-xs text-emerald-400 font-medium hidden text-center pt-2"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: FEEDBACK SUBMISSION -->
+  <div id="reviewModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-card bg-slate-900 rounded-3xl max-w-md w-full p-6 relative border border-slate-800 shadow-2xl">
+      <button onclick="closeReviewModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h3 class="text-lg font-bold text-white mb-4">Leave Patient Review</h3>
+      
+      <form onsubmit="handleReviewSubmit(event)" class="space-y-3">
+        <div>
+          <label class="block text-xs text-slate-400 mb-1">Your Name</label>
+          <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white">
+        </div>
+        <div>
+          <label class="block text-xs text-slate-400 mb-1">Chamber Visited</label>
+          <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white">
+            <option>Popular Dhanmondi</option>
+            <option>Square Hospital</option>
+            <option>Online Video Consultation</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs text-slate-400 mb-1">Rating</label>
+          <div class="flex gap-2 text-amber-400 text-lg">
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <i class="fa-solid fa-star cursor-pointer"></i>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs text-slate-400 mb-1">Your Review Note</label>
+          <textarea rows="3" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white" placeholder="Write about your treatment experience..."></textarea>
+        </div>
+        <button type="submit" class="w-full py-2.5 bg-emerald-500 text-slate-950 font-bold text-xs rounded-xl">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-emerald-500 text-slate-950 font-bold text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">Action completed successfully!</span>
+  </div>
+
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Language State & Translation Dictionary
+    let currentLang = 'BN'; // Default Bengali for local doctor audience
+
+    const translations = {
+      EN: {
+        announcement_badge: "Live Consultation Active",
+        announcement_text: "Today's Dhanmondi Chamber Evening Slots Available!",
+        quick_book: "Book Now",
+        subtitle: "Cardiologist & Medicine Specialist",
+        nav_about: "About",
+        nav_services: "Services",
+        nav_chambers: "Chambers",
+        nav_tools: "Health Tools",
+        nav_reviews: "Reviews",
+        check_queue: "Live Queue",
+        btn_appointment: "Appointment",
+        hero_verified: "BMDC Registered Specialist (A-89234)",
+        hero_title: "Compassionate Heart & Medical Care for Every Life",
+        hero_desc: "Consultant Cardiologist at National Heart Institute & Senior Physician. Specializing in advanced hypertension treatment, preventative cardiology, echocardiography, and online tele-consultation.",
+        stat_patients: "Patients Served",
+        stat_experience: "Experience",
+        stat_satisfaction: "Satisfaction",
+        btn_schedule_visit: "Schedule Chamber Visit",
+        emergency_title: "Emergency Medical Advice",
+        emergency_sub: "Urgent cardiac symptoms or quick prescription queries.",
+        whatsapp_chat: "WhatsApp Assistant",
+        video_consult_title: "Online Video Chamber",
+        video_consult_desc: "Consult from anywhere in BD via HD Video Call.",
+        book_video_btn: "Book Online Slot →",
+        section_services: "Specialized Clinical Services",
+        section_services_sub: "Evidence-based treatments & diagnostics tailored for long-term health",
+        service_1_title: "Cardiology & Hypertension",
+        service_1_desc: "High blood pressure management, angina, CAD evaluation, ECG interpretation & Echo assessment.",
+        service_2_title: "Internal Medicine",
+        service_2_desc: "Comprehensive diagnosis for adult illnesses, chronic diabetes care, chest pain, and general fatigue.",
+        service_3_title: "Preventative Heart Care",
+        service_3_desc: "Lipid profile management, lifestyle modifications, cardiovascular risk index analysis & diet plan.",
+        service_4_title: "Report Review & Follow-up",
+        service_4_desc: "Second opinion on angiograms, CT calcium score, lab reports, and ongoing prescription updates.",
+        select: "Select →",
+        tools_title: "Interactive Patient Health Calculators",
+        tools_sub: "Check your Body Mass Index (BMI) and target workout heart rate zone instant assessment.",
+        bmi_calc_title: "Body Mass Index (BMI) Calculator",
+        weight_kg: "Weight (kg)",
+        height_cm: "Height (cm)",
+        your_bmi: "Your Calculated BMI",
+        hr_calc_title: "Target Exercise Heart Rate Calculator",
+        age_years: "Your Age (Years)",
+        resting_hr: "Resting Pulse (BPM)",
+        max_hr: "Estimated Max HR",
+        cardio_zone: "Target Moderate Cardio Zone",
+        reviews_title: "Verified Patient Testimonials",
+        reviews_sub: "Real feedback from patients treated at Popular Dhanmondi & Square Hospital.",
+        modal_book_title: "Select Chamber & Date",
+        select_chamber: "Select Chamber / Portal",
+        reason_label: "Consultation Type",
+        date_label: "Preferred Date",
+        slot_label: "Available Time Slot",
+        patient_name: "Patient Name",
+        patient_phone: "Phone Number",
+        symptoms_label: "Key Health Concerns / Symptoms (Optional)"
+      },
+      BN: {
+        announcement_badge: "লাইভ চেম্বার চালু আছে",
+        announcement_text: "ধানমন্ডি পপুলার চেম্বারে আজ সন্ধ্যার স্লট খালি আছে!",
+        quick_book: "বুক করুন",
+        subtitle: "হৃদরোগ ও মেডিসিন বিশেষজ্ঞ",
+        nav_about: "পরিচিতি",
+        nav_services: "সেবাসমূহ",
+        nav_chambers: "চেম্বার",
+        nav_tools: "স্বাস্থ্য টুলস",
+        nav_reviews: "মতামত",
+        check_queue: "লাইভ কিউ (Queue)",
+        btn_appointment: "সিরিয়াল নিন",
+        hero_verified: "বিএমডিসি নিবন্ধিত বিশেষজ্ঞ (A-89234)",
+        hero_title: "আধুনিক হৃদরোগ ও মেডিসিন চিকিৎসা সেবা",
+        hero_desc: "কনসালট্যান্ট কার্ডিওলজিস্ট, জাতীয় হৃদরোগ ইনস্টিটিউট ও সিনিয়ার ফিজিশিয়ান। দীর্ঘদিনের অভিজ্ঞতায় উচ্চ রক্তচাপ, হার্ট অ্যাটাক প্রতিরোধ ও নিয়মিত স্বাস্থ্য সেবায় নিয়োজিত।",
+        stat_patients: "চিকিৎসাপ্রাপ্ত রোগী",
+        stat_experience: "অভিজ্ঞতা",
+        stat_satisfaction: "রোগীর সন্তুষ্টি",
+        btn_schedule_visit: "চেম্বারের সময়সূচী দেখুন",
+        emergency_title: "জরুরি চিকিৎসা পরামর্শ",
+        emergency_sub: "জরুরি হার্টের সমস্যা বা প্রেসক্রিপশন সংক্রান্ত প্রশ্ন।",
+        whatsapp_chat: "হোয়াটসঅ্যাপ অ্যাসিস্ট্যান্ট",
+        video_consult_title: "অনলাইন ভিডিও চেম্বার",
+        video_consult_desc: "বাংলাদেশের যেকোনো প্রান্ত থেকে এইচডি ভিডিও কলে পরামর্শ নিন।",
+        book_video_btn: "অনলাইন স্লট বুক করুন →",
+        section_services: "বিশেষায়িত চিকিৎসাসেবাসমূহ",
+        section_services_sub: "আধুনিক গাইডলাইন অনুযায়ী হৃদরোগ ও মেডিসিন সংক্রান্ত সঠিক নিদান",
+        service_1_title: "হৃদরোগ ও উচ্চ রক্তচাপ",
+        service_1_desc: "হাই ব্লাড প্রেশার নিয়ন্ত্রণ, বুকে ব্যথা, ইসিজি ও ইকো-কার্ডিগ্রাফি পরামর্শ।",
+        service_2_title: "ইনটার্নাল মেডিসিন",
+        service_2_desc: "বয়স্ক রোগীদের জটিল রোগ নির্ণয়, ডায়াবেটিস ব্যবস্থাপনা ও দীর্ঘমেয়াদী শারীরিক দুর্বলতা।",
+        service_3_title: "হার্ট অ্যাটাক প্রতিরোধক যত্ন",
+        service_3_desc: "কোলেস্টেরল নিয়ন্ত্রণ, জীবনযাত্রা পরিবর্তন, হার্টের ঝুকি নির্ণয় ও ডায়েট চার্ট।",
+        service_4_title: "রিপোর্ট ও ফলোআপ পরামর্শ",
+        service_4_desc: "এনজিওগ্রাম, সিটি স্ক্যান বা ল্যাব রিপোর্টের সেকেন্ড অপিনিয়ন ও নিয়মিত চেকআপ।",
+        service_3_title: "হার্ট অ্যাটাক প্রতিরোধ",
+        select: "নির্বাচন করুন →",
+        tools_title: "রোগীদের ডিজিটাল স্বাস্থ্য ক্যালকুলেটর",
+        tools_sub: "আপনার বডি মাস ইনডেক্স (BMI) এবং ব্যায়ামের সময় নিরাপদ হার্ট রেট রেঞ্জ জানুন।",
+        bmi_calc_title: "বিএমআই (BMI) ক্যালকুলেটর",
+        weight_kg: "ওজন (কেজি)",
+        height_cm: "উচ্চতা (সেমি)",
+        your_bmi: "আপনার বিএমআই স্কোর",
+        hr_calc_title: "টার্গেট হার্ট রেট ক্যালকুলেটর",
+        age_years: "আপনার বয়স (বছর)",
+        resting_hr: "স্বাভাবিক পালস (BPM)",
+        max_hr: "সর্বোচ্চ হার্ট রেট",
+        cardio_zone: "নিরাপদ কার্ডিও জোন",
+        reviews_title: "রোগীদের অভিজ্ঞতা ও মতামত",
+        reviews_sub: "পপুলার ধানমন্ডি ও স্কয়ার হাসপাতালের রোগীদের থেকে সংগৃহীত ফিডব্যাক।",
+        modal_book_title: "চেম্বার ও তারিখ বাছাই করুন",
+        select_chamber: "চেম্বার বা পোর্টাল বাছাই করুন",
+        reason_label: "পরামর্শের ধরণ",
+        date_label: "পছন্দের তারিখ",
+        slot_label: "ফাঁকা সময়সূচী (Slot)",
+        patient_name: "রোগীর নাম",
+        patient_phone: "মোবাইল নম্বর",
+        symptoms_label: "প্রধান শারীরিক সমস্যা (ঐচ্ছিক)"
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'BN' ? 'EN' : 'BN';
+      document.getElementById('langText').innerText = currentLang === 'BN' ? 'BN' : 'EN';
+      
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang] && translations[currentLang][key]) {
+          el.innerText = translations[currentLang][key];
+        }
+      });
+    }
+
+    // Set default date picker to today
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('bookDate').value = today;
+    });
+
+    // Modal Helpers
+    function openBookingModal(chamberType = 'dhanmondi') {
+      const modal = document.getElementById('bookingModal');
+      const chamberSelect = document.getElementById('bookChamber');
+      if (chamberType) {
+        chamberSelect.value = chamberType;
+      }
+      document.getElementById('bookingFormHeader').classList.remove('hidden');
+      document.getElementById('appointmentForm').classList.remove('hidden');
+      document.getElementById('bookingSuccessBox').classList.add('hidden');
+      modal.classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+
+    function openQueueModal() {
+      document.getElementById('queueModal').classList.remove('hidden');
+    }
+
+    function closeQueueModal() {
+      document.getElementById('queueModal').classList.add('hidden');
+    }
+
+    function openReviewModal() {
+      document.getElementById('reviewModal').classList.remove('hidden');
+    }
+
+    function closeReviewModal() {
+      document.getElementById('reviewModal').classList.add('hidden');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').innerText = message;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    // Handle Appointment Booking Submission
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('patientName').value;
+      const phone = document.getElementById('patientPhone').value;
+      const chamber = document.getElementById('bookChamber').options[document.getElementById('bookChamber').selectedIndex].text.split('(')[0];
+      const date = document.getElementById('bookDate').value;
+      const slot = document.getElementById('bookSlot').value;
+
+      // Generate random token number
+      const randomToken = "TOKEN #" + Math.floor(100 + Math.random() * 900);
+
+      document.getElementById('slipName').innerText = name;
+      document.getElementById('slipPhone').innerText = phone;
+      document.getElementById('slipChamber').innerText = chamber;
+      document.getElementById('slipDateTime').innerText = `${date} @ ${slot}`;
+      document.getElementById('slipToken').innerText = randomToken;
+
+      document.getElementById('bookingFormHeader').classList.add('hidden');
+      document.getElementById('appointmentForm').classList.add('hidden');
+      document.getElementById('bookingSuccessBox').classList.remove('hidden');
+
+      showToast("Appointment Serial Booked Successfully!");
+    }
+
+    // Health Tool 1: BMI Calculator Logic
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById('bmiWeight').value);
+      const heightCm = parseFloat(document.getElementById('bmiHeight').value);
+
+      if (!weight || !heightCm || heightCm <= 0) {
+        showToast("Please enter valid weight and height!");
+        return;
+      }
+
+      const heightM = heightCm / 100;
+      const bmi = (weight / (heightM * heightM)).toFixed(1);
+
+      document.getElementById('bmiValue').innerText = bmi;
+
+      const catEl = document.getElementById('bmiCategory');
+      const advEl = document.getElementById('bmiAdvice');
+
+      if (bmi < 18.5) {
+        catEl.innerText = "Underweight";
+        catEl.className = "px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold text-xs border border-amber-500/30";
+        advEl.innerText = "Consider nutritional guidance & diet boost.";
+      } else if (bmi >= 18.5 && bmi <= 24.9) {
+        catEl.innerText = "Normal Weight";
+        catEl.className = "px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs border border-emerald-500/30";
+        advEl.innerText = "Optimal cardiovascular health range.";
+      } else if (bmi >= 25 && bmi <= 29.9) {
+        catEl.innerText = "Overweight";
+        catEl.className = "px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 font-bold text-xs border border-orange-500/30";
+        advEl.innerText = "Moderate risk. Regular exercise recommended.";
+      } else {
+        catEl.innerText = "Obese Range";
+        catEl.className = "px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 font-bold text-xs border border-rose-500/30";
+        advEl.innerText = "High risk for hypertension. Doctor consult advised.";
+      }
+    }
+
+    // Health Tool 2: Target Heart Rate Zone Logic
+    function calculateHeartRate() {
+      const age = parseInt(document.getElementById('hrAge').value);
+      const resting = parseInt(document.getElementById('hrResting').value);
+
+      if (!age || age <= 0) {
+        showToast("Please enter a valid age.");
+        return;
+      }
+
+      const maxHr = 220 - age;
+      const hrReserve = maxHr - resting;
+      
+      const zoneLow = Math.round((hrReserve * 0.50) + resting);
+      const zoneHigh = Math.round((hrReserve * 0.75) + resting);
+
+      document.getElementById('hrMaxVal').innerHTML = `${maxHr} <span class="text-xs font-normal text-slate-400">bpm</span>`;
+      document.getElementById('hrZoneVal').innerText = `${zoneLow} - ${zoneHigh} bpm`;
+
+      showToast("Heart Rate Zones Updated!");
+    }
+
+    // Queue Tracking Simulation
+    function checkQueueStatus() {
+      const input = document.getElementById('queueCheckInput').value.trim();
+      const res = document.getElementById('queueResult');
+      if (!input) {
+        showToast("Please enter a token number or phone.");
+        return;
+      }
+      res.innerText = `Token status for "${input}": Estimated time ~ 35 minutes away (3 patients ahead).`;
+      res.classList.remove('hidden');
+    }
+
+    // Handle Patient Review Submit
+    function handleReviewSubmit(e) {
+      e.preventDefault();
+      closeReviewModal();
+      showToast("Thank you! Your feedback has been submitted.");
+    }
+  </script>
+</body>
+</html>

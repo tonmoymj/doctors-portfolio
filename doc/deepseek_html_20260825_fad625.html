@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ডাঃ আরিফ ইসলাম | নিউরোসার্জন</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #0f0e17;
+            color: #fffffe;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff8906;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== ANIMATED BACKGROUND PARTICLES ===== */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 42px;
+            background: #ff8906;
+            color: #0f0e17;
+            border: none;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(255, 137, 6, 0.25);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(255, 137, 6, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 14px 36px;
+            background: transparent;
+            color: #fffffe;
+            border: 2px solid #ff8906;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-secondary:hover {
+            background: #ff8906;
+            color: #0f0e17;
+            transform: translateY(-3px);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(15, 14, 23, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 137, 6, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fffffe;
+            letter-spacing: -0.5px;
+        }
+
+        .logo i {
+            color: #ff8906;
+            margin-right: 8px;
+        }
+
+        .logo span {
+            color: #ff8906;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #a7a9be;
+            font-weight: 400;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff8906;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #fffffe;
+        }
+
+        .nav-cta {
+            background: #ff8906;
+            color: #0f0e17 !important;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: #e67a00;
+            color: #0f0e17 !important;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #fffffe;
+            z-index: 1001;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 160px 0 100px;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content .tag {
+            display: inline-block;
+            background: rgba(255, 137, 6, 0.15);
+            color: #ff8906;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255, 137, 6, 0.2);
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 span {
+            color: #ff8906;
+            position: relative;
+        }
+
+        .hero-content h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 137, 6, 0.2);
+            border-radius: 4px;
+        }
+
+        .hero-content .subtitle {
+            font-size: 20px;
+            color: #a7a9be;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .hero-content p {
+            font-size: 17px;
+            color: #a7a9be;
+            line-height: 1.8;
+            max-width: 480px;
+            margin: 16px 0 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 137, 6, 0.1);
+        }
+
+        .hero-stats .stat .number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff8906;
+        }
+
+        .hero-stats .stat .label {
+            font-size: 14px;
+            color: #a7a9be;
+            margin-top: 2px;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-visual .profile-ring {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff8906, #e67a00);
+            padding: 6px;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-visual .profile-ring-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #0f0e17;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            animation: spin-reverse 20s linear infinite;
+        }
+
+        @keyframes spin-reverse {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .hero-visual .profile-ring-inner img {
+            width: 92%;
+            height: 92%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .hero-visual .floating-badge {
+            position: absolute;
+            background: rgba(26, 26, 46, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 14px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 137, 6, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: floatY 3s ease-in-out infinite;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-badge i {
+            font-size: 22px;
+            color: #ff8906;
+        }
+
+        .floating-badge .text {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .floating-badge .text small {
+            display: block;
+            font-weight: 300;
+            font-size: 11px;
+            color: #a7a9be;
+        }
+
+        .floating-badge:nth-child(2) {
+            top: 20px;
+            right: -20px;
+            animation-delay: 0.5s;
+        }
+
+        .floating-badge:nth-child(3) {
+            bottom: 40px;
+            left: -30px;
+            animation-delay: 1s;
+        }
+
+        .floating-badge:nth-child(4) {
+            top: 50%;
+            right: -40px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatY {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 90px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header .label {
+            display: inline-block;
+            background: rgba(255, 137, 6, 0.1);
+            color: #ff8906;
+            padding: 5px 18px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 137, 6, 0.15);
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2 span {
+            color: #ff8906;
+        }
+
+        .section-header p {
+            color: #a7a9be;
+            font-size: 17px;
+            margin-top: 10px;
+        }
+
+        /* ===== ABOUT (Neomorphic Cards) ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image .neo-card {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 12px 12px 24px #0a0a14, -12px -12px 24px #2a2a48;
+        }
+
+        .about-image .neo-card img {
+            width: 100%;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .about-image .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: #ff8906;
+            color: #0f0e17;
+            padding: 20px 24px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 137, 6, 0.3);
+        }
+
+        .about-image .experience-badge .number {
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .about-image .experience-badge .label {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .about-text h3 span {
+            color: #ff8906;
+        }
+
+        .about-text p {
+            color: #a7a9be;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .about-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .about-skills span {
+            background: rgba(255, 137, 6, 0.1);
+            color: #ff8906;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 137, 6, 0.1);
+        }
+
+        /* ===== SERVICES (Neomorphic) ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #1a1a2e;
+            padding: 36px 28px;
+            border-radius: 24px;
+            box-shadow: 8px 8px 20px #0a0a14, -8px -8px 20px #2a2a48;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 12px 12px 28px #0a0a14, -12px -12px 28px #2a2a48;
+        }
+
+        .service-card .icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 20px;
+            background: rgba(255, 137, 6, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #ff8906;
+            box-shadow: inset 4px 4px 8px #0a0a14, inset -4px -4px 8px #2a2a48;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #a7a9be;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: #1a1a2e;
+            padding: 24px 30px;
+            border-radius: 20px;
+            box-shadow: 8px 8px 20px #0a0a14, -8px -8px 20px #2a2a48;
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            border-left: 4px solid #ff8906;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+        }
+
+        .timeline-item .year {
+            min-width: 120px;
+            font-weight: 700;
+            color: #ff8906;
+            font-size: 18px;
+        }
+
+        .timeline-item .content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .content .sub {
+            color: #a7a9be;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 6px;
+        }
+
+        .timeline-item .content p {
+            color: #a7a9be;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #1a1a2e;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 8px 8px 20px #0a0a14, -8px -8px 20px #2a2a48;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .testimonial-card .quote-icon {
+            color: #ff8906;
+            font-size: 28px;
+            opacity: 0.3;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #fffffe;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card .client {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-card .client .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff8906, #e67a00);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: #0f0e17;
+        }
+
+        .testimonial-card .client .info .name {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .testimonial-card .client .info .title {
+            font-size: 13px;
+            color: #a7a9be;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info .neo-card {
+            background: #1a1a2e;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 8px 8px 20px #0a0a14, -8px -8px 20px #2a2a48;
+        }
+
+        .contact-info h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .contact-info .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+            color: #a7a9be;
+        }
+
+        .contact-info .info-item i {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 137, 6, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff8906;
+            font-size: 18px;
+        }
+
+        .contact-info .info-item span {
+            color: #fffffe;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .contact-social a {
+            width: 48px;
+            height: 48px;
+            background: #1a1a2e;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a7a9be;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 12px #0a0a14, -4px -4px 12px #2a2a48;
+        }
+
+        .contact-social a:hover {
+            color: #ff8906;
+            transform: translateY(-4px);
+        }
+
+        .contact-form {
+            background: #1a1a2e;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 8px 8px 20px #0a0a14, -8px -8px 20px #2a2a48;
+        }
+
+        .contact-form h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: #0f0e17;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            font-size: 15px;
+            color: #fffffe;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #ff8906;
+            box-shadow: 0 0 0 3px rgba(255, 137, 6, 0.1);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #6b6b7a;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+        }
+
+        #formStatus {
+            margin-top: 14px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0a0a14;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 137, 6, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer .brand {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fffffe;
+        }
+
+        footer .brand i {
+            color: #ff8906;
+        }
+
+        footer p {
+            color: #6b6b7a;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin: 16px auto 32px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual .profile-ring {
+                width: 320px;
+                height: 320px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-skills {
+                justify-content: center;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-badge:nth-child(4) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 20px 0;
+                gap: 16px;
+                background: #0f0e17;
+                border-bottom: 1px solid rgba(255, 137, 6, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .section-header h2 {
+                font-size: 30px;
+            }
+
+            .hero-visual .profile-ring {
+                width: 260px;
+                height: 260px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .timeline-item .year {
+                min-width: auto;
+            }
+
+            .floating-badge:nth-child(3) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .hero-visual .profile-ring {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+
+            .contact-info .neo-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PARTICLES CANVAS ===== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><i class="fas fa-brain"></i>ডা. <span>আরিফ</span></div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">পরিচয়</a></li>
+                    <li><a href="#services">সেবা</a></li>
+                    <li><a href="#timeline">অভিজ্ঞতা</a></li>
+                    <li><a href="#testimonials">মতামত</a></li>
+                    <li><a href="#contact" class="nav-cta">অ্যাপয়েন্টমেন্ট</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="tag"><i class="fas fa-star" style="font-size:10px;"></i> নিউরোসার্জারি বিশেষজ্ঞ</div>
+                    <h1>ডাঃ <span>আরিফ ইসলাম</span></h1>
+                    <div class="subtitle">মস্তিষ্ক ও স্নায়ুতন্ত্রের জটিল রোগের চিকিৎসক</div>
+                    <p>
+                        ১৫ বছরের অভিজ্ঞতায় ১০০০+ সফল নিউরোসার্জারি সম্পন্ন।
+                        আধুনিক প্রযুক্তি ও মানবিক সেবার সমন্বয়ে রোগীকে সুস্থ জীবন ফিরিয়ে দেই।
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary"><i class="fas fa-calendar-plus"></i> অ্যাপয়েন্টমেন্ট</a>
+                        <a href="#about" class="btn-secondary">আমার সম্পর্কে</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="number">১৫+</div>
+                            <div class="label">বছর অভিজ্ঞতা</div>
+                        </div>
+                        <div class="stat">
+                            <div class="number">১০০০+</div>
+                            <div class="label">সফল সার্জারি</div>
+                        </div>
+                        <div class="stat">
+                            <div class="number">৯৭%</div>
+                            <div class="label">সফলতার হার</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-ring">
+                        <div class="profile-ring-inner">
+                            <img src="https://img.freepik.com/free-photo/doctor-with-stethoscope_23-2147761472.jpg?w=740&t=st=1700000000" alt="ডাঃ আরিফ ইসলাম" />
+                        </div>
+                    </div>
+                    <div class="floating-badge">
+                        <i class="fas fa-award"></i>
+                        <div class="text">বেস্ট সার্জন <small>২০২৩ পুরস্কার</small></div>
+                    </div>
+                    <div class="floating-badge">
+                        <i class="fas fa-heartbeat"></i>
+                        <div class="text">৯৭% সফলতা <small>রোগী সন্তুষ্টি</small></div>
+                    </div>
+                    <div class="floating-badge">
+                        <i class="fas fa-microscope"></i>
+                        <div class="text">আধুনিক প্রযুক্তি <small>ন্যূনতম ইনভেসিভ</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" style="background:#0a0a14;">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">আমার পরিচয়</span>
+                <h2>জীবন <span>ও দর্শন</span></h2>
+                <p>শুধু চিকিৎসা নয়, রোগীর প্রতি দায়বদ্ধতা ও আন্তরিকতা আমার মূলমন্ত্র।</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="neo-card">
+                        <img src="https://img.freepik.com/free-photo/young-male-psychologist-consulting-patient_23-2148837668.jpg?w=740&t=st=1700000000" alt="ডাঃ আরিফ ইসলাম" />
+                    </div>
+                    <div class="experience-badge">
+                        <span class="number">১৫</span>
+                        <span class="label">বছর</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>মস্তিষ্কের জটিল রোগের <span>বিশেষজ্ঞ</span></h3>
+                    <p>
+                        আমি ডাঃ আরিফ ইসলাম, ঢাকা মেডিকেল কলেজ থেকে এমবিবিএস এবং 
+                        নিউরোসার্জারিতে এমএস (নিউরোসার্জারি) সম্পন্ন করি। 
+                        তারপর যুক্তরাজ্যের কিংস কলেজ হাসপাতাল থেকে ফেলোশিপ করি।
+                    </p>
+                    <p>
+                        আমার বিশ্বাস, প্রতিটি রোগীই অনন্য। তাই আমি প্রতিটি কেসকে 
+                        ব্যক্তিগত পর্যায়ে বিশ্লেষণ করি এবং সর্বোচ্চ মানের চিকিৎসা প্রদান করি।
+                    </p>
+                    <div class="about-skills">
+                        <span>🧠 নিউরোসার্জারি</span>
+                        <span>🩻 এমআরআই/সিটি স্ক্যান</span>
+                        <span>🔬 মাইক্রোনিউরোসার্জারি</span>
+                        <span>💉 স্পাইনাল সার্জারি</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">আমার সেবা</span>
+                <h2>আধুনিক <span>নিউরো</span> চিকিৎসা</h2>
+                <p>জটিল থেকে জটিলতর সব মস্তিষ্ক ও স্নায়ুজনিত রোগের চিকিৎসা</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>মস্তিষ্কের টিউমার</h3>
+                    <p>ব্রেন টিউমার সার্জারি, মাইক্রোনিউরোসার্জারি ও রেডিওসার্জারি।</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-spine"></i></div>
+                    <h3>স্পাইনাল সার্জারি</h3>
+                    <p>মেরুদণ্ডের ডিস্ক, স্পাইনাল স্টেনোসিস ও ফ্র্যাকচার সার্জারি।</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-bolt"></i></div>
+                    <h3>নিউরো ইমার্জেন্সি</h3>
+                    <p>ব্রেন হেমোরেজ, স্ট্রোক, হেড ইনজুরি ও নিউরো ট্রমা কেয়ার।</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>নিউরো রিহ্যাব</h3>
+                    <p>পোস্ট-সার্জারি রিহ্যাবিলিটেশন ও ফিজিওথেরাপি গাইডেন্স।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section id="timeline" style="background:#0a0a14;">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">পেশাগত জীবন</span>
+                <h2>শিক্ষা ও <span>অভিজ্ঞতা</span></h2>
+                <p>একাডেমিক যোগ্যতা ও কর্মজীবনের মাইলফলক</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">২০২১–বর্তমান</div>
+                    <div class="content">
+                        <h4>সিনিয়র কনসালটেন্ট – নিউরোসার্জারি</h4>
+                        <div class="sub">এভারকেয়ার হাসপাতাল, ঢাকা</div>
+                        <p>নিউরোসার্জারি বিভাগের প্রধান। প্রতিদিন ২০+ রোগী দেখা ও জটিল সার্জারি পরিচালনা।</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">২০১৮–২০২১</div>
+                    <div class="content">
+                        <h4>ফেলো (নিউরোসার্জারি)</h4>
+                        <div class="sub">কিংস কলেজ হাসপাতাল, লন্ডন</div>
+                        <p>মাইক্রোনিউরোসার্জারি ও স্কাল বেস সার্জারিতে বিশেষ প্রশিক্ষণ।</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">২০১৪–২০১৮</div>
+                    <div class="content">
+                        <h4>এমএস (নিউরোসার্জারি)</h4>
+                        <div class="sub">বিএসএমএমইউ, ঢাকা</div>
+                        <p>নিউরোসার্জারিতে স্নাতকোত্তর ডিগ্রি। গবেষণা: 'ব্রেন টিউমার সার্জারিতে নতুন পদ্ধতি'।</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">২০০৬–২০১২</div>
+                    <div class="content">
+                        <h4>এমবিবিএস</h4>
+                        <div class="sub">ঢাকা মেডিকেল কলেজ</div>
+                        <p>সম্মানসহ স্নাতক। ক্লিনিক্যাল নিউরোলজি ও সার্জারিতে বিশেষ আগ্রহ।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">রোগীদের মতামত</span>
+                <h2>তারা যা <span>বলেছেন</span></h2>
+                <p>আমার চিকিৎসায় সন্তুষ্ট রোগীদের কিছু মূল্যবান অভিজ্ঞতা</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>"ডাঃ আরিফের দক্ষ হাতে আমার মায়ের ব্রেন টিউমার সার্জারি সফল হয়েছে। তাঁর আন্তরিকতা ও পেশাদারিত্ব অতুলনীয়।"</blockquote>
+                    <div class="client">
+                        <div class="avatar">এ</div>
+                        <div class="info">
+                            <div class="name">আনোয়ারা বেগমের পরিবার</div>
+                            <div class="title">টিউমার সার্জারি রোগী</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>"স্পাইনাল ডিস্কের সমস্যায় অনেক কষ্ট পাচ্ছিলাম। ডাঃ আরিফের সঠিক ডায়াগনোসিস ও সার্জারিতে এখন আমি পুরোপুরি সুস্থ।"</blockquote>
+                    <div class="client">
+                        <div class="avatar">র</div>
+                        <div class="info">
+                            <div class="name">রফিকুল ইসলাম</div>
+                            <div class="title">স্পাইনাল সার্জারি রোগী</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>"স্ট্রোকের পর ডাঃ আরিফের তৎপরতা ও চিকিৎসায় আমার বাবা দ্রুত সুস্থ হয়েছেন। তিনি সত্যিই একজন গডসেন্ট।"</blockquote>
+                    <div class="client">
+                        <div class="avatar">ম</div>
+                        <div class="info">
+                            <div class="name">মাহমুদুর রহমান</div>
+                            <div class="title">স্ট্রোক রোগীর পরিবার</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" style="background:#0a0a14;">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">যোগাযোগ</span>
+                <h2>আমার সাথে <span>সংযোগ</span> করুন</h2>
+                <p>অ্যাপয়েন্টমেন্ট বা যেকোনো প্রশ্নে সরাসরি যোগাযোগ করুন</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="neo-card">
+                        <h3><i class="fas fa-map-pin" style="color:#ff8906;"></i> যোগাযোগের তথ্য</h3>
+                        <div class="info-item">
+                            <i class="fas fa-hospital"></i>
+                            <div><span>এভারকেয়ার হাসপাতাল</span><br />ধানমন্ডি, ঢাকা</div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div><span>+৮৮০ ১৭১২-৩৪৫৬৭৮</span></div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div><span>dr.arif@neurocare.com</span></div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div><span>শনি–বৃহস্পতি:</span> ৯am – ৮pm<br /><span>শুক্রবার:</span> ছুটির দিন</div>
+                        </div>
+                        <div class="contact-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <h3><i class="fas fa-paper-plane" style="color:#ff8906;"></i> দ্রুত বার্তা পাঠান</h3>
+                    <input type="text" placeholder="আপনার নাম" id="userName" required />
+                    <input type="email" placeholder="ইমেইল" id="userEmail" required />
+                    <input type="tel" placeholder="মোবাইল নম্বর" id="userPhone" />
+                    <input type="text" placeholder="বিষয় (ঐচ্ছিক)" id="userSubject" />
+                    <textarea placeholder="আপনার বার্তা লিখুন..." id="userMessage" required></textarea>
+                    <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> বার্তা পাঠান</button>
+                    <p id="formStatus"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="brand"><i class="fas fa-brain"></i> ডাঃ আরিফ ইসলাম</div>
+            <p>&copy; ২০২৬ – উন্নত নিউরোসার্জারি সেবায় নিবেদিত। সর্বস্বত্ব সংরক্ষিত।</p>
+            <p style="font-size:12px;color:#4a4a5a;">ডিজাইন করেছেন <span style="color:#ff8906;">মেডি পোর্টফোলিও</span></p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== PARTICLES =====
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const particleCount = 80;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.3 + 0.1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 137, 6, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(255, 137, 6, ${0.06 * (1 - dist / 150)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            drawLines();
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        // ===== HAMBURGER =====
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== CONTACT FORM =====
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('formStatus');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('userName').value.trim();
+            const email = document.getElementById('userEmail').value.trim();
+            const message = document.getElementById('userMessage').value.trim();
+
+            if (!name || !email || !message) {
+                status.innerHTML = '⚠️ দয়া করে নাম, ইমেইল ও বার্তা পূরণ করুন।';
+                status.style.color = '#ff6b6b';
+                return;
+            }
+
+            status.innerHTML = '✅ আপনার বার্তা সফলভাবে পাঠানো হয়েছে!';
+            status.style.color = '#ff8906';
+
+            form.reset();
+
+            setTimeout(() => {
+                status.innerHTML = '';
+            }, 6000);
+        });
+    </script>
+
+</body>
+</html>
