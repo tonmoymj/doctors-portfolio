@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Isabel Santos &mdash; Psychiatrist | Doctors Portfolio</title>
+    <meta name="description" content="Official portfolio and patient appointment portal for Dr. Isabel Santos, leading Psychiatrist.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #4A5568;
+            --accent-hover: #373f4e;
+            --accent-light: rgba(74,85,104, 0.08);
+            --accent-border: rgba(74,85,104, 0.25);
+            --text-primary: #1a1a2e;
+            --text-secondary: #5a5a6b;
+            --text-light: #8a8a9b;
+            --bg: #ffffff;
+            --bg-alt: #f9f9fc;
+            --bg-section: #f4f4f8;
+            --border: #e4e4ee;
+            --wa-green: #25D366;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+            --radius: 8px;
+            --radius-lg: 14px;
+            --transition: 0.3s ease;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); background: var(--bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.3; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+        .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+        .section-title { font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--text-primary); margin-bottom: 16px; }
+        .section-desc { color: var(--text-secondary); max-width: 580px; font-size: 1.02rem; }
+        .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Navbar */
+        .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); transition: box-shadow var(--transition); }
+        .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .nav-brand { display: flex; flex-direction: column; }
+        .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text-primary); line-height: 1.2; }
+        .nav-brand-title { font-size: 0.72rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); transition: color var(--transition); }
+        .nav-links a:hover { color: var(--accent); }
+        .btn-appt { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background var(--transition), transform var(--transition); font-family: 'Inter', sans-serif; display: inline-flex; align-items: center; gap: 6px; }
+        .btn-appt:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+        .nav-mobile { display: none; position: absolute; top: 70px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 12px 24px 20px; box-shadow: var(--shadow-md); z-index: 999; }
+        .nav-mobile.open { display: block; }
+        .nav-mobile li { list-style: none; border-bottom: 1px solid var(--border); }
+        .nav-mobile a { display: block; padding: 12px 0; font-size: 0.9rem; color: var(--text-secondary); font-weight: 500; }
+
+        /* Hero */
+        .hero { padding: 72px 0 64px; background: var(--bg); overflow: hidden; }
+        .hero-inner { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+        .hero-badge-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-light); color: var(--accent); padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; border: 1px solid var(--accent-border); }
+        .hero-name { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; color: var(--text-primary); margin-bottom: 6px; line-height: 1.15; }
+        .hero-creds { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 18px; font-weight: 600; }
+        .hero-desc { color: var(--text-secondary); font-size: 1.04rem; margin-bottom: 32px; max-width: 520px; line-height: 1.65; }
+        .hero-stats { display: flex; gap: 32px; margin-bottom: 36px; }
+        .stat-number { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1; }
+        .stat-label { font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; font-weight: 500; }
+        .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-primary { background: var(--accent); color: white; padding: 13px 26px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: all var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(74,85,104,0.25); }
+        .btn-secondary { border: 1.5px solid var(--border); color: var(--text-secondary); padding: 13px 26px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: all var(--transition); display: inline-flex; align-items: center; gap: 8px; background: white; }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+        
+        /* Hero Doctor Image Container */
+        .hero-image-wrap {
+            background: var(--bg-alt);
+            border-radius: var(--radius-lg);
+            aspect-ratio: 3/4;
+            max-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .hero-doctor-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .hero-image-wrap:hover .hero-doctor-photo {
+            transform: scale(1.03);
+        }
+        .hero-verified-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(6px);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+        .hero-floating-card {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* About */
+        .about-section { padding: 80px 0; background: var(--bg-alt); }
+        .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+        .credentials-list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+        .credential-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px; background: white; border-radius: var(--radius); border: 1px solid var(--border); transition: border-color var(--transition); }
+        .credential-item:hover { border-color: var(--accent); }
+        .credential-icon { width: 40px; height: 40px; background: var(--accent-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); }
+        .credential-title { font-weight: 700; font-size: 0.9rem; color: var(--text-primary); }
+        .credential-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px; }
+
+        /* Services */
+        .services-section { padding: 80px 0; background: var(--bg); }
+        .services-header { text-align: center; margin-bottom: 48px; }
+        .services-header .section-desc { margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .service-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; transition: all var(--transition); position: relative; overflow: hidden; }
+        .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--accent); transition: width var(--transition); }
+        .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--accent-border); }
+        .service-card:hover::after { width: 100%; }
+        .service-icon { width: 48px; height: 48px; background: var(--accent-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--accent); }
+        .service-name { font-family: 'Playfair Display', serif; font-size: 1.08rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+        .service-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Timeline */
+        .timeline-section { padding: 80px 0; background: var(--bg-alt); }
+        .timeline-header { text-align: center; margin-bottom: 48px; }
+        .timeline { position: relative; max-width: 780px; margin: 0 auto; }
+        .timeline::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { display: flex; gap: 28px; margin-bottom: 32px; position: relative; }
+        .timeline-dot { width: 50px; height: 50px; border-radius: 50%; background: white; border: 2.5px solid var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); font-weight: 700; font-size: 0.72rem; z-index: 1; font-family: 'Inter', sans-serif; }
+        .timeline-content { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; flex: 1; transition: border-color var(--transition); }
+        .timeline-content:hover { border-color: var(--accent); }
+        .timeline-year { font-size: 0.74rem; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+        .timeline-title { font-weight: 700; color: var(--text-primary); margin-bottom: 6px; font-size: 0.98rem; }
+        .timeline-desc { font-size: 0.85rem; color: var(--text-secondary); }
+
+        /* Testimonials */
+        .testimonials-section { padding: 80px 0; background: var(--bg); }
+        .testimonials-header { text-align: center; margin-bottom: 48px; }
+        .testimonials-header .section-desc { margin: 0 auto; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .testimonial-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+        .star-rating { color: #d97706; font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 2px; }
+        .testimonial-quote { font-size: 2.8rem; color: var(--accent); line-height: 0.8; font-family: 'Playfair Display', serif; margin-bottom: 10px; opacity: 0.35; }
+        .testimonial-text { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .author-avatar-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-border); flex-shrink: 0; }
+        .author-name { font-weight: 700; font-size: 0.86rem; }
+        .author-detail { font-size: 0.74rem; color: var(--text-light); }
+
+        /* Contact */
+        .contact-section { padding: 80px 0; background: var(--bg-alt); }
+        .contact-header { text-align: center; margin-bottom: 48px; }
+        .contact-header .section-desc { margin: 0 auto; }
+        .contact-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+        .contact-detail { display: flex; gap: 14px; margin-bottom: 22px; align-items: flex-start; }
+        .contact-icon { width: 42px; height: 42px; background: var(--accent-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+        .contact-text-label { font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+        .contact-text-value { font-size: 0.95rem; color: var(--text-primary); font-weight: 500; margin-top: 2px; }
+        .form-group { margin-bottom: 18px; }
+        .form-label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .form-input, .form-textarea, .form-select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: var(--radius); font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--text-primary); background: white; transition: border-color var(--transition); outline: none; }
+        .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--accent); }
+        .form-textarea { height: 110px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .btn-submit { background: var(--accent); color: white; border: none; width: 100%; padding: 14px; border-radius: var(--radius); font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 600; cursor: pointer; transition: all var(--transition); }
+        .btn-submit:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        /* Footer */
+        .footer { background: #0f172a; color: rgba(255,255,255,0.65); padding: 36px 0; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+        .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: white; }
+        .footer-brand span { display: block; font-family: 'Inter', sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+        .footer-links { display: flex; gap: 20px; list-style: none; }
+        .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+        .footer-links a:hover { color: white; }
+        .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2,1fr); } .testimonials-grid { grid-template-columns: repeat(2,1fr); } }
+        @media (max-width: 768px) {
+            .nav-links, .btn-appt { display: none; }
+            .hamburger { display: flex; }
+            .hero { padding: 48px 0; } .hero-inner { grid-template-columns: 1fr; gap: 36px; } .hero-visual { order: -1; } .hero-image-wrap { max-height: 340px; }
+            .hero-stats { gap: 20px; } .about-inner { grid-template-columns: 1fr; gap: 36px; }
+            .services-grid { grid-template-columns: 1fr; } .testimonials-grid { grid-template-columns: 1fr; }
+            .contact-inner { grid-template-columns: 1fr; gap: 36px; } .form-row { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <div class="nav-brand">
+                    <span class="nav-brand-name">Dr. Isabel Santos</span>
+                    <span class="nav-brand-title">Psychiatrist &middot; Miami, FL</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#experience">Career</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="btn-appt" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Book Appointment
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <ul class="nav-mobile container" id="mobileMenu">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Career</a></li>
+            <li><a href="#testimonials" onclick="toggleMenu()">Reviews</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content fade-in">
+                    <div class="hero-badge-pill">&#10003; Verified Psychiatrist</div>
+                    <h1 class="hero-name">Dr. Isabel Santos</h1>
+                    <p class="hero-creds">MD, FAPA &middot; Board-Certified Psychiatrist &middot; Specialist Physician</p>
+                    <p class="hero-desc">Dedicated cultural psychiatry expertise delivered with compassion and clinical excellence.</p>
+                    <div class="hero-stats">
+                        <div class="hero-stat"><div class="stat-number">15+</div><div class="stat-label">Years of Experience</div></div>
+                        <div class="hero-stat"><div class="stat-number">4,200+</div><div class="stat-label">Patients Treated</div></div>
+                        <div class="hero-stat"><div class="stat-number">98%</div><div class="stat-label">Positive Feedback</div></div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn-primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Book Consultation
+                        </a>
+                        <a href="#about" class="btn-secondary">
+                            View Credentials &rarr;
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual fade-in">
+                    <div class="hero-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Dr. Isabel Santos" class="hero-doctor-photo" onerror="this.style.display='none';">
+                        <div class="hero-verified-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Board Certified
+                        </div>
+                        <div class="hero-floating-card">
+                            <div style="font-size:0.72rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Available for Chamber &amp; Telehealth</div>
+                            <div style="font-size:0.82rem;color:var(--text-secondary);margin-top:2px;">Sat &mdash; Thu: 5:00 PM &ndash; 9:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-content fade-in">
+                    <span class="section-label">Professional Profile</span>
+                    <h2 class="section-title">Compassionate Care with Clinical Precision</h2>
+                    <p class="section-desc">With extensive clinical experience in psychiatrist, Dr. Santos combines evidence-based medicine with individualized patient care. Regularly consulting at premier diagnostic centers and hospitals, providing comprehensive diagnosis, treatment, and continuous follow-up.</p>
+                </div>
+                <div class="credentials-side fade-in">
+                    <span class="section-label">Academic Credentials &amp; Honors</span>
+                    <div class="credentials-list">
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>
+                            </div>
+                            <div class="credential-info">
+                                <div class="credential-title">Medical Education</div>
+                                <div class="credential-desc">Doctor of Medicine (MD) / MBBS &mdash; Top 1% Honors</div>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                            </div>
+                            <div class="credential-info">
+                                <div class="credential-title">Residency &amp; Hospital Appointment</div>
+                                <div class="credential-desc">Senior Consultant &mdash; Department of Psychiatrist</div>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="credential-info">
+                                <div class="credential-title">Fellowship &amp; Advanced Training</div>
+                                <div class="credential-desc">Subspecialty Fellowship &mdash; Leading Medical Institute</div>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l-4.5 2.5 1.2-5L4 8.5l5.2-.4L12 3.5l2.8 4.6 5.2.4-4.7 4 1.2 5z"/></svg>
+                            </div>
+                            <div class="credential-info">
+                                <div class="credential-title">Board Certifications</div>
+                                <div class="credential-desc">Fellow of Specialty College &amp; National Medical Board</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-header fade-in">
+                <span class="section-label">Specialized Treatments</span>
+                <h2 class="section-title">Psychiatrist Services &amp; Procedures</h2>
+                <p class="section-desc">Comprehensive medical and diagnostic services delivered with modern clinical protocols and empathetic care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="service-name">Medication Management</div>
+                    <p class="service-desc">Precise psychopharmacology tailored to individual neurochemistry.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <div class="service-name">Depression & Anxiety Care</div>
+                    <p class="service-desc">Evidence-based therapy for major depression and panic disorders.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="service-name">Trauma & PTSD Recovery</div>
+                    <p class="service-desc">Specialized cognitive and somatic trauma processing therapies.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <div class="service-name">Bipolar & Mood Disorders</div>
+                    <p class="service-desc">Mood stabilization and long-term relapse prevention programs.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8zM12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg>
+                    </div>
+                    <div class="service-name">Sleep Disorder Psychiatry</div>
+                    <p class="service-desc">Cognitive behavioral therapy for insomnia and sleep wellness.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/>
+                        </svg>
+                    </div>
+                    <div class="service-name">Adult ADHD Evaluation</div>
+                    <p class="service-desc">Comprehensive diagnostic testing and focused executive function care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline-section" id="experience">
+        <div class="container">
+            <div class="timeline-header fade-in">
+                <span class="section-label">Experience &amp; Milestones</span>
+                <h2 class="section-title">Career Journey &amp; Positions</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">2005</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2005 &mdash; 2009</div>
+                        <div class="timeline-title">Medical Degree (MD / MBBS) &mdash; Academic Honors</div>
+                        <div class="timeline-desc">Graduated with distinction in clinical medicine, surgical rotations, and pharmacology.</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">2010</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2010 &mdash; 2014</div>
+                        <div class="timeline-title">Specialist Residency &mdash; University Teaching Hospital</div>
+                        <div class="timeline-desc">Completed 4 years of intensive training in Psychiatrist managing inpatient and outpatient cases.</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">2015</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015 &mdash; 2018</div>
+                        <div class="timeline-title">Subspecialty Fellowship &amp; Clinical Research</div>
+                        <div class="timeline-desc">Advanced clinical fellowship with over 20+ peer-reviewed medical publications.</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">NOW</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019 &mdash; Present</div>
+                        <div class="timeline-title">Senior Consultant Psychiatrist &mdash; Private Practice</div>
+                        <div class="timeline-desc">Delivering compassionate, evidence-based clinical care to over 4,500+ satisfied patients.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="testimonials-header fade-in">
+                <span class="section-label">Patient Feedback</span>
+                <h2 class="section-title">Verified Patient Experiences</h2>
+                <p class="section-desc">Real stories and ratings from patients treated at our clinical chamber.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">Dr. Santos is an extraordinary physician. The diagnosis was accurate, the treatment plan was clear, and my recovery was faster than expected.</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Patient" class="author-avatar-img">
+                        <div>
+                            <div class="author-name">Rahman Chowdhury</div>
+                            <div class="author-detail">Treated for Psychiatrist Concern &middot; 2024</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">The level of patience and attention to detail provided by Dr. Santos made me feel completely reassured. Highly recommended to everyone!</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Patient" class="author-avatar-img">
+                        <div>
+                            <div class="author-name">Sabrina Karim</div>
+                            <div class="author-detail">Regular Patient &middot; 2023</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">After consulting multiple doctors, Dr. Santos finally gave me the right solution. Truly a master of their field.</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Patient" class="author-avatar-img">
+                        <div>
+                            <div class="author-name">Tanvir Ahmed</div>
+                            <div class="author-detail">Consultation &amp; Follow-up &middot; 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-header fade-in">
+                <span class="section-label">Chamber &amp; Appointment</span>
+                <h2 class="section-title">Schedule an Appointment</h2>
+                <p class="section-desc">Book your consultation slot online or directly reach out via phone / WhatsApp.</p>
+            </div>
+            <div class="contact-inner">
+                <div class="contact-info fade-in">
+                    <div class="contact-detail">
+                        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <div><div class="contact-text-label">Chamber Location</div><div class="contact-text-value">Suite #402, Specialist Diagnostic Center, Miami, FL</div></div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <div><div class="contact-text-label">Appointment Hotline</div><div class="contact-text-value"><a href="tel:+8801609-977377">+880 1609-977377</a></div></div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div><div class="contact-text-label">Visiting Hours</div><div class="contact-text-value">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM (Friday Closed)</div></div>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <form onsubmit="return handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group"><label class="form-label">Patient Name *</label><input class="form-input" type="text" placeholder="Full Name" required></div>
+                            <div class="form-group"><label class="form-label">Contact Number *</label><input class="form-input" type="tel" placeholder="+880 1XXXXXXXXX" required></div>
+                        </div>
+                        <div class="form-group"><label class="form-label">Preferred Date &amp; Time</label><input class="form-input" type="date" required></div>
+                        <div class="form-group"><label class="form-label">Reason for Visit / Problem Summary</label>
+                            <textarea class="form-textarea" placeholder="Briefly describe your symptoms or medical concern..."></textarea></div>
+                        <button type="submit" class="btn-submit">Confirm Appointment Request &rarr;</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">Dr. Isabel Santos <span>Psychiatrist &middot; Miami, FL</span></div>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#experience">Career</a></li>
+                    <li><a href="#contact">Chamber</a></li>
+                </ul>
+                <div class="footer-copy">&copy; 2026 Dr. Isabel Santos. Powered by Doctors Portfolio.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('[type="submit"]');
+            const orig = btn.textContent;
+            btn.textContent = 'Appointment Requested Successfully ✓';
+            btn.style.background = '#2D6A4F';
+            btn.disabled = true;
+            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
+            return false;
+        }
+    </script>
+</body>
+</html>

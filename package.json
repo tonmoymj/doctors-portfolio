@@ -1,0 +1,19 @@
+{
+  "name": "doctors-portfolio",
+  "version": "1.0.0",
+  "description": "100 Professional Website & Portfolio Templates for Physicians, Dentists & Healthcare Specialists",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "doctor-portfolio",
+    "healthcare",
+    "medical-website",
+    "templates",
+    "vercel"
+  ],
+  "author": "Doctors Portfolio",
+  "license": "MIT"
+}
