@@ -1,376 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Dr. Marcus Baptiste | Concierge Primary Care | Neo-Brutalist High-Contrast Clinic</title>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Syne:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Alex+Brush&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dr. Marcus Baptiste | Concierge Primary Care | Sidebar HUD</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --pri: #000000;
-  --acc: #FF4365;
-  --bg: #FFFDF0;
-  --card: #FFFFFF;
-  --text: #1E293B;
-  --muted: #64748B;
-  --border: #000000;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Space Grotesk', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
-h1, h2, h3, h4 { font-family: 'Space Grotesk', serif; font-weight: 700; color: #000000; }
-a { text-decoration: none; color: inherit; }
-.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
-
-/* Topbar */
-.topbar { background: var(--pri); color: #FF4365; font-size: .8rem; text-align: center; padding: 9px 0; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-bottom: 2px solid var(--acc); }
-
-/* Navbar */
-.navbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-.nav-inner { display: flex; justify-content: space-between; align-items: center; height: 74px; }
-.nav-links { display: flex; gap: 22px; list-style: none; font-size: .84rem; font-weight: 600; color: var(--muted); }
-.nav-links a:hover { color: var(--acc); }
-.btn-act { background: var(--acc); color: #090E17; border: none; padding: 11px 22px; border-radius: 8px; font-weight: 700; font-size: .84rem; cursor: pointer; transition: .2s; display: inline-block; }
-.btn-act:hover { opacity: .9; transform: translateY(-2px); }
-
-/* Hero */
-.hero { padding: 80px 0 60px; position: relative; }
-.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 54px; align-items: center; }
-.hero-tag { color: var(--acc); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 10px; display: inline-block; }
-.hero-title { font-size: clamp(2.4rem, 4.2vw, 3.6rem); line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.02em; }
-.hero-creds { font-size: 1.05rem; color: var(--acc); font-weight: 600; margin-bottom: 14px; }
-.hero-bio { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 24px; }
-.hero-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; border: 2px solid var(--border); box-shadow: 0 20px 45px rgba(0,0,0,0.08); display: block; }
-
-/* Stats Strip */
-.stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 36px 20px; margin: 40px 0 60px; gap: 16px; }
-.stat-val { font-size: 2.6rem; font-weight: 800; color: var(--acc); font-family: 'Space Grotesk', sans-serif; line-height: 1; }
-.stat-lbl { font-size: .82rem; color: var(--muted); margin-top: 4px; }
-
-/* Sections */
-.sec { padding: 74px 0; border-bottom: 1px solid var(--border); }
-.sec-head { text-align: center; max-width: 680px; margin: 0 auto 46px; }
-.sec-eye { font-size: .74rem; color: var(--acc); font-weight: 800; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 8px; display: block; }
-
-/* Credentials */
-.cred-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-.cred-card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--acc); border-radius: 10px; padding: 22px; }
-
-/* Services */
-.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.svc-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; transition: .3s; position: relative; }
-.svc-card:hover { border-color: var(--acc); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
-.svc-num { font-size: .74rem; font-weight: 800; color: var(--acc); text-transform: uppercase; margin-bottom: 8px; }
-
-/* Timeline */
-.timeline { border-left: 2px solid var(--acc); padding-left: 30px; margin-left: 12px; max-width: 760px; margin: 0 auto; }
-.tl-node { position: relative; margin-bottom: 32px; }
-.tl-node::before { content: ''; position: absolute; left: -39px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--acc); border: 3px solid var(--bg); }
-
-/* Chambers */
-.ch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-.ch-card { background: var(--card); border: 1.5px solid var(--border); border-radius: 14px; padding: 30px; }
-
-/* Reviews */
-.rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.rev-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 26px; }
-
-/* FAQ */
-.faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; }
-.faq-q { padding: 18px 22px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
-.faq-a { padding: 0 22px 16px; color: var(--muted); font-size: .9rem; display: none; line-height: 1.7; }
-.faq-item.active .faq-a { display: block; }
-
-/* Booking Form */
-.slot-btn { background: #F1F5F9; border: 1px solid var(--border); color: var(--text); padding: 8px 16px; font-size: .82rem; font-weight: 600; cursor: pointer; margin: 4px; display: inline-block; border-radius: 6px; transition: .2s; }
-.slot-btn.active { background: var(--acc); color: #090E17; border-color: var(--acc); font-weight: 700; }
-.f-in { width: 100%; padding: 13px 16px; background: #FFF; border: 1px solid var(--border); color: var(--text); border-radius: 8px; margin-bottom: 12px; font-family: inherit; font-size: .95rem; }
-.f-in:focus { outline: none; border-color: var(--acc); }
-
-/* Footer */
-.footer { background: #000000; color: #CBD5E1; padding: 68px 0 28px; }
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-
-
-        .b-box, .svc-card, .ch-card, .rev-card, .stats-strip, .cred-card { border: 3px solid #000 !important; box-shadow: 5px 5px 0px #000 !important; border-radius: 0px !important; }
-        .btn-act, .slot-btn { border: 2.5px solid #000 !important; box-shadow: 3px 3px 0px #000 !important; border-radius: 0px !important; }
-        
-
-@media (max-width: 860px) {
-  .hero-grid, .stats-strip, .cred-grid, .svc-grid, .ch-grid, .rev-grid, .footer-grid { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-}
-</style>
-</head>
+:root{--bg:#090E17;--panel:#111A2E;--cyan:#06B6D4;--green:#10B981;--border:#1E293B;--muted:#94A3B8}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;color:#F1F5F9;background:var(--bg);display:flex;min-height:100vh}h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;color:white}a{text-decoration:none;color:inherit}
+.sidebar{width:320px;background:var(--panel);border-right:1px solid var(--border);position:fixed;top:0;bottom:0;left:0;padding:36px 26px;display:flex;flex-direction:column;justify-content:space-between;z-index:50;overflow-y:auto}
+.s-photo{width:100px;height:100px;border-radius:16px;object-fit:cover;border:2px solid var(--cyan);box-shadow:0 0 20px rgba(6,182,212,.3);margin-bottom:14px}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;animation:p 1.5s infinite}
+@keyframes p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+.s-nav a{display:block;padding:9px 14px;border-radius:8px;font-size:.85rem;color:var(--muted);margin-bottom:4px;transition:.2s}
+.s-nav a:hover{background:rgba(255,255,255,.06);color:white}
+.main{margin-left:320px;flex:1;padding:50px 48px;max-width:1000px}
+.banner{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:44px;margin-bottom:32px;position:relative;overflow:hidden}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.m-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:18px}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:32px}
+.cap-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:26px}
+.slot-btn{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:6px;font-size:.8rem;cursor:pointer;margin:3px;display:inline-block}
+.slot-btn.active{background:var(--cyan);color:#090E17;font-weight:700}
+.f-input{width:100%;padding:12px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:white;border-radius:8px;margin-bottom:12px;font-family:'Inter',sans-serif}
+@media(max-width:960px){body{flex-direction:column}.sidebar{width:100%;position:relative;height:auto}.main{margin-left:0;padding:24px}.cap-grid,.metrics-row{grid-template-columns:1fr}}
+</style></head>
 <body>
-
-<div class="topbar">Neo-Brutalist High-Contrast Clinic &bull; Concierge Primary Care Specialist Practice &bull; Medical Plaza, NY</div>
-
-<nav class="navbar">
-  <div class="wrap nav-inner">
-    <div>
-      <div class="d-name" style="font-size: 1.15rem; font-weight: 800; font-family: 'Space Grotesk', serif;">Dr. Marcus Baptiste</div>
-      <div class="d-spec" style="font-size: .72rem; color: var(--acc); font-weight: 700; text-transform: uppercase;">Concierge Primary Care &bull; Medical Plaza, NY</div>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#about">Bio</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#timeline">Career</a></li>
-      <li><a href="#chambers">Chambers</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#booking">Book</a></li>
-    </ul>
-    <button class="btn-act" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Consultation</button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="hero-tag">Senior Consultant &bull; Concierge Primary Care</span>
-      <h1 class="d-name hero-title">Dr. Marcus Baptiste</h1>
-      <p class="hero-creds">MD, Board Certified</p>
-      <p class="hero-bio">Dedicated patient-centered healthcare excellence. Delivering advanced diagnostic precision, tailored therapeutics, and world-class clinical bedside care to patients in Medical Plaza, NY.</p>
-      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-        <a href="#booking" class="btn-act" style="padding: 13px 26px;">Book Appointment &rarr;</a>
-        <a href="https://wa.me/8801609977377" target="_blank" style="background: #25D366; color: white; padding: 13px 22px; font-weight: 700; font-size: .86rem; border-radius: 8px; display: inline-block;">&#x1F4AC; WhatsApp (+880 1609-977377)</a>
-      </div>
-    </div>
-    <div>
-      <img src="https://images.unsplash.com/photo-1643297654416-05795d62e39c?auto=format&fit=crop&w=800&q=80" alt="Dr. Marcus Baptiste" class="hero-img">
+<aside class="sidebar">
+  <div>
+    <img src="https://images.unsplash.com/photo-1643297654416-05795d62e39c?auto=format&fit=crop&w=800&q=80" alt="Dr. Marcus Baptiste" class="s-photo">
+    <div style="background:rgba(16,185,129,.15);color:var(--green);padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-bottom:14px"><span class="pulse"></span>In Chamber Now</div>
+    <div class="d-name" style="font-size:1.3rem;color:white">Dr. Marcus Baptiste</div>
+    <div class="d-spec" style="font-size:.75rem;color:var(--cyan);text-transform:uppercase;font-weight:700;margin-bottom:20px">Concierge Primary Care &bull; Medical Plaza, NY</div>
+    <div class="s-nav">
+      <a href="#overview">&rsaquo; Overview</a>
+      <a href="#procedures">&rsaquo; Capabilities</a>
+      <a href="#chambers">&rsaquo; Chambers</a>
+      <a href="#booking">&rsaquo; Live Booking</a>
     </div>
   </div>
-</section>
-
-<!-- STATS STRIP -->
-<div class="wrap">
-  <div class="stats-strip">
-    <div><div class="stat-val">16+</div><div class="stat-lbl">Years Clinical Experience</div></div>
-    <div><div class="stat-val">4,800+</div><div class="stat-lbl">Successful Patients</div></div>
-    <div><div class="stat-val">98.6%</div><div class="stat-lbl">Satisfaction Rate</div></div>
-    <div><div class="stat-val">25+</div><div class="stat-lbl">Clinical Publications</div></div>
+  <div>
+    <a href="https://wa.me/8801609977377" target="_blank" style="display:block;background:#25D366;color:white;padding:12px;border-radius:8px;text-align:center;font-weight:700;font-size:.85rem">&#x1F4AC; WhatsApp (+880 1609-977377)</a>
   </div>
-</div>
-
-<!-- ABOUT & CREDENTIALS -->
-<section class="sec" id="about">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-eye">Clinical Leadership</span>
-      <h2>Specialist Biography &amp; Credentials</h2>
+</aside>
+<main class="main">
+  <section class="banner" id="overview">
+    <span style="font-size:.72rem;color:var(--cyan);font-weight:800;text-transform:uppercase">Health-Tech Diagnostic Suite</span>
+    <h1 class="d-name" style="font-size:2.8rem;font-weight:800;margin:10px 0 12px">Dr. Marcus Baptiste</h1>
+    <p style="color:var(--cyan);font-size:1rem;margin-bottom:10px;font-weight:600">MD, Board Certified</p>
+    <p style="color:var(--muted);font-size:1rem;line-height:1.75;max-width:600px">Dedicated patient-centered healthcare excellence. Delivering advanced diagnostic protocols and patient-centred clinical care in Medical Plaza, NY.</p>
+    <div class="metrics-row">
+      <div class="m-card"><div style="font-size:2rem;font-weight:800;color:var(--cyan)">16+</div><div style="font-size:.72rem;color:var(--muted)">Yrs Experience</div></div>
+      <div class="m-card"><div style="font-size:2rem;font-weight:800;color:var(--cyan)">4,800+</div><div style="font-size:.72rem;color:var(--muted)">Cases Treated</div></div>
+      <div class="m-card"><div style="font-size:2rem;font-weight:800;color:var(--cyan)">99.2%</div><div style="font-size:.72rem;color:var(--muted)">Success Rate</div></div>
+      <div class="m-card"><div style="font-size:2rem;font-weight:800;color:var(--cyan)">24/7</div><div style="font-size:.72rem;color:var(--muted)">Emergency Refs</div></div>
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
-      <div>
-        <h3 style="font-size: 1.45rem; margin-bottom: 14px;">Dedicated Patient-Centred Care</h3>
-        <p style="color: var(--muted); line-height: 1.85; margin-bottom: 14px;">Dr. Baptiste completed an honours medical degree followed by advanced subspecialty fellowship rotations at premier teaching institutions. With over 16 years of consultant practice in Medical Plaza, NY, Dr. Baptiste has earned a distinguished reputation for clinical accuracy and compassionate patient management.</p>
-        <p style="color: var(--muted); line-height: 1.85;">Actively involved in postgraduate medical training, clinical research, and hospital quality governance boards.</p>
-      </div>
-      <div class="cred-grid">
-        <div class="cred-card"><h4>MBBS / Doctor of Medicine</h4><p style="font-size: .84rem; color: var(--muted); margin-top: 4px;">First Class Honours &bull; Medical Gold Medal</p></div>
-        <div class="cred-card"><h4>Postgraduate Fellowship</h4><p style="font-size: .84rem; color: var(--muted); margin-top: 4px;">Royal College &bull; Board Certified Concierge Primary Care</p></div>
-        <div class="cred-card"><h4>Specialist Registration</h4><p style="font-size: .84rem; color: var(--muted); margin-top: 4px;">Permanent Medical Council Licence</p></div>
-        <div class="cred-card"><h4>Academic Research</h4><p style="font-size: .84rem; color: var(--muted); margin-top: 4px;">25+ Peer-Reviewed Journal Papers</p></div>
-      </div>
+  </section>
+  <section id="procedures" style="margin-bottom:32px">
+    <h2 style="font-size:1.8rem;margin-bottom:20px">Precision Capabilities</h2>
+    <div class="cap-grid">
+      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Annual Health Checkup</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Comprehensive physical examination, complete blood panel, and personalized wellness recommendations.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Diabetes & Metabolic Care</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">HbA1c optimization, dietary counseling, and long-term complication screening protocols.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Hypertension Management</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">24-hour ambulatory blood pressure monitoring and evidence-based cardiovascular risk reduction.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Acute Illness & Infections</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Rapid diagnosis and targeted treatment for viral fevers, bacterial infections, and tropical diseases.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Geriatric Primary Care</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Holistic health management for elderly patients including polypharmacy review and falls prevention.</p></div>      <div class="cap-card"><div style="color:var(--cyan);font-size:1.1rem;margin-bottom:6px">Executive Health Screening</div><p style="color:var(--muted);font-size:.86rem;line-height:1.65">Tailored corporate health assessment with advanced imaging, blood panels, and cardiac evaluation.</p></div>
+    </div>
+  </section>
+  <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:32px;margin-bottom:32px" id="chambers">
+    <h2 style="font-size:1.5rem;margin-bottom:14px">Chamber &amp; Schedule</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+      <div style="background:rgba(255,255,255,.03);padding:18px;border-radius:10px;border:1px solid var(--border)"><strong>Main Chamber:</strong><p style="color:var(--muted);font-size:.85rem;margin-top:4px">Suite #402, Diagnostic Center, Medical Plaza, NY<br>Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</p></div>
+      <div style="background:rgba(255,255,255,.03);padding:18px;border-radius:10px;border:1px solid var(--border)"><strong>Hospital Rounds:</strong><p style="color:var(--muted);font-size:.85rem;margin-top:4px">City Hospital, Medical Plaza, NY<br>Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</p></div>
     </div>
   </div>
-</section>
-
-<!-- SERVICES -->
-<section class="sec" id="services">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-eye">Procedures &amp; Treatments</span>
-      <h2>Specialized Clinical Procedures</h2>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-card">
-        <div class="svc-num">01 &bull; Clinical Focus</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Annual Health Checkup</h3>
-        <p style="font-size: .88rem; color: var(--muted); line-height: 1.75;">Comprehensive physical examination, complete blood panel, and personalized wellness recommendations.</p>
-      </div>      <div class="svc-card">
-        <div class="svc-num">02 &bull; Clinical Focus</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Diabetes & Metabolic Care</h3>
-        <p style="font-size: .88rem; color: var(--muted); line-height: 1.75;">HbA1c optimization, dietary counseling, and long-term complication screening protocols.</p>
-      </div>      <div class="svc-card">
-        <div class="svc-num">03 &bull; Clinical Focus</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Hypertension Management</h3>
-        <p style="font-size: .88rem; color: var(--muted); line-height: 1.75;">24-hour ambulatory blood pressure monitoring and evidence-based cardiovascular risk reduction.</p>
-      </div>      <div class="svc-card">
-        <div class="svc-num">04 &bull; Clinical Focus</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Acute Illness & Infections</h3>
-        <p style="font-size: .88rem; color: var(--muted); line-height: 1.75;">Rapid diagnosis and targeted treatment for viral fevers, bacterial infections, and tropical diseases.</p>
-      </div>      <div class="svc-card">
-        <div class="svc-num">05 &bull; Clinical Focus</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Geriatric Primary Care</h3>
-        <p style="font-size: .88rem; color: var(--muted); line-height: 1.75;">Holistic health management for elderly patients including polypharmacy review and falls prevention.</p>
-      </div>      <div class="svc-card">
-        <div class="svc-num">06 &bull; Clinical Focus</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Executive Health Screening</h3>
-        <p style="font-size: .88rem; color: var(--muted); line-height: 1.75;">Tailored corporate health assessment with advanced imaging, blood panels, and cardiac evaluation.</p>
-      </div>
-    </div>
+  <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:32px" id="booking">
+    <h2 style="font-size:1.5rem;margin-bottom:14px">Instant Telemetry Booking</h2>
+    <div style="margin-bottom:14px"><span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span><span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span><span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span><span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span><span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span></div>
+    <form onsubmit="handleForm(event)"><input class="f-input" type="text" placeholder="Patient Full Name" required><input class="f-input" type="tel" placeholder="Mobile Number (+880)" required><input class="f-input" type="date" required><button type="submit" style="background:var(--cyan);color:#090E17;border:none;padding:14px;width:100%;border-radius:8px;font-weight:800;cursor:pointer">Confirm Booking &rarr;</button></form>
   </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="sec" id="timeline">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-eye">Career Milestones</span>
-      <h2>Academic &amp; Clinical Journey</h2>
-    </div>
-    <div class="timeline">
-      <div class="tl-node">
-        <div style="font-size: .82rem; color: var(--acc); font-weight: 700;">2006 &ndash; 2011</div>
-        <h3 style="font-size: 1.15rem; margin: 4px 0 6px;">Medical School &amp; Hospital Internship</h3>
-        <p style="color: var(--muted); font-size: .88rem;">Graduated First Class Honours with Gold Medal. Completed comprehensive rotations across internal medicine, surgery, and diagnostics.</p>
-      </div>
-      <div class="tl-node">
-        <div style="font-size: .82rem; color: var(--acc); font-weight: 700;">2012 &ndash; 2017</div>
-        <h3 style="font-size: 1.15rem; margin: 4px 0 6px;">Specialist Residency &amp; Fellowship in Concierge Primary Care</h3>
-        <p style="color: var(--muted); font-size: .88rem;">Subspecialty fellowship training at premier tertiary hospitals. Authored foundational clinical research studies.</p>
-      </div>
-      <div class="tl-node">
-        <div style="font-size: .82rem; color: var(--acc); font-weight: 700;">2018 &ndash; Present</div>
-        <h3 style="font-size: 1.15rem; margin: 4px 0 6px;">Senior Consultant &bull; Private Specialist Practice</h3>
-        <p style="color: var(--muted); font-size: .88rem;">Leading a modern specialist diagnostic center in Medical Plaza, NY. Over 4,800 patients treated with evidence-based protocols.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CHAMBERS -->
-<section class="sec" id="chambers">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-eye">Chamber Locations</span>
-      <h2>Visiting Hours &amp; Consulting Rooms</h2>
-    </div>
-    <div class="ch-grid">
-      <div class="ch-card">
-        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Main Specialist Diagnostic Chamber</h3>
-        <p style="color: var(--muted); font-size: .88rem; margin-bottom: 14px;">Suite #402, Medical Plaza, Medical Plaza, NY</p>
-        <div style="background: #F8FAFC; border: 1px solid var(--border); padding: 14px; border-radius: 8px; font-size: .88rem; margin-bottom: 16px; line-height: 1.7;">
-          <strong style="color: var(--acc);">Visiting Hours:</strong><br>
-          Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM<br>
-          Friday: Closed (Emergency on-call)
-        </div>
-        <a href="https://wa.me/8801609977377" target="_blank" style="display: block; background: #25D366; color: white; text-align: center; padding: 12px; font-weight: 700; font-size: .85rem; border-radius: 6px;">&#x1F4AC; WhatsApp Serial Booking</a>
-      </div>
-      <div class="ch-card">
-        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Hospital Department &amp; Clinical Rounds</h3>
-        <p style="color: var(--muted); font-size: .88rem; margin-bottom: 14px;">Department of Concierge Primary Care, City Hospital, Medical Plaza, NY</p>
-        <div style="background: #F8FAFC; border: 1px solid var(--border); padding: 14px; border-radius: 8px; font-size: .88rem; margin-bottom: 16px; line-height: 1.7;">
-          <strong style="color: var(--acc);">Clinical Rounds:</strong><br>
-          Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM<br>
-          Emergency referrals accepted 24/7
-        </div>
-        <a href="#booking" class="btn-act" style="display: block; text-align: center; padding: 12px; border-radius: 6px;">Request Chamber Serial &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="sec" id="reviews">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-eye">Patient Feedback</span>
-      <h2>Verified Patient Reviews</h2>
-    </div>
-    <div class="rev-grid">
-      <div class="rev-card">
-        <div style="color: var(--acc); font-size: 1.1rem; margin-bottom: 10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="color: var(--muted); font-size: .9rem; font-style: italic; line-height: 1.7;">&ldquo;Dr. Baptiste's diagnostic precision and calm bedside approach gave my family complete peace of mind. The care was thorough, caring, and life-changing.&rdquo;</p>
-        <div style="margin-top: 14px; font-size: .82rem; font-weight: 700;">&mdash; M. Rahman &bull; Verified Patient</div>
-      </div>
-      <div class="rev-card">
-        <div style="color: var(--acc); font-size: 1.1rem; margin-bottom: 10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="color: var(--muted); font-size: .9rem; font-style: italic; line-height: 1.7;">&ldquo;Exceptional specialist care and a remarkably well-organized chamber. Every test and prescription was clearly explained. Highly recommended!&rdquo;</p>
-        <div style="margin-top: 14px; font-size: .82rem; font-weight: 700;">&mdash; Ayesha Begum &bull; Medical Plaza, NY</div>
-      </div>
-      <div class="rev-card">
-        <div style="color: var(--acc); font-size: 1.1rem; margin-bottom: 10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="color: var(--muted); font-size: .9rem; font-style: italic; line-height: 1.7;">&ldquo;The best medical consultation experience I have had. Accurate diagnosis, targeted therapy, and excellent follow-up support.&rdquo;</p>
-        <div style="margin-top: 14px; font-size: .82rem; font-weight: 700;">&mdash; Tariq Ahmed &bull; Private Patient</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-eye">Patient Assistance</span>
-      <h2>Frequently Asked Questions</h2>
-    </div>
-    <div style="max-width: 760px; margin: 0 auto;">
-      <div class="faq-item"><div class="faq-q"><span>What reports should I bring to the consultation?</span><span>&#9660;</span></div><div class="faq-a">Please bring all recent diagnostic reports, blood test results, imaging scans (X-ray, MRI, CT), and previous prescription records.</div></div>
-      <div class="faq-item"><div class="faq-q"><span>How do I secure an appointment serial?</span><span>&#9660;</span></div><div class="faq-a">Complete the booking form below or message directly via WhatsApp at +880 1609-977377 for the quickest serial confirmation.</div></div>
-      <div class="faq-item"><div class="faq-q"><span>Are telemedicine / video consultations available?</span><span>&#9660;</span></div><div class="faq-a">Yes. Video follow-up consultations and report reviews are available on request. Contact our WhatsApp line to schedule.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOKING -->
-<section class="sec" id="booking">
-  <div class="wrap" style="max-width: 740px;">
-    <div class="sec-head">
-      <span class="sec-eye">Appointment Booking</span>
-      <h2>Schedule Your Consultation</h2>
-      <p style="color: var(--muted); margin-top: 6px;">Visiting Hours: Sat &ndash; Thu, 5:00 PM &ndash; 9:00 PM &bull; Hotline: +880 1609-977377</p>
-    </div>
-    <div style="background: var(--card); border: 1.5px solid var(--border); border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
-      <div style="margin-bottom: 18px;">
-        <label style="font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; display: block; margin-bottom: 8px;">Select Preferred Time Slot</label>
-        <span class="slot-btn active" onclick="selectSlot(this)">5:00 PM</span>
-        <span class="slot-btn" onclick="selectSlot(this)">5:30 PM</span>
-        <span class="slot-btn" onclick="selectSlot(this)">6:00 PM</span>
-        <span class="slot-btn" onclick="selectSlot(this)">6:30 PM</span>
-        <span class="slot-btn" onclick="selectSlot(this)">7:00 PM</span>
-        <span class="slot-btn" onclick="selectSlot(this)">7:30 PM</span>
-      </div>
-      <form onsubmit="handleForm(event)">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <input class="f-in" type="text" placeholder="Patient Full Name" required>
-          <input class="f-in" type="tel" placeholder="Mobile / WhatsApp Number (+880)" required>
-        </div>
-        <input class="f-in" type="date" required>
-        <textarea class="f-in" rows="3" placeholder="Brief symptoms or reason for visit..." style="resize: vertical;"></textarea>
-        <button type="submit" class="btn-act" data-orig="Confirm Appointment Serial" style="width: 100%; padding: 15px; font-size: .95rem;">Confirm Appointment Serial &rarr;</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <h3 class="d-name" style="color: var(--acc); font-size: 1.4rem; margin-bottom: 6px;">Dr. Marcus Baptiste</h3>
-        <p class="d-spec" style="font-size: .84rem; color: var(--acc);">MD, Board Certified &bull; Concierge Primary Care</p>
-        <p style="color: #94A3B8; font-size: .82rem; margin-top: 10px; line-height: 1.7;">Medical Plaza, NY &bull; Neo-Brutalist High-Contrast Clinic</p>
-      </div>
-      <div>
-        <h4 style="color: white; font-size: .85rem; margin-bottom: 12px;">Navigation</h4>
-        <p style="font-size: .84rem; line-height: 2.2;"><a href="#about" style="color: #94A3B8;">Biography</a><br><a href="#services" style="color: #94A3B8;">Services</a><br><a href="#chambers" style="color: #94A3B8;">Chambers</a><br><a href="#reviews" style="color: #94A3B8;">Reviews</a></p>
-      </div>
-      <div>
-        <h4 style="color: white; font-size: .85rem; margin-bottom: 12px;">Chamber</h4>
-        <p style="font-size: .84rem; color: #94A3B8; line-height: 1.9;">Suite #402, Medical Plaza<br>Medical Plaza, NY<br>Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM<br>Hospital: 9:00 AM &ndash; 2:00 PM</p>
-      </div>
-      <div>
-        <h4 style="color: white; font-size: .85rem; margin-bottom: 12px;">Hotline</h4>
-        <a href="https://wa.me/8801609977377" target="_blank" style="color: #25D366; font-weight: 700; font-size: .95rem;">+880 1609-977377</a>
-        <p style="color: #94A3B8; font-size: .8rem; margin-top: 8px;">WhatsApp concierge available for appointment confirmation and urgent inquiries.</p>
-      </div>
-    </div>
-    <div style="text-align: center; padding-top: 24px; font-size: .78rem; color: #64748B;">&copy; 2026 Dr. Marcus Baptiste. Neo-Brutalist High-Contrast Clinic &bull; Doctors Portfolio Platform</div>
-  </div>
-</footer>
-
+</main>
 <script>
     document.querySelectorAll('.faq-q').forEach(q => {
         q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
@@ -393,6 +94,4 @@ a { text-decoration: none; color: inherit; }
             document.querySelectorAll('.d-spec').forEach(el => { if(ev.data.specialty) el.textContent = ev.data.specialty; });
         }
     });
-    </script>
-</body>
-</html>
+    </script></body></html>
