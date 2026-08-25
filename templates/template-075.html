@@ -3,113 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Specialist #075 &mdash; Specialist | Bento Grid UI</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <title>Dr. Specialist #075 &mdash; Specialist | Apple Bento UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #7E22CE; --accent-hover: #5e199a; --accent-bg: rgba(126,34,206,0.08); --text: #09090b; --muted: #71717a; --bg: #f4f4f5; --border: #e4e4e7; --radius: 20px; }
+        :root { --bg: #F4F4F5; --card: rgba(255,255,255,0.92); --border: #E4E4E7; --text: #09090B; --muted: #71717A; --blue: #2563EB; }
         *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); padding: 40px 20px; line-height: 1.6; }
-        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); padding: 40px 20px; line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1140px; margin: 0 auto; }
 
-        .bento-hero { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 20px; margin-bottom: 30px; }
-        .bento-card { background: white; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: 0 4px 14px rgba(0,0,0,0.02); }
-        .bento-main { grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; }
-        .bento-img { padding: 0; overflow: hidden; position: relative; min-height: 220px; }
-        .bento-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .bento-stat { background: var(--accent); color: white; border: none; display: flex; flex-direction: column; justify-content: center; }
+        /* Floating Pill Nav */
+        .bento-nav { background: var(--card); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 40px; padding: 12px 28px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
         
-        .bento-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
-        .bento-tile { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; transition: 0.3s; }
-        .bento-tile:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.04); }
-        .b-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-bg); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+        .bento-hero { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+        .b-card { background: var(--card); border: 1.5px solid var(--border); border-radius: 24px; padding: 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.02); }
+        .b-main { grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; }
+        
+        .bento-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+        .b-tile { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 26px; transition: 0.3s; }
+        .b-tile:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 
-        .form-input, .form-textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; margin-bottom: 12px; font-family: inherit; }
-        .btn-bento { background: var(--text); color: white; padding: 14px; border-radius: 10px; font-weight: 700; width: 100%; border: none; cursor: pointer; }
+        .slot-pill { background: #f4f4f5; border: 1px solid var(--border); padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-block; margin: 3px; }
+        .slot-pill.active { background: var(--blue); color: white; }
 
-        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
-        .faq-question { font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
-        .faq-answer { color: var(--muted); font-size: 0.88rem; margin-top: 6px; display: none; }
-        .faq-item.active .faq-answer { display: block; }
-
-        @media(max-width: 860px) { .bento-hero, .bento-grid-3 { grid-template-columns: 1fr; } .bento-main { grid-row: auto; } }
+        .form-input { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 12px; margin-bottom: 12px; font-family: inherit; }
+        @media(max-width: 860px) { .bento-hero, .bento-grid-3 { grid-template-columns: 1fr; } .b-main { grid-row: auto; } }
     </style>
 </head>
 <body>
     <div class="container">
+        <header class="bento-nav">
+            <div><strong class="dyn-doc-name" style="font-size:1.1rem;">Dr. Specialist #075</strong> <span class="dyn-doc-spec" style="font-size:0.75rem; color:var(--blue); font-weight:700;">Specialist</span></div>
+            <a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366; color:white; padding:8px 16px; border-radius:20px; font-size:0.8rem; font-weight:700;">WhatsApp (+880 1609-977377)</a>
+        </header>
+
         <div class="bento-hero">
-            <div class="bento-card bento-main">
+            <div class="b-card b-main">
                 <div>
-                    <span style="font-size: 0.75rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;">Specialist Specialist</span>
-                    <h1 class="doc-name-dyn" style="font-size: 2.6rem; font-weight: 800; margin: 8px 0 12px; letter-spacing: -0.02em;">Dr. Specialist #075</h1>
-                    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.6;">Dedicated patient-centered healthcare excellence. MD, Board Certified</p>
+                    <span style="font-size:0.75rem; font-weight:800; color:var(--blue); text-transform:uppercase; letter-spacing:0.08em;">Top Medical Specialist</span>
+                    <h1 class="dyn-doc-name" style="font-size:2.8rem; font-weight:800; margin:10px 0 12px; letter-spacing:-0.03em;">Dr. Specialist #075</h1>
+                    <p style="color:var(--muted); font-size:1.05rem; line-height:1.7;">Dedicated patient-centered healthcare excellence. MD, Board Certified</p>
                 </div>
-                <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border);">
-                    <div style="font-size: 0.85rem; color: var(--muted);">Chamber Location:</div>
-                    <div style="font-size: 1.05rem; font-weight: 700;">Diagnostic Plaza &bull; Medical Plaza, NY</div>
+                <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--border);">
+                    <div style="font-size:0.82rem; color:var(--muted);">Chamber:</div>
+                    <div style="font-size:1.05rem; font-weight:700;">Specialist Diagnostic Center &bull; Medical Plaza, NY</div>
                 </div>
             </div>
 
-            <div class="bento-card bento-img">
-                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80" alt="Dr. Specialist #075">
-                <div style="position: absolute; bottom: 14px; left: 14px; background: rgba(0,0,0,0.7); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 700;">&#10003; Verified Practice</div>
+            <div class="b-card" style="padding:0; overflow:hidden; min-height:220px;">
+                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80" alt="Dr. Specialist #075" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
 
-            <div class="bento-card bento-stat">
-                <div style="font-size: 3.2rem; font-weight: 800; line-height: 1;">16+</div>
-                <div style="font-size: 0.95rem; opacity: 0.9; margin-top: 4px;">Years Experience in Clinical Practice</div>
+            <div class="b-card" style="background:var(--blue); color:white; border:none; display:flex; flex-direction:column; justify-content:center;">
+                <div style="font-size:3.2rem; font-weight:800; line-height:1;">16+</div>
+                <div style="font-size:0.95rem; opacity:0.9; margin-top:4px;">Years of Dedicated Clinical Tenure</div>
             </div>
 
-            <div class="bento-card" style="grid-column: 2 / 4; display: flex; justify-content: space-between; align-items: center;">
+            <div class="b-card" style="grid-column: 2 / 4; display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <div style="font-size: 1.15rem; font-weight: 800;">Direct WhatsApp Hotline</div>
-                    <div style="font-size: 0.85rem; color: var(--muted);">Call or message: +880 1609-977377</div>
+                    <div style="font-size:1.15rem; font-weight:800;">Chamber Visiting Hours</div>
+                    <div style="font-size:0.85rem; color:var(--muted);">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</div>
                 </div>
-                <a href="https://wa.me/8801609977377" target="_blank" style="background: #25D366; color: white; padding: 12px 20px; border-radius: 10px; font-weight: 700; font-size: 0.88rem;">Open WhatsApp &rarr;</a>
+                <a href="#booking" style="background:var(--text); color:white; padding:12px 22px; border-radius:12px; font-weight:700; font-size:0.85rem;">Reserve Slot &rarr;</a>
             </div>
         </div>
 
-        <h2 style="font-size: 1.8rem; font-weight: 800; margin: 36px 0 18px; letter-spacing: -0.02em;">Specialized Clinical Procedures</h2>
-        <div class="bento-grid-3">
-            <div class="bento-tile"><div class="b-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/></svg></div><h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">Annual Health Checkup</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Comprehensive physical exam, lab panels, and wellness care.</p></div><div class="bento-tile"><div class="b-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">Diabetes & Metabolic Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">HbA1c optimization, diet coaching, and complication screening.</p></div><div class="bento-tile"><div class="b-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">Hypertension Management</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">24-hour BP monitoring and cardiovascular protection.</p></div><div class="bento-tile"><div class="b-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">Acute Infections Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Prompt diagnosis for viral fevers, flu, and infections.</p></div><div class="bento-tile"><div class="b-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg></div><h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">Geriatric Primary Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Holistic care for elderly adults and safe medication reviews.</p></div><div class="bento-tile"><div class="b-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">Executive Health Screening</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Tailored preventive medicine protocols for professionals.</p></div>
-        </div>
+        <h2 style="font-size: 1.8rem; font-weight: 800; margin: 36px 0 18px; letter-spacing:-0.02em;">Clinical Treatments &amp; Procedures</h2>
+        <div class="bento-grid-3"><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Annual Health Checkup</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Comprehensive physical exam, lab panels, and wellness care.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Diabetes & Metabolic Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">HbA1c optimization, diet coaching, and complication screening.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Hypertension Management</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">24-hour BP monitoring and cardiovascular protection.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Acute Infections Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Prompt diagnosis for viral fevers, flu, and infections.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Geriatric Primary Care</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Holistic care for elderly adults and safe medication reviews.</p></div><div class="b-tile"><h3 style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">Executive Health Screening</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Tailored preventive medicine protocols for professionals.</p></div></div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
-            <div class="bento-card">
-                <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">Chamber &amp; Timetable</h3>
-                <div style="background: var(--bg); padding: 16px; border-radius: 12px; margin-bottom: 12px;">
-                    <strong>Main Diagnostic Center</strong>
-                    <div style="font-size: 0.85rem; color: var(--muted);">Suite #402, Diagnostic Plaza, Medical Plaza, NY</div>
-                    <div style="font-size: 0.82rem; font-weight: 700; color: var(--accent); margin-top: 4px;">Sat &ndash; Thu: 5:00 PM &ndash; 9:00 PM</div>
-                </div>
-                <div style="background: var(--bg); padding: 16px; border-radius: 12px;">
-                    <strong>Hospital Department</strong>
-                    <div style="font-size: 0.85rem; color: var(--muted);">Specialty Hospital, Medical Plaza, NY</div>
-                    <div style="font-size: 0.82rem; font-weight: 700; color: var(--accent); margin-top: 4px;">Sat &ndash; Thu: 9:00 AM &ndash; 2:00 PM</div>
-                </div>
+        <div class="b-card" style="max-width:680px; margin: 0 auto 40px;" id="booking">
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:14px;">Select Chamber Time Slot</h3>
+            <div style="margin-bottom:16px;">
+                <span class="slot-pill active" onclick="selectSlot(this)">5:00 PM</span>
+                <span class="slot-pill" onclick="selectSlot(this)">5:30 PM</span>
+                <span class="slot-pill" onclick="selectSlot(this)">6:00 PM</span>
+                <span class="slot-pill" onclick="selectSlot(this)">6:30 PM</span>
+                <span class="slot-pill" onclick="selectSlot(this)">7:00 PM</span>
             </div>
-
-            <div class="bento-card">
-                <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">Common Patient FAQs</h3>
-                <div class="faq-item"><div class="faq-question"><span>What should I bring for consultation?</span><span>+</span></div><div class="faq-answer">Bring previous prescriptions, test reports, and imaging scans.</div></div>
-                <div class="faq-item"><div class="faq-question"><span>How to confirm appointment?</span><span>+</span></div><div class="faq-answer">Fill the online form or message directly on WhatsApp.</div></div>
-            </div>
-        </div>
-
-        <div class="bento-card" style="max-width: 680px; margin: 0 auto 40px;">
-            <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 14px;">Book Chamber Consultation</h3>
-            <form onsubmit="return handleSubmit(event)">
+            <form onsubmit="return handleAppointment(event)">
                 <input class="form-input" type="text" placeholder="Patient Full Name" required>
-                <input class="form-input" type="tel" placeholder="Mobile Number (+880)" required>
+                <input class="form-input" type="tel" placeholder="Mobile Number" required>
                 <input class="form-input" type="date" required>
-                <textarea class="form-textarea" rows="3" placeholder="Symptoms / Reason for visit..."></textarea>
-                <button type="submit" class="btn-bento">Confirm Chamber Booking &rarr;</button>
+                <button type="submit" style="background:var(--text); color:white; padding:14px; border:none; border-radius:12px; font-weight:700; width:100%; cursor:pointer;">Confirm Reservation &rarr;</button>
             </form>
         </div>
 
-        <footer style="text-align: center; font-size: 0.82rem; color: var(--muted); padding: 20px 0; border-top: 1px solid var(--border);">
-            &copy; 2026 Dr. Specialist #075. Powered by Doctors Portfolio.
+        <footer style="text-align:center; font-size:0.82rem; color:var(--muted); padding:20px 0; border-top:1px solid var(--border);">
+            &copy; 2026 Dr. Specialist #075. Apple Bento Design &bull; Doctors Portfolio.
         </footer>
     </div>
     <script>
@@ -117,24 +97,24 @@
             const m = document.getElementById('mobileMenu');
             if (m) m.classList.toggle('open');
         }
-        document.querySelectorAll('.faq-question').forEach(q => {
+        document.querySelectorAll('.faq-q').forEach(q => {
             q.addEventListener('click', () => {
                 const item = q.parentElement;
                 item.classList.toggle('active');
             });
         });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        function handleSubmit(e) {
+        function selectSlot(btn) {
+            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            const slotInput = document.getElementById('selectedSlot');
+            if (slotInput) slotInput.value = btn.textContent.trim();
+        }
+        function handleAppointment(e) {
             e.preventDefault();
             const btn = e.target.querySelector('[type="submit"]');
             const orig = btn.textContent;
             btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#0d9488';
+            btn.style.background = '#059669';
             btn.disabled = true;
             setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
             return false;
@@ -143,12 +123,8 @@
             if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
                 const name = event.data.name;
                 const spec = event.data.specialty;
-                if (name) {
-                    document.querySelectorAll('.doc-name-dyn').forEach(el => el.textContent = name);
-                }
-                if (spec) {
-                    document.querySelectorAll('.doc-spec-dyn').forEach(el => el.textContent = spec);
-                }
+                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
+                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
             }
         });
     </script>

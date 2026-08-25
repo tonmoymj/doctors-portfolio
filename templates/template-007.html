@@ -3,83 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Angela Kim &mdash; Cardiologist | Immersive Hero</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Dr. Angela Kim &mdash; Cardiologist | VIP Concierge Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #0369A1; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; }
+        :root { --emerald: #062C22; --gold: #D4AF37; --bg: #F9F9F6; --text: #1E293B; --muted: #64748B; }
         *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: #ffffff; line-height: 1.65; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.65; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
         a { text-decoration: none; color: inherit; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
-        .imm-hero { background: linear-gradient(135deg, #09131f 0%, #1e293b 100%); color: white; padding: 84px 24px; }
-        .imm-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
-        .imm-form { background: white; color: var(--text); border-radius: 16px; padding: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-
-        .form-input { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 8px; margin-bottom: 12px; font-family: inherit; }
-        .btn-imm { background: var(--accent); color: white; padding: 13px; border: none; border-radius: 8px; font-weight: 700; width: 100%; cursor: pointer; }
-
-        @media(max-width: 800px) { .imm-inner { grid-template-columns: 1fr; } }
+        .vip-hero { background: linear-gradient(135deg, #062C22 0%, #0D4738 100%); color: white; padding: 84px 24px; }
+        .vip-hero-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+        .vip-form-card { background: white; color: var(--text); border-radius: 16px; padding: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
+        .form-input { width: 100%; padding: 12px; border: 1.5px solid #E2E8F0; border-radius: 8px; margin-bottom: 12px; font-family: inherit; }
+        @media(max-width: 800px) { .vip-hero-inner { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <section class="imm-hero">
-        <div class="imm-inner">
+    <section class="vip-hero">
+        <div class="vip-hero-inner">
             <div>
-                <span style="background: rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 700;">&#10003; Leading Cardiologist</span>
-                <h1 class="doc-name-dyn" style="font-size: clamp(2.4rem, 4vw, 3.5rem); font-weight: 800; margin: 16px 0 10px; line-height: 1.15;">Dr. Angela Kim</h1>
-                <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 24px;">Preventive cardiology and sports medicine expertise keeping hearts healthy and athletes performing. MD, FACC &middot; Board-Certified Cardiologist</p>
-                <div style="display: flex; gap: 30px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px;">
-                    <div><div style="font-size: 1.9rem; font-weight: 800; color: #93c5fd;">16+</div><div style="font-size: 0.78rem; color: #94a3b8;">Years Exp.</div></div>
-                    <div><div style="font-size: 1.9rem; font-weight: 800; color: #93c5fd;">4,800+</div><div style="font-size: 0.78rem; color: #94a3b8;">Patients</div></div>
-                    <div><div style="font-size: 1.9rem; font-weight: 800; color: #93c5fd;">98%</div><div style="font-size: 0.78rem; color: #94a3b8;">Rating</div></div>
-                </div>
+                <span style="background:rgba(212,175,55,0.2); color:var(--gold); padding:4px 14px; border-radius:20px; font-size:0.75rem; font-weight:700;">VIP CONCIERGE MEDICAL CARE</span>
+                <h1 class="dyn-doc-name" style="font-size:clamp(2.4rem, 4vw, 3.5rem); font-weight:800; margin:14px 0 10px;">Dr. Angela Kim</h1>
+                <p style="font-size:1.05rem; color:#cbd5e1; margin-bottom:24px;">Preventive cardiology and sports medicine expertise keeping hearts healthy and athletes performing. MD, FACC &middot; Board-Certified Cardiologist</p>
+                <div style="font-size:0.85rem; color:#94a3b8;">📍 VIP Suite #402, Seattle, WA &bull; WhatsApp Concierge: <strong style="color:white;">+880 1609-977377</strong></div>
             </div>
-            <div class="imm-form">
-                <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 6px;">Instant Chamber Serial</h3>
-                <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 18px;">Visiting: Sat &ndash; Thu (5PM &ndash; 9PM)</p>
-                <form onsubmit="return handleSubmit(event)">
+            <div class="vip-form-card">
+                <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 6px;">Instant VIP Appointment</h3>
+                <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Private Suite Visiting: Sat &ndash; Thu (5PM &ndash; 9PM)</p>
+                <form onsubmit="return handleAppointment(event)">
                     <input class="form-input" type="text" placeholder="Patient Full Name" required>
                     <input class="form-input" type="tel" placeholder="Mobile Number (+880)" required>
                     <input class="form-input" type="date" required>
-                    <button type="submit" class="btn-imm">Book Chamber Slot &rarr;</button>
+                    <button type="submit" style="background:var(--emerald); color:var(--gold); border:none; padding:13px; border-radius:8px; font-weight:700; width:100%; cursor:pointer;">Reserve VIP Slot &rarr;</button>
                 </form>
             </div>
         </div>
     </section>
 
     <div style="max-width: 1140px; margin: 60px auto; padding: 0 24px;">
-        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 24px;">Clinical Procedures &amp; Services</h2>
+        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 24px;">Concierge Clinical Procedures</h2>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-            <div style="background:#f8fafc; border:1px solid var(--border); padding:24px; border-radius:12px;"><h3 style="font-size:1.15rem; margin-bottom:6px;">Preventive Cardiology</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Comprehensive risk profiling and early heart disease prevention.</p></div><div style="background:#f8fafc; border:1px solid var(--border); padding:24px; border-radius:12px;"><h3 style="font-size:1.15rem; margin-bottom:6px;">ECG & Holter Rhythm</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">24-48h continuous rhythm monitoring detecting palpitations.</p></div><div style="background:#f8fafc; border:1px solid var(--border); padding:24px; border-radius:12px;"><h3 style="font-size:1.15rem; margin-bottom:6px;">Doppler Echocardiography</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">High-resolution ultrasound imaging of cardiac function and valves.</p></div><div style="background:#f8fafc; border:1px solid var(--border); padding:24px; border-radius:12px;"><h3 style="font-size:1.15rem; margin-bottom:6px;">Heart Failure & Hypertension</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Individualized medical therapy for chronic cardiovascular health.</p></div><div style="background:#f8fafc; border:1px solid var(--border); padding:24px; border-radius:12px;"><h3 style="font-size:1.15rem; margin-bottom:6px;">Angiography & Stenting</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Minimally invasive coronary catheterization and stent care.</p></div><div style="background:#f8fafc; border:1px solid var(--border); padding:24px; border-radius:12px;"><h3 style="font-size:1.15rem; margin-bottom:6px;">Cardiac Rehabilitation</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Supervised post-procedural rehabilitation and lifestyle coaching.</p></div>
+            <div style="background:white; border:1px solid #E2E8F0; padding:26px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.02);"><h3 style="font-size:1.15rem; margin-bottom:6px; color:var(--emerald);">Preventive Cardiology</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Comprehensive risk profiling and early heart disease prevention.</p></div><div style="background:white; border:1px solid #E2E8F0; padding:26px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.02);"><h3 style="font-size:1.15rem; margin-bottom:6px; color:var(--emerald);">ECG & Holter Rhythm</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">24-48h continuous rhythm monitoring detecting palpitations.</p></div><div style="background:white; border:1px solid #E2E8F0; padding:26px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.02);"><h3 style="font-size:1.15rem; margin-bottom:6px; color:var(--emerald);">Doppler Echocardiography</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">High-resolution ultrasound imaging of cardiac function and valves.</p></div><div style="background:white; border:1px solid #E2E8F0; padding:26px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.02);"><h3 style="font-size:1.15rem; margin-bottom:6px; color:var(--emerald);">Heart Failure & Hypertension</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Individualized medical therapy for chronic cardiovascular health.</p></div><div style="background:white; border:1px solid #E2E8F0; padding:26px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.02);"><h3 style="font-size:1.15rem; margin-bottom:6px; color:var(--emerald);">Angiography & Stenting</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Minimally invasive coronary catheterization and stent care.</p></div><div style="background:white; border:1px solid #E2E8F0; padding:26px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.02);"><h3 style="font-size:1.15rem; margin-bottom:6px; color:var(--emerald);">Cardiac Rehabilitation</h3><p style="font-size:0.86rem; color:var(--muted); line-height:1.6;">Supervised post-procedural rehabilitation and lifestyle coaching.</p></div>
         </div>
     </div>
 
-    <footer style="background:#09131f; color:#94a3b8; padding:30px 0; text-align:center; font-size:0.85rem;">
-        &copy; 2026 Dr. Angela Kim. Powered by Doctors Portfolio.
+    <footer style="background:#062C22; color:#94A3B8; padding:36px 0; text-align:center; font-size:0.85rem;">
+        &copy; 2026 Dr. Angela Kim. VIP Concierge Health Suite &bull; Doctors Portfolio.
     </footer>
     <script>
         function toggleMenu() {
             const m = document.getElementById('mobileMenu');
             if (m) m.classList.toggle('open');
         }
-        document.querySelectorAll('.faq-question').forEach(q => {
+        document.querySelectorAll('.faq-q').forEach(q => {
             q.addEventListener('click', () => {
                 const item = q.parentElement;
                 item.classList.toggle('active');
             });
         });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        function handleSubmit(e) {
+        function selectSlot(btn) {
+            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            const slotInput = document.getElementById('selectedSlot');
+            if (slotInput) slotInput.value = btn.textContent.trim();
+        }
+        function handleAppointment(e) {
             e.preventDefault();
             const btn = e.target.querySelector('[type="submit"]');
             const orig = btn.textContent;
             btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#0d9488';
+            btn.style.background = '#059669';
             btn.disabled = true;
             setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
             return false;
@@ -88,12 +83,8 @@
             if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
                 const name = event.data.name;
                 const spec = event.data.specialty;
-                if (name) {
-                    document.querySelectorAll('.doc-name-dyn').forEach(el => el.textContent = name);
-                }
-                if (spec) {
-                    document.querySelectorAll('.doc-spec-dyn').forEach(el => el.textContent = spec);
-                }
+                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
+                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
             }
         });
     </script>

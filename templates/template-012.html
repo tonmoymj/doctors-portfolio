@@ -3,83 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nathan Webb &mdash; Dentist | Minimalist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Dr. Nathan Webb &mdash; Dentist | Nordic Minimalist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #B45309; --text: #18181b; --muted: #71717a; --bg: #ffffff; --border: #e4e4e7; }
+        :root { --text: #18181B; --muted: #71717A; --bg: #FFFFFF; --border: #E4E4E7; --green: #059669; }
         *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
         body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; padding: 60px 24px; }
+        h1, h2, h3 { font-family: 'Syne', sans-serif; letter-spacing: -0.03em; }
         a { text-decoration: none; color: inherit; }
-        .container { max-width: 880px; margin: 0 auto; }
+        .container { max-width: 860px; margin: 0 auto; }
 
-        .m-header { border-bottom: 1px solid var(--border); padding-bottom: 40px; margin-bottom: 50px; display: flex; justify-content: space-between; align-items: flex-end; }
-        .m-photo { width: 140px; height: 140px; border-radius: 12px; object-fit: cover; }
-        .m-title { font-size: 2.8rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 4px; }
-        .m-sec { margin-bottom: 50px; }
-        .m-label { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 700; margin-bottom: 20px; }
+        .nordic-head { border-bottom: 1px solid var(--border); padding-bottom: 40px; margin-bottom: 50px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .nordic-photo { width: 140px; height: 140px; border-radius: 12px; object-fit: cover; }
+        .nordic-sec { margin-bottom: 50px; }
+        .nordic-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); font-weight: 700; margin-bottom: 20px; }
         
-        .m-row { display: grid; grid-template-columns: 1fr 1.6fr; padding: 18px 0; border-bottom: 1px solid var(--border); }
-        .m-row-name { font-weight: 600; font-size: 1.05rem; }
-        .m-row-desc { font-size: 0.9rem; color: var(--muted); }
-
+        .nordic-row { display: grid; grid-template-columns: 1fr 1.6fr; padding: 18px 0; border-bottom: 1px solid var(--border); }
         .form-input { width: 100%; padding: 12px 0; border: none; border-bottom: 1.5px solid var(--border); margin-bottom: 20px; font-family: inherit; font-size: 0.95rem; outline: none; }
-        .form-input:focus { border-color: var(--accent); }
-        .btn-m { background: var(--text); color: white; border: none; padding: 14px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; }
-
-        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
-        .faq-question { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
-        .faq-answer { color: var(--muted); font-size: 0.88rem; margin-top: 6px; display: none; }
-        .faq-item.active .faq-answer { display: block; }
-
-        @media(max-width: 700px) { .m-header { flex-direction: column; align-items: flex-start; gap: 20px; } .m-row { grid-template-columns: 1fr; gap: 6px; } }
+        .form-input:focus { border-color: var(--green); }
+        @media(max-width: 700px) { .nordic-head { flex-direction: column; align-items: flex-start; gap: 20px; } .nordic-row { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="m-header">
+        <header class="nordic-head">
             <div>
-                <h1 class="m-title doc-name-dyn">Dr. Nathan Webb</h1>
-                <div class="doc-spec-dyn" style="font-size: 1rem; color: var(--muted); font-weight: 500;">DMD &middot; Board-Certified Dentist &mdash; Dentist, Portland, OR</div>
+                <h1 class="dyn-doc-name" style="font-size: 3rem; margin-bottom: 4px;">Dr. Nathan Webb</h1>
+                <div class="dyn-doc-spec" style="font-size: 1rem; color: var(--muted); font-weight: 500;">DMD &middot; Board-Certified Dentist &mdash; Dentist, Portland, OR</div>
             </div>
-            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=80" alt="Dr. Nathan Webb" class="m-photo">
+            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=80" alt="Dr. Nathan Webb" class="nordic-photo">
         </header>
 
-        <section class="m-sec">
-            <div class="m-label">01 &mdash; Clinical Profile</div>
-            <p style="font-size: 1.15rem; line-height: 1.8; color: #27272a;">Dedicated digital & holistic dentistry expertise delivered with compassion and clinical excellence. Bringing 16+ years of evidence-based medical treatments and diagnostic care to patients in Portland, OR.</p>
+        <section class="nordic-sec">
+            <div class="nordic-label">01 &mdash; Clinical Profile</div>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #27272A;">Dedicated digital & holistic dentistry expertise delivered with compassion and clinical excellence. Dedicated to evidence-based surgery, precision diagnostics, and compassionate patient care in Portland, OR.</p>
         </section>
 
-        <section class="m-sec">
-            <div class="m-label">02 &mdash; Procedures &amp; Care</div>
-            <div class="m-row"><div class="m-row-name">Digital Smile Design</div><div class="m-row-desc">Comprehensive aesthetic transformation with ceramic veneers.</div></div><div class="m-row"><div class="m-row-name">Porcelain Restorations</div><div class="m-row-desc">Ultra-durable zirconia restorations restoring chewing function.</div></div><div class="m-row"><div class="m-row-name">Titanium Dental Implants</div><div class="m-row-desc">Permanent artificial root placement with surgical precision.</div></div><div class="m-row"><div class="m-row-name">Invisalign Aligners</div><div class="m-row-desc">Customized transparent aligners correcting bite alignment.</div></div><div class="m-row"><div class="m-row-name">Microscopic Root Canal</div><div class="m-row-desc">Single-visit pain-free endodontics saving natural teeth.</div></div><div class="m-row"><div class="m-row-name">Periodontal Laser Care</div><div class="m-row-desc">Laser gum therapy and regenerative bone management.</div></div>
+        <section class="nordic-sec">
+            <div class="nordic-label">02 &mdash; Procedures &amp; Care</div>
+            <div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Digital Smile Design</div><div style="color:var(--muted); font-size:0.9rem;">Comprehensive aesthetic transformation with ceramic veneers.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Porcelain Restorations</div><div style="color:var(--muted); font-size:0.9rem;">Ultra-durable zirconia restorations restoring chewing function.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Titanium Dental Implants</div><div style="color:var(--muted); font-size:0.9rem;">Permanent artificial root placement with surgical precision.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Invisalign Aligners</div><div style="color:var(--muted); font-size:0.9rem;">Customized transparent aligners correcting bite alignment.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Microscopic Root Canal</div><div style="color:var(--muted); font-size:0.9rem;">Single-visit pain-free endodontics saving natural teeth.</div></div><div class="nordic-row"><div style="font-weight:700; font-size:1.05rem;">Periodontal Laser Care</div><div style="color:var(--muted); font-size:0.9rem;">Laser gum therapy and regenerative bone management.</div></div>
         </section>
 
-        <section class="m-sec">
-            <div class="m-label">03 &mdash; Chamber &amp; Timetable</div>
-            <div class="m-row"><div class="m-row-name">Specialist Diagnostic Center</div><div class="m-row-desc">Suite #402, Portland, OR &bull; Sat &ndash; Thu (5PM &ndash; 9PM)</div></div>
-            <div class="m-row"><div class="m-row-name">Hospital Visiting Hours</div><div class="m-row-desc">City Hospital, Portland, OR &bull; Sat &ndash; Thu (9AM &ndash; 2PM)</div></div>
+        <section class="nordic-sec">
+            <div class="nordic-label">03 &mdash; Chamber &amp; Timetable</div>
+            <div class="nordic-row"><div>Specialist Diagnostic Center</div><div style="color:var(--muted);">Suite #402, Portland, OR &bull; Sat &ndash; Thu (5PM &ndash; 9PM)</div></div>
+            <div class="nordic-row"><div>Hospital Clinical Rounds</div><div style="color:var(--muted);">City Hospital, Portland, OR &bull; Sat &ndash; Thu (9AM &ndash; 2PM)</div></div>
         </section>
 
-        <section class="m-sec">
-            <div class="m-label">04 &mdash; Frequently Asked Questions</div>
-            <div class="faq-item"><div class="faq-question"><span>What to bring for my appointment?</span><span>&darr;</span></div><div class="faq-answer">Please bring all recent reports, previous prescriptions, and ongoing medication details.</div></div>
-            <div class="faq-item"><div class="faq-question"><span>How to contact directly?</span><span>&darr;</span></div><div class="faq-answer">Call or WhatsApp at +880 1609-977377 for instant booking.</div></div>
-        </section>
-
-        <section class="m-sec">
-            <div class="m-label">05 &mdash; Consultation Booking</div>
-            <p style="color: var(--muted); margin-bottom: 24px;">Visiting Hours: Sat &ndash; Thu 5PM &ndash; 9PM | Hotline: +880 1609-977377</p>
-            <form onsubmit="return handleSubmit(event)">
+        <section class="nordic-sec" id="booking">
+            <div class="nordic-label">04 &mdash; Consultation Booking</div>
+            <p style="color: var(--muted); margin-bottom: 24px;">Hotline: +880 1609-977377</p>
+            <form onsubmit="return handleAppointment(event)">
                 <input class="form-input" type="text" placeholder="Patient Full Name" required>
                 <input class="form-input" type="tel" placeholder="Mobile / WhatsApp Number" required>
                 <input class="form-input" type="date" required>
-                <button type="submit" class="btn-m">Submit Booking Request &rarr;</button>
+                <button type="submit" style="background:var(--text); color:white; border:none; padding:14px 28px; border-radius:6px; font-weight:700; cursor:pointer;">Submit Booking &rarr;</button>
             </form>
         </section>
 
-        <footer style="border-top: 1px solid var(--border); padding-top: 24px; font-size: 0.8rem; color: var(--muted); display: flex; justify-content: space-between;">
+        <footer style="border-top:1px solid var(--border); padding-top:24px; font-size:0.8rem; color:var(--muted); display:flex; justify-content:space-between;">
             <div>&copy; 2026 Dr. Nathan Webb</div>
-            <div>Doctors Portfolio</div>
+            <div>Nordic Minimalist Design &bull; Doctors Portfolio</div>
         </footer>
     </div>
     <script>
@@ -87,24 +71,24 @@
             const m = document.getElementById('mobileMenu');
             if (m) m.classList.toggle('open');
         }
-        document.querySelectorAll('.faq-question').forEach(q => {
+        document.querySelectorAll('.faq-q').forEach(q => {
             q.addEventListener('click', () => {
                 const item = q.parentElement;
                 item.classList.toggle('active');
             });
         });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        function handleSubmit(e) {
+        function selectSlot(btn) {
+            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            const slotInput = document.getElementById('selectedSlot');
+            if (slotInput) slotInput.value = btn.textContent.trim();
+        }
+        function handleAppointment(e) {
             e.preventDefault();
             const btn = e.target.querySelector('[type="submit"]');
             const orig = btn.textContent;
             btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#0d9488';
+            btn.style.background = '#059669';
             btn.disabled = true;
             setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
             return false;
@@ -113,12 +97,8 @@
             if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
                 const name = event.data.name;
                 const spec = event.data.specialty;
-                if (name) {
-                    document.querySelectorAll('.doc-name-dyn').forEach(el => el.textContent = name);
-                }
-                if (spec) {
-                    document.querySelectorAll('.doc-spec-dyn').forEach(el => el.textContent = spec);
-                }
+                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
+                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
             }
         });
     </script>

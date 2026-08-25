@@ -3,114 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nadia Volkov &mdash; Psychiatrist | Editorial Journal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Dr. Nadia Volkov &mdash; Psychiatrist | Harvard Medical Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #16A34A; --text: #1c1917; --muted: #78716c; --bg: #fdfbf7; --border: #e7e5e4; }
+        :root { --bg: #FAF7F2; --text: #1C1917; --muted: #78716C; --border: #E7E5E4; --burgundy: #881337; }
         *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
-        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+        h1, h2, h3, h4 { font-family: 'Newsreader', serif; }
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        .editorial-hero { padding: 80px 0; border-bottom: 1px solid var(--border); }
-        .editorial-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
-        .editorial-title { font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 12px; }
-        .editorial-quote { border-left: 3px solid var(--accent); padding-left: 20px; font-style: italic; font-size: 1.2rem; color: var(--muted); margin: 24px 0; }
-        .editorial-img { width: 100%; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover; box-shadow: 0 14px 35px rgba(0,0,0,0.08); }
-
-        .sec-title { font-size: 2.2rem; margin-bottom: 24px; }
-        .form-input, .form-textarea { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 6px; margin-bottom: 12px; background: white; font-family: inherit; }
-        
-        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
-        .faq-question { font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
-        .faq-answer { color: var(--muted); font-size: 0.88rem; margin-top: 6px; display: none; }
-        .faq-item.active .faq-answer { display: block; }
-
-        @media(max-width: 800px) { .editorial-grid { grid-template-columns: 1fr; } }
+        .journal-header { text-align: center; border-bottom: 2px solid var(--text); padding: 30px 0 16px; margin-bottom: 50px; }
+        .journal-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; padding-bottom: 60px; border-bottom: 1px solid var(--border); }
+        .pull-quote { border-left: 3px solid var(--burgundy); padding-left: 20px; font-style: italic; font-size: 1.25rem; color: var(--muted); margin: 24px 0; font-family: 'Newsreader', serif; }
+        .form-input { width: 100%; padding: 12px; border: 1.5px solid var(--border); border-radius: 6px; margin-bottom: 12px; background: white; font-family: inherit; }
+        @media(max-width: 800px) { .journal-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <div class="container editorial-hero">
-        <div class="editorial-grid">
+    <div class="container">
+        <header class="journal-header">
+            <div style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;">Academic Clinical Portfolio &bull; Vol. XXVI</div>
+            <h1 class="dyn-doc-name" style="font-size: 3.2rem; margin: 6px 0;">Dr. Nadia Volkov</h1>
+            <div class="dyn-doc-spec" style="font-size: 0.95rem; color: var(--burgundy); font-weight: 600;">MD, FAPA &middot; Board-Certified Psychiatrist &bull; Senior Consultant in Psychiatrist, Chicago, IL</div>
+        </header>
+
+        <div class="journal-grid">
             <div>
-                <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 700;">Specialist Physician Profile</span>
-                <h1 class="editorial-title doc-name-dyn">Dr. Nadia Volkov</h1>
-                <p class="doc-spec-dyn" style="font-size: 1.1rem; color: var(--muted);">MD, FAPA &middot; Board-Certified Psychiatrist &bull; Psychiatrist, Chicago, IL</p>
-                <div class="editorial-quote">&ldquo;Dedicated forensic psychiatry expertise delivered with compassion and clinical excellence.&rdquo;</div>
-                <p style="color: var(--muted); font-size: 0.98rem; line-height: 1.8;">Delivering clinical judgment, pioneering patient recovery pathways, and high-standard care across Psychiatrist. Consulting at premier medical institutes with 16+ years of clinical tenure.</p>
+                <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--burgundy); font-weight: 700;">Clinical Leadership</span>
+                <h2 style="font-size: 2.2rem; margin: 10px 0;">Pioneering Evidence-Based Therapeutics</h2>
+                <div class="pull-quote">&ldquo;Dedicated forensic psychiatry expertise delivered with compassion and clinical excellence.&rdquo;</div>
+                <p style="color: var(--muted); font-size: 1rem; line-height: 1.8;">Author of numerous clinical research publications in international peer-reviewed journals. Providing tertiary-level patient care and consultations across Psychiatrist in Chicago, IL.</p>
             </div>
-            <div><img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=800&q=80" alt="Dr. Nadia Volkov" class="editorial-img"></div>
-        </div>
-    </div>
-
-    <div class="container" style="padding: 70px 24px; border-bottom: 1px solid var(--border);">
-        <h2 class="sec-title">Specialized Clinical Procedures</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-            <div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Personalized Medication</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Precision psychopharmacology tailored to neurochemistry.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Depression & Mood Care</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Evidence-based care for major depressive disorder.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Anxiety & Panic Treatment</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Targeted therapy for panic, social anxiety, and OCD.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Bipolar Mood Regulation</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Long-term mood stabilization and relapse prevention.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Trauma & PTSD Recovery</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Trauma-informed psychiatric care and somatic support.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:10px;"><h3 style="font-size:1.3rem; margin-bottom:8px;">Insomnia & Sleep Clinic</h3><p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Diagnostic evaluation for restorative sleep health.</p></div>
-        </div>
-    </div>
-
-    <div class="container" style="padding: 70px 24px; border-bottom: 1px solid var(--border);">
-        <h2 class="sec-title">Chamber Hours &amp; Schedule</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-            <div style="background:white; border:1px solid var(--border); padding:28px; border-radius:10px;">
-                <h3>Specialist Diagnostic Center</h3>
-                <p style="color:var(--muted); margin:8px 0;">Suite #402, Main Diagnostic Plaza, Chicago, IL</p>
-                <strong>Visiting Hours:</strong> Sat &ndash; Thu (5PM &ndash; 9PM)<br><br>
-                <a href="https://wa.me/8801609977377" target="_blank" style="background:#25D366; color:white; padding:10px 18px; border-radius:6px; font-weight:700; font-size:0.85rem; display:inline-block;">WhatsApp Booking</a>
-            </div>
-            <div style="background:white; border:1px solid var(--border); padding:28px; border-radius:10px;">
-                <h3>Hospital Consultations</h3>
-                <p style="color:var(--muted); margin:8px 0;">City Care Hospital, Chicago, IL</p>
-                <strong>Clinical Hours:</strong> Sat &ndash; Thu (9AM &ndash; 2PM)<br><br>
-                <a href="#contact" style="background:var(--accent); color:white; padding:10px 18px; border-radius:6px; font-weight:700; font-size:0.85rem; display:inline-block;">Request Slot</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container" style="padding: 70px 24px;" id="contact">
-        <h2 class="sec-title">Appointment Request</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
             <div>
-                <p style="color: var(--muted); margin-bottom: 20px;">For patient serials, inquiries, or urgent chamber bookings, reach out via the form or hotline.</p>
-                <div style="font-size: 1.1rem; font-weight: 700;">Hotline: +880 1609-977377</div>
+                <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=800&q=80" alt="Dr. Nadia Volkov" style="width: 100%; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover; box-shadow: 0 14px 35px rgba(0,0,0,0.06);">
             </div>
-            <form onsubmit="return handleSubmit(event)">
-                <input class="form-input" type="text" placeholder="Patient Full Name" required>
-                <input class="form-input" type="tel" placeholder="Phone Number" required>
-                <input class="form-input" type="date" required>
-                <button type="submit" style="background: var(--accent); color: white; border: none; padding: 14px; width: 100%; border-radius: 6px; font-weight: 700; cursor: pointer;">Confirm Appointment</button>
-            </form>
         </div>
-    </div>
 
-    <footer style="background:#1c1917; color:#a8a29e; padding:30px 0; text-align:center; font-size:0.85rem;">
-        &copy; 2026 Dr. Nadia Volkov. Powered by Doctors Portfolio.
-    </footer>
+        <div style="padding: 60px 0; border-bottom: 1px solid var(--border);">
+            <h2 style="font-size: 2rem; margin-bottom: 24px;">Key Clinical Procedures</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+                <div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Personalized Medication</h3><p style="font-size:0.86rem; color:var(--muted);">Precision psychopharmacology tailored to neurochemistry.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Depression & Mood Care</h3><p style="font-size:0.86rem; color:var(--muted);">Evidence-based care for major depressive disorder.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Anxiety & Panic Treatment</h3><p style="font-size:0.86rem; color:var(--muted);">Targeted therapy for panic, social anxiety, and OCD.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Bipolar Mood Regulation</h3><p style="font-size:0.86rem; color:var(--muted);">Long-term mood stabilization and relapse prevention.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Trauma & PTSD Recovery</h3><p style="font-size:0.86rem; color:var(--muted);">Trauma-informed psychiatric care and somatic support.</p></div><div style="background:white; border:1px solid var(--border); padding:26px; border-radius:8px;"><h3 style="font-size:1.25rem; margin-bottom:8px;">Insomnia & Sleep Clinic</h3><p style="font-size:0.86rem; color:var(--muted);">Diagnostic evaluation for restorative sleep health.</p></div>
+            </div>
+        </div>
+
+        <div style="padding: 60px 0;" id="booking">
+            <h2 style="font-size: 2rem; margin-bottom: 24px;">Request Academic Chamber Consultation</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
+                    <p style="color: var(--muted); margin-bottom: 16px;">Visiting Hours: Sat &ndash; Thu 5PM &ndash; 9PM<br>Diagnostic Center, Chicago, IL<br>Hotline: +880 1609-977377</p>
+                    <a href="https://wa.me/8801609977377" target="_blank" style="background: #25D366; color: white; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; display: inline-block;">💬 Direct WhatsApp Consultation</a>
+                </div>
+                <form onsubmit="return handleAppointment(event)">
+                    <input class="form-input" type="text" placeholder="Patient Full Name" required>
+                    <input class="form-input" type="tel" placeholder="Mobile Number" required>
+                    <input class="form-input" type="date" required>
+                    <button type="submit" style="background:var(--burgundy); color:white; border:none; padding:14px; width:100%; border-radius:6px; font-weight:700; cursor:pointer;">Confirm Appointment</button>
+                </form>
+            </div>
+        </div>
+
+        <footer style="background:#1c1917; color:#a8a29e; padding:30px 0; text-align:center; font-size:0.85rem; margin-top:40px;">
+            &copy; 2026 Dr. Nadia Volkov. Medical Journal Edition &bull; Doctors Portfolio.
+        </footer>
+    </div>
     <script>
         function toggleMenu() {
             const m = document.getElementById('mobileMenu');
             if (m) m.classList.toggle('open');
         }
-        document.querySelectorAll('.faq-question').forEach(q => {
+        document.querySelectorAll('.faq-q').forEach(q => {
             q.addEventListener('click', () => {
                 const item = q.parentElement;
                 item.classList.toggle('active');
             });
         });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        function handleSubmit(e) {
+        function selectSlot(btn) {
+            document.querySelectorAll('.slot-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            const slotInput = document.getElementById('selectedSlot');
+            if (slotInput) slotInput.value = btn.textContent.trim();
+        }
+        function handleAppointment(e) {
             e.preventDefault();
             const btn = e.target.querySelector('[type="submit"]');
             const orig = btn.textContent;
             btn.textContent = 'Appointment Requested Successfully ✓';
-            btn.style.background = '#0d9488';
+            btn.style.background = '#059669';
             btn.disabled = true;
             setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 4000);
             return false;
@@ -119,12 +98,8 @@
             if (event.data && event.data.type === 'CUSTOMIZE_DOCTOR') {
                 const name = event.data.name;
                 const spec = event.data.specialty;
-                if (name) {
-                    document.querySelectorAll('.doc-name-dyn').forEach(el => el.textContent = name);
-                }
-                if (spec) {
-                    document.querySelectorAll('.doc-spec-dyn').forEach(el => el.textContent = spec);
-                }
+                if (name) document.querySelectorAll('.dyn-doc-name').forEach(el => el.textContent = name);
+                if (spec) document.querySelectorAll('.dyn-doc-spec').forEach(el => el.textContent = spec);
             }
         });
     </script>
