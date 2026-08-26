@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Imran Hossain | Dental Surgeon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#ffffff;
+    --mint:#E8F9FD;
+    --teal:#00A9A5;
+    --deep:#023535;
+    --muted:#5b7d7c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--white);color:var(--deep);font-family:'Work Sans',sans-serif;font-weight:400;line-height:1.7;}
+  h1,h2,h3,.disp{font-family:'Outfit',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+
+  nav{border-bottom:1px solid #dff3f2;}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:84px;}
+  .brand{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;}
+  .brand span{color:var(--teal);}
+  .navlinks{display:flex;gap:36px;font-size:0.85rem;color:var(--muted);font-weight:500;}
+  .navlinks a:hover{color:var(--teal);}
+  @media(max-width:760px){.navlinks{display:none;}}
+
+  .hero{background:var(--mint);padding:90px 0 110px;position:relative;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;background:white;padding:8px 18px;border-radius:100px;font-size:0.82rem;font-weight:600;color:var(--teal);margin-bottom:26px;}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4rem);font-weight:800;line-height:1.12;margin-bottom:24px;color:var(--deep);}
+  .hero h1 .accent{color:var(--teal);}
+  .hero p{max-width:460px;color:var(--muted);margin-bottom:36px;font-size:1.05rem;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{padding:16px 32px;font-size:0.85rem;font-weight:600;border-radius:12px;transition:.25s;display:inline-block;}
+  .btn-solid{background:var(--teal);color:white;}
+  .btn-solid:hover{background:#008683;}
+  .btn-ghost{background:white;color:var(--deep);border:1px solid #cdeceb;}
+  .btn-ghost:hover{border-color:var(--teal);}
+
+  /* smile arc signature */
+  .smile-box{position:relative;height:340px;display:flex;align-items:center;justify-content:center;}
+  .smile-box svg{width:100%;max-width:300px;}
+  .arc{fill:none;stroke:var(--teal);stroke-width:3;stroke-linecap:round;}
+  .tooth{fill:white;stroke:var(--deep);stroke-width:1.4;}
+  .tooth.highlight{fill:var(--teal);stroke:var(--teal);}
+  .float-tag{position:absolute;background:white;border-radius:14px;padding:12px 18px;box-shadow:0 10px 30px rgba(0,53,53,0.1);font-size:0.8rem;font-weight:600;color:var(--deep);}
+  .tag1{top:8px;left:0;}
+  .tag2{bottom:24px;right:0;}
+  .tag-teal{color:var(--teal);}
+
+  section{padding:110px 0;}
+  .section-tag{color:var(--teal);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:18px;font-weight:600;}
+  .section-title{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:700;margin-bottom:52px;max-width:620px;}
+
+  .about-grid{display:grid;grid-template-columns:0.85fr 1.3fr;gap:60px;}
+  .info-card{background:var(--mint);border-radius:18px;padding:34px;}
+  .info-card .row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(0,169,165,0.15);font-size:0.9rem;}
+  .info-card .row:last-child{border-bottom:none;}
+  .info-card .row span:first-child{color:var(--muted);}
+  .info-card .row span:last-child{font-weight:600;text-align:right;}
+  .about-text p{margin-bottom:20px;color:#3a5352;max-width:560px;}
+  .about-text p:first-child{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:600;color:var(--deep);}
+
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:60px;}
+  .stat-card{background:var(--deep);color:white;border-radius:16px;padding:28px;text-align:center;}
+  .stat-card .num{font-family:'Outfit',sans-serif;font-size:2.1rem;font-weight:700;color:#7EE8E4;}
+  .stat-card .lbl{font-size:0.8rem;color:#a9c9c8;margin-top:6px;}
+  @media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr);}.about-grid{grid-template-columns:1fr;}.hero .wrap{grid-template-columns:1fr;}}
+
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{border:1px solid #dff3f2;border-radius:18px;padding:32px;transition:.2s;}
+  .service-card:hover{border-color:var(--teal);box-shadow:0 12px 30px rgba(0,169,165,0.1);}
+  .service-card .icon{width:48px;height:48px;background:var(--mint);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px;}
+  .service-card h3{font-size:1.1rem;margin-bottom:10px;}
+  .service-card p{font-size:0.9rem;color:var(--muted);}
+  @media(max-width:760px){.service-grid{grid-template-columns:1fr;}}
+
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .tl-item{display:grid;grid-template-columns:150px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid #dff3f2;}
+  .tl-item:last-child{border-bottom:none;}
+  .tl-year{font-family:'Outfit',sans-serif;font-weight:700;color:var(--teal);}
+  .tl-item h3{font-size:1.1rem;margin-bottom:6px;font-weight:600;}
+  .tl-item p{color:var(--muted);font-size:0.92rem;}
+  @media(max-width:600px){.tl-item{grid-template-columns:1fr;gap:6px;}}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi{background:var(--mint);border-radius:18px;padding:30px;font-size:0.92rem;color:#3a5352;}
+  .testi .who{margin-top:16px;font-size:0.8rem;color:var(--teal);font-weight:600;}
+  @media(max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  .contact{background:var(--deep);color:#e5f5f4;border-radius:24px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:46px;}
+  .contact .k{color:#7EE8E4;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px;}
+  .contact .v{font-size:1.05rem;margin-bottom:24px;}
+  .hours-table{width:100%;font-size:0.92rem;}
+  .hours-table td{padding:11px 0;border-bottom:1px solid rgba(229,245,244,0.12);color:#a9c9c8;}
+  .hours-table td:last-child{text-align:right;color:white;}
+  @media(max-width:760px){.contact{grid-template-columns:1fr;padding:34px;}}
+
+  footer{text-align:center;padding:44px 0;color:var(--muted);font-size:0.85rem;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Dr. Imran <span>Hossain</span></div>
+    <div class="navlinks">
+      <a href="#about">পরিচিতি</a>
+      <a href="#services">সেবা</a>
+      <a href="#experience">অভিজ্ঞতা</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">🦷 Dental Surgeon, BDS</div>
+      <h1>স্বাস্থ্যকর হাসির <span class="accent">যত্নশীল</span> নিশ্চয়তা</h1>
+      <p>রুট ক্যানেল, ইমপ্ল্যান্ট, ব্রেসিং ও কসমেটিক ডেন্টিস্ট্রিতে ১০ বছরের অভিজ্ঞতা — ব্যথাহীন ও আধুনিক চিকিৎসা।</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-solid">অ্যাপয়েন্টমেন্ট নিন</a>
+        <a href="#about" class="btn btn-ghost">প্রোফাইল দেখুন</a>
+      </div>
+    </div>
+    <div class="smile-box">
+      <svg viewBox="0 0 300 200">
+        <path class="arc" d="M40,60 Q150,180 260,60"/>
+        <rect class="tooth" x="70" y="72" width="22" height="30" rx="5"/>
+        <rect class="tooth highlight" x="98" y="86" width="22" height="34" rx="5"/>
+        <rect class="tooth" x="126" y="96" width="22" height="36" rx="5"/>
+        <rect class="tooth highlight" x="154" y="96" width="22" height="36" rx="5"/>
+        <rect class="tooth" x="182" y="86" width="22" height="34" rx="5"/>
+        <rect class="tooth" x="210" y="72" width="22" height="30" rx="5"/>
+      </svg>
+      <div class="float-tag tag1">✓ Painless Care</div>
+      <div class="float-tag tag2">⭐ <span class="tag-teal">4.9</span>/5 Rating</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag">পরিচিতি</div>
+    <h2 class="section-title">আধুনিক প্রযুক্তি, আন্তরিক পরিচর্যা</h2>
+    <div class="about-grid">
+      <div class="info-card">
+        <div class="row"><span>বিশেষত্ব</span><span>General & Cosmetic Dentistry</span></div>
+        <div class="row"><span>ডিগ্রি</span><span>BDS, FCPS (Dental Surgery)</span></div>
+        <div class="row"><span>প্রতিষ্ঠান</span><span>স্মাইল ডেন্টাল কেয়ার</span></div>
+        <div class="row"><span>নিবন্ধন নং</span><span>BM&DC-D-21874</span></div>
+        <div class="row"><span>ভাষা</span><span>বাংলা, ইংরেজি</span></div>
+      </div>
+      <div class="about-text">
+        <p>ডা. ইমরান হোসেন একজন অভিজ্ঞ ডেন্টাল সার্জন, যিনি রুট ক্যানেল, দাঁত প্রতিস্থাপন (ইমপ্ল্যান্ট) ও কসমেটিক ডেন্টিস্ট্রিতে বিশেষায়িত।</p>
+        <p>তিনি বিশ্বাস করেন, ব্যথাহীন চিকিৎসা ও রোগীর স্বাচ্ছন্দ্যই একটি সফল ডেন্টাল ভিজিটের মূল ভিত্তি।</p>
+        <p>বর্তমানে তিনি স্মাইল ডেন্টাল কেয়ারে প্রধান ডেন্টিস্ট হিসেবে কর্মরত, যেখানে আধুনিক ডিজিটাল এক্স-রে ও লেজার প্রযুক্তি ব্যবহৃত হয়।</p>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">১০+</div><div class="lbl">বছরের অভিজ্ঞতা</div></div>
+      <div class="stat-card"><div class="num">৯,৫০০+</div><div class="lbl">সফল চিকিৎসা</div></div>
+      <div class="stat-card"><div class="num">১,২০০+</div><div class="lbl">ইমপ্ল্যান্ট স্থাপন</div></div>
+      <div class="stat-card"><div class="num">৪.৯/৫</div><div class="lbl">রোগী রেটিং</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-tag">সেবাসমূহ</div>
+    <h2 class="section-title">চিকিৎসার ক্ষেত্রসমূহ</h2>
+    <div class="service-grid">
+      <div class="service-card"><div class="icon">🦷</div><h3>রুট ক্যানেল চিকিৎসা</h3><p>সংক্রমিত দাঁতের ব্যথাহীন মূল চিকিৎসা।</p></div>
+      <div class="service-card"><div class="icon">🔩</div><h3>ডেন্টাল ইমপ্ল্যান্ট</h3><p>স্থায়ীভাবে হারানো দাঁত প্রতিস্থাপন।</p></div>
+      <div class="service-card"><div class="icon">😁</div><h3>স্মাইল ডিজাইনিং</h3><p>ভেনিয়ার ও হোয়াইটেনিং দিয়ে হাসি সুন্দর করা।</p></div>
+      <div class="service-card"><div class="icon">📐</div><h3>ব্রেসিং ও অর্থোডন্টিক্স</h3><p>বাঁকা দাঁত সোজা করতে আধুনিক ব্রেস।</p></div>
+      <div class="service-card"><div class="icon">🧒</div><h3>শিশুদের দাঁতের যত্ন</h3><p>শিশুদের জন্য বিশেষ বন্ধুত্বপূর্ণ চিকিৎসা।</p></div>
+      <div class="service-card"><div class="icon">🧼</div><h3>স্কেলিং ও পলিশিং</h3><p>দাঁতের ময়লা ও দাগ পরিষ্কার সেবা।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-tag">কর্মজীবন</div>
+    <h2 class="section-title">অভিজ্ঞতার সময়রেখা</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">২০১৮–বর্তমান</div><div><h3>প্রধান ডেন্টিস্ট</h3><p>স্মাইল ডেন্টাল কেয়ার, বনানী, ঢাকা।</p></div></div>
+      <div class="tl-item"><div class="tl-year">২০১৪–২০১৮</div><div><h3>ডেন্টাল সার্জন</h3><p>ঢাকা ডেন্টাল কলেজ হাসপাতাল।</p></div></div>
+      <div class="tl-item"><div class="tl-year">২০১০–২০১৪</div><div><h3>BDS ডিগ্রি সম্পন্ন</h3><p>ঢাকা ডেন্টাল কলেজ।</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">রোগীদের অভিজ্ঞতা</div>
+    <h2 class="section-title">তারা যা বলেছেন</h2>
+    <div class="testi-grid">
+      <div class="testi">রুট ক্যানেল করার সময় একদমই ব্যথা অনুভব করিনি, খুবই দক্ষ হাত।<div class="who">— রোগী, ধানমন্ডি</div></div>
+      <div class="testi">ইমপ্ল্যান্ট বসানোর পর এখন স্বাভাবিকভাবে সব খেতে পারছি।<div class="who">— রোগী, বয়স ৫৮</div></div>
+      <div class="testi">বাচ্চাকে নিয়ে গিয়েছিলাম, ভয় না দেখিয়ে সুন্দরভাবে চিকিৎসা করেছেন।<div class="who">— অভিভাবক</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-tag">যোগাযোগ</div>
+    <h2 class="section-title">অ্যাপয়েন্টমেন্টের জন্য যোগাযোগ করুন</h2>
+    <div class="contact">
+      <div>
+        <div class="k">চেম্বার</div><div class="v">স্মাইল ডেন্টাল কেয়ার, বনানী, ঢাকা</div>
+        <div class="k">ফোন</div><div class="v">+৮৮০ ১৩xx-xxxxxx</div>
+        <div class="k">ইমেইল</div><div class="v">visit.imran@example.com</div>
+      </div>
+      <table class="hours-table">
+        <tr><td>শনি — বৃহস্পতি</td><td>সকাল ১০টা — রাত ৮টা</td></tr>
+        <tr><td>শুক্রবার</td><td>বিকাল ৩টা — রাত ৮টা</td></tr>
+        <tr><td>জরুরি সেবা</td><td>প্রতিদিন উপলব্ধ</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>© ২০২৬ Dr. Imran Hossain · Dental Surgeon · সকল তথ্য প্রদর্শনী উদ্দেশ্যে</footer>
+
+</body>
+</html>

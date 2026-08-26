@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Rafiqul Islam | Orthopedic Surgeon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#2b2d42;
+    --steel:#8d99ae;
+    --light:#edf2f4;
+    --accent:#ef233c;
+    --panel:#33354f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--light);color:var(--dark);font-family:'IBM Plex Sans',sans-serif;line-height:1.65;}
+  h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+
+  nav{background:var(--dark);color:var(--light);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:80px;}
+  .brand{font-weight:700;font-size:1.15rem;letter-spacing:0.02em;}
+  .brand .dot{color:var(--accent);}
+  .navlinks{display:flex;gap:0;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;}
+  .navlinks a{padding:10px 20px;border-left:1px solid rgba(237,242,244,0.15);color:var(--steel);}
+  .navlinks a:hover{color:var(--light);}
+  @media(max-width:760px){.navlinks{display:none;}}
+
+  .hero{background:var(--dark);color:var(--light);padding:80px 0 0;position:relative;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:0;align-items:end;}
+  .hero-left{padding-bottom:80px;}
+  .grid-label{color:var(--accent);font-size:0.78rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:24px;font-family:'IBM Plex Sans',sans-serif;font-weight:600;}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4rem);font-weight:700;line-height:1.08;margin-bottom:26px;}
+  .hero h1 .out{-webkit-text-stroke:1px var(--steel);color:transparent;}
+  .hero p{color:var(--steel);font-size:1.05rem;max-width:460px;margin-bottom:34px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{padding:15px 30px;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;transition:.2s;}
+  .btn-solid{background:var(--accent);color:white;}
+  .btn-solid:hover{background:#c9182b;}
+  .btn-ghost{border:1px solid var(--steel);color:var(--light);}
+  .btn-ghost:hover{border-color:var(--light);}
+
+  /* skeletal joint diagram */
+  .joint-diagram{position:relative;height:420px;display:flex;align-items:flex-end;justify-content:center;}
+  .joint-diagram svg{width:100%;max-width:340px;height:auto;}
+  .joint-line{stroke:var(--steel);stroke-width:2;fill:none;}
+  .joint-node{fill:var(--dark);stroke:var(--accent);stroke-width:2.5;}
+  .joint-node.active{fill:var(--accent);}
+  .joint-label{fill:var(--steel);font-size:9px;font-family:'IBM Plex Sans',sans-serif;letter-spacing:0.05em;}
+  .angle-tag{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:var(--panel);padding:8px 18px;font-size:0.75rem;color:var(--steel);letter-spacing:0.08em;text-transform:uppercase;border:1px solid rgba(141,153,174,0.3);}
+  .angle-tag b{color:var(--accent);}
+
+  section{padding:100px 0;}
+  .section-num{color:var(--accent);font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.15em;margin-bottom:16px;}
+  .section-title{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:700;margin-bottom:50px;max-width:620px;}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;}
+  .spec-list{border:1px solid #d8dee4;}
+  .spec-list .row{display:flex;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #d8dee4;font-size:0.9rem;}
+  .spec-list .row:last-child{border-bottom:none;}
+  .spec-list .row span:first-child{color:#8a93a0;font-weight:500;}
+  .spec-list .row span:last-child{font-weight:600;text-align:right;}
+  .about-text p{margin-bottom:20px;color:#43485a;max-width:560px;}
+  .about-text p:first-child{font-size:1.2rem;font-weight:600;color:var(--dark);font-family:'Space Grotesk',sans-serif;}
+
+  .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:var(--dark);color:var(--light);margin-top:70px;}
+  .stat{padding:38px 24px;border-right:1px solid rgba(237,242,244,0.1);text-align:center;}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:var(--accent);}
+  .stat .lbl{font-size:0.78rem;color:var(--steel);margin-top:6px;text-transform:uppercase;letter-spacing:.04em;}
+  @media(max-width:760px){.stats-strip{grid-template-columns:repeat(2,1fr);}.about-grid{grid-template-columns:1fr;}.hero .wrap{grid-template-columns:1fr;}}
+
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#d8dee4;border:1px solid #d8dee4;}
+  .service{background:var(--light);padding:32px 24px;}
+  .service .num-tag{font-family:'Space Grotesk',sans-serif;color:var(--accent);font-weight:700;font-size:1.3rem;margin-bottom:14px;}
+  .service h3{font-size:1rem;margin-bottom:8px;}
+  .service p{font-size:0.85rem;color:#666;}
+  @media(max-width:900px){.service-grid{grid-template-columns:repeat(2,1fr);}}
+
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--dark);}
+  .tl-col{padding:28px 28px 0 0;border-right:1px solid #d8dee4;}
+  .tl-col:last-child{border-right:none;}
+  .tl-year{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--accent);font-size:1.1rem;margin-bottom:10px;}
+  .tl-col h3{font-size:1.05rem;margin-bottom:8px;}
+  .tl-col p{font-size:0.88rem;color:#666;}
+  @media(max-width:800px){.timeline{grid-template-columns:1fr;}.tl-col{border-right:none;border-bottom:1px solid #d8dee4;padding-bottom:24px;margin-bottom:24px;}}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#d8dee4;border:1px solid #d8dee4;}
+  .testi{background:var(--light);padding:30px;font-size:0.92rem;color:#43485a;}
+  .testi .who{margin-top:16px;font-size:0.8rem;color:#8a93a0;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+  @media(max-width:800px){.testi-grid{grid-template-columns:1fr;}}
+
+  .contact{background:var(--dark);color:var(--light);padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+  .contact .k{color:var(--accent);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:6px;}
+  .contact .v{font-size:1.05rem;margin-bottom:24px;}
+  .hours-table{width:100%;font-size:0.92rem;}
+  .hours-table td{padding:11px 0;border-bottom:1px solid rgba(237,242,244,0.12);color:var(--steel);}
+  .hours-table td:last-child{text-align:right;color:var(--light);}
+  @media(max-width:800px){.contact{grid-template-columns:1fr;padding:34px;}}
+
+  footer{text-align:center;padding:44px 0;color:#8a93a0;font-size:0.85rem;background:var(--light);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">RAFIQUL ISLAM<span class="dot">.</span></div>
+    <div class="navlinks">
+      <a href="#about">প্রোফাইল</a>
+      <a href="#experience">অভিজ্ঞতা</a>
+      <a href="#services">সেবা</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-left">
+      <div class="grid-label">Orthopedic & Joint Replacement Surgeon</div>
+      <h1>নড়াচড়ার<br>স্বাধীনতা <span class="out">ফিরিয়ে</span> দিই</h1>
+      <p>হাড়, জয়েন্ট ও স্পাইনের জটিল সমস্যার আধুনিক অস্ত্রোপচার ও পুনর্বাসন চিকিৎসায় ১৫ বছরের বিশেষায়িত অভিজ্ঞতা।</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-solid">অ্যাপয়েন্টমেন্ট</a>
+        <a href="#about" class="btn btn-ghost">প্রোফাইল দেখুন</a>
+      </div>
+    </div>
+    <div class="joint-diagram">
+      <svg viewBox="0 0 200 380">
+        <line class="joint-line" x1="100" y1="20" x2="100" y2="90"/>
+        <line class="joint-line" x1="100" y1="90" x2="60" y2="180"/>
+        <line class="joint-line" x1="100" y1="90" x2="140" y2="180"/>
+        <line class="joint-line" x1="60" y1="180" x2="55" y2="300"/>
+        <line class="joint-line" x1="140" y1="180" x2="145" y2="300"/>
+        <circle class="joint-node" cx="100" cy="20" r="14"/>
+        <circle class="joint-node active" cx="100" cy="90" r="10"/>
+        <circle class="joint-node active" cx="60" cy="180" r="10"/>
+        <circle class="joint-node active" cx="140" cy="180" r="10"/>
+        <circle class="joint-node" cx="55" cy="300" r="8"/>
+        <circle class="joint-node" cx="145" cy="300" r="8"/>
+        <text class="joint-label" x="106" y="94">Shoulder</text>
+        <text class="joint-label" x="20" y="184">Hip</text>
+        <text class="joint-label" x="146" y="184">Hip</text>
+        <text class="joint-label" x="12" y="304">Knee</text>
+        <text class="joint-label" x="150" y="304">Knee</text>
+      </svg>
+      <div class="angle-tag">Range of Motion <b>140°</b> Restored</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats-strip">
+      <div class="stat"><div class="num">১৫+</div><div class="lbl">বছরের অভিজ্ঞতা</div></div>
+      <div class="stat"><div class="num">৩,২০০+</div><div class="lbl">জয়েন্ট রিপ্লেসমেন্ট</div></div>
+      <div class="stat"><div class="num">৯০০০+</div><div class="lbl">সফল অস্ত্রোপচার</div></div>
+      <div class="stat"><div class="num">MS Ortho</div><div class="lbl">FCPS, MRCS</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-num">০১ — প্রোফাইল</div>
+    <h2 class="section-title">হাড়ের গঠন যত জটিলই হোক, সমাধান নিশ্চিত</h2>
+    <div class="about-grid">
+      <div class="spec-list">
+        <div class="row"><span>বিশেষত্ব</span><span>Joint Replacement, Trauma</span></div>
+        <div class="row"><span>ডিগ্রি</span><span>MBBS, MS (Ortho), FCPS</span></div>
+        <div class="row"><span>প্রতিষ্ঠান</span><span>পঙ্গু হাসপাতাল (NITOR)</span></div>
+        <div class="row"><span>নিবন্ধন নং</span><span>BMDC-A-51027</span></div>
+        <div class="row"><span>ভাষা</span><span>বাংলা, ইংরেজি</span></div>
+      </div>
+      <div class="about-text">
+        <p>ডা. রফিকুল ইসলাম একজন অস্থি ও জয়েন্ট প্রতিস্থাপন সার্জন, যিনি হিপ ও নী রিপ্লেসমেন্ট এবং স্পোর্টস ইনজুরি চিকিৎসায় বিশেষায়িত।</p>
+        <p>দুর্ঘটনাজনিত জটিল ফ্র্যাকচার থেকে শুরু করে বয়সজনিত জয়েন্ট ক্ষয় — প্রতিটি কেসে তিনি রোগীর দৈনন্দিন কার্যক্ষমতা পুনরুদ্ধারকে সর্বোচ্চ অগ্রাধিকার দেন।</p>
+        <p>বর্তমানে তিনি জাতীয় অর্থোপেডিক হাসপাতাল ও পুনর্বাসন প্রতিষ্ঠানে (NITOR) সিনিয়র কনসালট্যান্ট হিসেবে কর্মরত।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-num">০২ — সেবাসমূহ</div>
+    <h2 class="section-title">চিকিৎসার ক্ষেত্রসমূহ</h2>
+  </div>
+  <div class="wrap">
+    <div class="service-grid">
+      <div class="service"><div class="num-tag">01</div><h3>হিপ রিপ্লেসমেন্ট</h3><p>সম্পূর্ণ ও আংশিক হিপ প্রতিস্থাপন অস্ত্রোপচার।</p></div>
+      <div class="service"><div class="num-tag">02</div><h3>নী রিপ্লেসমেন্ট</h3><p>আর্থ্রাইটিসজনিত হাঁটুর ক্ষয়ে আধুনিক সমাধান।</p></div>
+      <div class="service"><div class="num-tag">03</div><h3>ফ্র্যাকচার ও ট্রমা</h3><p>জরুরি দুর্ঘটনাজনিত ভাঙা হাড়ের চিকিৎসা।</p></div>
+      <div class="service"><div class="num-tag">04</div><h3>স্পোর্টস ইনজুরি</h3><p>লিগামেন্ট ছেঁড়া ও খেলাধুলাজনিত আঘাত সারানো।</p></div>
+      <div class="service"><div class="num-tag">05</div><h3>স্পাইন কনসালটেশন</h3><p>মেরুদণ্ডের ব্যথা ও ডিস্ক সমস্যার মূল্যায়ন।</p></div>
+      <div class="service"><div class="num-tag">06</div><h3>আর্থ্রোস্কোপি</h3><p>ন্যূনতম আক্রমণাত্মক জয়েন্ট পরীক্ষা ও চিকিৎসা।</p></div>
+      <div class="service"><div class="num-tag">07</div><h3>ফিজিওথেরাপি সমন্বয়</h3><p>অস্ত্রোপচার পরবর্তী পুনর্বাসন পরিকল্পনা।</p></div>
+      <div class="service"><div class="num-tag">08</div><h3>পেডিয়াট্রিক অর্থোপেডিক্স</h3><p>শিশুদের হাড় বাঁকা হওয়াজনিত সমস্যা সমাধান।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-num">০৩ — কর্মজীবন</div>
+    <h2 class="section-title">অভিজ্ঞতার সময়রেখা</h2>
+    <div class="timeline">
+      <div class="tl-col"><div class="tl-year">২০২০–বর্তমান</div><h3>সিনিয়র কনসালট্যান্ট</h3><p>NITOR (পঙ্গু হাসপাতাল), ঢাকা — জয়েন্ট রিপ্লেসমেন্ট ইউনিট প্রধান।</p></div>
+      <div class="tl-col"><div class="tl-year">২০১৩–২০২০</div><h3>রেজিস্ট্রার, অর্থোপেডিক সার্জারি</h3><p>ঢাকা মেডিকেল কলেজ হাসপাতাল — ট্রমা ও জরুরি অস্ত্রোপচার বিভাগ।</p></div>
+      <div class="tl-col"><div class="tl-year">২০০৮–২০১৩</div><h3>MS (Orthopedics), FCPS</h3><p>বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয় — ফেলোশিপ, জয়েন্ট রিপ্লেসমেন্ট।</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-num">০৪ — প্রতিক্রিয়া</div>
+    <h2 class="section-title">রোগীরা যা বলেছেন</h2>
+    <div class="testi-grid">
+      <div class="testi">হাঁটু প্রতিস্থাপনের পর মাত্র তিন মাসে আবার হাঁটাচলা স্বাভাবিক হয়ে গেছে।<div class="who">রোগী, বয়স ৬২</div></div>
+      <div class="testi">দুর্ঘটনায় ভাঙা হাত অপারেশনের পর সম্পূর্ণ স্বাভাবিক কাজ করতে পারছি।<div class="who">রোগী, মোটরসাইকেল দুর্ঘটনা</div></div>
+      <div class="testi">প্রতিটি ধাপ বিস্তারিত বুঝিয়েছেন, অস্ত্রোপচারের আগে কোনো দ্বিধা ছিল না।<div class="who">রোগীর পরিবার</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-num">০৫ — যোগাযোগ</div>
+    <h2 class="section-title">অ্যাপয়েন্টমেন্টের জন্য যোগাযোগ করুন</h2>
+    <div class="contact">
+      <div>
+        <div class="k">চেম্বার</div><div class="v">NITOR, শেরে বাংলা নগর, ঢাকা</div>
+        <div class="k">ফোন</div><div class="v">+৮৮০ ১৭xx-xxxxxx</div>
+        <div class="k">ইমেইল</div><div class="v">chamber.rafiqul@example.com</div>
+      </div>
+      <table class="hours-table">
+        <tr><td>রবি — বৃহস্পতি</td><td>সকাল ১০টা — দুপুর ১টা</td></tr>
+        <tr><td>শনি — বুধ (সন্ধ্যা)</td><td>সন্ধ্যা ৬টা — রাত ৯টা</td></tr>
+        <tr><td>শুক্রবার</td><td>বন্ধ</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>© ২০২৬ Dr. Rafiqul Islam · Orthopedic & Joint Replacement Surgeon · সকল তথ্য প্রদর্শনী উদ্দেশ্যে</footer>
+
+</body>
+</html>

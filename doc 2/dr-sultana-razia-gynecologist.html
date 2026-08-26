@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Sultana Razia — Gynecologist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose:#B5495B;
+    --cream:#FBEFE7;
+    --plum:#3A1F2B;
+    --sage:#8FA998;
+    --gold:#D9A441;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--plum);font-family:'Karla',sans-serif;line-height:1.7;}
+  h1,h2,h3,.display{font-family:'Playfair Display',serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);font-weight:600;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(251,239,231,.92);backdrop-filter:blur(8px);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:1140px;margin:0 auto;}
+  .brand{font-family:'Playfair Display',serif;font-weight:600;font-size:1.2rem;color:var(--plum);}
+  .navlinks{display:flex;gap:30px;font-size:.88rem;font-weight:500;}
+  .navlinks a:hover{color:var(--rose);}
+  .cta-btn{background:var(--rose);color:#fff;padding:10px 24px;border-radius:24px;font-weight:600;font-size:.85rem;}
+  .cta-btn:hover{background:#96384a;}
+  .navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;}
+  .navtoggle span{width:24px;height:2px;background:var(--plum);}
+
+  .hero{position:relative;padding:180px 0 100px;overflow:hidden;}
+  .vine{position:absolute;opacity:.5;}
+  .vine.top-right{top:80px;right:-40px;width:340px;}
+  .vine.bottom-left{bottom:-30px;left:-40px;width:280px;transform:scaleX(-1);}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  .hero h1{font-size:3.3rem;font-weight:600;line-height:1.15;margin:16px 0 22px;color:var(--plum);}
+  .hero h1 em{font-style:italic;color:var(--rose);}
+  .hero p{max-width:460px;color:#5c4048;font-size:1.02rem;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:16px;}
+  .ghost-btn{border:1.5px solid var(--plum);padding:9px 24px;border-radius:24px;font-weight:600;font-size:.85rem;}
+  .avatar-frame{width:100%;aspect-ratio:1;border-radius:50%;background:var(--rose);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:#fff;font-size:4.5rem;font-weight:600;border:10px solid var(--cream);outline:2px solid var(--sage);position:relative;}
+
+  section{padding:96px 0;}
+  .section-head{max-width:600px;margin-bottom:48px;}
+  .section-head h2{font-size:2.1rem;font-weight:600;color:var(--plum);margin-top:8px;}
+
+  .about{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .stats{display:flex;gap:34px;margin-top:26px;flex-wrap:wrap;}
+  .stat b{display:block;font-family:'Playfair Display',serif;font-size:2rem;color:var(--rose);}
+  .stat span{font-size:.8rem;color:#8a6b73;}
+  .about-body p{margin-bottom:16px;color:#5c4048;}
+
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .cred-card{background:#fff;padding:28px 24px;border-radius:20px 20px 20px 4px;box-shadow:0 6px 20px rgba(58,31,43,.06);}
+  .cred-card h3{font-size:1.05rem;margin:8px 0 6px;}
+  .cred-card p{font-size:.86rem;color:#8a6b73;}
+
+  .expertise{background:var(--plum);color:var(--cream);}
+  .expertise .section-head h2{color:#fff;}
+  .expertise .eyebrow{color:var(--gold);}
+  .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .exp-card{background:rgba(255,255,255,.06);border-radius:20px 20px 20px 4px;padding:28px 24px;}
+  .exp-card h3{font-size:1.1rem;margin-bottom:8px;color:var(--gold);}
+  .exp-card p{font-size:.88rem;color:rgba(251,239,231,.75);}
+
+  .timeline{max-width:760px;margin:0 auto;position:relative;padding-left:32px;border-left:2px solid var(--sage);}
+  .tl-item{position:relative;padding-bottom:40px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:'❀';position:absolute;left:-46px;top:-4px;color:var(--rose);font-size:1.1rem;}
+  .tl-year{font-family:'Playfair Display',serif;color:var(--rose);font-weight:600;}
+  .tl-item h3{margin:4px 0 6px;font-size:1.1rem;}
+  .tl-item p{color:#8a6b73;font-size:.9rem;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{background:#fff;padding:28px 24px;border-radius:20px 20px 20px 4px;box-shadow:0 6px 20px rgba(58,31,43,.06);}
+  .testi-card p{font-size:.92rem;color:#5c4048;font-style:italic;}
+  .testi-name{margin-top:16px;font-weight:600;font-size:.82rem;color:var(--rose);}
+
+  .contact{background:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .info-row{margin-bottom:18px;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  input,textarea{border:1px solid #ecd8dc;background:var(--cream);padding:13px 16px;font-family:inherit;font-size:.92rem;border-radius:14px;}
+  input:focus,textarea:focus{outline:none;border-color:var(--rose);}
+  button.submit{background:var(--rose);color:#fff;padding:13px;font-weight:600;border:0;border-radius:14px;cursor:pointer;font-size:.9rem;}
+  .form-note{font-size:.82rem;color:var(--rose);display:none;font-style:italic;}
+  .form-note.show{display:block;}
+
+  footer{background:var(--plum);color:rgba(251,239,231,.7);padding:40px 0;text-align:center;font-size:.85rem;}
+  footer .brand{color:#fff;}
+
+  @media(max-width:880px){
+    .navlinks,.cta-btn{display:none;}
+    .navtoggle{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.3rem;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .cred-grid,.exp-grid,.testi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Dr. Sultana Razia</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Care</a>
+      <a href="#timeline">Experience</a>
+      <a href="#testimonials">Patients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Book a Visit</a>
+    <button class="navtoggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="vine top-right" viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#8FA998" stroke-width="2">
+    <path d="M10,190 C80,150 90,90 160,70 C210,55 240,20 320,10"/>
+    <circle cx="160" cy="70" r="10" fill="#8FA998" stroke="none"/>
+    <circle cx="240" cy="30" r="7" fill="#D9A441" stroke="none"/>
+    <circle cx="90" cy="120" r="6" fill="#B5495B" stroke="none"/>
+  </svg>
+  <svg class="vine bottom-left" viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#8FA998" stroke-width="2">
+    <path d="M10,150 C90,130 100,80 180,60 C220,50 250,20 270,10"/>
+    <circle cx="180" cy="60" r="9" fill="#8FA998" stroke="none"/>
+    <circle cx="90" cy="110" r="6" fill="#D9A441" stroke="none"/>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Gynecologist &amp; Obstetrician · Women's Wellness Center</div>
+      <h1>Care that grows<br>with <em>every stage</em> of life.</h1>
+      <p>From first consultations to pregnancy, childbirth, and menopause — sixteen years of women's health care built on trust and unrushed conversations.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-btn">Book a Visit</a>
+        <a href="#about" class="ghost-btn">About Dr. Razia</a>
+      </div>
+    </div>
+    <div class="avatar-frame">SR</div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow">About</div>
+      <h2 style="margin:10px 0 18px;color:var(--plum);font-size:1.9rem;">A gynecologist who listens before she examines.</h2>
+      <div class="about-body">
+        <p>Dr. Sultana Razia earned her MBBS from Rajshahi Medical College and her FCPS in Obstetrics &amp; Gynecology from the Bangladesh College of Physicians and Surgeons. She has delivered over 3,000 babies and guided countless women through every stage of reproductive health.</p>
+        <p>Her consultations move at the patient's pace — every question answered, every concern taken seriously, whether it's a first prenatal visit or a menopause consultation.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>16+</b><span>Years in practice</span></div>
+      <div class="stat"><b>3,000+</b><span>Deliveries</span></div>
+      <div class="stat"><b>8,500+</b><span>Patients cared for</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Credentials</div>
+      <h2>Training &amp; certifications</h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card"><div class="eyebrow">Degree</div><h3>MBBS, FCPS (OBGYN)</h3><p>Rajshahi Medical College &amp; BCPS</p></div>
+      <div class="cred-card"><div class="eyebrow">Fellowship</div><h3>High-Risk Pregnancy Care</h3><p>Advanced maternal-fetal medicine training, India</p></div>
+      <div class="cred-card"><div class="eyebrow">Registration</div><h3>BM&amp;DC Licensed</h3><p>Bangladesh Medical &amp; Dental Council</p></div>
+      <div class="cred-card"><div class="eyebrow">Membership</div><h3>Obstetrical &amp; Gynaecological Society</h3><p>of Bangladesh, active member</p></div>
+      <div class="cred-card"><div class="eyebrow">Certification</div><h3>Laparoscopic Surgery</h3><p>Minimally invasive gynecological procedures</p></div>
+      <div class="cred-card"><div class="eyebrow">Focus</div><h3>Adolescent &amp; Menopause Health</h3><p>Regular community health workshops</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Care areas</div>
+      <h2>Areas of expertise</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><h3>Prenatal &amp; Delivery Care</h3><p>Full pregnancy journey, from first trimester to birth.</p></div>
+      <div class="exp-card"><h3>High-Risk Pregnancy</h3><p>Close monitoring for complex pregnancies.</p></div>
+      <div class="exp-card"><h3>Fertility Consultation</h3><p>Evaluation and guidance for conception concerns.</p></div>
+      <div class="exp-card"><h3>Menstrual Disorders</h3><p>PCOS, irregular cycles, and hormonal imbalance.</p></div>
+      <div class="exp-card"><h3>Laparoscopic Surgery</h3><p>Minimally invasive fibroid and cyst removal.</p></div>
+      <div class="exp-card"><h3>Menopause Care</h3><p>Symptom management and long-term health planning.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Journey</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">2007</div><h3>MBBS, Rajshahi Medical College</h3><p>Graduated; began residency in Obstetrics &amp; Gynecology.</p></div>
+      <div class="tl-item"><div class="tl-year">2012</div><h3>FCPS (OBGYN)</h3><p>Bangladesh College of Physicians and Surgeons.</p></div>
+      <div class="tl-item"><div class="tl-year">2014</div><h3>High-Risk Pregnancy Fellowship</h3><p>Advanced training in maternal-fetal medicine, India.</p></div>
+      <div class="tl-item"><div class="tl-year">2016–Present</div><h3>Senior Consultant</h3><p>Women's Wellness Center, Rajshahi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Patients</div>
+      <h2>What patients say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p>She guided me through a high-risk pregnancy with so much calm reassurance.</p><div class="testi-name">— Maternity patient</div></div>
+      <div class="testi-card"><p>First doctor who took my PCOS symptoms seriously instead of dismissing them.</p><div class="testi-name">— PCOS patient</div></div>
+      <div class="testi-card"><p>My menopause consultation finally gave me answers, not just a prescription.</p><div class="testi-name">— Long-term patient</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="margin:10px 0 24px;color:var(--plum);font-size:1.9rem;">Book a visit</h2>
+      <div class="info-row"><div class="eyebrow">Clinic</div>Women's Wellness Center</div>
+      <div class="info-row"><div class="eyebrow">Address</div>New Market Area, Rajshahi</div>
+      <div class="info-row"><div class="eyebrow">Phone</div>+880 1XXX-XXXXXX</div>
+      <div class="info-row"><div class="eyebrow">Hours</div>Sat–Thu, 4:00 PM – 8:00 PM</div>
+    </div>
+    <form id="contactForm">
+      <input type="text" placeholder="Full name" required>
+      <input type="tel" placeholder="Phone number" required>
+      <textarea rows="4" placeholder="Briefly describe your concern"></textarea>
+      <button type="submit" class="submit">Request appointment</button>
+      <div class="form-note" id="formNote">Thank you — the clinic will call to confirm your slot.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="brand display">Dr. Sultana Razia</div>
+  <div>Women's Wellness Center · &copy; 2026 All rights reserved</div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formNote').classList.add('show');
+    this.reset();
+  });
+</script>
+</body>
+</html>

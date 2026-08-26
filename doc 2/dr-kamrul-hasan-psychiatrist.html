@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Kamrul Hasan | Psychiatrist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EDE6DB;
+    --sage:#6B705C;
+    --olive:#A5A58D;
+    --ink:#3D405B;
+    --panel:#F8F5EF;
+    --line:#ddd5c4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:'Karla',sans-serif;font-weight:300;line-height:1.85;}
+  h1,h2,h3,.disp{font-family:'Fraunces',serif;font-weight:400;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 32px;}
+
+  nav{padding:0;}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:96px;}
+  .brand{font-family:'Fraunces',serif;font-size:1.3rem;font-style:italic;}
+  .navlinks{display:flex;gap:42px;font-size:0.82rem;letter-spacing:0.04em;color:#6c6a5e;}
+  .navlinks a:hover{color:var(--sage);}
+  @media(max-width:760px){.navlinks{display:none;}}
+
+  .hero{padding:70px 0 130px;}
+  .hero .wrap{max-width:760px;}
+  .eyebrow{font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:30px;}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,3.8rem);line-height:1.3;margin-bottom:30px;font-weight:400;}
+  .hero h1 em{font-style:italic;color:var(--sage);}
+  .hero p{max-width:520px;color:#5c5a4e;margin-bottom:40px;font-size:1.08rem;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{padding:16px 32px;font-size:0.85rem;letter-spacing:0.03em;border-radius:100px;transition:.3s;display:inline-block;}
+  .btn-solid{background:var(--ink);color:var(--bg);}
+  .btn-solid:hover{background:#2a2c40;}
+  .btn-ghost{border:1px solid #b8b09a;}
+  .btn-ghost:hover{border-color:var(--ink);}
+
+  /* breathing wave signature */
+  .wave-strip{margin-top:70px;}
+  .wave-strip svg{width:100%;height:80px;}
+  .wave-path{fill:none;stroke:var(--sage);stroke-width:1.6;opacity:0.7;}
+  .wave-note{font-size:0.78rem;color:#8a8672;letter-spacing:0.08em;text-transform:uppercase;margin-top:14px;}
+
+  section{padding:100px 0;}
+  .section-tag{color:var(--sage);font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:20px;}
+  .section-title{font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:400;margin-bottom:54px;max-width:600px;}
+
+  .about-grid{display:grid;grid-template-columns:0.8fr 1.3fr;gap:60px;}
+  .info-card{background:var(--panel);border-radius:4px;padding:34px;border-left:2px solid var(--sage);}
+  .info-card .row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);font-size:0.9rem;}
+  .info-card .row:last-child{border-bottom:none;}
+  .info-card .row span:first-child{color:#8a8672;}
+  .about-text p{margin-bottom:22px;color:#4a4838;max-width:560px;}
+  .about-text p:first-child{font-family:'Fraunces',serif;font-size:1.25rem;font-style:italic;color:var(--ink);}
+
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:64px;}
+  .stat{background:var(--bg);padding:32px 20px;text-align:center;}
+  .stat .num{font-family:'Fraunces',serif;font-size:2rem;color:var(--sage);}
+  .stat .lbl{font-size:0.8rem;color:#8a8672;margin-top:6px;}
+  @media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr);}.about-grid{grid-template-columns:1fr;}}
+
+  .service-list{display:flex;flex-direction:column;}
+  .service-row{display:grid;grid-template-columns:1fr 2fr;gap:30px;padding:30px 0;border-bottom:1px solid var(--line);}
+  .service-row:first-child{border-top:1px solid var(--line);}
+  .service-row h3{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:400;color:var(--ink);}
+  .service-row p{font-size:0.92rem;color:#6c6a5e;}
+  @media(max-width:640px){.service-row{grid-template-columns:1fr;gap:8px;}}
+
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .tl-item{display:grid;grid-template-columns:150px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line);}
+  .tl-item:last-child{border-bottom:none;}
+  .tl-year{font-family:'Fraunces',serif;font-style:italic;color:var(--sage);}
+  .tl-item h3{font-size:1.1rem;margin-bottom:6px;font-weight:500;}
+  .tl-item p{color:#6c6a5e;font-size:0.92rem;}
+  @media(max-width:600px){.tl-item{grid-template-columns:1fr;gap:6px;}}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi{background:var(--panel);padding:30px;font-size:0.92rem;color:#4a4838;border-radius:4px;}
+  .testi .who{margin-top:16px;font-size:0.8rem;color:var(--sage);font-style:italic;}
+  @media(max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  .contact{background:var(--ink);color:var(--bg);border-radius:8px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:46px;}
+  .contact .k{color:var(--olive);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px;}
+  .contact .v{font-size:1.05rem;margin-bottom:24px;}
+  .hours-table{width:100%;font-size:0.92rem;}
+  .hours-table td{padding:11px 0;border-bottom:1px solid rgba(237,230,219,0.12);color:#c9c5b5;}
+  .hours-table td:last-child{text-align:right;color:var(--bg);}
+  @media(max-width:760px){.contact{grid-template-columns:1fr;padding:34px;}}
+
+  footer{text-align:center;padding:44px 0;color:#8a8672;font-size:0.85rem;font-style:italic;font-family:'Fraunces',serif;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Dr. Kamrul Hasan</div>
+    <div class="navlinks">
+      <a href="#about">পরিচিতি</a>
+      <a href="#services">সেবা</a>
+      <a href="#experience">অভিজ্ঞতা</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Consultant Psychiatrist</div>
+    <h1>মনের কথা শোনার জন্য <em>সময় ও ধৈর্য</em> — দুটোই রাখি</h1>
+    <p>উদ্বেগ, বিষণ্নতা, ঘুমের সমস্যা ও মানসিক স্বাস্থ্যের বিভিন্ন জটিলতায় সহানুভূতিশীল ও বিজ্ঞানভিত্তিক চিকিৎসা — ১৩ বছরের অভিজ্ঞতা।</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-solid">অ্যাপয়েন্টমেন্ট নিন</a>
+      <a href="#about" class="btn btn-ghost">প্রোফাইল দেখুন</a>
+    </div>
+    <div class="wave-strip">
+      <svg viewBox="0 0 800 80" preserveAspectRatio="none">
+        <path class="wave-path" d="M0,40 C40,10 80,70 120,40 C160,10 200,70 240,40 C280,10 320,70 360,40 C400,10 440,70 480,40 C520,10 560,70 600,40 C640,10 680,70 720,40 C750,20 780,60 800,40"/>
+      </svg>
+      <div class="wave-note">শান্ত শ্বাস, স্থির মন — প্রতিটি সেশনের ভিত্তি</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag">পরিচিতি</div>
+    <h2 class="section-title">মানসিক স্বাস্থ্যকে গুরুত্ব দেওয়ার সময় এখনই</h2>
+    <div class="about-grid">
+      <div class="info-card">
+        <div class="row"><span>বিশেষত্ব</span><span>Psychiatry, Adult & Adolescent</span></div>
+        <div class="row"><span>ডিগ্রি</span><span>MBBS, MD (Psychiatry)</span></div>
+        <div class="row"><span>প্রতিষ্ঠান</span><span>জাতীয় মানসিক স্বাস্থ্য ইনস্টিটিউট</span></div>
+        <div class="row"><span>নিবন্ধন নং</span><span>BMDC-A-41562</span></div>
+        <div class="row"><span>ভাষা</span><span>বাংলা, ইংরেজি</span></div>
+      </div>
+      <div class="about-text">
+        <p>"মানসিক স্বাস্থ্য শারীরিক স্বাস্থ্যের মতোই গুরুত্বপূর্ণ — এটি লুকানোর কিছু নয়, বরং যত্ন নেওয়ার বিষয়।"</p>
+        <p>ডা. কামরুল হাসান উদ্বেগ, বিষণ্নতা, বাইপোলার ডিসঅর্ডার ও ঘুমজনিত সমস্যার চিকিৎসায় বিশেষায়িত। তিনি ওষুধ ও কাউন্সেলিংয়ের সমন্বিত পদ্ধতিতে বিশ্বাসী।</p>
+        <p>বর্তমানে তিনি জাতীয় মানসিক স্বাস্থ্য ইনস্টিটিউটে সিনিয়র কনসালট্যান্ট হিসেবে কর্মরত এবং কর্মক্ষেত্রে মানসিক চাপ বিষয়ক সচেতনতা কর্মশালা পরিচালনা করেন।</p>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="num">১৩+</div><div class="lbl">বছরের অভিজ্ঞতা</div></div>
+      <div class="stat"><div class="num">৯,০০০+</div><div class="lbl">কাউন্সেলিং সেশন</div></div>
+      <div class="stat"><div class="num">২,৫০০+</div><div class="lbl">দীর্ঘমেয়াদী রোগী</div></div>
+      <div class="stat"><div class="num">MD</div><div class="lbl">Psychiatry</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-tag">সেবাসমূহ</div>
+    <h2 class="section-title">যেসব বিষয়ে সহায়তা করা হয়</h2>
+    <div class="service-list">
+      <div class="service-row"><h3>উদ্বেগ ব্যাধি</h3><p>অতিরিক্ত দুশ্চিন্তা, প্যানিক অ্যাটাক ও ফোবিয়ার চিকিৎসা।</p></div>
+      <div class="service-row"><h3>বিষণ্নতা চিকিৎসা</h3><p>দীর্ঘস্থায়ী মন খারাপ ভাব ও আগ্রহহীনতার ব্যবস্থাপনা।</p></div>
+      <div class="service-row"><h3>ঘুমজনিত সমস্যা</h3><p>অনিদ্রা ও অনিয়মিত ঘুমের ধরন সংশোধন।</p></div>
+      <div class="service-row"><h3>বাইপোলার ডিসঅর্ডার</h3><p>মুড পরিবর্তনজনিত দীর্ঘমেয়াদি চিকিৎসা পরিকল্পনা।</p></div>
+      <div class="service-row"><h3>কর্মক্ষেত্রের মানসিক চাপ</h3><p>বার্নআউট ও কর্মজীবনের চাপ মোকাবিলায় পরামর্শ।</p></div>
+      <div class="service-row"><h3>কিশোর মানসিক স্বাস্থ্য</h3><p>পরীক্ষার চাপ ও কিশোর বয়সের আচরণগত সমস্যা।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-tag">কর্মজীবন</div>
+    <h2 class="section-title">অভিজ্ঞতার সময়রেখা</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">২০১৭–বর্তমান</div><div><h3>সিনিয়র কনসালট্যান্ট</h3><p>জাতীয় মানসিক স্বাস্থ্য ইনস্টিটিউট, ঢাকা।</p></div></div>
+      <div class="tl-item"><div class="tl-year">২০১১–২০১৭</div><div><h3>মেডিকেল অফিসার, মনোরোগ বিভাগ</h3><p>পাবনা মানসিক হাসপাতাল।</p></div></div>
+      <div class="tl-item"><div class="tl-year">২০০৬–২০১১</div><div><h3>MD (Psychiatry), প্রশিক্ষণ</h3><p>বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয়।</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">রোগীদের অভিজ্ঞতা</div>
+    <h2 class="section-title">তারা যা বলেছেন</h2>
+    <div class="testi-grid">
+      <div class="testi">দীর্ঘদিনের উদ্বেগ থেকে মুক্তি পেতে সাহায্য করেছেন খুব ধৈর্য সহকারে।<div class="who">— রোগী, বেসরকারি চাকরিজীবী</div></div>
+      <div class="testi">প্রথমবার মানসিক স্বাস্থ্যের জন্য ডাক্তার দেখাতে ভয় লাগছিল, কিন্তু তিনি খুব সহজ করে দিয়েছেন।<div class="who">— রোগী</div></div>
+      <div class="testi">আমার ছেলের কিশোর বয়সের সমস্যা বুঝতে ও সমাধানে অনেক সাহায্য করেছেন।<div class="who">— অভিভাবক</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-tag">যোগাযোগ</div>
+    <h2 class="section-title">পরামর্শের জন্য যোগাযোগ করুন</h2>
+    <div class="contact">
+      <div>
+        <div class="k">চেম্বার</div><div class="v">জাতীয় মানসিক স্বাস্থ্য ইনস্টিটিউট, শের-ই-বাংলা নগর, ঢাকা</div>
+        <div class="k">ফোন</div><div class="v">+৮৮০ ১২xx-xxxxxx</div>
+        <div class="k">ইমেইল</div><div class="v">consult.kamrul@example.com</div>
+      </div>
+      <table class="hours-table">
+        <tr><td>রবি — বৃহস্পতি</td><td>সকাল ১০টা — দুপুর ২টা</td></tr>
+        <tr><td>শনি — মঙ্গল (সন্ধ্যা)</td><td>সন্ধ্যা ৫টা — রাত ৮টা</td></tr>
+        <tr><td>শুক্রবার</td><td>বন্ধ</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>© ২০২৬ Dr. Kamrul Hasan · Consultant Psychiatrist · সকল তথ্য প্রদর্শনী উদ্দেশ্যে</footer>
+
+</body>
+</html>

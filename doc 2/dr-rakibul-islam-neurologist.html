@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Rakibul Islam — Neurologist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12081F;
+    --indigo:#1B1035;
+    --violet:#6C4AB6;
+    --lavender:#EDE7F6;
+    --cyan:#4FD1C5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--lavender);font-family:'IBM Plex Sans',sans-serif;line-height:1.65;}
+  h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);font-weight:600;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(18,8,31,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(237,231,245,.08);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:1180px;margin:0 auto;}
+  .brand{font-weight:700;font-size:1.1rem;color:#fff;letter-spacing:-.01em;}
+  .brand span{color:var(--cyan);}
+  .navlinks{display:flex;gap:30px;font-size:.9rem;color:rgba(237,231,245,.75);}
+  .navlinks a:hover{color:var(--cyan);}
+  .cta-btn{background:var(--violet);color:#fff;padding:10px 22px;border-radius:30px;font-weight:600;font-size:.85rem;}
+  .navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;}
+  .navtoggle span{width:24px;height:2px;background:#fff;}
+
+  /* HERO with neural net canvas */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:80px;}
+  .hero-net{position:absolute;inset:0;z-index:0;opacity:.55;}
+  .hero-content{position:relative;z-index:2;max-width:640px;}
+  .hero h1{font-size:3.5rem;font-weight:700;line-height:1.08;color:#fff;margin:18px 0 22px;}
+  .hero h1 span{color:var(--cyan);}
+  .hero p{color:rgba(237,231,245,.75);font-size:1.05rem;margin-bottom:32px;max-width:520px;}
+  .hero-ctas{display:flex;gap:16px;}
+  .ghost-btn{border:1.5px solid rgba(237,231,245,.4);padding:10px 22px;border-radius:30px;font-weight:600;font-size:.85rem;}
+
+  section{padding:100px 0;}
+  .section-head{max-width:600px;margin-bottom:50px;}
+  .section-head h2{font-size:2.1rem;font-weight:600;color:#fff;margin-top:10px;}
+
+  .about{display:grid;grid-template-columns:260px 1fr;gap:60px;background:var(--indigo);}
+  .avatar-ring{width:200px;height:200px;border-radius:24px;background:linear-gradient(145deg,var(--violet),var(--indigo));display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:700;border:1px solid rgba(79,209,197,.4);}
+  .stats{display:flex;gap:30px;margin-top:24px;flex-wrap:wrap;}
+  .stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.9rem;color:var(--cyan);}
+  .stat span{font-size:.8rem;color:rgba(237,231,245,.6);}
+  .about-body p{margin-bottom:16px;color:rgba(237,231,245,.8);max-width:640px;}
+
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(237,231,245,.08);border:1px solid rgba(237,231,245,.08);}
+  .cred-card{background:var(--bg);padding:28px 24px;}
+  .cred-card h3{font-size:1.05rem;margin:8px 0 6px;color:#fff;}
+  .cred-card p{font-size:.86rem;color:rgba(237,231,245,.6);}
+
+  .expertise{background:var(--indigo);}
+  .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .exp-card{background:rgba(108,74,182,.12);border:1px solid rgba(108,74,182,.35);border-radius:16px;padding:28px;transition:transform .2s, border-color .2s;}
+  .exp-card:hover{transform:translateY(-4px);border-color:var(--cyan);}
+  .exp-card h3{font-size:1.15rem;color:#fff;margin-bottom:8px;}
+  .exp-card p{font-size:.9rem;color:rgba(237,231,245,.65);}
+
+  .timeline{position:relative;max-width:760px;margin:0 auto;padding-left:32px;border-left:2px solid var(--violet);}
+  .tl-item{position:relative;padding-bottom:42px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:'';position:absolute;left:-40px;top:2px;width:14px;height:14px;background:var(--cyan);border-radius:50%;box-shadow:0 0 0 4px rgba(79,209,197,.2);}
+  .tl-year{font-family:'Space Grotesk',sans-serif;color:var(--cyan);font-weight:600;}
+  .tl-item h3{margin:4px 0 6px;font-size:1.1rem;color:#fff;}
+  .tl-item p{color:rgba(237,231,245,.65);font-size:.9rem;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{background:var(--indigo);border:1px solid rgba(237,231,245,.08);padding:28px 24px;border-radius:16px;}
+  .testi-card p{font-size:.92rem;color:rgba(237,231,245,.8);}
+  .testi-name{margin-top:16px;font-weight:600;font-size:.85rem;color:var(--cyan);}
+
+  .contact{background:var(--indigo);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .info-row{margin-bottom:20px;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  input,textarea{background:rgba(255,255,255,.05);border:1px solid rgba(237,231,245,.2);color:#fff;padding:13px 14px;font-family:inherit;font-size:.92rem;border-radius:8px;}
+  input::placeholder,textarea::placeholder{color:rgba(237,231,245,.4);}
+  input:focus,textarea:focus{outline:2px solid var(--cyan);}
+  button.submit{background:var(--cyan);color:var(--bg);padding:13px;font-weight:700;border:0;border-radius:8px;cursor:pointer;font-size:.92rem;}
+  .form-note{font-size:.82rem;color:var(--cyan);display:none;}
+  .form-note.show{display:block;}
+
+  footer{background:var(--bg);color:rgba(237,231,245,.5);padding:40px 0;text-align:center;font-size:.85rem;border-top:1px solid rgba(237,231,245,.08);}
+
+  @media(max-width:880px){
+    .navlinks,.cta-btn{display:none;}
+    .navtoggle{display:flex;}
+    .hero h1{font-size:2.3rem;}
+    .about,.contact-grid{grid-template-columns:1fr;}
+    .cred-grid,.exp-grid,.testi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Dr. Rakibul Islam<span>.</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#timeline">Experience</a>
+      <a href="#testimonials">Patients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Book Consultation</a>
+    <button class="navtoggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="hero-net" viewBox="0 0 1180 800" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#6C4AB6" stroke-width="1">
+      <line x1="700" y1="120" x2="900" y2="220"/>
+      <line x1="700" y1="120" x2="850" y2="80"/>
+      <line x1="900" y1="220" x2="1050" y2="180"/>
+      <line x1="900" y1="220" x2="980" y2="350"/>
+      <line x1="850" y1="80" x2="1050" y2="180"/>
+      <line x1="980" y1="350" x2="1100" y2="420"/>
+      <line x1="980" y1="350" x2="820" y2="420"/>
+      <line x1="820" y1="420" x2="900" y2="560"/>
+      <line x1="1100" y1="420" x2="1050" y2="580"/>
+      <line x1="900" y1="560" x2="1050" y2="580"/>
+      <line x1="700" y1="120" x2="600" y2="260"/>
+      <line x1="600" y1="260" x2="820" y2="420"/>
+    </g>
+    <g fill="#4FD1C5">
+      <circle cx="700" cy="120" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite"/></circle>
+      <circle cx="900" cy="220" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin=".3s" repeatCount="indefinite"/></circle>
+      <circle cx="850" cy="80" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin=".6s" repeatCount="indefinite"/></circle>
+      <circle cx="1050" cy="180" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin=".9s" repeatCount="indefinite"/></circle>
+      <circle cx="980" cy="350" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></circle>
+      <circle cx="1100" cy="420" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin="1.5s" repeatCount="indefinite"/></circle>
+      <circle cx="820" cy="420" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin="1.8s" repeatCount="indefinite"/></circle>
+      <circle cx="900" cy="560" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin="2.1s" repeatCount="indefinite"/></circle>
+      <circle cx="1050" cy="580" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin=".2s" repeatCount="indefinite"/></circle>
+      <circle cx="600" cy="260" r="4"><animate attributeName="r" values="4;7;4" dur="2.4s" begin=".5s" repeatCount="indefinite"/></circle>
+    </g>
+  </svg>
+  <div class="wrap hero-content">
+    <div class="eyebrow">Neurologist · Rajshahi Neuro Care Center</div>
+    <h1>Understanding the<br>signals your <span>brain</span> sends.</h1>
+    <p>Twelve years diagnosing and treating stroke, epilepsy, migraine, and movement disorders — with imaging, patience, and a plan explained in terms that make sense.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="cta-btn">Book Consultation</a>
+      <a href="#about" class="ghost-btn">Meet Dr. Islam</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap" style="display:grid;grid-template-columns:260px 1fr;gap:60px;">
+    <div>
+      <div class="avatar-ring">RI</div>
+      <div class="stats">
+        <div class="stat"><b>12+</b><span>Years practicing</span></div>
+        <div class="stat"><b>4,800</b><span>Patients treated</span></div>
+        <div class="stat"><b>300+</b><span>EEG studies read</span></div>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="eyebrow">About</div>
+      <h2 style="margin:10px 0 18px;color:#fff;font-size:1.9rem;">A neurologist who traces symptoms to their source.</h2>
+      <p>Dr. Rakibul Islam earned his MD in Neurology from Dhaka Medical College and completed advanced training in epilepsy and stroke management at Christian Medical College, Vellore. He now heads the Neurology division at Rajshahi Neuro Care Center.</p>
+      <p>He believes most neurological conditions are manageable once properly understood — his consultations focus on clear diagnosis, honest prognosis, and a treatment path patients can actually follow at home.</p>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Credentials</div>
+      <h2>Training &amp; affiliations</h2>
+    </div>
+  </div>
+  <div class="cred-grid">
+    <div class="cred-card"><div class="eyebrow">Degree</div><h3>MBBS, MD (Neurology)</h3><p>Dhaka Medical College</p></div>
+    <div class="cred-card"><div class="eyebrow">Fellowship</div><h3>Stroke &amp; Epilepsy Care</h3><p>Christian Medical College, Vellore</p></div>
+    <div class="cred-card"><div class="eyebrow">Membership</div><h3>Bangladesh Neurological Society</h3><p>Active member since 2015</p></div>
+    <div class="cred-card"><div class="eyebrow">Certification</div><h3>EEG &amp; EMG Interpretation</h3><p>Certified electrodiagnostic specialist</p></div>
+    <div class="cred-card"><div class="eyebrow">Registration</div><h3>BM&amp;DC Licensed</h3><p>Bangladesh Medical &amp; Dental Council</p></div>
+    <div class="cred-card"><div class="eyebrow">Research</div><h3>Published Author</h3><p>Papers on early stroke intervention outcomes</p></div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Expertise</div>
+      <h2>Conditions treated</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><h3>Stroke &amp; TIA</h3><p>Rapid diagnosis and long-term rehabilitation planning.</p></div>
+      <div class="exp-card"><h3>Epilepsy</h3><p>Seizure classification and personalized medication management.</p></div>
+      <div class="exp-card"><h3>Migraine &amp; Headache Disorders</h3><p>Root-cause evaluation beyond just pain relief.</p></div>
+      <div class="exp-card"><h3>Movement Disorders</h3><p>Parkinson's disease and tremor management.</p></div>
+      <div class="exp-card"><h3>Peripheral Neuropathy</h3><p>Nerve conduction studies and targeted therapy.</p></div>
+      <div class="exp-card"><h3>Memory &amp; Cognitive Decline</h3><p>Early evaluation for dementia-related conditions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Journey</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">2010</div><h3>MBBS, Dhaka Medical College</h3><p>Graduated; began residency in Neurology.</p></div>
+      <div class="tl-item"><div class="tl-year">2014</div><h3>MD in Neurology</h3><p>Bangabandhu Sheikh Mujib Medical University.</p></div>
+      <div class="tl-item"><div class="tl-year">2016</div><h3>Fellowship in Stroke &amp; Epilepsy</h3><p>Christian Medical College, Vellore, India.</p></div>
+      <div class="tl-item"><div class="tl-year">2018–Present</div><h3>Head of Neurology</h3><p>Rajshahi Neuro Care Center — building the region's first dedicated stroke unit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Patients</div>
+      <h2>What patients say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p>My migraines went undiagnosed for years. He found the pattern within one visit.</p><div class="testi-name">— Migraine patient</div></div>
+      <div class="testi-card"><p>After my father's stroke, Dr. Islam walked us through recovery step by step.</p><div class="testi-name">— Family of a patient</div></div>
+      <div class="testi-card"><p>My seizures are fully controlled now, and I finally understand why they were happening.</p><div class="testi-name">— Epilepsy patient</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="margin:10px 0 24px;color:#fff;font-size:1.9rem;">Book a consultation</h2>
+      <div class="info-row"><div class="eyebrow">Clinic</div>Rajshahi Neuro Care Center, 2nd Floor</div>
+      <div class="info-row"><div class="eyebrow">Address</div>Kazla, Rajshahi</div>
+      <div class="info-row"><div class="eyebrow">Phone</div>+880 1XXX-XXXXXX</div>
+      <div class="info-row"><div class="eyebrow">Hours</div>Sat–Thu, 5:00 PM – 9:00 PM</div>
+    </div>
+    <form id="contactForm">
+      <input type="text" placeholder="Full name" required>
+      <input type="tel" placeholder="Phone number" required>
+      <textarea rows="4" placeholder="Briefly describe your symptoms"></textarea>
+      <button type="submit" class="submit">Request appointment</button>
+      <div class="form-note" id="formNote">Thank you — our team will call to confirm your slot.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="brand display" style="color:#fff;margin-bottom:8px;">Dr. Rakibul Islam</div>
+  <div>Rajshahi Neuro Care Center · &copy; 2026 All rights reserved</div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formNote').classList.add('show');
+    this.reset();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Farzana Haque | Dermatologist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF7F2;
+    --sand:#D4A574;
+    --charcoal:#2F2F2F;
+    --accent:#8B7355;
+    --panel:#ffffff;
+    --line:#e8e0d4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--charcoal);font-family:'Karla',sans-serif;font-weight:400;line-height:1.75;}
+  h1,h2,h3,.disp{font-family:'Manrope',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 32px;}
+
+  nav{padding:0;border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:90px;}
+  .brand{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-0.01em;}
+  .navlinks{display:flex;gap:40px;font-size:0.82rem;letter-spacing:0.03em;color:#6b645a;}
+  .navlinks a:hover{color:var(--charcoal);}
+  @media(max-width:760px){.navlinks{display:none;}}
+
+  .hero{padding:100px 0 120px;}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr 0.9fr;gap:70px;align-items:center;}
+  .eyebrow{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;font-weight:600;}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;line-height:1.15;margin-bottom:28px;letter-spacing:-0.02em;}
+  .hero h1 .light{font-weight:300;color:var(--accent);}
+  .hero p{max-width:440px;color:#6b645a;margin-bottom:38px;font-size:1.05rem;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{padding:16px 30px;font-size:0.82rem;letter-spacing:0.04em;font-weight:600;transition:.25s;display:inline-block;}
+  .btn-solid{background:var(--charcoal);color:white;}
+  .btn-solid:hover{background:#000;}
+  .btn-ghost{border:1px solid #d8d0c0;}
+  .btn-ghost:hover{border-color:var(--charcoal);}
+
+  /* concentric skin layers signature */
+  .layer-box{position:relative;height:340px;display:flex;align-items:center;justify-content:center;}
+  .layer-box svg{width:100%;max-width:280px;height:auto;}
+  .ring{fill:none;stroke-width:1;}
+  .ring1{stroke:var(--sand);opacity:0.4;}
+  .ring2{stroke:var(--sand);opacity:0.6;}
+  .ring3{stroke:var(--accent);opacity:0.8;}
+  .ring4{stroke:var(--charcoal);}
+  .layer-label{position:absolute;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8171;}
+  .l1{top:14px;right:10px;}
+  .l2{bottom:40px;left:0;}
+  .l3{bottom:10px;right:30px;}
+
+  section{padding:110px 0;}
+  .section-tag{color:var(--accent);font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:20px;font-weight:600;}
+  .section-title{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;margin-bottom:54px;max-width:600px;letter-spacing:-0.01em;}
+
+  .about-grid{display:grid;grid-template-columns:0.85fr 1.3fr;gap:60px;}
+  .info-card{border:1px solid var(--line);padding:34px;}
+  .info-card .row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:0.9rem;}
+  .info-card .row:last-child{border-bottom:none;}
+  .info-card .row span:first-child{color:#8a8171;}
+  .info-card .row span:last-child{font-weight:600;text-align:right;}
+  .about-text p{margin-bottom:22px;color:#4e4a42;max-width:560px;}
+  .about-text p:first-child{font-family:'Manrope',sans-serif;font-size:1.2rem;font-weight:600;color:var(--charcoal);}
+
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:64px;border:1px solid var(--line);}
+  .stat{background:var(--bg);padding:32px 20px;text-align:center;}
+  .stat .num{font-family:'Manrope',sans-serif;font-size:2.1rem;font-weight:800;color:var(--charcoal);}
+  .stat .lbl{font-size:0.8rem;color:#8a8171;margin-top:6px;}
+  @media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr);}.about-grid{grid-template-columns:1fr;}.hero .wrap{grid-template-columns:1fr;}}
+
+  .service-list{display:flex;flex-direction:column;}
+  .service-row{display:grid;grid-template-columns:60px 1fr 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);align-items:center;}
+  .service-row:first-child{border-top:1px solid var(--line);}
+  .service-row .idx{font-family:'Manrope',sans-serif;color:var(--sand);font-weight:800;font-size:1.2rem;}
+  .service-row h3{font-size:1.1rem;font-weight:600;}
+  .service-row p{font-size:0.9rem;color:#6b645a;}
+  @media(max-width:700px){.service-row{grid-template-columns:1fr;gap:8px;}}
+
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .tl-item{display:grid;grid-template-columns:150px 1fr;gap:30px;padding:30px 0;border-bottom:1px solid var(--line);}
+  .tl-item:last-child{border-bottom:none;}
+  .tl-year{font-family:'Manrope',sans-serif;font-weight:700;color:var(--accent);}
+  .tl-item h3{font-size:1.1rem;margin-bottom:6px;font-weight:600;}
+  .tl-item p{color:#6b645a;font-size:0.92rem;}
+  @media(max-width:600px){.tl-item{grid-template-columns:1fr;gap:6px;}}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .testi{background:var(--bg);padding:32px;font-size:0.92rem;color:#4e4a42;}
+  .testi .who{margin-top:18px;font-size:0.8rem;color:#8a8171;text-transform:uppercase;letter-spacing:0.04em;}
+  @media(max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  .contact{background:var(--charcoal);color:var(--bg);padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:46px;}
+  .contact .k{color:var(--sand);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px;}
+  .contact .v{font-size:1.05rem;margin-bottom:24px;}
+  .hours-table{width:100%;font-size:0.92rem;}
+  .hours-table td{padding:11px 0;border-bottom:1px solid rgba(250,247,242,0.12);color:#c9c2b4;}
+  .hours-table td:last-child{text-align:right;color:var(--bg);}
+  @media(max-width:760px){.contact{grid-template-columns:1fr;padding:34px;}}
+
+  footer{text-align:center;padding:44px 0;color:#8a8171;font-size:0.85rem;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">FARZANA HAQUE</div>
+    <div class="navlinks">
+      <a href="#about">পরিচিতি</a>
+      <a href="#services">সেবা</a>
+      <a href="#experience">অভিজ্ঞতা</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Consultant Dermatologist</div>
+      <h1>ত্বকের যত্নে <span class="light">নির্ভুল</span> বিজ্ঞান, সহজ পদ্ধতি</h1>
+      <p>ব্রণ, একজিমা, চুল পড়া থেকে শুরু করে জটিল চর্মরোগ নির্ণয় ও কসমেটিক ডার্মাটোলজিতে ১১ বছরের অভিজ্ঞতা।</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-solid">অ্যাপয়েন্টমেন্ট নিন</a>
+        <a href="#about" class="btn btn-ghost">প্রোফাইল দেখুন</a>
+      </div>
+    </div>
+    <div class="layer-box">
+      <svg viewBox="0 0 200 200">
+        <circle class="ring ring1" cx="100" cy="100" r="95"/>
+        <circle class="ring ring2" cx="100" cy="100" r="70"/>
+        <circle class="ring ring3" cx="100" cy="100" r="45"/>
+        <circle class="ring ring4" cx="100" cy="100" r="20"/>
+      </svg>
+      <div class="layer-label l1">Epidermis</div>
+      <div class="layer-label l2">Dermis</div>
+      <div class="layer-label l3">Subcutis</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag">পরিচিতি</div>
+    <h2 class="section-title">ত্বক বোঝাটাই প্রথম ধাপ, সমাধান তার পরের অংশ</h2>
+    <div class="about-grid">
+      <div class="info-card">
+        <div class="row"><span>বিশেষত্ব</span><span>Dermatology & Cosmetology</span></div>
+        <div class="row"><span>ডিগ্রি</span><span>MBBS, DDV, FCPS (Dermatology)</span></div>
+        <div class="row"><span>প্রতিষ্ঠান</span><span>স্কিন কেয়ার সেন্টার, ঢাকা</span></div>
+        <div class="row"><span>নিবন্ধন নং</span><span>BMDC-A-58943</span></div>
+        <div class="row"><span>ভাষা</span><span>বাংলা, ইংরেজি</span></div>
+      </div>
+      <div class="about-text">
+        <p>ডা. ফারজানা হক একজন কনসালট্যান্ট ডার্মাটোলজিস্ট, যিনি ব্রণ, পিগমেন্টেশন, চুল পড়া ও অটোইমিউন চর্মরোগে বিশেষায়িত।</p>
+        <p>তিনি প্রতিটি রোগীর ত্বকের ধরন, জীবনযাত্রা ও পরিবেশগত কারণ বিবেচনা করে ব্যক্তিগতকৃত চিকিৎসা পরিকল্পনা তৈরি করেন।</p>
+        <p>বর্তমানে তিনি ঢাকার স্কিন কেয়ার সেন্টারে প্রধান পরামর্শক হিসেবে কর্মরত এবং লেজার থেরাপি বিভাগ তত্ত্বাবধান করেন।</p>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="num">১১+</div><div class="lbl">বছরের অভিজ্ঞতা</div></div>
+      <div class="stat"><div class="num">১৩,০০০+</div><div class="lbl">রোগী চিকিৎসা</div></div>
+      <div class="stat"><div class="num">২,১০০+</div><div class="lbl">লেজার সেশন</div></div>
+      <div class="stat"><div class="num">FCPS</div><div class="lbl">Dermatology</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-tag">সেবাসমূহ</div>
+    <h2 class="section-title">চিকিৎসার ক্ষেত্রসমূহ</h2>
+    <div class="service-list">
+      <div class="service-row"><div class="idx">01</div><h3>ব্রণ ও দাগ চিকিৎসা</h3><p>কারণ নির্ণয়পূর্বক দীর্ঘমেয়াদি সমাধান।</p></div>
+      <div class="service-row"><div class="idx">02</div><h3>চুল পড়া ও স্ক্যাল্প কেয়ার</h3><p>PRP থেরাপি ও ওষুধভিত্তিক চিকিৎসা।</p></div>
+      <div class="service-row"><div class="idx">03</div><h3>পিগমেন্টেশন ও মেলাসমা</h3><p>অসম ত্বকের রঙ সংশোধনে আধুনিক পদ্ধতি।</p></div>
+      <div class="service-row"><div class="idx">04</div><h3>একজিমা ও সোরিয়াসিস</h3><p>দীর্ঘস্থায়ী প্রদাহজনিত চর্মরোগ ব্যবস্থাপনা।</p></div>
+      <div class="service-row"><div class="idx">05</div><h3>লেজার থেরাপি</h3><p>দাগ, লোম ও বয়সজনিত পরিবর্তনের চিকিৎসা।</p></div>
+      <div class="service-row"><div class="idx">06</div><h3>কসমেটিক ডার্মাটোলজি</h3><p>ফিলার, বোটক্স ও ত্বক উজ্জ্বলকরণ সেবা।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-tag">কর্মজীবন</div>
+    <h2 class="section-title">অভিজ্ঞতার সময়রেখা</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">২০১৯–বর্তমান</div><div><h3>প্রধান পরামর্শক</h3><p>স্কিন কেয়ার সেন্টার, গুলশান, ঢাকা।</p></div></div>
+      <div class="tl-item"><div class="tl-year">২০১৩–২০১৯</div><div><h3>কনসালট্যান্ট ডার্মাটোলজিস্ট</h3><p>ল্যাবএইড হাসপাতাল, ঢাকা।</p></div></div>
+      <div class="tl-item"><div class="tl-year">২০০৯–২০১৩</div><div><h3>FCPS প্রশিক্ষণ, চর্মরোগ বিদ্যা</h3><p>স্যার সলিমুল্লাহ মেডিকেল কলেজ।</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">রোগীদের অভিজ্ঞতা</div>
+    <h2 class="section-title">তারা যা বলেছেন</h2>
+    <div class="testi-grid">
+      <div class="testi">বছরের পর বছর ব্রণের সমস্যা এখন সম্পূর্ণ নিয়ন্ত্রণে। ধন্যবাদ ম্যাডামকে।<div class="who">— রোগী, বয়স ২৪</div></div>
+      <div class="testi">PRP থেরাপির পর চুল পড়া অনেকটাই কমে এসেছে।<div class="who">— দীর্ঘমেয়াদী রোগী</div></div>
+      <div class="testi">প্রতিটি প্রোডাক্ট ও চিকিৎসা পদ্ধতি বিস্তারিত বুঝিয়ে দেন।<div class="who">— নিয়মিত রোগী</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-tag">যোগাযোগ</div>
+    <h2 class="section-title">অ্যাপয়েন্টমেন্টের জন্য যোগাযোগ করুন</h2>
+    <div class="contact">
+      <div>
+        <div class="k">চেম্বার</div><div class="v">স্কিন কেয়ার সেন্টার, গুলশান-২, ঢাকা</div>
+        <div class="k">ফোন</div><div class="v">+৮৮০ ১৫xx-xxxxxx</div>
+        <div class="k">ইমেইল</div><div class="v">consult.farzana@example.com</div>
+      </div>
+      <table class="hours-table">
+        <tr><td>শনি — বৃহস্পতি</td><td>সকাল ১১টা — বিকাল ৩টা</td></tr>
+        <tr><td>শনি — বুধ (সন্ধ্যা)</td><td>সন্ধ্যা ৬টা — রাত ৯টা</td></tr>
+        <tr><td>শুক্রবার</td><td>বন্ধ</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>© ২০২৬ Dr. Farzana Haque · Consultant Dermatologist · সকল তথ্য প্রদর্শনী উদ্দেশ্যে</footer>
+
+</body>
+</html>

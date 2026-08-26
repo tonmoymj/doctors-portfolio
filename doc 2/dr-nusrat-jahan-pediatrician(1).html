@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Nusrat Jahan | শিশু বিশেষজ্ঞ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8E7;
+    --coral:#FF6B6B;
+    --teal:#3AAFA9;
+    --yellow:#FFC857;
+    --ink:#292F36;
+    --panel:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'Nunito',sans-serif;line-height:1.7;}
+  h1,h2,h3,.disp{font-family:'Baloo 2',cursive;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+
+  nav{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:3px solid var(--ink);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:82px;}
+  .brand{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:700;}
+  .brand span{color:var(--coral);}
+  .navlinks{display:flex;gap:28px;font-weight:700;font-size:0.95rem;}
+  .navlinks a{padding:8px 16px;border-radius:20px;transition:.2s;}
+  .navlinks a:hover{background:var(--yellow);}
+  @media(max-width:720px){.navlinks{display:none;}}
+
+  .hero{padding:80px 0 60px;position:relative;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;}
+  .blob{position:absolute;border-radius:50%;opacity:0.5;filter:blur(2px);z-index:0;}
+  .blob1{width:220px;height:220px;background:var(--yellow);top:-60px;right:12%;}
+  .blob2{width:140px;height:140px;background:var(--teal);opacity:0.35;bottom:-40px;left:6%;}
+  .hero-content{position:relative;z-index:1;}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--panel);border:2px solid var(--ink);border-radius:30px;padding:8px 18px;font-weight:700;font-size:0.85rem;margin-bottom:24px;}
+  .badge::before{content:'🧸';}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.15;margin-bottom:20px;font-weight:800;}
+  .hero h1 .hl{color:var(--coral);}
+  .hero p{font-size:1.1rem;max-width:480px;margin-bottom:32px;color:#4a4f57;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{padding:15px 28px;border-radius:14px;font-weight:700;font-size:0.95rem;border:3px solid var(--ink);transition:.2s;display:inline-block;}
+  .btn-solid{background:var(--coral);color:white;box-shadow:5px 5px 0 var(--ink);}
+  .btn-solid:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);}
+  .btn-ghost{background:var(--panel);box-shadow:5px 5px 0 var(--ink);}
+  .btn-ghost:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);}
+
+  /* growth chart signature */
+  .growth-box{position:relative;background:var(--panel);border:3px solid var(--ink);border-radius:24px;padding:30px;box-shadow:8px 8px 0 var(--ink);z-index:1;}
+  .growth-box h3{font-size:1rem;margin-bottom:18px;color:var(--teal);}
+  .ruler{display:flex;flex-direction:column-reverse;gap:0;}
+  .ruler .mark{display:flex;align-items:center;gap:10px;height:34px;border-bottom:1px dashed #ddd;}
+  .ruler .mark .cm{width:44px;font-size:0.75rem;color:#999;font-weight:700;}
+  .ruler .mark .bar{height:14px;background:linear-gradient(90deg,var(--teal),var(--coral));border-radius:8px;transition:width .3s;}
+  .ruler .mark:nth-child(1) .bar{width:30%;}
+  .ruler .mark:nth-child(2) .bar{width:48%;}
+  .ruler .mark:nth-child(3) .bar{width:64%;}
+  .ruler .mark:nth-child(4) .bar{width:80%;}
+  .ruler .mark:nth-child(5) .bar{width:96%;}
+  .growth-note{margin-top:16px;font-size:0.85rem;color:#777;font-weight:600;}
+
+  section{padding:90px 0;}
+  .section-tag{display:inline-block;background:var(--yellow);border:2px solid var(--ink);border-radius:20px;padding:6px 18px;font-weight:700;font-size:0.85rem;margin-bottom:20px;}
+  .section-title{font-family:'Baloo 2',cursive;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:700;margin-bottom:46px;max-width:640px;}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .avatar-card{background:var(--teal);border:3px solid var(--ink);border-radius:28px;padding:40px;text-align:center;box-shadow:8px 8px 0 var(--ink);color:white;}
+  .avatar-circle{width:150px;height:150px;border-radius:50%;background:var(--cream);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:4rem;border:3px solid var(--ink);}
+  .avatar-card h3{font-size:1.3rem;margin-bottom:4px;}
+  .avatar-card p{opacity:0.9;font-size:0.9rem;}
+  .about-text p{margin-bottom:18px;color:#3d434b;}
+  .about-text p:first-child{font-size:1.15rem;font-weight:700;color:var(--ink);}
+
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:60px;}
+  .stat-card{background:var(--panel);border:2px solid var(--ink);border-radius:18px;padding:26px;text-align:center;box-shadow:5px 5px 0 var(--ink);}
+  .stat-card .num{font-family:'Baloo 2',cursive;font-size:2.1rem;color:var(--coral);font-weight:700;}
+  .stat-card .lbl{font-size:0.82rem;font-weight:700;color:#666;margin-top:4px;}
+  @media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr);}.about-grid{grid-template-columns:1fr;}.hero .wrap{grid-template-columns:1fr;}}
+
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{background:var(--panel);border:2px solid var(--ink);border-radius:20px;padding:30px;box-shadow:6px 6px 0 var(--ink);transition:.2s;}
+  .service-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);}
+  .service-card .icon{font-size:2.2rem;margin-bottom:14px;}
+  .service-card h3{font-size:1.1rem;margin-bottom:8px;}
+  .service-card p{font-size:0.9rem;color:#666;}
+  @media(max-width:760px){.service-grid{grid-template-columns:1fr;}}
+
+  .timeline-strip{display:flex;flex-direction:column;gap:22px;}
+  .tl-row{display:grid;grid-template-columns:140px 1fr;gap:24px;background:var(--panel);border:2px solid var(--ink);border-radius:16px;padding:22px 26px;}
+  .tl-row .yr{font-family:'Baloo 2',cursive;color:var(--teal);font-weight:700;}
+  .tl-row h3{font-size:1.05rem;margin-bottom:4px;}
+  .tl-row p{font-size:0.88rem;color:#666;}
+  @media(max-width:600px){.tl-row{grid-template-columns:1fr;}}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .testi{background:var(--yellow);border:2px solid var(--ink);border-radius:18px;padding:26px;font-size:0.92rem;position:relative;}
+  .testi::before{content:'"';font-family:'Baloo 2',cursive;font-size:3rem;color:rgba(0,0,0,0.15);position:absolute;top:6px;left:16px;}
+  .testi .who{margin-top:14px;font-weight:700;font-size:0.82rem;}
+  @media(max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  .contact-card{background:var(--ink);color:white;border-radius:28px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .contact-card .k{color:var(--yellow);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;}
+  .contact-card .v{font-size:1.05rem;margin-bottom:22px;}
+  .hours-table{width:100%;font-size:0.92rem;}
+  .hours-table td{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);}
+  .hours-table td:last-child{text-align:right;color:var(--coral);font-weight:700;}
+  @media(max-width:760px){.contact-card{grid-template-columns:1fr;padding:34px;}}
+
+  footer{text-align:center;padding:40px 0;font-weight:700;color:#777;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Dr. Nusrat <span>Jahan</span></div>
+    <div class="navlinks">
+      <a href="#about">পরিচিতি</a>
+      <a href="#services">সেবা</a>
+      <a href="#experience">অভিজ্ঞতা</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="badge">শিশু বিশেষজ্ঞ, FCPS (Paediatrics)</div>
+      <h1>আপনার সন্তানের <span class="hl">হাসিমাখা</span> বেড়ে ওঠার সঙ্গী</h1>
+      <p>নবজাতক থেকে কিশোর বয়স পর্যন্ত প্রতিটি ধাপে যত্নশীল ও বন্ধুত্বপূর্ণ চিকিৎসা সেবা — ১২ বছর ধরে হাজারো পরিবারের আস্থা।</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-solid">সিরিয়াল বুক করুন</a>
+        <a href="#about" class="btn btn-ghost">আরও জানুন</a>
+      </div>
+    </div>
+    <div class="growth-box">
+      <h3>📈 বৃদ্ধির ট্র্যাকিং</h3>
+      <div class="ruler">
+        <div class="mark"><div class="cm">১ বছর</div><div class="bar"></div></div>
+        <div class="mark"><div class="cm">৩ বছর</div><div class="bar"></div></div>
+        <div class="mark"><div class="cm">৬ বছর</div><div class="bar"></div></div>
+        <div class="mark"><div class="cm">৯ বছর</div><div class="bar"></div></div>
+        <div class="mark"><div class="cm">১২ বছর</div><div class="bar"></div></div>
+      </div>
+      <div class="growth-note">প্রতিটি ভিজিটে গ্রোথ চার্ট আপডেট করা হয়</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag">পরিচিতি</div>
+    <h2 class="section-title">শিশুদের ভাষা বোঝেন যিনি</h2>
+    <div class="about-grid">
+      <div class="avatar-card">
+        <div class="avatar-circle">👩‍⚕️</div>
+        <h3>ডা. নুসরাত জাহান</h3>
+        <p>MBBS, FCPS (Paediatrics)<br>BMDC Reg: 39104</p>
+      </div>
+      <div class="about-text">
+        <p>"শিশুরা কথায় নয়, আচরণে অসুস্থতা প্রকাশ করে — তাই ধৈর্য ধরে পর্যবেক্ষণ করাটাই আমার কাজের প্রথম ধাপ।"</p>
+        <p>ডা. নুসরাত জাহান গত ১২ বছর ধরে নবজাতক পরিচর্যা, টিকাদান কর্মসূচি এবং শিশুদের পুষ্টি বিষয়ক চিকিৎসায় কাজ করছেন।</p>
+        <p>তিনি ঢাকা শিশু হাসপাতালে সিনিয়র কনসালট্যান্ট হিসেবে কর্মরত এবং নিয়মিত মা ও শিশু স্বাস্থ্য বিষয়ক সচেতনতামূলক সেশন পরিচালনা করেন।</p>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">১২+</div><div class="lbl">বছরের অভিজ্ঞতা</div></div>
+      <div class="stat-card"><div class="num">১৫,০০০+</div><div class="lbl">শিশু রোগী</div></div>
+      <div class="stat-card"><div class="num">৩০০০+</div><div class="lbl">টিকাদান সম্পন্ন</div></div>
+      <div class="stat-card"><div class="num">৪.৯/৫</div><div class="lbl">অভিভাবক রেটিং</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-tag">সেবাসমূহ</div>
+    <h2 class="section-title">যেসব বিষয়ে সহায়তা করা হয়</h2>
+    <div class="service-grid">
+      <div class="service-card"><div class="icon">👶</div><h3>নবজাতক পরিচর্যা</h3><p>জন্মের পর থেকে প্রথম মাসগুলোর যত্ন ও পর্যবেক্ষণ।</p></div>
+      <div class="service-card"><div class="icon">💉</div><h3>টিকাদান কর্মসূচি</h3><p>জাতীয় ইপিআই সূচি অনুযায়ী সম্পূর্ণ টিকাদান।</p></div>
+      <div class="service-card"><div class="icon">📏</div><h3>গ্রোথ ও পুষ্টি পর্যবেক্ষণ</h3><p>নিয়মিত উচ্চতা-ওজন ট্র্যাকিং ও পুষ্টি পরামর্শ।</p></div>
+      <div class="service-card"><div class="icon">🤧</div><h3>সাধারণ অসুস্থতা চিকিৎসা</h3><p>জ্বর, সর্দি-কাশি, পেটের সমস্যার দ্রুত সমাধান।</p></div>
+      <div class="service-card"><div class="icon">🧠</div><h3>উন্নয়নমূলক মূল্যায়ন</h3><p>বয়স অনুযায়ী শারীরিক-মানসিক বিকাশ পর্যালোচনা।</p></div>
+      <div class="service-card"><div class="icon">🌙</div><h3>জরুরি পরামর্শ</h3><p>ফোনে জরুরি পেডিয়াট্রিক পরামর্শ সুবিধা।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-tag">কর্মজীবন</div>
+    <h2 class="section-title">অভিজ্ঞতার পথচলা</h2>
+    <div class="timeline-strip">
+      <div class="tl-row"><div class="yr">২০১৯–বর্তমান</div><div><h3>সিনিয়র কনসালট্যান্ট, শিশুরোগ বিভাগ</h3><p>ঢাকা শিশু হাসপাতাল</p></div></div>
+      <div class="tl-row"><div class="yr">২০১৪–২০১৯</div><div><h3>মেডিকেল অফিসার, নবজাতক বিভাগ</h3><p>স্কয়ার হাসপাতাল, ঢাকা</p></div></div>
+      <div class="tl-row"><div class="yr">২০১০–২০১৪</div><div><h3>FCPS প্রশিক্ষণ, শিশুরোগ বিদ্যা</h3><p>বাংলাদেশ শিশু হাসপাতাল ও ইনস্টিটিউট</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">অভিভাবকদের মতামত</div>
+    <h2 class="section-title">যা বলেছেন অভিভাবকরা</h2>
+    <div class="testi-grid">
+      <div class="testi">ম্যাডাম এত সুন্দরভাবে আমার বাচ্চার সাথে কথা বলেন যে ও ভয় পায় না একদমই।<div class="who">— একজন মা, উত্তরা</div></div>
+      <div class="testi">টিকাদান শিডিউল নিয়ে কখনো দুশ্চিন্তা করতে হয়নি, সব মনে করিয়ে দেন।<div class="who">— অভিভাবক, ধানমন্ডি</div></div>
+      <div class="testi">রাত ২টায় ফোন দিয়েও পরামর্শ পেয়েছি — এত আন্তরিক ডাক্তার সচরাচর মেলে না।<div class="who">— অভিভাবক</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-tag">যোগাযোগ</div>
+    <h2 class="section-title">সিরিয়ালের জন্য যোগাযোগ করুন</h2>
+    <div class="contact-card">
+      <div>
+        <div class="k">চেম্বার</div><div class="v">ঢাকা শিশু হাসপাতাল, শ্যামলী, ঢাকা</div>
+        <div class="k">ফোন</div><div class="v">+৮৮০ ১৮xx-xxxxxx</div>
+        <div class="k">ইমেইল</div><div class="v">appointments.nusrat@example.com</div>
+      </div>
+      <table class="hours-table">
+        <tr><td>শনি — বৃহস্পতি</td><td>সকাল ৯টা — দুপুর ২টা</td></tr>
+        <tr><td>শনি — বুধ (সন্ধ্যা)</td><td>সন্ধ্যা ৬টা — রাত ৮টা</td></tr>
+        <tr><td>শুক্রবার</td><td>জরুরি সেবা মাত্র</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>© ২০২৬ Dr. Nusrat Jahan · শিশু বিশেষজ্ঞ · সকল তথ্য প্রদর্শনী উদ্দেশ্যে 🧸</footer>
+
+</body>
+</html>

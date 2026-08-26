@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Kamrul Hasan — General Physician</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A;
+    --gold:#C89B3C;
+    --offwhite:#F5F2EC;
+    --brick:#A63A32;
+    --slate:#5B6B7C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--offwhite);color:var(--navy);font-family:'Source Sans 3',sans-serif;line-height:1.65;}
+  h1,h2,h3,.display{font-family:'Zilla Slab',serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy);border-bottom:3px solid var(--gold);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;color:#fff;}
+  .brand{font-family:'Zilla Slab',serif;font-weight:700;font-size:1.2rem;}
+  .brand span{color:var(--gold);}
+  .navlinks{display:flex;gap:28px;font-size:.9rem;font-weight:500;}
+  .navlinks a:hover{color:var(--gold);}
+  .cta-btn{background:var(--gold);color:var(--navy);padding:10px 22px;font-weight:700;font-size:.85rem;border-radius:2px;}
+  .navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;}
+  .navtoggle span{width:24px;height:2px;background:#fff;}
+
+  .hero{background:var(--navy);color:#fff;padding:170px 0 100px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:2;}
+  .hero h1{font-size:3.2rem;font-weight:700;line-height:1.12;margin:16px 0 20px;}
+  .hero h1 span{color:var(--gold);}
+  .hero p{max-width:460px;color:rgba(255,255,255,.75);font-size:1.02rem;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:16px;}
+  .ghost-btn{border:1.5px solid var(--gold);color:var(--gold);padding:9px 22px;border-radius:2px;font-weight:600;font-size:.85rem;}
+  .badge-row{display:flex;gap:18px;margin-top:34px;flex-wrap:wrap;}
+  .badge{border:1px solid rgba(255,255,255,.2);padding:10px 16px;font-size:.8rem;border-radius:2px;color:rgba(255,255,255,.85);}
+  .stetho-panel{display:flex;align-items:center;justify-content:center;}
+  .stetho-panel svg{width:260px;height:auto;}
+
+  section{padding:90px 0;}
+  .section-head{max-width:600px;margin-bottom:46px;}
+  .section-head h2{font-size:2.1rem;font-weight:700;color:var(--navy);margin-top:8px;}
+
+  .about{background:#fff;border-top:4px solid var(--gold);}
+  .about-grid{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start;}
+  .avatar-box{width:200px;height:200px;background:var(--navy);color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Zilla Slab',serif;font-size:3rem;font-weight:700;border:4px solid var(--gold);}
+  .stats{display:flex;gap:0;margin-top:22px;border:1px solid var(--navy);}
+  .stat{flex:1;padding:14px;border-right:1px solid var(--navy);text-align:center;}
+  .stat:last-child{border-right:0;}
+  .stat b{display:block;font-family:'Zilla Slab',serif;font-size:1.6rem;color:var(--brick);}
+  .stat span{font-size:.72rem;text-transform:uppercase;color:#5a6a7c;}
+  .about-body p{margin-bottom:16px;color:#3a4658;max-width:620px;}
+
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--navy);border:1px solid var(--navy);}
+  .cred-card{background:#fff;padding:26px 22px;}
+  .cred-card h3{font-size:1.02rem;margin:8px 0 6px;}
+  .cred-card p{font-size:.85rem;color:#5a6a7c;}
+
+  .expertise{background:var(--offwhite);}
+  .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .exp-card{background:#fff;border-left:4px solid var(--gold);padding:26px 24px;box-shadow:0 4px 14px rgba(27,42,74,.06);}
+  .exp-card h3{font-size:1.08rem;margin-bottom:8px;}
+  .exp-card p{font-size:.87rem;color:#5a6a7c;}
+
+  .timeline{max-width:760px;margin:0 auto;}
+  .tl-item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #ddd6c8;}
+  .tl-item:last-child{border-bottom:0;}
+  .tl-year{font-family:'Zilla Slab',serif;color:var(--brick);font-weight:700;}
+  .tl-item h3{font-size:1.05rem;margin-bottom:4px;}
+  .tl-item p{color:#5a6a7c;font-size:.88rem;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .testi-card{background:#fff;padding:26px 22px;border-top:3px solid var(--gold);box-shadow:0 4px 14px rgba(27,42,74,.06);}
+  .testi-card p{font-size:.9rem;color:#3a4658;}
+  .testi-name{margin-top:14px;font-weight:600;font-size:.82rem;color:var(--navy);}
+
+  .contact{background:var(--navy);color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .contact .section-head h2{color:#fff;}
+  .info-row{margin-bottom:18px;color:rgba(255,255,255,.85);}
+  .info-row .eyebrow{margin-bottom:4px;}
+  form{display:flex;flex-direction:column;gap:12px;}
+  input,textarea{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;padding:12px 14px;font-family:inherit;font-size:.9rem;border-radius:2px;}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.5);}
+  input:focus,textarea:focus{outline:2px solid var(--gold);}
+  button.submit{background:var(--gold);color:var(--navy);padding:13px;font-weight:700;border:0;border-radius:2px;cursor:pointer;font-size:.9rem;}
+  .form-note{font-size:.82rem;color:var(--gold);display:none;}
+  .form-note.show{display:block;}
+
+  footer{background:#12203a;color:rgba(255,255,255,.6);padding:36px 0;text-align:center;font-size:.82rem;}
+
+  @media(max-width:880px){
+    .navlinks,.cta-btn{display:none;}
+    .navtoggle{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.2rem;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .cred-grid,.exp-grid,.testi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Dr. Kamrul Hasan<span>, MBBS</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Services</a>
+      <a href="#timeline">Experience</a>
+      <a href="#testimonials">Patients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Book a Visit</a>
+    <button class="navtoggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">General Physician · Est. 2010 · Rajshahi Family Clinic</div>
+      <h1>Your family's<br>first call for<br><span>every concern.</span></h1>
+      <p>Sixteen years as the doctor families turn to first — for fevers, checkups, chronic conditions, and the questions that don't fit neatly into a specialty.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-btn">Book a Visit</a>
+        <a href="#about" class="ghost-btn">Meet Dr. Hasan</a>
+      </div>
+      <div class="badge-row">
+        <div class="badge">BM&amp;DC Licensed</div>
+        <div class="badge">16+ Years</div>
+        <div class="badge">MRCGP (UK)</div>
+      </div>
+    </div>
+    <div class="stetho-panel">
+      <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C89B3C" stroke-width="4" stroke-linecap="round">
+        <path d="M40,20 C40,60 40,80 60,90 C80,100 80,120 60,130 C40,140 40,160 60,170"/>
+        <path d="M140,20 C140,60 140,80 120,90 C100,100 100,120 120,130 C140,140 140,160 120,170"/>
+        <path d="M60,170 C60,195 80,205 100,205 C120,205 140,195 140,170"/>
+        <circle cx="100" cy="215" r="18" fill="#C89B3C" stroke="none"/>
+        <circle cx="40" cy="14" r="8" fill="none" stroke="#C89B3C"/>
+        <circle cx="140" cy="14" r="8" fill="none" stroke="#C89B3C"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="avatar-box">KH</div>
+      <div class="stats">
+        <div class="stat"><b>16+</b><span>Yrs Practice</span></div>
+        <div class="stat"><b>12,000+</b><span>Patients</span></div>
+        <div class="stat"><b>3</b><span>Generations Treated</span></div>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="eyebrow">About</div>
+      <h2 style="margin:10px 0 18px;font-size:1.9rem;">Trusted care, close to home.</h2>
+      <p>Dr. Kamrul Hasan completed his MBBS at Rajshahi Medical College and holds an MRCGP from the Royal College of General Practitioners, UK. He has run Rajshahi Family Clinic since 2010, treating patients across every stage of life.</p>
+      <p>Many of his patients have been with him for over a decade — he's treated grandparents, their children, and now their grandchildren, building the kind of continuity that catches problems early.</p>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Credentials</div>
+      <h2>Training &amp; certifications</h2>
+    </div>
+  </div>
+  <div class="cred-grid">
+    <div class="cred-card"><div class="eyebrow">Degree</div><h3>MBBS</h3><p>Rajshahi Medical College</p></div>
+    <div class="cred-card"><div class="eyebrow">Membership</div><h3>MRCGP</h3><p>Royal College of General Practitioners, UK</p></div>
+    <div class="cred-card"><div class="eyebrow">Certification</div><h3>Advanced Life Support</h3><p>Renewed annually</p></div>
+    <div class="cred-card"><div class="eyebrow">Registration</div><h3>BM&amp;DC Licensed</h3><p>Bangladesh Medical &amp; Dental Council</p></div>
+    <div class="cred-card"><div class="eyebrow">Focus</div><h3>Chronic Disease Management</h3><p>Diabetes and hypertension long-term care</p></div>
+    <div class="cred-card"><div class="eyebrow">Community</div><h3>Free Monthly Health Camps</h3><p>Since 2012, for underserved families</p></div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Services</div>
+      <h2>What I can help with</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><h3>General Checkups</h3><p>Annual physicals and preventive screening.</p></div>
+      <div class="exp-card"><h3>Diabetes &amp; Hypertension</h3><p>Long-term chronic condition management.</p></div>
+      <div class="exp-card"><h3>Fever &amp; Infections</h3><p>Fast diagnosis for acute illness.</p></div>
+      <div class="exp-card"><h3>Vaccinations</h3><p>Adult and travel immunizations.</p></div>
+      <div class="exp-card"><h3>Referral Coordination</h3><p>Connecting you to the right specialist when needed.</p></div>
+      <div class="exp-card"><h3>Family Health Planning</h3><p>Ongoing care across every age group.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Journey</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">2005</div><div><h3>MBBS, Rajshahi Medical College</h3><p>Graduated; began general practice residency.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2009</div><div><h3>MRCGP, United Kingdom</h3><p>Royal College of General Practitioners.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2010–Present</div><div><h3>Founder, Rajshahi Family Clinic</h3><p>Serving Rajshahi families across generations.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2012–Present</div><div><h3>Community Health Camps</h3><p>Monthly free checkups for underserved families.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Patients</div>
+      <h2>What patients say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p>Three generations of our family have seen Dr. Hasan. He remembers all of us.</p><div class="testi-name">— Family patient</div></div>
+      <div class="testi-card"><p>My diabetes has been under control for five years now, thanks to his steady follow-up.</p><div class="testi-name">— Diabetes patient</div></div>
+      <div class="testi-card"><p>He caught my father's early symptoms and referred him before it became serious.</p><div class="testi-name">— Family of a patient</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="margin:10px 0 24px;font-size:1.9rem;">Book a visit</h2>
+      <div class="info-row"><div class="eyebrow">Clinic</div>Rajshahi Family Clinic</div>
+      <div class="info-row"><div class="eyebrow">Address</div>Ghoramara, Rajshahi</div>
+      <div class="info-row"><div class="eyebrow">Phone</div>+880 1XXX-XXXXXX</div>
+      <div class="info-row"><div class="eyebrow">Hours</div>Sat–Thu, 9:00 AM – 1:00 PM &amp; 4:00 PM – 8:00 PM</div>
+    </div>
+    <form id="contactForm">
+      <input type="text" placeholder="Full name" required>
+      <input type="tel" placeholder="Phone number" required>
+      <textarea rows="4" placeholder="What brings you in?"></textarea>
+      <button type="submit" class="submit">Request appointment</button>
+      <div class="form-note" id="formNote">Thank you — the clinic will call to confirm your slot.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="display" style="color:#fff;margin-bottom:8px;font-weight:700;">Dr. Kamrul Hasan, MBBS, MRCGP</div>
+  <div>Rajshahi Family Clinic · &copy; 2026 All rights reserved</div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formNote').classList.add('show');
+    this.reset();
+  });
+</script>
+</body>
+</html>

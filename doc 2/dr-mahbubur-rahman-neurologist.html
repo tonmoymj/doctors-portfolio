@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Mahbubur Rahman | Neurologist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D0221;
+    --panel:#161033;
+    --violet:#6E44FF;
+    --lavender:#C77DFF;
+    --text:#EDEBFA;
+    --muted:#8b83b0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;}
+  h1,h2,h3,.disp{font-family:'Sora',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,2,33,0.8);backdrop-filter:blur(10px);border-bottom:1px solid rgba(110,68,255,0.2);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:78px;}
+  .brand{font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;}
+  .brand span{color:var(--lavender);}
+  .navlinks{display:flex;gap:34px;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);}
+  .navlinks a:hover{color:var(--lavender);}
+  @media(max-width:760px){.navlinks{display:none;}}
+
+  .hero{min-height:100vh;display:flex;align-items:center;padding-top:78px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(110,68,255,0.25),transparent 70%);border-radius:50%;}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;}
+  .eyebrow{color:var(--lavender);font-size:0.8rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:24px;}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4.1rem);font-weight:700;line-height:1.12;margin-bottom:26px;}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--violet),var(--lavender));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero p{color:var(--muted);max-width:470px;margin-bottom:36px;font-size:1.05rem;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{padding:16px 32px;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:10px;transition:.25s;display:inline-block;}
+  .btn-solid{background:var(--violet);color:white;font-weight:600;}
+  .btn-solid:hover{background:#5a30e0;box-shadow:0 8px 30px rgba(110,68,255,0.4);}
+  .btn-ghost{border:1px solid rgba(237,235,250,0.2);}
+  .btn-ghost:hover{border-color:var(--lavender);color:var(--lavender);}
+
+  /* neural network signature */
+  .neuro-box{position:relative;height:420px;}
+  .neuro-box svg{width:100%;height:100%;}
+  .n-line{stroke:rgba(110,68,255,0.35);stroke-width:1;}
+  .n-line.active{stroke:var(--lavender);stroke-width:1.4;}
+  .n-node{fill:var(--panel);stroke:var(--violet);stroke-width:1.6;}
+  .n-node.lit{fill:var(--lavender);animation:glow 2.4s ease-in-out infinite;}
+  @keyframes glow{0%,100%{opacity:0.6;}50%{opacity:1;}}
+
+  section{padding:120px 0;}
+  .section-tag{color:var(--lavender);font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:18px;}
+  .section-title{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:700;margin-bottom:50px;max-width:640px;}
+
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.4fr;gap:56px;}
+  .info-card{background:var(--panel);border:1px solid rgba(110,68,255,0.2);border-radius:16px;padding:34px;}
+  .info-card .row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(237,235,250,0.08);font-size:0.9rem;}
+  .info-card .row:last-child{border-bottom:none;}
+  .info-card .row span:first-child{color:var(--muted);}
+  .about-text p{margin-bottom:20px;color:#c6c1e0;max-width:560px;}
+  .about-text p:first-child{font-family:'Sora',sans-serif;font-size:1.2rem;color:var(--text);font-weight:500;}
+
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:1px solid rgba(237,235,250,0.08);border-bottom:1px solid rgba(237,235,250,0.08);}
+  .stat{padding:38px 20px;text-align:center;border-right:1px solid rgba(237,235,250,0.08);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Sora',sans-serif;font-size:2.4rem;font-weight:700;color:var(--lavender);}
+  .stat .lbl{color:var(--muted);font-size:0.8rem;margin-top:6px;}
+  @media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr);}.about-grid{grid-template-columns:1fr;}.hero .wrap{grid-template-columns:1fr;}}
+
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .service-card{background:var(--panel);border:1px solid rgba(110,68,255,0.15);border-radius:16px;padding:32px;transition:.25s;}
+  .service-card:hover{border-color:var(--violet);transform:translateY(-4px);}
+  .service-card .idx{font-family:'Sora',sans-serif;color:var(--violet);font-weight:700;font-size:1.4rem;margin-bottom:16px;}
+  .service-card h3{font-size:1.1rem;margin-bottom:10px;}
+  .service-card p{font-size:0.9rem;color:var(--muted);}
+  @media(max-width:760px){.service-grid{grid-template-columns:1fr;}}
+
+  .timeline{border-left:1px solid rgba(110,68,255,0.3);padding-left:36px;display:flex;flex-direction:column;gap:44px;}
+  .tl-item{position:relative;}
+  .tl-item::before{content:'';position:absolute;left:-42px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--lavender);}
+  .tl-year{color:var(--lavender);font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+  .tl-item h3{font-size:1.2rem;margin-bottom:6px;}
+  .tl-item p{color:var(--muted);font-size:0.92rem;max-width:520px;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi{background:var(--panel);border-left:2px solid var(--lavender);border-radius:0 12px 12px 0;padding:28px;font-size:0.92rem;color:#c6c1e0;}
+  .testi .who{margin-top:16px;font-size:0.8rem;color:var(--muted);}
+  @media(max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  .contact{background:var(--panel);border:1px solid rgba(110,68,255,0.2);border-radius:20px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:46px;}
+  .contact .k{color:var(--lavender);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px;}
+  .contact .v{font-size:1.05rem;margin-bottom:24px;}
+  .hours-table{width:100%;font-size:0.92rem;}
+  .hours-table td{padding:11px 0;border-bottom:1px solid rgba(237,235,250,0.08);color:var(--muted);}
+  .hours-table td:last-child{text-align:right;color:var(--text);}
+  @media(max-width:760px){.contact{grid-template-columns:1fr;padding:34px;}}
+
+  footer{text-align:center;padding:44px 0;color:var(--muted);font-size:0.85rem;border-top:1px solid rgba(237,235,250,0.06);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Dr. Mahbubur <span>Rahman</span></div>
+    <div class="navlinks">
+      <a href="#about">পরিচিতি</a>
+      <a href="#services">সেবা</a>
+      <a href="#experience">অভিজ্ঞতা</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Consultant Neurologist</div>
+      <h1>মস্তিষ্কের <span class="grad">জটিল সংকেত</span> পড়তে জানি</h1>
+      <p>স্ট্রোক, মৃগীরোগ, মাইগ্রেন ও স্নায়ুতন্ত্রের জটিল রোগ নির্ণয় ও চিকিৎসায় ১৬ বছরের অভিজ্ঞতা।</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-solid">অ্যাপয়েন্টমেন্ট নিন</a>
+        <a href="#about" class="btn btn-ghost">প্রোফাইল দেখুন</a>
+      </div>
+    </div>
+    <div class="neuro-box">
+      <svg viewBox="0 0 320 380">
+        <line class="n-line active" x1="60" y1="60" x2="160" y2="150"/>
+        <line class="n-line" x1="60" y1="60" x2="60" y2="200"/>
+        <line class="n-line active" x1="160" y1="150" x2="260" y2="80"/>
+        <line class="n-line" x1="160" y1="150" x2="100" y2="270"/>
+        <line class="n-line active" x1="160" y1="150" x2="230" y2="250"/>
+        <line class="n-line" x1="60" y1="200" x2="100" y2="270"/>
+        <line class="n-line" x1="230" y1="250" x2="180" y2="330"/>
+        <line class="n-line active" x1="100" y1="270" x2="180" y2="330"/>
+        <line class="n-line" x1="260" y1="80" x2="230" y2="250"/>
+        <circle class="n-node lit" cx="60" cy="60" r="7"/>
+        <circle class="n-node lit" cx="160" cy="150" r="9"/>
+        <circle class="n-node" cx="260" cy="80" r="6"/>
+        <circle class="n-node" cx="60" cy="200" r="6"/>
+        <circle class="n-node lit" cx="230" cy="250" r="7"/>
+        <circle class="n-node" cx="100" cy="270" r="6"/>
+        <circle class="n-node lit" cx="180" cy="330" r="7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="stats-row">
+    <div class="stat"><div class="num">১৬+</div><div class="lbl">বছরের অভিজ্ঞতা</div></div>
+    <div class="stat"><div class="num">৫,৮০০+</div><div class="lbl">স্ট্রোক কেস ব্যবস্থাপনা</div></div>
+    <div class="stat"><div class="num">১৯,০০০+</div><div class="lbl">রোগী পরামর্শ</div></div>
+    <div class="stat"><div class="num">MD</div><div class="lbl">Neurology, FCPS</div></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag">পরিচিতি</div>
+    <h2 class="section-title">স্নায়ুতন্ত্রের গোলকধাঁধায় সঠিক পথের দিশারি</h2>
+    <div class="about-grid">
+      <div class="info-card">
+        <div class="row"><span>বিশেষত্ব</span><span>Neurology, Stroke Medicine</span></div>
+        <div class="row"><span>ডিগ্রি</span><span>MBBS, MD (Neurology), FCPS</span></div>
+        <div class="row"><span>প্রতিষ্ঠান</span><span>জাতীয় স্নায়ুবিজ্ঞান ইনস্টিটিউট</span></div>
+        <div class="row"><span>নিবন্ধন নং</span><span>BMDC-A-37260</span></div>
+        <div class="row"><span>ভাষা</span><span>বাংলা, ইংরেজি</span></div>
+      </div>
+      <div class="about-text">
+        <p>ডা. মাহবুবুর রহমান একজন কনসালট্যান্ট নিউরোলজিস্ট, যিনি স্ট্রোক, মৃগীরোগ, পারকিনসন্স ও মাইগ্রেন চিকিৎসায় বিশেষায়িত।</p>
+        <p>তিনি বিশ্বাস করেন, মস্তিষ্কের প্রতিটি সংকেত একটি গল্প বলে — নিখুঁত নির্ণয়ের জন্য প্রয়োজন গভীর মনোযোগ ও আধুনিক প্রযুক্তির সমন্বয়।</p>
+        <p>বর্তমানে তিনি জাতীয় স্নায়ুবিজ্ঞান ইনস্টিটিউট ও হাসপাতালে সিনিয়র কনসালট্যান্ট হিসেবে কর্মরত এবং স্ট্রোক জরুরি বিভাগের সমন্বয়ক।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-tag">সেবাসমূহ</div>
+    <h2 class="section-title">চিকিৎসার ক্ষেত্রসমূহ</h2>
+    <div class="service-grid">
+      <div class="service-card"><div class="idx">01</div><h3>স্ট্রোক ব্যবস্থাপনা</h3><p>জরুরি স্ট্রোক নির্ণয় ও দ্রুত চিকিৎসা প্রদান।</p></div>
+      <div class="service-card"><div class="idx">02</div><h3>মৃগীরোগ চিকিৎসা</h3><p>খিঁচুনি নিয়ন্ত্রণে দীর্ঘমেয়াদি ওষুধ ব্যবস্থাপনা।</p></div>
+      <div class="service-card"><div class="idx">03</div><h3>মাইগ্রেন ও মাথাব্যথা</h3><p>দীর্ঘস্থায়ী মাথাব্যথার কারণ নির্ণয় ও চিকিৎসা।</p></div>
+      <div class="service-card"><div class="idx">04</div><h3>পারকিনসন্স রোগ</h3><p>চলাফেরার সমস্যা ও কম্পনজনিত রোগের চিকিৎসা।</p></div>
+      <div class="service-card"><div class="idx">05</div><h3>নার্ভ কন্ডাকশন স্টাডি</h3><p>স্নায়ু ও পেশির কার্যক্ষমতা পরীক্ষা।</p></div>
+      <div class="service-card"><div class="idx">06</div><h3>স্মৃতিভ্রম মূল্যায়ন</h3><p>ডিমেনশিয়া ও আলঝেইমার প্রাথমিক নির্ণয়।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-tag">কর্মজীবন</div>
+    <h2 class="section-title">অভিজ্ঞতার সময়রেখা</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">২০১৭ — বর্তমান</div><h3>সিনিয়র কনসালট্যান্ট, নিউরোলজি</h3><p>জাতীয় স্নায়ুবিজ্ঞান ইনস্টিটিউট ও হাসপাতাল, ঢাকা।</p></div>
+      <div class="tl-item"><div class="tl-year">২০১১ — ২০১৭</div><h3>মেডিকেল অফিসার</h3><p>ঢাকা মেডিকেল কলেজ হাসপাতাল, নিউরোলজি বিভাগ।</p></div>
+      <div class="tl-item"><div class="tl-year">২০০৬ — ২০১১</div><h3>MD (Neurology), ফেলোশিপ</h3><p>বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয়।</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">রোগীদের অভিজ্ঞতা</div>
+    <h2 class="section-title">তারা যা বলেছেন</h2>
+    <div class="testi-grid">
+      <div class="testi">স্ট্রোকের পর দ্রুত চিকিৎসায় আমার বাবা এখন প্রায় স্বাভাবিক জীবনে ফিরেছেন।<div class="who">— রোগীর পুত্র</div></div>
+      <div class="testi">বছরের পর বছরের মাইগ্রেন এখন সম্পূর্ণ নিয়ন্ত্রণে, ধন্যবাদ স্যারকে।<div class="who">— দীর্ঘমেয়াদী রোগী</div></div>
+      <div class="testi">মৃগীরোগের চিকিৎসায় খুবই যত্নশীল ও ধৈর্যশীল পরামর্শ পেয়েছি।<div class="who">— রোগীর পরিবার</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-tag">যোগাযোগ</div>
+    <h2 class="section-title">অ্যাপয়েন্টমেন্টের জন্য যোগাযোগ করুন</h2>
+    <div class="contact">
+      <div>
+        <div class="k">চেম্বার</div><div class="v">জাতীয় স্নায়ুবিজ্ঞান ইনস্টিটিউট, শাহবাগ, ঢাকা</div>
+        <div class="k">ফোন</div><div class="v">+৮৮০ ১৬xx-xxxxxx</div>
+        <div class="k">ইমেইল</div><div class="v">consult.mahbubur@example.com</div>
+      </div>
+      <table class="hours-table">
+        <tr><td>রবি — বৃহস্পতি</td><td>সকাল ৯টা — দুপুর ১টা</td></tr>
+        <tr><td>শনি — মঙ্গল (সন্ধ্যা)</td><td>সন্ধ্যা ৬টা — রাত ৯টা</td></tr>
+        <tr><td>শুক্রবার</td><td>বন্ধ</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>© ২০২৬ Dr. Mahbubur Rahman · Consultant Neurologist · সকল তথ্য প্রদর্শনী উদ্দেশ্যে</footer>
+
+</body>
+</html>

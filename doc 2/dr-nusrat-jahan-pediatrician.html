@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Nusrat Jahan — Pediatrician</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#EAF6FB;
+    --yellow:#FFC94A;
+    --coral:#FF7F6B;
+    --mint:#7FD9C4;
+    --navy:#1F3B4D;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--sky);color:var(--navy);font-family:'Nunito Sans',sans-serif;line-height:1.65;}
+  h1,h2,h3,.display{font-family:'Baloo 2',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);font-weight:700;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(234,246,251,.9);backdrop-filter:blur(8px);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .brand{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:var(--navy);}
+  .brand span{color:var(--coral);}
+  .navlinks{display:flex;gap:28px;font-size:.92rem;font-weight:600;}
+  .navlinks a:hover{color:var(--coral);}
+  .cta-btn{background:var(--coral);color:#fff;padding:11px 24px;border-radius:40px;font-weight:700;font-size:.88rem;box-shadow:0 4px 0 #d9614e;}
+  .navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;}
+  .navtoggle span{width:24px;height:2px;background:var(--navy);}
+
+  .hero{position:relative;padding:170px 0 100px;overflow:hidden;}
+  .blob{position:absolute;border-radius:44% 56% 62% 38%/46% 40% 60% 54%;z-index:0;}
+  .blob1{width:520px;height:520px;background:var(--mint);opacity:.5;top:-120px;right:-140px;}
+  .blob2{width:300px;height:300px;background:var(--yellow);opacity:.45;bottom:-80px;left:-80px;}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  .hero h1{font-size:3.3rem;font-weight:700;line-height:1.1;margin:16px 0 20px;color:var(--navy);}
+  .hero h1 span{color:var(--coral);}
+  .hero p{max-width:460px;color:#3d5a6b;font-size:1.05rem;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:16px;}
+  .ghost-btn{border:2px solid var(--navy);padding:9px 22px;border-radius:40px;font-weight:700;font-size:.88rem;}
+  .hero-avatar{width:100%;aspect-ratio:1;border-radius:44% 56% 62% 38%/46% 40% 60% 54%;background:var(--coral);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;color:#fff;font-size:5rem;font-weight:800;border:8px solid #fff;box-shadow:0 20px 40px rgba(31,59,77,.15);}
+
+  section{padding:90px 0;position:relative;z-index:1;}
+  .section-head{max-width:600px;margin-bottom:46px;}
+  .section-head h2{font-size:2.1rem;font-weight:700;color:var(--navy);margin-top:8px;}
+
+  .about{background:#fff;border-radius:32px;margin:0 24px;padding:70px 0;}
+  .about-grid{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:start;}
+  .stats{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap;}
+  .stat{background:var(--sky);padding:14px 18px;border-radius:16px;}
+  .stat b{display:block;font-family:'Baloo 2',sans-serif;font-size:1.7rem;color:var(--coral);}
+  .stat span{font-size:.78rem;color:#5a7788;}
+  .about-body p{margin-bottom:16px;color:#425c6b;max-width:600px;}
+
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .cred-card{background:#fff;border-radius:20px;padding:26px 22px;box-shadow:0 6px 20px rgba(31,59,77,.06);}
+  .cred-card h3{font-size:1.05rem;margin:8px 0 6px;}
+  .cred-card p{font-size:.86rem;color:#5a7788;}
+
+  .growth-chart{background:var(--navy);border-radius:32px;margin:0 24px;padding:70px 40px;color:#fff;}
+  .growth-chart .section-head h2{color:#fff;}
+  .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .exp-card{background:rgba(255,255,255,.08);border-radius:20px;padding:26px;}
+  .exp-card h3{font-size:1.1rem;margin-bottom:8px;color:var(--yellow);}
+  .exp-card p{font-size:.88rem;color:rgba(255,255,255,.75);}
+
+  .growth-marks{display:flex;align-items:flex-end;gap:14px;margin-top:50px;height:120px;}
+  .mark{flex:1;background:linear-gradient(180deg,var(--mint),var(--yellow));border-radius:8px 8px 0 0;position:relative;}
+  .mark span{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:.75rem;color:rgba(255,255,255,.8);}
+
+  .timeline{position:relative;max-width:760px;margin:0 auto;padding-left:32px;border-left:3px dashed var(--coral);}
+  .tl-item{position:relative;padding-bottom:40px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:'';position:absolute;left:-41px;top:2px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--coral);border-radius:50%;}
+  .tl-year{font-family:'Baloo 2',sans-serif;color:var(--coral);font-weight:700;}
+  .tl-item h3{margin:4px 0 6px;font-size:1.1rem;}
+  .tl-item p{color:#5a7788;font-size:.9rem;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .testi-card{background:#fff;border-radius:20px;padding:26px 22px;box-shadow:0 6px 20px rgba(31,59,77,.06);}
+  .testi-card p{font-size:.92rem;color:#3d5a6b;}
+  .testi-name{margin-top:14px;font-weight:700;font-size:.85rem;color:var(--coral);}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .info-row{margin-bottom:18px;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  input,textarea{border:2px solid #d8ecf3;background:#fff;padding:13px 16px;font-family:inherit;font-size:.92rem;border-radius:14px;}
+  input:focus,textarea:focus{outline:none;border-color:var(--coral);}
+  button.submit{background:var(--coral);color:#fff;padding:14px;font-weight:700;border:0;border-radius:14px;cursor:pointer;font-size:.94rem;box-shadow:0 4px 0 #d9614e;}
+  .form-note{font-size:.85rem;color:var(--coral);display:none;font-weight:600;}
+  .form-note.show{display:block;}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;text-align:center;font-size:.85rem;margin-top:40px;}
+  footer .brand{color:#fff;}
+
+  @media(max-width:880px){
+    .navlinks,.cta-btn{display:none;}
+    .navtoggle{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.3rem;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .cred-grid,.exp-grid,.testi-grid{grid-template-columns:1fr;}
+    .about,.growth-chart{margin:0 12px;padding:50px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Dr. Nusrat Jahan<span>🌤</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Care</a>
+      <a href="#timeline">Experience</a>
+      <a href="#testimonials">Parents</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Book a Visit</a>
+    <button class="navtoggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Pediatrician · Little Steps Children's Clinic</div>
+      <h1>Growing up is<br><span>easier</span> with the right care.</h1>
+      <p>From newborn checkups to teenage growing pains, I make every visit calm, unhurried, and a little bit fun — for kids and for the parents watching closely.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-btn">Book a Visit</a>
+        <a href="#about" class="ghost-btn">Meet Dr. Jahan</a>
+      </div>
+    </div>
+    <div class="hero-avatar">NJ</div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="stats">
+        <div class="stat"><b>10+</b><span>Years in practice</span></div>
+        <div class="stat"><b>3,500+</b><span>Little patients</span></div>
+        <div class="stat"><b>1,200</b><span>Newborns checked</span></div>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="eyebrow">About</div>
+      <h2 style="margin:10px 0 18px;color:var(--navy);font-size:1.9rem;">A pediatrician who gets down to their level.</h2>
+      <p>Dr. Nusrat Jahan completed her MBBS at Rajshahi Medical College and her DCH (Diploma in Child Health) at Dhaka Shishu Hospital. She has spent the last decade focused entirely on children — from premature newborns to teenagers.</p>
+      <p>She believes the best pediatric care happens when kids feel safe enough to relax. Her clinic room has a growth chart wall every child gets to mark on their own visit.</p>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Credentials</div>
+      <h2>Training &amp; certifications</h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card"><div class="eyebrow">Degree</div><h3>MBBS, DCH</h3><p>Rajshahi Medical College &amp; Dhaka Shishu Hospital</p></div>
+      <div class="cred-card"><div class="eyebrow">Specialization</div><h3>FCPS (Paediatrics)</h3><p>Bangladesh College of Physicians and Surgeons</p></div>
+      <div class="cred-card"><div class="eyebrow">Certification</div><h3>Neonatal Resuscitation</h3><p>Certified NRP provider</p></div>
+      <div class="cred-card"><div class="eyebrow">Registration</div><h3>BM&amp;DC Licensed</h3><p>Bangladesh Medical &amp; Dental Council</p></div>
+      <div class="cred-card"><div class="eyebrow">Membership</div><h3>Bangladesh Paediatric Association</h3><p>Active member since 2016</p></div>
+      <div class="cred-card"><div class="eyebrow">Interest</div><h3>Childhood Nutrition</h3><p>Regular workshops for new parents</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="growth-chart" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Care areas</div>
+      <h2>How I can help your child</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><h3>Newborn Care</h3><p>First checkups, feeding guidance, and vaccination scheduling.</p></div>
+      <div class="exp-card"><h3>Growth &amp; Development</h3><p>Tracking milestones from infancy through adolescence.</p></div>
+      <div class="exp-card"><h3>Vaccinations</h3><p>Full immunization schedule, explained clearly to parents.</p></div>
+      <div class="exp-card"><h3>Common Illness Care</h3><p>Fevers, infections, allergies — fast, calm diagnosis.</p></div>
+      <div class="exp-card"><h3>Nutrition Counseling</h3><p>Feeding plans for picky eaters and growth concerns.</p></div>
+      <div class="exp-card"><h3>School Health Checks</h3><p>Readiness evaluations and sports physicals.</p></div>
+    </div>
+    <div class="growth-marks">
+      <div class="mark" style="height:35%;"><span>Newborn</span></div>
+      <div class="mark" style="height:50%;"><span>1 yr</span></div>
+      <div class="mark" style="height:65%;"><span>3 yrs</span></div>
+      <div class="mark" style="height:80%;"><span>7 yrs</span></div>
+      <div class="mark" style="height:100%;"><span>12 yrs</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Journey</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">2011</div><h3>MBBS, Rajshahi Medical College</h3><p>Graduated; began residency in Paediatrics.</p></div>
+      <div class="tl-item"><div class="tl-year">2014</div><h3>DCH, Dhaka Shishu Hospital</h3><p>Focused training in newborn and child care.</p></div>
+      <div class="tl-item"><div class="tl-year">2017</div><h3>FCPS (Paediatrics)</h3><p>Bangladesh College of Physicians and Surgeons.</p></div>
+      <div class="tl-item"><div class="tl-year">2019–Present</div><h3>Lead Pediatrician</h3><p>Little Steps Children's Clinic, Rajshahi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Parents</div>
+      <h2>What parents say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p>My daughter actually looks forward to her checkups now. That says everything.</p><div class="testi-name">— Parent of a 5-year-old</div></div>
+      <div class="testi-card"><p>She caught a feeding issue with my newborn that two other doctors missed.</p><div class="testi-name">— First-time mother</div></div>
+      <div class="testi-card"><p>Patient, thorough, and never makes us feel rushed even during flu season.</p><div class="testi-name">— Parent of twins</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="margin:10px 0 24px;color:var(--navy);font-size:1.9rem;">Book a visit</h2>
+      <div class="info-row"><div class="eyebrow">Clinic</div>Little Steps Children's Clinic</div>
+      <div class="info-row"><div class="eyebrow">Address</div>Uposhohor, Rajshahi</div>
+      <div class="info-row"><div class="eyebrow">Phone</div>+880 1XXX-XXXXXX</div>
+      <div class="info-row"><div class="eyebrow">Hours</div>Sat–Thu, 10:00 AM – 1:00 PM &amp; 5:00 PM – 8:00 PM</div>
+    </div>
+    <form id="contactForm">
+      <input type="text" placeholder="Parent's name" required>
+      <input type="text" placeholder="Child's age" required>
+      <textarea rows="4" placeholder="What would you like to discuss?"></textarea>
+      <button type="submit" class="submit">Request appointment</button>
+      <div class="form-note" id="formNote">Thank you — we'll call to confirm your visit!</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="brand display">Dr. Nusrat Jahan</div>
+  <div>Little Steps Children's Clinic · &copy; 2026 All rights reserved</div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formNote').classList.add('show');
+    this.reset();
+  });
+</script>
+</body>
+</html>

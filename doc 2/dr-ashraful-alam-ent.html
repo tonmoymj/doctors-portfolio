@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Ashraful Alam — ENT Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deepteal:#0B3C49;
+    --coral:#FF6B5B;
+    --sand:#F4E9DC;
+    --aqua:#4FB6BE;
+    --charcoal:#22292E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--sand);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.6;}
+  h1,h2,h3,.display{font-family:'Poppins',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);font-weight:700;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(244,233,220,.92);backdrop-filter:blur(8px);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .brand{font-weight:700;font-size:1.1rem;color:var(--deepteal);}
+  .brand span{color:var(--coral);}
+  .navlinks{display:flex;gap:28px;font-size:.9rem;font-weight:500;}
+  .navlinks a:hover{color:var(--coral);}
+  .cta-btn{background:var(--coral);color:#fff;padding:10px 22px;border-radius:10px;font-weight:700;font-size:.85rem;}
+  .navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;}
+  .navtoggle span{width:24px;height:2px;background:var(--charcoal);}
+
+  .hero{background:var(--deepteal);color:#fff;padding:170px 0 100px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  .hero h1{font-size:3.2rem;font-weight:700;line-height:1.1;margin:16px 0 20px;}
+  .hero h1 span{color:var(--coral);}
+  .hero p{max-width:460px;color:rgba(255,255,255,.75);font-size:1.02rem;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:16px;}
+  .ghost-btn{border:1.5px solid rgba(255,255,255,.5);padding:9px 22px;border-radius:10px;font-weight:600;font-size:.85rem;color:#fff;}
+  .wave-panel{background:rgba(255,255,255,.06);border-radius:16px;padding:40px 30px;}
+  .wave-bars{display:flex;align-items:center;gap:5px;height:100px;justify-content:center;}
+  .wave-bars .bar{width:6px;background:var(--aqua);border-radius:4px;animation:wave 1.2s ease-in-out infinite;}
+  .wave-bars .bar:nth-child(odd){background:var(--coral);}
+  @keyframes wave{0%,100%{height:16px;}50%{height:80px;}}
+  .wave-caption{margin-top:18px;text-align:center;font-size:.78rem;color:rgba(255,255,255,.6);letter-spacing:.08em;text-transform:uppercase;}
+
+  section{padding:90px 0;}
+  .section-head{max-width:600px;margin-bottom:46px;}
+  .section-head h2{font-size:2.1rem;font-weight:700;color:var(--deepteal);margin-top:8px;}
+
+  .about{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start;}
+  .avatar-box{width:200px;height:200px;background:var(--coral);color:#fff;border-radius:20px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:3rem;font-weight:700;}
+  .stats{display:flex;gap:24px;margin-top:22px;flex-wrap:wrap;}
+  .stat{background:var(--sand);padding:14px 18px;border-radius:12px;}
+  .stat b{display:block;font-family:'Poppins',sans-serif;font-size:1.6rem;color:var(--deepteal);}
+  .stat span{font-size:.75rem;color:#5a6a70;}
+  .about-body p{margin-bottom:16px;color:#3a484d;max-width:600px;}
+
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .cred-card{background:#fff;border:1px solid #e6dccb;padding:26px 22px;border-radius:14px;}
+  .cred-card h3{font-size:1.02rem;margin:8px 0 6px;}
+  .cred-card p{font-size:.85rem;color:#5a6a70;}
+
+  .expertise{background:var(--aqua);color:#06262b;}
+  .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .exp-card{background:rgba(255,255,255,.35);border-radius:14px;padding:26px;}
+  .exp-card h3{font-size:1.08rem;margin-bottom:8px;}
+  .exp-card p{font-size:.86rem;color:#0b3c49;}
+
+  .timeline{max-width:760px;margin:0 auto;}
+  .tl-item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #e6dccb;}
+  .tl-item:last-child{border-bottom:0;}
+  .tl-year{font-family:'Poppins',sans-serif;color:var(--coral);font-weight:700;}
+  .tl-item h3{font-size:1.05rem;margin-bottom:4px;}
+  .tl-item p{color:#5a6a70;font-size:.88rem;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .testi-card{background:#fff;border:1px solid #e6dccb;padding:26px 22px;border-radius:14px;}
+  .testi-card p{font-size:.9rem;color:#3a484d;}
+  .testi-name{margin-top:14px;font-weight:600;font-size:.82rem;color:var(--coral);}
+
+  .contact{background:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .info-row{margin-bottom:18px;}
+  form{display:flex;flex-direction:column;gap:12px;}
+  input,textarea{border:1px solid #e6dccb;background:var(--sand);padding:12px 14px;font-family:inherit;font-size:.9rem;border-radius:10px;}
+  input:focus,textarea:focus{outline:2px solid var(--coral);}
+  button.submit{background:var(--deepteal);color:#fff;padding:13px;font-weight:700;border:0;border-radius:10px;cursor:pointer;font-size:.9rem;}
+  button.submit:hover{background:#06262b;}
+  .form-note{font-size:.82rem;color:var(--coral);display:none;font-weight:600;}
+  .form-note.show{display:block;}
+
+  footer{background:var(--deepteal);color:rgba(255,255,255,.7);padding:36px 0;text-align:center;font-size:.82rem;}
+
+  @media(max-width:880px){
+    .navlinks,.cta-btn{display:none;}
+    .navtoggle{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.2rem;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .cred-grid,.exp-grid,.testi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Dr. Ashraful Alam<span>, ENT</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#timeline">Experience</a>
+      <a href="#testimonials">Patients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Book Consultation</a>
+    <button class="navtoggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">ENT Specialist · Rajshahi ENT &amp; Hearing Center</div>
+      <h1>Clear hearing.<br>Easy breathing.<br><span>Better balance.</span></h1>
+      <p>Thirteen years treating ear, nose, and throat conditions — from chronic sinus problems to hearing loss and voice disorders — with fast, precise diagnosis.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-btn">Book Consultation</a>
+        <a href="#about" class="ghost-btn">Meet Dr. Alam</a>
+      </div>
+    </div>
+    <div class="wave-panel">
+      <div class="wave-bars">
+        <div class="bar" style="animation-delay:0s"></div>
+        <div class="bar" style="animation-delay:.1s"></div>
+        <div class="bar" style="animation-delay:.2s"></div>
+        <div class="bar" style="animation-delay:.3s"></div>
+        <div class="bar" style="animation-delay:.15s"></div>
+        <div class="bar" style="animation-delay:.25s"></div>
+        <div class="bar" style="animation-delay:.05s"></div>
+        <div class="bar" style="animation-delay:.35s"></div>
+        <div class="bar" style="animation-delay:.2s"></div>
+        <div class="bar" style="animation-delay:.1s"></div>
+        <div class="bar" style="animation-delay:.3s"></div>
+        <div class="bar" style="animation-delay:0s"></div>
+      </div>
+      <div class="wave-caption">Audiogram · Normal Range</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="avatar-box">AA</div>
+      <div class="stats">
+        <div class="stat"><b>13+</b><span>Years practicing</span></div>
+        <div class="stat"><b>5,600+</b><span>Patients treated</span></div>
+        <div class="stat"><b>800+</b><span>Surgeries performed</span></div>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="eyebrow">About</div>
+      <h2 style="margin:10px 0 18px;color:var(--deepteal);font-size:1.9rem;">Fixing the small things that affect everything.</h2>
+      <p>Dr. Ashraful Alam earned his MBBS from Rajshahi Medical College and his MS in Otolaryngology (ENT) from Bangabandhu Sheikh Mujib Medical University. He now leads the ENT department at Rajshahi ENT &amp; Hearing Center.</p>
+      <p>He treats hearing, breathing, and voice problems as connected systems — a blocked nose, a ringing ear, and a hoarse voice often share one root cause, and he digs until he finds it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Credentials</div>
+      <h2>Training &amp; certifications</h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card"><div class="eyebrow">Degree</div><h3>MBBS, MS (ENT)</h3><p>Rajshahi Medical College &amp; BSMMU</p></div>
+      <div class="cred-card"><div class="eyebrow">Fellowship</div><h3>Endoscopic Sinus Surgery</h3><p>Advanced training, Chennai, India</p></div>
+      <div class="cred-card"><div class="eyebrow">Registration</div><h3>BM&amp;DC Licensed</h3><p>Bangladesh Medical &amp; Dental Council</p></div>
+      <div class="cred-card"><div class="eyebrow">Membership</div><h3>Bangladesh ENT Society</h3><p>Active member since 2014</p></div>
+      <div class="cred-card"><div class="eyebrow">Certification</div><h3>Hearing Aid Fitting</h3><p>Certified audiology consultant</p></div>
+      <div class="cred-card"><div class="eyebrow">Focus</div><h3>Pediatric ENT</h3><p>Regular tonsil &amp; adenoid clinics for children</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Expertise</div>
+      <h2>Conditions treated</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><h3>Hearing Loss</h3><p>Diagnosis, hearing aids, and surgical options.</p></div>
+      <div class="exp-card"><h3>Chronic Sinusitis</h3><p>Endoscopic sinus surgery and long-term relief.</p></div>
+      <div class="exp-card"><h3>Tonsils &amp; Adenoids</h3><p>Evaluation and removal for children and adults.</p></div>
+      <div class="exp-card"><h3>Voice Disorders</h3><p>Hoarseness and vocal cord evaluation.</p></div>
+      <div class="exp-card"><h3>Ear Infections</h3><p>Acute and chronic middle ear conditions.</p></div>
+      <div class="exp-card"><h3>Balance &amp; Vertigo</h3><p>Inner ear evaluation for dizziness.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Journey</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">2010</div><div><h3>MBBS, Rajshahi Medical College</h3><p>Graduated; began residency in ENT.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2015</div><div><h3>MS in Otolaryngology</h3><p>Bangabandhu Sheikh Mujib Medical University.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2017</div><div><h3>Sinus Surgery Fellowship</h3><p>Advanced endoscopic training, Chennai, India.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2018–Present</div><div><h3>Head of ENT</h3><p>Rajshahi ENT &amp; Hearing Center.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Patients</div>
+      <h2>What patients say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p>Years of sinus headaches gone after one surgery. I wish I'd come sooner.</p><div class="testi-name">— Sinusitis patient</div></div>
+      <div class="testi-card"><p>My son's constant ear infections finally stopped after his treatment plan.</p><div class="testi-name">— Parent of a patient</div></div>
+      <div class="testi-card"><p>Got fitted for hearing aids and could hear my grandchildren clearly again.</p><div class="testi-name">— Hearing loss patient</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="margin:10px 0 24px;color:var(--deepteal);font-size:1.9rem;">Book a consultation</h2>
+      <div class="info-row"><div class="eyebrow">Clinic</div>Rajshahi ENT &amp; Hearing Center</div>
+      <div class="info-row"><div class="eyebrow">Address</div>Court Station Road, Rajshahi</div>
+      <div class="info-row"><div class="eyebrow">Phone</div>+880 1XXX-XXXXXX</div>
+      <div class="info-row"><div class="eyebrow">Hours</div>Sat–Thu, 5:00 PM – 9:00 PM</div>
+    </div>
+    <form id="contactForm">
+      <input type="text" placeholder="Full name" required>
+      <input type="tel" placeholder="Phone number" required>
+      <textarea rows="4" placeholder="Briefly describe your symptoms"></textarea>
+      <button type="submit" class="submit">Request appointment</button>
+      <div class="form-note" id="formNote">Thank you — our team will call to confirm your slot.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="display" style="color:#fff;margin-bottom:8px;font-weight:700;">Dr. Ashraful Alam</div>
+  <div>Rajshahi ENT &amp; Hearing Center · &copy; 2026 All rights reserved</div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formNote').classList.add('show');
+    this.reset();
+  });
+</script>
+</body>
+</html>

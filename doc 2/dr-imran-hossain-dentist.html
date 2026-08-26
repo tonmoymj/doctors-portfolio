@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Imran Hossain — Dentist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --teal:#2FA39A;
+    --teal-dark:#114B4A;
+    --grey:#E7ECEC;
+    --coral:#F26B5B;
+    --ink:#12302F;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;}
+  h1,h2,h3,.display{font-family:'Sora',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:600;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--grey);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .brand{font-weight:700;font-size:1.1rem;color:var(--teal-dark);}
+  .brand span{color:var(--coral);}
+  .navlinks{display:flex;gap:28px;font-size:.9rem;font-weight:500;}
+  .navlinks a:hover{color:var(--teal);}
+  .cta-btn{background:var(--teal);color:#fff;padding:10px 22px;border-radius:8px;font-weight:600;font-size:.86rem;}
+  .cta-btn:hover{background:var(--teal-dark);}
+  .navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;}
+  .navtoggle span{width:24px;height:2px;background:var(--ink);}
+
+  .hero{padding:170px 0 90px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  .hero h1{font-size:3.2rem;font-weight:700;line-height:1.1;margin:16px 0 20px;color:var(--teal-dark);}
+  .hero h1 span{color:var(--coral);}
+  .hero p{max-width:460px;color:#4d6362;font-size:1.02rem;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:16px;}
+  .ghost-btn{border:1.5px solid var(--teal-dark);padding:9px 22px;border-radius:8px;font-weight:600;font-size:.86rem;}
+  .arch-panel{background:var(--grey);border-radius:16px;padding:36px;}
+  .arch-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;}
+  .tooth{aspect-ratio:1;background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:600;color:var(--teal-dark);border:1px solid #d8e0e0;}
+  .tooth.hl{background:var(--teal);color:#fff;}
+  .arch-caption{margin-top:16px;font-size:.78rem;color:#4d6362;text-align:center;}
+
+  section{padding:90px 0;}
+  .section-head{max-width:600px;margin-bottom:46px;}
+  .section-head h2{font-size:2.1rem;font-weight:700;color:var(--teal-dark);margin-top:8px;}
+
+  .about{background:var(--grey);}
+  .about-grid{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start;}
+  .avatar-box{width:200px;height:200px;background:var(--teal);color:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:3rem;font-weight:700;}
+  .stats{display:flex;gap:24px;margin-top:22px;flex-wrap:wrap;}
+  .stat{background:#fff;padding:14px 18px;border-radius:10px;}
+  .stat b{display:block;font-family:'Sora',sans-serif;font-size:1.6rem;color:var(--teal);}
+  .stat span{font-size:.75rem;color:#4d6362;}
+  .about-body p{margin-bottom:16px;color:#37504f;max-width:600px;}
+
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .cred-card{border:1px solid var(--grey);padding:26px 22px;border-radius:12px;}
+  .cred-card h3{font-size:1.02rem;margin:8px 0 6px;}
+  .cred-card p{font-size:.85rem;color:#4d6362;}
+
+  .expertise{background:var(--teal-dark);color:#e9f5f4;}
+  .expertise .section-head h2{color:#fff;}
+  .expertise .eyebrow{color:#7fd9c4;}
+  .exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .exp-card{background:rgba(255,255,255,.06);border-radius:12px;padding:22px 18px;}
+  .exp-card .num{font-family:'Sora',sans-serif;font-size:.75rem;color:#7fd9c4;font-weight:700;}
+  .exp-card h3{font-size:1rem;margin:8px 0 6px;color:#fff;}
+  .exp-card p{font-size:.82rem;color:rgba(233,245,244,.7);}
+
+  .timeline{max-width:760px;margin:0 auto;}
+  .tl-item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--grey);}
+  .tl-item:last-child{border-bottom:0;}
+  .tl-year{font-family:'Sora',sans-serif;color:var(--teal);font-weight:700;}
+  .tl-item h3{font-size:1.05rem;margin-bottom:4px;}
+  .tl-item p{color:#4d6362;font-size:.88rem;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .testi-card{background:var(--grey);padding:26px 22px;border-radius:12px;}
+  .testi-card p{font-size:.9rem;color:#37504f;}
+  .testi-name{margin-top:14px;font-weight:600;font-size:.82rem;color:var(--teal-dark);}
+
+  .contact{background:var(--grey);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .info-row{margin-bottom:18px;}
+  form{display:flex;flex-direction:column;gap:12px;}
+  input,textarea{border:1px solid #cdd8d7;background:#fff;padding:12px 14px;font-family:inherit;font-size:.9rem;border-radius:8px;}
+  input:focus,textarea:focus{outline:2px solid var(--teal);}
+  button.submit{background:var(--teal);color:#fff;padding:13px;font-weight:600;border:0;border-radius:8px;cursor:pointer;font-size:.9rem;}
+  button.submit:hover{background:var(--teal-dark);}
+  .form-note{font-size:.82rem;color:var(--teal-dark);display:none;}
+  .form-note.show{display:block;}
+
+  footer{background:var(--teal-dark);color:rgba(233,245,244,.7);padding:36px 0;text-align:center;font-size:.82rem;}
+
+  @media(max-width:880px){
+    .navlinks,.cta-btn{display:none;}
+    .navtoggle{display:flex;}
+    .hero{grid-template-columns:1fr;padding-top:130px;}
+    .hero h1{font-size:2.2rem;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .cred-grid,.testi-grid{grid-template-columns:1fr;}
+    .exp-grid{grid-template-columns:repeat(2,1fr);}
+    .arch-grid{grid-template-columns:repeat(8,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Dr. Imran Hossain<span>.DDS</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Services</a>
+      <a href="#timeline">Experience</a>
+      <a href="#testimonials">Patients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Book a Visit</a>
+    <button class="navtoggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap" style="display:contents;">
+    <div>
+      <div class="eyebrow">Dentist · BrightSmile Dental Care</div>
+      <h1>Precision dentistry,<br><span>zero anxiety.</span></h1>
+      <p>From routine cleanings to root canals and implants, every procedure at BrightSmile is explained tooth by tooth — no surprises, no rushed appointments.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-btn">Book a Visit</a>
+        <a href="#about" class="ghost-btn">Meet Dr. Hossain</a>
+      </div>
+    </div>
+    <div class="arch-panel">
+      <div class="arch-grid" id="archGrid"></div>
+      <div class="arch-caption">Full dental chart · 32 teeth mapped every visit</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="avatar-box">IH</div>
+      <div class="stats">
+        <div class="stat"><b>11+</b><span>Years practicing</span></div>
+        <div class="stat"><b>9,000+</b><span>Procedures</span></div>
+        <div class="stat"><b>4.9★</b><span>Patient rating</span></div>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="eyebrow">About</div>
+      <h2 style="margin:10px 0 18px;color:var(--teal-dark);font-size:1.9rem;">A dentist who explains every step first.</h2>
+      <p>Dr. Imran Hossain completed his BDS at Dhaka Dental College and his advanced training in Cosmetic &amp; Restorative Dentistry in Bangkok. He founded BrightSmile Dental Care to make routine and complex dental work equally stress-free.</p>
+      <p>He walks every patient through the dental chart before starting, so there's never a surprise mid-procedure — just a clear plan, tooth by tooth.</p>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Credentials</div>
+      <h2>Training &amp; certifications</h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card"><div class="eyebrow">Degree</div><h3>BDS</h3><p>Dhaka Dental College</p></div>
+      <div class="cred-card"><div class="eyebrow">Advanced Training</div><h3>Cosmetic &amp; Restorative Dentistry</h3><p>Bangkok International Dental Center</p></div>
+      <div class="cred-card"><div class="eyebrow">Certification</div><h3>Dental Implantology</h3><p>Certified implant placement specialist</p></div>
+      <div class="cred-card"><div class="eyebrow">Registration</div><h3>BM&amp;DC Licensed</h3><p>Bangladesh Medical &amp; Dental Council</p></div>
+      <div class="cred-card"><div class="eyebrow">Membership</div><h3>Bangladesh Dental Society</h3><p>Active member since 2015</p></div>
+      <div class="cred-card"><div class="eyebrow">Focus</div><h3>Painless Root Canal Therapy</h3><p>Modern rotary endodontics technique</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Services</div>
+      <h2>Full-mouth care, mapped by tooth</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><div class="num">01–08</div><h3>Cleanings &amp; Checkups</h3><p>Routine care and early detection.</p></div>
+      <div class="exp-card"><div class="num">09–16</div><h3>Fillings &amp; Restorations</h3><p>Tooth-colored, long-lasting repairs.</p></div>
+      <div class="exp-card"><div class="num">17–24</div><h3>Root Canal Therapy</h3><p>Pain-free, single-visit where possible.</p></div>
+      <div class="exp-card"><div class="num">25–28</div><h3>Crowns &amp; Bridges</h3><p>Custom-fit restorations.</p></div>
+      <div class="exp-card"><div class="num">29–30</div><h3>Dental Implants</h3><p>Permanent replacement for missing teeth.</p></div>
+      <div class="exp-card"><div class="num">31–32</div><h3>Wisdom Tooth Removal</h3><p>Safe, comfortable extractions.</p></div>
+      <div class="exp-card"><div class="num">EXTRA</div><h3>Teeth Whitening</h3><p>In-clinic and take-home options.</p></div>
+      <div class="exp-card"><div class="num">EXTRA</div><h3>Braces &amp; Aligners</h3><p>Orthodontic consultation and referral.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Journey</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">2013</div><div><h3>BDS, Dhaka Dental College</h3><p>Graduated with distinction in restorative dentistry.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2016</div><div><h3>Advanced Cosmetic Training</h3><p>Bangkok International Dental Center.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2018</div><div><h3>Implantology Certification</h3><p>Specialized training in dental implant placement.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2019–Present</div><div><h3>Founder, BrightSmile Dental Care</h3><p>Rajshahi's patient-first dental clinic.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Patients</div>
+      <h2>What patients say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p>I've always dreaded root canals — this was genuinely painless.</p><div class="testi-name">— Root canal patient</div></div>
+      <div class="testi-card"><p>He showed me my own X-ray and explained exactly what needed fixing.</p><div class="testi-name">— Filling patient</div></div>
+      <div class="testi-card"><p>My implant looks and feels completely natural. Worth every visit.</p><div class="testi-name">— Implant patient</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="margin:10px 0 24px;color:var(--teal-dark);font-size:1.9rem;">Book a visit</h2>
+      <div class="info-row"><div class="eyebrow">Clinic</div>BrightSmile Dental Care</div>
+      <div class="info-row"><div class="eyebrow">Address</div>Shaheb Bazar, Rajshahi</div>
+      <div class="info-row"><div class="eyebrow">Phone</div>+880 1XXX-XXXXXX</div>
+      <div class="info-row"><div class="eyebrow">Hours</div>Sat–Thu, 10:00 AM – 8:00 PM</div>
+    </div>
+    <form id="contactForm">
+      <input type="text" placeholder="Full name" required>
+      <input type="tel" placeholder="Phone number" required>
+      <textarea rows="4" placeholder="What brings you in?"></textarea>
+      <button type="submit" class="submit">Request appointment</button>
+      <div class="form-note" id="formNote">Thank you — the clinic will call to confirm your slot.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="display" style="color:#fff;margin-bottom:8px;font-weight:700;">Dr. Imran Hossain, DDS</div>
+  <div>BrightSmile Dental Care · &copy; 2026 All rights reserved</div>
+</footer>
+
+<script>
+  const grid = document.getElementById('archGrid');
+  const highlight = new Set([9,10,11,22,23,24]);
+  for(let i=1;i<=32;i++){
+    const d = document.createElement('div');
+    d.className = 'tooth' + (highlight.has(i) ? ' hl' : '');
+    d.textContent = i;
+    grid.appendChild(d);
+  }
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formNote').classList.add('show');
+    this.reset();
+  });
+</script>
+</body>
+</html>

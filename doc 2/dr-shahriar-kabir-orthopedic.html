@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Shahriar Kabir — Orthopedic Surgeon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --graphite:#23272B;
+    --steel:#3E6C8C;
+    --bone:#F2EFE9;
+    --orange:#E0622A;
+    --grid:#CBD8E3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bone);color:var(--graphite);font-family:'Source Sans 3',sans-serif;line-height:1.6;}
+  h1,h2,h3,.display{font-family:'Archivo',sans-serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);font-weight:500;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(242,239,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--graphite);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .brand{font-weight:700;font-size:1.1rem;color:var(--graphite);}
+  .brand .mono{color:var(--orange);font-size:.7rem;display:block;margin-top:2px;}
+  .navlinks{display:flex;gap:28px;font-size:.88rem;font-weight:600;}
+  .navlinks a:hover{color:var(--steel);}
+  .cta-btn{background:var(--graphite);color:var(--bone);padding:10px 22px;font-weight:600;font-size:.85rem;border:1px solid var(--graphite);}
+  .cta-btn:hover{background:var(--steel);border-color:var(--steel);}
+  .navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;}
+  .navtoggle span{width:24px;height:2px;background:var(--graphite);}
+
+  /* Blueprint hero */
+  .hero{position:relative;padding:170px 0 100px;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:2;}
+  .hero h1{font-size:3.2rem;font-weight:800;line-height:1.08;margin:16px 0 20px;color:var(--graphite);}
+  .hero h1 span{color:var(--orange);}
+  .hero p{max-width:460px;color:#4b545a;font-size:1.02rem;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:16px;}
+  .ghost-btn{border:1.5px solid var(--graphite);padding:9px 22px;font-weight:600;font-size:.85rem;}
+  .joint-diagram{background:#fff;border:1.5px solid var(--graphite);position:relative;padding:20px;}
+  .joint-diagram svg{width:100%;height:auto;}
+  .joint-diagram .tag{position:absolute;top:12px;left:14px;}
+  .dim-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;fill:var(--steel);}
+
+  section{padding:90px 0;}
+  .section-head{max-width:600px;margin-bottom:46px;}
+  .section-head h2{font-size:2rem;font-weight:700;color:var(--graphite);margin-top:8px;}
+
+  .about{background:#fff;border-top:1px solid var(--graphite);border-bottom:1px solid var(--graphite);}
+  .about-grid{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start;}
+  .avatar-box{width:200px;height:200px;background:var(--graphite);color:var(--bone);display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-size:3rem;font-weight:800;border:6px solid var(--orange);}
+  .stats{display:flex;gap:0;margin-top:24px;border:1px solid var(--graphite);}
+  .stat{flex:1;padding:14px;border-right:1px solid var(--graphite);}
+  .stat:last-child{border-right:0;}
+  .stat b{display:block;font-family:'Archivo',sans-serif;font-size:1.6rem;color:var(--steel);}
+  .stat span{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:#666;}
+  .about-body p{margin-bottom:16px;color:#40474c;max-width:620px;}
+
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--graphite);}
+  .cred-card{padding:26px 22px;border-right:1px solid var(--graphite);border-bottom:1px solid var(--graphite);}
+  .cred-card:nth-child(3n){border-right:0;}
+  .cred-card h3{font-size:1.02rem;margin:8px 0 6px;}
+  .cred-card p{font-size:.85rem;color:#5a6268;}
+
+  .expertise{background:var(--graphite);color:var(--bone);}
+  .expertise .section-head h2{color:#fff;}
+  .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(242,239,233,.15);}
+  .exp-card{background:var(--graphite);padding:30px 24px;}
+  .exp-card .tag{color:var(--orange);}
+  .exp-card h3{font-size:1.08rem;margin:8px 0 8px;color:#fff;}
+  .exp-card p{font-size:.87rem;color:rgba(242,239,233,.7);}
+
+  .timeline{max-width:760px;margin:0 auto;}
+  .tl-item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--grid);}
+  .tl-item:last-child{border-bottom:0;}
+  .tl-year{font-family:'IBM Plex Mono',monospace;color:var(--orange);font-weight:500;}
+  .tl-item h3{font-size:1.05rem;margin-bottom:4px;}
+  .tl-item p{color:#5a6268;font-size:.88rem;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--graphite);border:1px solid var(--graphite);}
+  .testi-card{background:#fff;padding:26px 22px;}
+  .testi-card p{font-size:.9rem;color:#40474c;}
+  .testi-name{margin-top:14px;font-weight:600;font-size:.82rem;color:var(--steel);}
+
+  .contact{background:#fff;border-top:1px solid var(--graphite);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .info-row{margin-bottom:18px;}
+  form{display:flex;flex-direction:column;gap:12px;}
+  input,textarea{border:1px solid var(--graphite);background:var(--bone);padding:12px 14px;font-family:inherit;font-size:.9rem;}
+  input:focus,textarea:focus{outline:2px solid var(--orange);}
+  button.submit{background:var(--graphite);color:var(--bone);padding:13px;font-weight:600;border:0;cursor:pointer;font-size:.9rem;}
+  button.submit:hover{background:var(--orange);}
+  .form-note{font-size:.8rem;color:var(--orange);display:none;font-family:'IBM Plex Mono',monospace;}
+  .form-note.show{display:block;}
+
+  footer{background:var(--graphite);color:rgba(242,239,233,.6);padding:36px 0;text-align:center;font-size:.82rem;}
+
+  @media(max-width:880px){
+    .navlinks,.cta-btn{display:none;}
+    .navtoggle{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.2rem;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .cred-grid,.exp-grid,.testi-grid{grid-template-columns:1fr;}
+    .cred-card{border-right:0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Dr. Shahriar Kabir<span class="mono">ORTHOPEDIC SURGEON</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#timeline">Experience</a>
+      <a href="#testimonials">Patients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Book Consultation</a>
+    <button class="navtoggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tag">FIG. 01 — ORTHOPEDIC &amp; JOINT CARE</div>
+      <h1>Built to get you<br><span>back on your feet.</span></h1>
+      <p>Fourteen years repairing fractures, replacing joints, and restoring mobility — from weekend athletes to grandparents who want to keep gardening.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-btn">Book Consultation</a>
+        <a href="#about" class="ghost-btn">About Dr. Kabir</a>
+      </div>
+    </div>
+    <div class="joint-diagram">
+      <div class="tag">SPEC — KNEE JOINT, LATERAL VIEW</div>
+      <svg viewBox="0 0 300 260" style="margin-top:18px;">
+        <line x1="150" y1="10" x2="150" y2="100" stroke="#23272B" stroke-width="6"/>
+        <circle cx="150" cy="120" r="26" fill="none" stroke="#3E6C8C" stroke-width="4"/>
+        <line x1="150" y1="146" x2="150" y2="250" stroke="#23272B" stroke-width="6"/>
+        <line x1="40" y1="120" x2="115" y2="120" stroke="#E0622A" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="20" y="116" class="dim-label">R=26mm</text>
+        <line x1="190" y1="50" x2="240" y2="50" stroke="#3E6C8C" stroke-width="1"/>
+        <text x="192" y="45" class="dim-label">FEMUR</text>
+        <line x1="190" y1="200" x2="240" y2="200" stroke="#3E6C8C" stroke-width="1"/>
+        <text x="192" y="195" class="dim-label">TIBIA</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="avatar-box">SK</div>
+      <div class="stats">
+        <div class="stat"><b>14+</b><span>Yrs Practice</span></div>
+        <div class="stat"><b>2,100</b><span>Surgeries</span></div>
+        <div class="stat"><b>5,000+</b><span>Patients</span></div>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="tag">ABOUT</div>
+      <h2 style="margin:10px 0 18px;font-size:1.8rem;">Precision-focused, recovery-obsessed.</h2>
+      <p>Dr. Shahriar Kabir earned his MS in Orthopedic Surgery from Chittagong Medical College and trained further in joint replacement surgery in South Korea. He now leads Orthopedic Services at Rajshahi Bone &amp; Joint Hospital.</p>
+      <p>He treats every fracture and joint problem as an engineering puzzle — load, alignment, and recovery time all matter. Patients get a clear map of what surgery (or non-surgical treatment) will realistically achieve.</p>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">CREDENTIALS</div>
+      <h2>Training &amp; certifications</h2>
+    </div>
+  </div>
+  <div class="cred-grid">
+    <div class="cred-card"><div class="tag">DEGREE</div><h3>MBBS, MS (Orthopedics)</h3><p>Chittagong Medical College</p></div>
+    <div class="cred-card"><div class="tag">FELLOWSHIP</div><h3>Joint Replacement Surgery</h3><p>Seoul National University Hospital</p></div>
+    <div class="cred-card"><div class="tag">CERTIFICATION</div><h3>Arthroscopic Surgery</h3><p>Certified minimally-invasive technique specialist</p></div>
+    <div class="cred-card"><div class="tag">REGISTRATION</div><h3>BM&amp;DC Licensed</h3><p>Bangladesh Medical &amp; Dental Council</p></div>
+    <div class="cred-card"><div class="tag">MEMBERSHIP</div><h3>Bangladesh Orthopedic Society</h3><p>Active member since 2013</p></div>
+    <div class="cred-card"><div class="tag">FOCUS</div><h3>Sports Injuries</h3><p>Regular consultant for regional athletic teams</p></div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">EXPERTISE</div>
+      <h2>Procedures &amp; care</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><div class="tag">01</div><h3>Knee &amp; Hip Replacement</h3><p>Total and partial joint replacement with modern implants.</p></div>
+      <div class="exp-card"><div class="tag">02</div><h3>Fracture Fixation</h3><p>Plating, rodding, and casting for all fracture types.</p></div>
+      <div class="exp-card"><div class="tag">03</div><h3>Arthroscopy</h3><p>Minimally invasive repair for ligament and cartilage damage.</p></div>
+      <div class="exp-card"><div class="tag">04</div><h3>Spine Care</h3><p>Non-surgical and surgical management of back pain.</p></div>
+      <div class="exp-card"><div class="tag">05</div><h3>Sports Medicine</h3><p>ACL repair, tendon injuries, return-to-play planning.</p></div>
+      <div class="exp-card"><div class="tag">06</div><h3>Pediatric Orthopedics</h3><p>Growth-related bone and joint conditions in children.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">JOURNEY</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">2008</div><div><h3>MBBS, Chittagong Medical College</h3><p>Graduated; began surgical residency.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2013</div><div><h3>MS in Orthopedic Surgery</h3><p>Bangabandhu Sheikh Mujib Medical University.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2015</div><div><h3>Joint Replacement Fellowship</h3><p>Seoul National University Hospital, South Korea.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2017–Present</div><div><h3>Head of Orthopedic Services</h3><p>Rajshahi Bone &amp; Joint Hospital.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">PATIENTS</div>
+      <h2>What patients say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p>Six weeks after my knee replacement, I was back to walking without pain for the first time in years.</p><div class="testi-name">— Knee replacement patient</div></div>
+      <div class="testi-card"><p>He explained exactly which fracture required surgery and which didn't. No unnecessary procedures.</p><div class="testi-name">— Fracture patient</div></div>
+      <div class="testi-card"><p>My ACL repair got me back on the football field in five months, right on schedule.</p><div class="testi-name">— Athlete, ACL surgery</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="tag">GET IN TOUCH</div>
+      <h2 style="margin:10px 0 24px;font-size:1.8rem;">Book a consultation</h2>
+      <div class="info-row"><div class="tag">CLINIC</div>Rajshahi Bone &amp; Joint Hospital</div>
+      <div class="info-row"><div class="tag">ADDRESS</div>Laxmipur, Rajshahi</div>
+      <div class="info-row"><div class="tag">PHONE</div>+880 1XXX-XXXXXX</div>
+      <div class="info-row"><div class="tag">HOURS</div>Sat–Thu, 4:00 PM – 8:00 PM</div>
+    </div>
+    <form id="contactForm">
+      <input type="text" placeholder="Full name" required>
+      <input type="tel" placeholder="Phone number" required>
+      <textarea rows="4" placeholder="Briefly describe your injury or concern"></textarea>
+      <button type="submit" class="submit">Request appointment</button>
+      <div class="form-note" id="formNote">// request received — clinic will call to confirm</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="display" style="color:#fff;margin-bottom:8px;font-weight:700;">Dr. Shahriar Kabir</div>
+  <div>Rajshahi Bone &amp; Joint Hospital · &copy; 2026 All rights reserved</div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formNote').classList.add('show');
+    this.reset();
+  });
+</script>
+</body>
+</html>

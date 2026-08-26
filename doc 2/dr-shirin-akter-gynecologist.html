@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Shirin Akter | Gynecologist & Obstetrician</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFF0F3;
+    --rose:#C9184A;
+    --rose-soft:#FF758F;
+    --ink:#4A0E24;
+    --panel:#ffffff;
+    --line:#f3c9d3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:'Lato',sans-serif;font-weight:300;line-height:1.75;}
+  h1,h2,h3,.disp{font-family:'Cormorant Garamond',serif;font-weight:500;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  nav{background:var(--bg);padding:0;border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:88px;}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;font-weight:600;}
+  .navlinks{display:flex;gap:38px;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a5568;}
+  .navlinks a:hover{color:var(--rose);}
+  @media(max-width:760px){.navlinks{display:none;}}
+
+  .hero{padding:80px 0 100px;position:relative;}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;}
+  .eyebrow{font-size:0.8rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose);margin-bottom:24px;}
+  .hero h1{font-size:clamp(2.6rem,5.4vw,4.2rem);line-height:1.15;margin-bottom:26px;font-weight:500;}
+  .hero h1 em{color:var(--rose);}
+  .hero p{max-width:460px;color:#7a4258;margin-bottom:36px;font-size:1.05rem;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{padding:16px 32px;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:100px;transition:.25s;display:inline-block;}
+  .btn-solid{background:var(--rose);color:white;}
+  .btn-solid:hover{background:#a30f3b;}
+  .btn-ghost{border:1px solid var(--rose);color:var(--rose);}
+  .btn-ghost:hover{background:var(--rose);color:white;}
+
+  /* botanical signature */
+  .bloom-box{position:relative;height:400px;display:flex;align-items:center;justify-content:center;}
+  .bloom-box svg{width:100%;max-width:320px;height:auto;}
+  .petal{fill:none;stroke:var(--rose-soft);stroke-width:1.5;}
+  .petal.fill{fill:rgba(201,24,74,0.08);}
+  .stem{stroke:#9CAF88;stroke-width:2;fill:none;}
+  .center-dot{fill:var(--rose);}
+  .quote-tag{position:absolute;bottom:0;left:50%;transform:translateX(-50%);background:var(--panel);padding:16px 28px;border-radius:14px;box-shadow:0 10px 30px rgba(201,24,74,0.12);text-align:center;}
+  .quote-tag .num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--rose);}
+  .quote-tag .lbl{font-size:0.72rem;color:#8a5568;text-transform:uppercase;letter-spacing:0.08em;}
+
+  section{padding:100px 0;}
+  .section-tag{color:var(--rose);font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:18px;}
+  .section-title{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:500;margin-bottom:50px;max-width:640px;}
+
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.3fr;gap:60px;}
+  .info-card{background:var(--panel);border-radius:20px;padding:36px;box-shadow:0 10px 40px rgba(201,24,74,0.08);}
+  .info-card .row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);font-size:0.9rem;}
+  .info-card .row:last-child{border-bottom:none;}
+  .info-card .row span:first-child{color:#a56b7e;}
+  .about-text p{margin-bottom:20px;color:#6b3a4a;max-width:560px;}
+  .about-text p:first-child{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ink);font-style:italic;}
+
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;}
+  .stat-card{background:var(--panel);border-radius:18px;padding:28px;text-align:center;box-shadow:0 8px 26px rgba(201,24,74,0.08);}
+  .stat-card .num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--rose);}
+  .stat-card .lbl{font-size:0.8rem;color:#8a5568;margin-top:6px;}
+  @media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr);}.about-grid{grid-template-columns:1fr;}.hero .wrap{grid-template-columns:1fr;}}
+
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .service-card{background:var(--panel);border-radius:20px;padding:34px;box-shadow:0 8px 30px rgba(201,24,74,0.07);}
+  .service-card .icon{width:46px;height:46px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px;}
+  .service-card h3{font-size:1.15rem;margin-bottom:10px;}
+  .service-card p{font-size:0.9rem;color:#8a5568;}
+  @media(max-width:760px){.service-grid{grid-template-columns:1fr;}}
+
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .tl-item{display:grid;grid-template-columns:160px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line);}
+  .tl-item:last-child{border-bottom:none;}
+  .tl-year{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--rose);font-style:italic;}
+  .tl-item h3{font-size:1.15rem;margin-bottom:6px;}
+  .tl-item p{color:#8a5568;font-size:0.92rem;}
+  @media(max-width:600px){.tl-item{grid-template-columns:1fr;gap:6px;}}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi{background:var(--panel);border-radius:20px;padding:30px;font-size:0.92rem;color:#6b3a4a;box-shadow:0 8px 26px rgba(201,24,74,0.06);position:relative;}
+  .testi::before{content:'❀';color:var(--rose-soft);font-size:1.4rem;display:block;margin-bottom:12px;}
+  .testi .who{margin-top:16px;font-size:0.8rem;color:var(--rose);font-style:italic;}
+  @media(max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  .contact{background:var(--ink);color:#ffe3ea;border-radius:26px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:46px;}
+  .contact .k{color:var(--rose-soft);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px;}
+  .contact .v{font-size:1.05rem;margin-bottom:24px;}
+  .hours-table{width:100%;font-size:0.92rem;}
+  .hours-table td{padding:11px 0;border-bottom:1px solid rgba(255,227,234,0.12);}
+  .hours-table td:last-child{text-align:right;color:var(--rose-soft);}
+  @media(max-width:760px){.contact{grid-template-columns:1fr;padding:34px;}}
+
+  footer{text-align:center;padding:44px 0;color:#a56b7e;font-size:0.85rem;font-style:italic;font-family:'Cormorant Garamond',serif;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Dr. Shirin Akter</div>
+    <div class="navlinks">
+      <a href="#about">পরিচিতি</a>
+      <a href="#services">সেবা</a>
+      <a href="#experience">অভিজ্ঞতা</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Gynecologist & Obstetrician</div>
+      <h1>নারীজীবনের প্রতিটি <em>অধ্যায়ে</em> পাশে আছি</h1>
+      <p>গর্ভাবস্থা, প্রসব ও নারী স্বাস্থ্যের জটিল সমস্যায় সংবেদনশীল ও অভিজ্ঞতাসমৃদ্ধ চিকিৎসা — ১৪ বছর ধরে হাজারো মায়ের বিশ্বস্ত সঙ্গী।</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-solid">অ্যাপয়েন্টমেন্ট নিন</a>
+        <a href="#about" class="btn btn-ghost">প্রোফাইল দেখুন</a>
+      </div>
+    </div>
+    <div class="bloom-box">
+      <svg viewBox="0 0 200 240">
+        <path class="stem" d="M100,240 C100,180 90,150 100,100"/>
+        <path class="stem" d="M100,190 C80,190 65,175 60,160"/>
+        <path class="stem" d="M100,160 C122,160 138,148 145,132"/>
+        <g transform="translate(100,70)">
+          <ellipse class="petal fill" cx="0" cy="-28" rx="16" ry="30"/>
+          <ellipse class="petal fill" cx="26" cy="-14" rx="16" ry="30" transform="rotate(60 26 -14)"/>
+          <ellipse class="petal fill" cx="26" cy="14" rx="16" ry="30" transform="rotate(120 26 14)"/>
+          <ellipse class="petal fill" cx="0" cy="28" rx="16" ry="30" transform="rotate(180 0 28)"/>
+          <ellipse class="petal fill" cx="-26" cy="14" rx="16" ry="30" transform="rotate(240 -26 14)"/>
+          <ellipse class="petal fill" cx="-26" cy="-14" rx="16" ry="30" transform="rotate(300 -26 -14)"/>
+          <circle class="center-dot" cx="0" cy="0" r="9"/>
+        </g>
+      </svg>
+      <div class="quote-tag">
+        <div class="num">১৪+</div>
+        <div class="lbl">বছরের সেবা</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag">পরিচিতি</div>
+    <h2 class="section-title">সংবেদনশীলতা ও দক্ষতার মেলবন্ধন</h2>
+    <div class="about-grid">
+      <div class="info-card">
+        <div class="row"><span>বিশেষত্ব</span><span>Obstetrics & Gynecology</span></div>
+        <div class="row"><span>ডিগ্রি</span><span>MBBS, FCPS (Gynae & Obs)</span></div>
+        <div class="row"><span>প্রতিষ্ঠান</span><span>হলি ফ্যামিলি হাসপাতাল</span></div>
+        <div class="row"><span>নিবন্ধন নং</span><span>BMDC-A-44581</span></div>
+        <div class="row"><span>ভাষা</span><span>বাংলা, ইংরেজি</span></div>
+      </div>
+      <div class="about-text">
+        <p>"প্রতিটি গর্ভাবস্থা আলাদা গল্প — আমি সেই গল্পের নিরাপদ পরিসমাপ্তি নিশ্চিত করতে কাজ করি।"</p>
+        <p>ডা. শিরিন আক্তার উচ্চ-ঝুঁকিসম্পন্ন গর্ভাবস্থা, স্বাভাবিক ও সিজারিয়ান প্রসব এবং নারীদের হরমোনজনিত জটিলতার চিকিৎসায় বিশেষজ্ঞ।</p>
+        <p>তিনি হলি ফ্যামিলি রেড ক্রিসেন্ট মেডিকেল কলেজ হাসপাতালে সিনিয়র কনসালট্যান্ট হিসেবে কর্মরত এবং নিয়মিত মাতৃস্বাস্থ্য সচেতনতা কর্মসূচিতে যুক্ত থাকেন।</p>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">১৪+</div><div class="lbl">বছরের অভিজ্ঞতা</div></div>
+      <div class="stat-card"><div class="num">৪,৬০০+</div><div class="lbl">নিরাপদ প্রসব</div></div>
+      <div class="stat-card"><div class="num">১৮,০০০+</div><div class="lbl">রোগী পরামর্শ</div></div>
+      <div class="stat-card"><div class="num">FCPS</div><div class="lbl">Gynae & Obs</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-tag">সেবাসমূহ</div>
+    <h2 class="section-title">যেসব ক্ষেত্রে চিকিৎসা দেওয়া হয়</h2>
+    <div class="service-grid">
+      <div class="service-card"><div class="icon">🤰</div><h3>প্রসবপূর্ব পরিচর্যা</h3><p>নিয়মিত চেকআপ, আল্ট্রাসনোগ্রাম ও ঝুঁকি মূল্যায়ন।</p></div>
+      <div class="service-card"><div class="icon">👶</div><h3>নিরাপদ প্রসব</h3><p>স্বাভাবিক ও প্রয়োজনে সিজারিয়ান প্রসব ব্যবস্থাপনা।</p></div>
+      <div class="service-card"><div class="icon">🩺</div><h3>স্ত্রীরোগ চিকিৎসা</h3><p>মাসিক অনিয়মিততা, ফাইব্রয়েড, সিস্ট ইত্যাদির চিকিৎসা।</p></div>
+      <div class="service-card"><div class="icon">🧬</div><h3>বন্ধ্যত্ব পরামর্শ</h3><p>দম্পতিদের সন্তান ধারণের প্রাথমিক মূল্যায়ন ও পরামর্শ।</p></div>
+      <div class="service-card"><div class="icon">🎗️</div><h3>ক্যান্সার স্ক্রিনিং</h3><p>জরায়ুমুখ ও স্তন ক্যান্সারের প্রাথমিক পরীক্ষা।</p></div>
+      <div class="service-card"><div class="icon">🌸</div><h3>মেনোপজ কেয়ার</h3><p>বয়সজনিত হরমোন পরিবর্তনে সহায়ক চিকিৎসা।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-tag">কর্মজীবন</div>
+    <h2 class="section-title">অভিজ্ঞতার সময়রেখা</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">২০১৮ — বর্তমান</div><div><h3>সিনিয়র কনসালট্যান্ট</h3><p>হলি ফ্যামিলি রেড ক্রিসেন্ট মেডিকেল কলেজ হাসপাতাল, ঢাকা।</p></div></div>
+      <div class="tl-item"><div class="tl-year">২০১২ — ২০১৮</div><div><h3>মেডিকেল অফিসার, গাইনি বিভাগ</h3><p>স্যার সলিমুল্লাহ মেডিকেল কলেজ মিটফোর্ড হাসপাতাল।</p></div></div>
+      <div class="tl-item"><div class="tl-year">২০০৭ — ২০১২</div><div><h3>FCPS প্রশিক্ষণ</h3><p>বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয়, ঢাকা।</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">রোগীদের অভিজ্ঞতা</div>
+    <h2 class="section-title">তারা যা বলেছেন</h2>
+    <div class="testi-grid">
+      <div class="testi">প্রথম গর্ভাবস্থায় খুব ভয়ে ছিলাম, কিন্তু ম্যাডামের যত্নে সব সহজ মনে হয়েছে।<div class="who">— মা, প্রথম সন্তান</div></div>
+      <div class="testi">জরুরি সিজারিয়ানের সময় তার দ্রুত সিদ্ধান্ত আমাদের পরিবারকে স্বস্তি দিয়েছে।<div class="who">— রোগীর স্বামী</div></div>
+      <div class="testi">বহুদিনের হরমোনজনিত সমস্যা তার চিকিৎসায় এখন অনেকটাই নিয়ন্ত্রণে।<div class="who">— দীর্ঘমেয়াদী রোগী</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-tag">যোগাযোগ</div>
+    <h2 class="section-title">অ্যাপয়েন্টমেন্টের জন্য যোগাযোগ করুন</h2>
+    <div class="contact">
+      <div>
+        <div class="k">চেম্বার</div><div class="v">হলি ফ্যামিলি হাসপাতাল, ইস্কাটন, ঢাকা</div>
+        <div class="k">ফোন</div><div class="v">+৮৮০ ১৯xx-xxxxxx</div>
+        <div class="k">ইমেইল</div><div class="v">appointment.shirin@example.com</div>
+      </div>
+      <table class="hours-table">
+        <tr><td>শনি — বুধ</td><td>সকাল ১০টা — দুপুর ২টা</td></tr>
+        <tr><td>শনি — বুধ (সন্ধ্যা)</td><td>সন্ধ্যা ৫টা — রাত ৮টা</td></tr>
+        <tr><td>শুক্র — শনি</td><td>জরুরি সেবা মাত্র</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>© ২০২৬ Dr. Shirin Akter · Gynecologist & Obstetrician · সকল তথ্য প্রদর্শনী উদ্দেশ্যে</footer>
+
+</body>
+</html>
